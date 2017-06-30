@@ -1,3 +1,3 @@
 # BigBandConcept
 Fin de formation WebForce3 (Pierre, Geoffrey, Philippe, Olivier)
-on va y arriver !
+Nous allons y arriver !
