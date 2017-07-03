@@ -15,4 +15,12 @@ class DefaultController extends Controller
 		$this->show('default/home');
 	}
 
+	/**
+	 * Page d'accueil par défaut
+	 */
+	public function prestations()
+	{
+		$this->show('default/home#prestations');
+	}
+
 }
