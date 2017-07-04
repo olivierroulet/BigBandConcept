@@ -1,12 +1,14 @@
 <?php
 
-namespace W\Model;
+namespace Model;
 
 /**
  * Classe requise par l'AuthentificationModel, éventuellement à étendre par le UsersModel de l'appli
  */
-class ArtistesModel extends UsersModel
+class ArtistesModel extends \W\Model\Model // Attention à l' arborescence !!!
 {
+
+	protected $primaryKey = 'AR_Idartiste'; // cette variable permet de ne pas être coincé par w\Model.php 
 	/**
 	 * Constructeur
 	 */
