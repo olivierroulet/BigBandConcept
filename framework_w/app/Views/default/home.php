@@ -623,13 +623,13 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Email">Adresse Mail</label>
-												<input type="email" class="form-control" id="email" placeholder="Votre adresse mail">
+												<input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse mail">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="password">Mot de passe</label>
-												<input type="password" class="form-control" id="password" placeholder="Votre mot de passe">
+												<input type="password" class="form-control" id="password" id="password" placeholder="Votre mot de passe">
 											</div>
 
 										</div>
