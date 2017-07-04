@@ -36,3 +36,28 @@
 .single-member{
 	background-color: rgb(150,0,0);
 }
+#formulaire, #contact-form-section{
+	height:auto;
+}
+
+.btn[type=submit]{
+	background-color: red;
+	font-size: 1.2em;
+	color:white;
+}
+
+.single-service:hover{
+	background-color:red;
+	color:black;
+}
+
+section #clients{
+	padding-top:250px;
+	padding-bottom:250px;
+}
+
+a:hover footer
+{
+	color:red;
+}
+
