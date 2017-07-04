@@ -47,7 +47,6 @@
 			$AR_Nationalite = isset($post['AR_Nationalite']) ? $post['AR_Nationalite'] : '';
 			$AR_NewsLetterYN = isset($post['AR_NewsLetterYN']) ? $post['AR_NewsLetterYN'] : '';
 
-
 			?>
 			<div class="col col-md-12 mobiform">						
 				<form class="form form-horizontal" method="post">

@@ -509,6 +509,7 @@
 												</div>
 											</div>
 										</div>
+
 										<div class="container">
 											<div class="contact-details">
 												<div class="col-sm-12"> 
@@ -518,46 +519,46 @@
 															<div class="row">
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="prenom">Prénom</label>
-																		<input type="text" name="prenom" id="prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+																		<label for="CL_prenom">Prénom</label>
+																		<input type="text" name="CL_prenom" id="CL_prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="nom">Nom</label>
-																		<input type="text" name="nom" id="nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+																		<label for="CL_nom">Nom</label>
+																		<input type="text" name="CL_nom" id="CL_nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="telephone">Telephone</label>
-																		<input type="text" name="telephone" id="telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
+																		<label for="CL_telephone">Telephone</label>
+																		<input type="text" name="CL_telephone" id="CL_telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
 															<div class="row">
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="email1">Adresse mail</label>
-																		<input type="email" name="email1" id="email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
+																		<label for="CL_email1">Adresse mail</label>
+																		<input type="email" name="CL_email1" id="CL_email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
 																	</div> 
 																</div>
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="email2">Confirmez votre adresse mail</label>
-																		<input type="email" name="email2" id="email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
+																		<label for="CL_email2">Confirmez votre adresse mail</label>
+																		<input type="email" name="CL_email2" id="CL_email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
 															<div class="row">
 																<div class="col-lg-12">
 																	<div class="form-group">
-																		<label for="raisonsociale">Raison sociale</label>
-																		<input type="text" name="raisonsociale" id="raisonsociale" class="form-control" placeholder="Raison sociale" tabindex="5">
+																		<label for="CL_Raison_Sociale">Raison sociale</label>
+																		<input type="text" name="CL_Raison_Sociale" id="CL_Raison_Sociale" class="form-control" placeholder="Raison sociale" tabindex="5">
 																	</div>
 																	<div class="form-group">
-																		<label for="statutjuridique">Statut juridique</label>
-																		<select class="form-control" name="statutjuridique" tabindex="6">
+																		<label for="CL_Statut_Juridique">Statut juridique</label>
+																		<select class="form-control" name="CL_Statut_Juridique" id="CL_Statut_Juridique" tabindex="6">
 																			<option selected value="">Indiquez votre statut juridique</option>
 																			<option value="Particulier">Particulier</option>
 																			<option value="Entreprise">Entreprise</option>
@@ -566,8 +567,8 @@
 																		</select>
 																	</div>
 																	<div class="form-group">
-																		<label for="licencedespectacle">Titulaire de la licence d'entrepreneur de spectacle
-																			<input type="checkbox" name="licencedespectacle" id="licencedespectacle" tabindex="7">
+																		<label for="CL_Titulaire_Licence_Entrepreneur_De_Spectacles">Titulaire de la licence d'entrepreneur de spectacle
+																			<input type="checkbox" name="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" id="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" tabindex="7">
 																		</label>
 																	</div>
 																</div>
@@ -578,8 +579,8 @@
 																	<div class="col-lg-4">
 
 																		<div class="form-group">
-																			<label for="datevenemenent">Date de votre évènement</label>
-																			<input type="text" name="dateevenement" id="dateevenement" class="form-control" placeholder="01/01/2018" tabindex="8">
+																			<label for="DV_Datedelaprestation">Date de votre évènement</label>
+																			<input type="text" name="DV_Datedelaprestation" id="DV_Datedelaprestation" class="form-control" placeholder="01/01/2018" tabindex="8">
 																		</div>
 																	</div>
 																	<div class="col-lg-4">
@@ -590,7 +591,7 @@
 																	</div>
 																	<div class="col-lg-4">
 																		<div class="form-group">
-																			<label for="ville">Ville</label>
+																			<label for="DV_Ville">Ville</label>
 																			<input type="text" name="ville" id="ville" class="form-control" placeholder="Ville" tabindex="10">
 																		</div>
 																	</div>
