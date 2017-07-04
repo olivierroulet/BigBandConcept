@@ -7,6 +7,7 @@
 
 
 
+
 <!-- ** Fin des boutons NAVIGATION ************************ -->	
 <!-- ** Début du formulaire d' ajout d' ARTISTE ' ************************ -->	
 
