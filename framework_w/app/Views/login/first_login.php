@@ -39,7 +39,7 @@
 					}
 					?>
 				</div>
-				<form method="POST" action="first_loggin">
+				<form method="POST" action="first_login">
 					<div class="col-sm-12">
 						<div class="form-group">
 							<label for="email">Adresse Mail</label>

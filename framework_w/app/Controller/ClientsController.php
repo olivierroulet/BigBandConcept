@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 // use \W\Model\UsersModel;
+use Model\DevisModel;
 use Model\ClientsModel;
 use Model\UsersModel;
 use \W\Security\AuthentificationModel;
@@ -68,20 +69,44 @@ class ClientsController extends \W\Controller\Controller
                 'US_tel'   => $post['CL_Telephone'],
                 'US_idURole'    => 2,
                 ];
-                // on verifie que l'utilisateur n'ai pas déjà un compte
+                    // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new UsersModel();
-                $verif = $user-> getUserByUsernameOrEmail($post['CL_Email1']);
+                $verif = $user -> getUserByUsernameOrEmail($post['CL_Email1']);
                 if($verif){
                     // L'utilisateur à un id
-                    $idEmployeur=$verif;
+                    $idEmployeur=$verif['US_id'];
                 } 
                 else {
-                //l'utilisateur n'a pas de compte utilisateur, on lui en crée un 
+                // L'utilisateur n'a pas de compte utilisateur, on lui en crée un 
                 $insert = $user->insert($dataUser); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
-                $idEmployeur = $user->lastInsertId();
+                $lastid = $insert['US_id'];
+                    // on crée la fiche employeur
+                    // on determine le mois de date de prestation habituelle
+                $data = [
+                'CL_ID_InUsersTable'   => $lastid,
+                'CL_Raison_Sociale'    => $post['CL_Raison_Sociale'],
+                'CL_Statut_Juridique'   => $post['CL_Statut_Juridique'],
+                'CL_Titulaire_Licence_Entrepreneur_De_Spectacles'   => $post['CL_Titulaire_Licence_Entrepreneur_De_Spectacles'],
+                ];
+                $employeur = new ClientsModel();
+                $insert = $employeur->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
+                // On recupere l'id employeur créé
+                $lastidemployeur = $insert['CL_Idclient'];
+                // on a inséré les données dans la table employeur
+                // maintenant on ajoute les données dans la table devis
+                $datePrestaEn = date ('Y-m-d', strtotime($post['DV_Datedelaprestation']));
+                $data = [
+                'DV_Idclient'   => $lastidemployeur,
+                'DV_Datedelaprestation'    => $datePrestaEn,
+                'DV_CodePostalPrestation'   => $post['DV_Codepostal'],
+                'DV_Lieudelaprestation'   => $post['DV_Ville'],
+                'DV_Statut_Du_Devis'    => 'A faire',
+                ];
+                $devis = new DevisModel();
+                $insert = $devis->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
                 $formValid = true;
-            }                 
-
+            }
+                             
             if(!empty($insert)){
                 $formValid = true;
             }

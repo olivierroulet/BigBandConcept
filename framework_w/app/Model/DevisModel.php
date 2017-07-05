@@ -6,13 +6,13 @@ namespace Model;
 /**
  * Classe requise par l'AuthentificationModel, éventuellement à étendre par le UsersModel de l'appli
  */
-class ClientsModel extends \W\Model\Model // Attention à l' arborescence !!!
+class DevisModel extends \W\Model\Model // Attention à l' arborescence !!!
 {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->setPrimaryKey('CL_Idclient'); // cette variable permet de ne pas être coincé par w\Model.php 
+		$this->setPrimaryKey('DV_Iddevis'); // cette variable permet de ne pas être coincé par w\Model.php
 
 	}
 
