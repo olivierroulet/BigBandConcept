@@ -15,10 +15,18 @@ class DefaultController extends Controller
 		$this->show('default/home');
 	}
 
+
     public function backAdmin()
     {
         $this->show ('default/admin');
     }
     
+}
+
+
+	public function contact()
+	{
+		$this->show('#contact');
+	}
 }
 

@@ -5,13 +5,21 @@
 
 // LE LIEN : http://localhost/bigband/framework_w/public/artistes_add
 
-$w_routes = array(
-    ['GET', '/', 'Default#home', 'default_home'],
-    ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
-    ['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],
-    ['GET|POST', '/accueil', 'Users#connect', 'users_connect'],
-    ['GET|POST', '/admin', 'Default#backAdmin', 'default_admin']
-    
+
+	$w_routes = array(
+		['GET', '/', 'Default#home', 'default_home'],
+	
+		['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],
+
+
+		['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
+		['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],
+        ['GET|POST', '/accueil', 'Users#connect', 'users_connect'],
+		['GET|POST', '/loggin', 'Users#connect', 'loggin'],
+         ['GET|POST', '/admin', 'Default#backAdmin', 'default_admin']
+
+
+>>>>>>> 30645bfdced354e5afbdcd20ad0180388fb80120
 
 );
 
