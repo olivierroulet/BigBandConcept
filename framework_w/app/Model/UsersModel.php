@@ -15,46 +15,31 @@ class UsersModel extends \W\Model\UsersModel // Attention à l' arborescence !!!
 		$this->setPrimaryKey('US_id'); // cette variable permet de ne pas être coincé par w\Model.php 
 
 	}
-
-// liste des méthodes existantes
-// getUserByUsernameOrEmail($usernameOrEmail)
-// emailExists($email)	
-// usernameExists($username)
-// insérer 2 méthodes : insert & update la table artistes
-
-// Dans Model:
-// function insert(array $data, $stripTags = true)
-// 	public function update(array $data, $id, $stripTags = true)
-
-
-
-
-
-
-//	ci-dessous juste pour l'exemple
+	
 	/**
-	 * Teste si un pseudo est présent en base de données
-	 * @param string $username Le pseudo à tester
-	 * @return boolean true si présent en base de données, false sinon
+	 * Teste si un utilisateur dont le nom est present en bdd a un password associé
+	 * @param string $email L'email à tester
+	 * @return boolean true si l'utilisateur n'a pas de password, false sinon
 	 */
-/*	public function usernameExists($username)
+	public function passwordExists($email)
 	{
 
-	    $app = getApp();
+	   $app = getApp();
 
-	    $sql = 'SELECT ' . $app->getConfig('security_username_property') . ' FROM ' . $this->table .
-	           ' WHERE ' . $app->getConfig('security_username_property') . ' = :username LIMIT 1';
+	   $sql = 'SELECT * FROM ' . $this->table .
+	          ' WHERE US_email = :email AND US_Password = :password';
 
-	    $dbh = ConnectionModel::getDbh();
-	    $sth = $dbh->prepare($sql);
-	    $sth->bindValue(':username', $username);
-	    if($sth->execute()){
-	        $foundUser = $sth->fetch();
-	        if($foundUser){
-	            return true;
-	        }
-	    }
+	   $sth = $this->dbh->prepare($sql);
+	   $sth->bindValue(':email', $email);
+	   $sth->bindValue(':password', '');
+		if($sth->execute()){
+	       $foundUser = $sth->fetch();
+	       if($foundUser){
+	           return true;
+	       }
+	   }
 
-	    return false;
-	}*/
+	   return false;
+	}
+
 }

@@ -513,13 +513,7 @@
 										<div class="container">
 											<div class="contact-details">
 												<div class="col-sm-12"> 
-													<div class="status alert alert-success" style="">
-													<?php
-														if(!empty($formErrors)){
-															echo '<p style="color:red">'.implode('<br>', $formErrors);
-														}        ?>
-
-													</div>
+													
 													<div id="contact-form-section">
 														<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
 															<div class="row">
@@ -604,7 +598,7 @@
 																</div><!--Fin de row -->
 															</fieldset>
 															<div class="form-group">
-																<button type="submit" class="btn">Envoyer</button>
+																<button type="submit" class="btn btn-success">Envoyer</button>
 															</div>
 														</div>
 													</div>
@@ -626,7 +620,7 @@
 										<p>Artiste</p>
 										<p>Administrateur</p>
 									</div>
-									<form action="loggin">
+									<form method="POST" action="login">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Email">Adresse Mail</label>
@@ -636,14 +630,15 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="password">Mot de passe</label>
-												<input type="password" class="form-control" id="password" id="password" placeholder="Votre mot de passe">
+												<input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
 											</div>
 
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
-											<a href=""><button class="btn btn-default">Se connecter</button></a>
-											<a href=""><button class="btn btn-warning">Mot de passe oublié</button></a>
-										</h2>
+											<button class="btn btn-primary"><a href="first_login">Premiere connexion</a></button>
+											<button class="btn btn-success">Se connecter</button>
+											<button class="btn btn-warning"><a href="forgot_password">Mot de passe oublié</a></button>
+										
 
 									</div>
 								</form>
