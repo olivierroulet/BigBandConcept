@@ -4,7 +4,7 @@
 	background-color:red;
 }
 #navigation .navbar {
-	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.92);
 }
 
 #navigation .navbar-nav.navbar-right li a{
