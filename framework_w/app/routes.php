@@ -21,9 +21,10 @@
 		['GET|POST', '/first_login', 'Users#firstLogin', 'firstlogin'],
 		['GET|POST', '/login', 'Users#login', 'login'],
 		['GET|POST', '/forgot_password', 'Users#forgotPassword', 'forgot_password'],
+		['GET|POST', '/logout', 'Users#logout', 'logout'],
 
 		// redirection utilisateur connecté en fonction de son role
-		['GET|POST', 'redirect_role', 'Users#redirectRole', 'redirectrole'],
+		['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],
 /*
         ['GET|POST', '/accueil', 'Users#connect', 'users_connect'],
 		['GET|POST', '/loggin', 'Users#connect', 'loggin'],*/
