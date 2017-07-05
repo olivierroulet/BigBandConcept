@@ -1,0 +1,62 @@
+#navigation .navbar-inverse .navbar-nav .active a, 
+#navigation .navbar-inverse .navbar-nav .active a:focus, 
+#navigation .navbar-nav.navbar-right li a:hover { 
+	background-color:red;
+}
+#navigation .navbar {
+	background: rgb(0, 0, 0);
+}
+
+#navigation .navbar-nav.navbar-right li a{
+	color:rgb(180,180,180);
+}
+
+#main-carousel .carousel-inner h2{
+	color:white;
+	text-shadow: 4px 4px 4px rgb(150,0,0);
+}
+
+.navbar-brand h1{
+	color:red;
+	text-shadow: 2px 2px 2px rgb(155,0,0);
+}
+
+#our-team .title-one{
+	color:rgb(180,180,180);
+}
+
+.title-one:after, .title-one:before{
+	display:none;
+}
+
+#our-team {
+
+}
+
+.single-member{
+	background-color: rgb(150,0,0);
+}
+#formulaire, #contact-form-section{
+	height:auto;
+}
+
+.btn[type=submit]{
+	font-size: 1.2em;
+	color:white;
+}
+
+.single-service:hover{
+	background-color:red;
+	color:black;
+}
+
+section #clients{
+	padding-top:250px;
+	padding-bottom:250px;
+}
+
+a:hover footer
+{
+	color:red;
+}
+

@@ -15,4 +15,17 @@ class DefaultController extends Controller
 		$this->show('default/home');
 	}
 
+
+	public function accueil()
+	{
+		$this->show('default/home');
+	}
+
+
+
+    public function backAdmin()
+    {
+        $this->show ('default/admin');
+    }
+    
 }
