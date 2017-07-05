@@ -178,7 +178,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/1.jpg" alt=""></div> 
+									<img src="assets/publique/images/portfolio/portfolio1.jpg" alt=""></div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
 										<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -190,7 +190,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item jooma">
 								<div class="view efffect" >
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/2.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio2.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -203,7 +203,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/3.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio3.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -216,7 +216,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item megento">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/4.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio4.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -229,7 +229,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item html">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/5.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio5.jpg" alt="">
 									</div> <div class="mask text-center">
 									<h3>Novel</h3>
 									<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -241,7 +241,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/6.jpg" alt="">
+									<img src="assets/publique/images/portfolio/portfolio6.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
 									<h3>Novel</h3>
@@ -254,7 +254,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/7.jpg" alt="">
+									<img src="assets/publique/images/portfolio/portfolio7.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
 									<h3>Novel</h3>
@@ -267,7 +267,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/8.jpg" alt=""></div> 
+									<img src="assets/publique/images/portfolio/portfolio8.jpg" alt=""></div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
 										<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -279,7 +279,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item html">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/9.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio9.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -292,7 +292,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/10.jpg" alt=""></div> 
+										<img src="assets/publique/images/portfolio/portfolio10.jpg" alt=""></div> 
 										<div class="mask text-center">
 											<h3>Novel</h3>
 											<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -304,7 +304,7 @@
 								<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 									<div class="view efffect">
 										<div class="portfolio-image">
-											<img src="assets/publique/images/portfolio/11.jpg" alt=""></div> 
+											<img src="assets/publique/images/portfolio/portfolio11.jpg" alt=""></div> 
 											<div class="mask text-center">
 												<h3>Novel</h3>
 												<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -316,7 +316,7 @@
 									<div class="col-sm-3 col-xs-12 portfolio-item megento">
 										<div class="view efffect">
 											<div class="portfolio-image">
-												<img src="assets/publique/images/portfolio/12.jpg" alt=""></div> 
+												<img src="assets/publique/images/portfolio/portfolio12.jpg" alt=""></div> 
 												<div class="mask text-center">
 													<h3>Novel</h3>
 													<h4>Lorem ipsum dolor sit amet consectetur</h4>
