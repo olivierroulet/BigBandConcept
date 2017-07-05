@@ -59,7 +59,7 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/member1.jpg" alt="team member" />
-									<h4>Pierre Ancelin</h4>
+									<h4>Peter Ancelin</h4>
 									<h5>Keyboards, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -74,7 +74,7 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/member2.jpg" alt="team member" />
-									<h4>Geoffrey Mollet</h4>
+									<h4>Jeffrey Mollet</h4>
 									<h5>Hang Drums, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -89,7 +89,7 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/member3.jpg" alt="team member" />
-									<h4>Philippe Nowak</h4>
+									<h4>Philip Nowak</h4>
 									<h5>Guitars, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -104,7 +104,7 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/member4.jpg" alt="team member" />
-									<h4>Olivier ROULET</h4>
+									<h4>Oliver "magic" ROULET</h4>
 									<h5>Accordéons, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -126,7 +126,7 @@
 				<div class="row text-center">
 					<div class="col-sm-8 col-sm-offset-2">
 						<h2 class="title-one">Prestations</h2>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						<p></p>
 					</div>
 				</div>
 				<div class="row">
@@ -163,16 +163,16 @@
 				<div class="container">
 					<div class="row text-center">
 						<div class="col-sm-8 col-sm-offset-2">
-							<h2 class="title-one">Portfolio</h2>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+							<h2 class="title-one">Photos</h2>
+							<p></p>
 						</div>
 					</div>
 					<ul class="portfolio-filter text-center">
 						<li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".html">Html</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".wordpress">Wordpress</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".joomla">Joomla</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".megento">Megento</a></li>
+						<li><a class="btn btn-default" href="#" data-filter=".html">Stade de France</a></li>
+						<li><a class="btn btn-default" href="#" data-filter=".wordpress">Francofolies 2016</a></li>
+						<li><a class="btn btn-default" href="#" data-filter=".joomla">HellFest</a></li>
+						<li><a class="btn btn-default" href="#" data-filter=".megento">Les Vieilles Charrues</a></li>
 					</ul><!--/#portfolio-filter-->
 					<div class="portfolio-items">
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
@@ -304,7 +304,7 @@
 								<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 									<div class="view efffect">
 										<div class="portfolio-image">
-											<img src="assets/publique/images/portfolio/portfolio11.jpg" alt=""></div> 
+											<img src="assets/publique/images/portfolio/portfolio16.jpg" alt=""></div> 
 											<div class="mask text-center">
 												<h3>Novel</h3>
 												<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -329,7 +329,8 @@
 								</div> 
 
 							</section> <!--/#portfolio-->
-							<section id="blog"> 
+							
+							<!--<section id="blog"> 
 								<div class="container">
 									<div class="row text-center clearfix">
 										<div class="col-sm-8 col-sm-offset-2">
@@ -497,6 +498,8 @@
 										</div> 
 									</div> 
 								</section> <!--/#blog-->
+								
+								
 								<section id="contact">
 									<div class="container">
 										<div class="container">

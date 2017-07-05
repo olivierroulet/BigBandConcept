@@ -19,7 +19,7 @@
          ['GET|POST', '/admin', 'Default#backAdmin', 'default_admin']
 
 
->>>>>>> 30645bfdced354e5afbdcd20ad0180388fb80120
+
 
 );
 
