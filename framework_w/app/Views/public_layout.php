@@ -41,7 +41,11 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
 					</button> 
+<<<<<<< HEAD
 					<a class="navbar-brand" href="#home"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a> 
+=======
+					<a class="navbar-brand" href="#home"><h1><img src="images/portfolio/portfolio1.jpg" alt="logo">BIG BAND</h1></a> 
+>>>>>>> 1ec414199a5acc92dbcdbabdaacc757c8e8ca1f7
 				</div> 
 				<div class="collapse navbar-collapse"> 
 					<ul class="nav navbar-nav navbar-right"> 
