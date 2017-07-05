@@ -43,7 +43,7 @@
 					</button> 
 					<a class="navbar-brand" href="#home"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a> 
 
-				</div> 
+                </div>
 				<div class="collapse navbar-collapse"> 
 					<ul class="nav navbar-nav navbar-right"> 
 						<li class="scroll active"><a href="#navigation">Accueil</a></li> 
