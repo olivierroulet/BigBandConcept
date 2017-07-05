@@ -42,10 +42,7 @@
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
 					</button> 
 					<a class="navbar-brand" href="#home"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a> 
-<<<<<<< HEAD
 
-=======
->>>>>>> a3fab89626c4af915d16e040d02a8ac60afb1a67
 				</div> 
 				<div class="collapse navbar-collapse"> 
 					<ul class="nav navbar-nav navbar-right"> 
