@@ -178,7 +178,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/1.jpg" alt=""></div> 
+									<img src="assets/publique/images/portfolio/portfolio1.jpg" alt=""></div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
 										<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -190,7 +190,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item jooma">
 								<div class="view efffect" >
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/2.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio2.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -203,7 +203,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/3.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio3.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -216,7 +216,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item megento">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/4.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio4.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -229,7 +229,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item html">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/5.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio5.jpg" alt="">
 									</div> <div class="mask text-center">
 									<h3>Novel</h3>
 									<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -241,7 +241,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/6.jpg" alt="">
+									<img src="assets/publique/images/portfolio/portfolio6.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
 									<h3>Novel</h3>
@@ -254,7 +254,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/7.jpg" alt="">
+									<img src="assets/publique/images/portfolio/portfolio7.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
 									<h3>Novel</h3>
@@ -267,7 +267,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/8.jpg" alt=""></div> 
+									<img src="assets/publique/images/portfolio/portfolio8.jpg" alt=""></div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
 										<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -279,7 +279,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item html">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/9.jpg" alt="">
+										<img src="assets/publique/images/portfolio/portfolio9.jpg" alt="">
 									</div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
@@ -292,7 +292,7 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/10.jpg" alt=""></div> 
+										<img src="assets/publique/images/portfolio/portfolio10.jpg" alt=""></div> 
 										<div class="mask text-center">
 											<h3>Novel</h3>
 											<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -304,7 +304,7 @@
 								<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 									<div class="view efffect">
 										<div class="portfolio-image">
-											<img src="assets/publique/images/portfolio/11.jpg" alt=""></div> 
+											<img src="assets/publique/images/portfolio/portfolio11.jpg" alt=""></div> 
 											<div class="mask text-center">
 												<h3>Novel</h3>
 												<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -316,7 +316,7 @@
 									<div class="col-sm-3 col-xs-12 portfolio-item megento">
 										<div class="view efffect">
 											<div class="portfolio-image">
-												<img src="assets/publique/images/portfolio/12.jpg" alt=""></div> 
+												<img src="assets/publique/images/portfolio/portfolio12.jpg" alt=""></div> 
 												<div class="mask text-center">
 													<h3>Novel</h3>
 													<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -509,65 +509,72 @@
 												</div>
 											</div>
 										</div>
+
 										<div class="container">
 											<div class="contact-details">
 												<div class="col-sm-12"> 
-													<div class="status alert alert-success" style="">good job</div>
+													<div class="status alert alert-success" style="">
+													<?php
+														if(!empty($formErrors)){
+															echo '<p style="color:red">'.implode('<br>', $formErrors);
+														}        ?>
+
+													</div>
 													<div id="contact-form-section">
-														<form id="contact-form" name="contact-form" method="post" action="">
+														<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
 															<div class="row">
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="prenom">Prénom</label>
-																		<input type="text" name="prenom" id="prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+																		<label for="CL_Prenom">Prénom</label>
+																		<input type="text" name="CL_Prenom" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="nom">Nom</label>
-																		<input type="text" name="nom" id="nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+																		<label for="CL_Nom">Nom</label>
+																		<input type="text" name="CL_Nom" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="telephone">Telephone</label>
-																		<input type="text" name="telephone" id="telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
+																		<label for="CL_Telephone">Telephone</label>
+																		<input type="text" name="CL_Telephone" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
 															<div class="row">
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="email1">Adresse mail</label>
-																		<input type="email" name="email1" id="email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
+																		<label for="CL_Email1">Adresse mail</label>
+																		<input type="email" name="CL_Email1" id="CL_Email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
 																	</div> 
 																</div>
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="email2">Confirmez votre adresse mail</label>
-																		<input type="email" name="email2" id="email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
+																		<label for="CL_Email2">Confirmez votre adresse mail</label>
+																		<input type="email" name="CL_Email2" id="CL_Email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
 															<div class="row">
 																<div class="col-lg-12">
 																	<div class="form-group">
-																		<label for="raisonsociale">Raison sociale</label>
-																		<input type="text" name="raisonsociale" id="raisonsociale" class="form-control" placeholder="Raison sociale" tabindex="5">
+																		<label for="CL_Raison_Sociale">Raison sociale</label>
+																		<input type="text" name="CL_Raison_Sociale" id="CL_Raison_Sociale" class="form-control" placeholder="Raison sociale" tabindex="5">
 																	</div>
 																	<div class="form-group">
-																		<label for="statutjuridique">Statut juridique</label>
-																		<select class="form-control" name="statutjuridique" tabindex="6">
+																		<label for="CL_Statut_Juridique">Statut juridique</label>
+																		<select class="form-control" name="CL_Statut_Juridique" id="CL_Statut_Juridique" tabindex="6">
 																			<option selected value="">Indiquez votre statut juridique</option>
-																			<option value="Particulier">Particulier</option>
-																			<option value="Entreprise">Entreprise</option>
-																			<option value="Administration">Administration</option>
-																			<option value="Association loi 1901">Association loi 1901</option>
+																			<option value="particulier">Particulier</option>
+																			<option value="entreprise">Entreprise</option>
+																			<option value="administration">Administration</option>
+																			<option value="association loi 1901">Association loi 1901</option>
 																		</select>
 																	</div>
 																	<div class="form-group">
-																		<label for="licencedespectacle">Titulaire de la licence d'entrepreneur de spectacle
-																			<input type="checkbox" name="licencedespectacle" id="licencedespectacle" tabindex="7">
+																		<label for="CL_Titulaire_Licence_Entrepreneur_De_Spectacles">Titulaire de la licence d'entrepreneur de spectacle
+																			<input type="checkbox" name="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" id="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" tabindex="7">
 																		</label>
 																	</div>
 																</div>
@@ -578,20 +585,20 @@
 																	<div class="col-lg-4">
 
 																		<div class="form-group">
-																			<label for="datevenemenent">Date de votre évènement</label>
-																			<input type="text" name="dateevenement" id="dateevenement" class="form-control" placeholder="01/01/2018" tabindex="8">
+																			<label for="DV_Datedelaprestation">Date de votre évènement</label>
+																			<input type="text" name="DV_Datedelaprestation" id="DV_Datedelaprestation" class="form-control" placeholder="01/01/2018" tabindex="8">
 																		</div>
 																	</div>
 																	<div class="col-lg-4">
 																		<div class="form-group">
-																			<label for="codepostal">Code postal</label>
-																			<input type="text" name="codepostal" id="codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
+																			<label for="DV_Codepostal">Code postal</label>
+																			<input type="text" name="DV_Codepostal" id="DV_Codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
 																		</div>
 																	</div>
 																	<div class="col-lg-4">
 																		<div class="form-group">
-																			<label for="ville">Ville</label>
-																			<input type="text" name="ville" id="ville" class="form-control" placeholder="Ville" tabindex="10">
+																			<label for="DV_Ville">Ville</label>
+																			<input type="text" name="DV_Ville" id="DV_Ville" class="form-control" placeholder="Ville" tabindex="10">
 																		</div>
 																	</div>
 																</div><!--Fin de row -->
@@ -619,7 +626,7 @@
 										<p>Artiste</p>
 										<p>Administrateur</p>
 									</div>
-									<form>
+									<form action="loggin">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Email">Adresse Mail</label>

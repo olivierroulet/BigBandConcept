@@ -7,9 +7,16 @@
 
 	$w_routes = array(
 		['GET', '/', 'Default#home', 'default_home'],
+	
+		['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],
+
+
 		['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
 		['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],
-		['GET|POST', '/accueil', 'Users#connect', 'users_connect'],
+
+		['GET|POST', '/loggin', 'Users#connect', 'loggin'],
+
+
 
 	);
 
