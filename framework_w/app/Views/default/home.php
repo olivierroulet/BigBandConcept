@@ -635,16 +635,14 @@
 												<label for="password">Mot de passe</label>
 												<input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
 											</div>
-
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
 											<button class="btn btn-primary"><a href="first_login">Premiere connexion</a></button>
 											<button class="btn btn-success">Se connecter</button>
 											<button class="btn btn-warning"><a href="forgot_password">Mot de passe oublié</a></button>
-										
-
-									</div>
-								</form>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</section><!--/#clients-->
