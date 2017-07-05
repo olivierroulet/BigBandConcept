@@ -13,7 +13,7 @@
 			<div class="item active" style="background-image: url(assets/publique/images/slider/slide3.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-							<h2 class="heading animated bounceInDown">Big Band</h2><!-- 
+							<h2 class="heading animated bounceInDown"><img class="img-responsive"  src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 							<p class="animated bounceInUp"></p> 
 							<a class="btn btn-default slider-btn animated fadeIn" href="#"></a> -->
 						</div> 
@@ -21,7 +21,7 @@
 				</div>
 				<div class="item" style="background-image: url(assets/publique/images/slider/slide2.jpg)"> 
 					<div class="carousel-caption"> <div> 
-						<h2 class="heading animated bounceInDown">Big Band</h2><!-- 
+						<h2 class="heading animated bounceInDown"><img class="img-responsive"  src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 						<p class="animated bounceInUp">Everything is outstanding</p> <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a>--> 
 					</div> 
 				</div> 
@@ -29,7 +29,7 @@
 			<div class="item" style="background-image: url(assets/publique/images/slider/slide1.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<h2 class="heading animated bounceInRight">Big Band</h2><!-- 
+						<h2 class="heading animated bounceInRight"><img class="img-responsive" src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 						<p class="animated bounceInLeft">100% Responsive HTML template</p> 
 						<a class="btn btn-default slider-btn animated bounceInUp" href="#">Get Started</a> -->
 					</div> 
