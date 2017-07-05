@@ -289,7 +289,10 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #fc7700;
 }
 
+navbar navbar-inverse navbar-fixed-top {
+    
 
+}
 /*======================
 ====Main Slider CSS=====
 =======================*/
@@ -303,19 +306,22 @@ h1, h2, h3, h4, h5, h6 {
 	background-image:url(../images/home-pattern.png);
 	background-repeat:repeat;
 	opacity:0.2;
+    
 }
 
 #home{
   padding: 0;
   overflow: hidden;
-  position:relative
+  position:relative;
 }
+
 
 #main-carousel .carousel-inner .item {
 	background-size:cover;
 	height: 100%;
 	background-position: 50% 50%;
 	background-repeat:no-repeat;
+   
 }
 
 #main-carousel .carousel-indicators { 
@@ -334,6 +340,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-indicators .active{
 	background-color: #fff !important;
+
 	
 }
 
@@ -366,6 +373,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: none;
 	text-transform: uppercase;
 }
+
 
 #main-carousel .carousel-inner h2 span{
   color:#7ab700;
