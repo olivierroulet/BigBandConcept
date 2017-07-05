@@ -513,40 +513,46 @@
 										<div class="container">
 											<div class="contact-details">
 												<div class="col-sm-12"> 
-													<div class="status alert alert-success" style="">good job</div>
+													<div class="status alert alert-success" style="">
+													<?php
+														if(!empty($formErrors)){
+															echo '<p style="color:red">'.implode('<br>', $formErrors);
+														}        ?>
+
+													</div>
 													<div id="contact-form-section">
-														<form id="contact-form" name="contact-form" method="post" action="">
+														<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
 															<div class="row">
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="CL_prenom">Prénom</label>
-																		<input type="text" name="CL_prenom" id="CL_prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+																		<label for="CL_Prenom">Prénom</label>
+																		<input type="text" name="CL_Prenom" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="CL_nom">Nom</label>
-																		<input type="text" name="CL_nom" id="CL_nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+																		<label for="CL_Nom">Nom</label>
+																		<input type="text" name="CL_Nom" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
 																	</div>
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="CL_telephone">Telephone</label>
-																		<input type="text" name="CL_telephone" id="CL_telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
+																		<label for="CL_Telephone">Telephone</label>
+																		<input type="text" name="CL_Telephone" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
 															<div class="row">
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="CL_email1">Adresse mail</label>
-																		<input type="email" name="CL_email1" id="CL_email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
+																		<label for="CL_Email1">Adresse mail</label>
+																		<input type="email" name="CL_Email1" id="CL_Email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
 																	</div> 
 																</div>
 																<div class="col-lg-6">
 																	<div class="form-group">
-																		<label for="CL_email2">Confirmez votre adresse mail</label>
-																		<input type="email" name="CL_email2" id="CL_email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
+																		<label for="CL_Email2">Confirmez votre adresse mail</label>
+																		<input type="email" name="CL_Email2" id="CL_Email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
 																	</div>
 																</div>
 															</div><!--Fin de row -->
@@ -560,10 +566,10 @@
 																		<label for="CL_Statut_Juridique">Statut juridique</label>
 																		<select class="form-control" name="CL_Statut_Juridique" id="CL_Statut_Juridique" tabindex="6">
 																			<option selected value="">Indiquez votre statut juridique</option>
-																			<option value="Particulier">Particulier</option>
-																			<option value="Entreprise">Entreprise</option>
-																			<option value="Administration">Administration</option>
-																			<option value="Association loi 1901">Association loi 1901</option>
+																			<option value="particulier">Particulier</option>
+																			<option value="entreprise">Entreprise</option>
+																			<option value="administration">Administration</option>
+																			<option value="association loi 1901">Association loi 1901</option>
 																		</select>
 																	</div>
 																	<div class="form-group">
@@ -585,14 +591,14 @@
 																	</div>
 																	<div class="col-lg-4">
 																		<div class="form-group">
-																			<label for="codepostal">Code postal</label>
-																			<input type="text" name="codepostal" id="codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
+																			<label for="DV_Codepostal">Code postal</label>
+																			<input type="text" name="DV_Codepostal" id="DV_Codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
 																		</div>
 																	</div>
 																	<div class="col-lg-4">
 																		<div class="form-group">
 																			<label for="DV_Ville">Ville</label>
-																			<input type="text" name="ville" id="ville" class="form-control" placeholder="Ville" tabindex="10">
+																			<input type="text" name="DV_Ville" id="DV_Ville" class="form-control" placeholder="Ville" tabindex="10">
 																		</div>
 																	</div>
 																</div><!--Fin de row -->
@@ -620,7 +626,7 @@
 										<p>Artiste</p>
 										<p>Administrateur</p>
 									</div>
-									<form>
+									<form action="loggin">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Email">Adresse Mail</label>

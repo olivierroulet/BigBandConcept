@@ -56,7 +56,9 @@ if(!empty($_POST)){
             if (!empty($post['DV_Datedelaprestation']) && !v::date('d-m-Y')->validate($post['DV_Datedelaprestation'])){
                 $errors[] = 'La date de la prestation est incorrecte'; // true
             }  
-
+            if (!v::postalCode('FR')->validate($post['DV_Codepostal'])){
+                $errors[] = 'Le code postal (français) est invalide'; // true
+            }
 
 
             /*
