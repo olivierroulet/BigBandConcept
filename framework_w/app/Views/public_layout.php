@@ -49,8 +49,8 @@
 						<!--<li class="scroll"><a href="#about-us">Prestations</a></li>-->
 						<li class="scroll"><a href="#our-team">Le groupe</a></li> 
 						<li class="scroll"><a href="#services">Prestations</a></li> 
-						<li class="scroll"><a href="#portfolio">Portfolio</a></li> 
-						<li class="scroll"><a href="#blog">Actualités</a></li> 
+						<li class="scroll"><a href="#portfolio">Photos</a></li> 
+						<!--<li class="scroll"><a href="#blog">Actualités</a></li>-->
 						<li class="scroll"><a href="#contact">Contact</a></li> 
 						<li class="scroll"><a href="#clients">Espace utilisateur</a></li> 
 					</ul> 
