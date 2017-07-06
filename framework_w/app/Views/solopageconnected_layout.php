@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/animate.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/main.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/styleconnected.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('admin/css/styleconnected.css') ?>">
 	<link rel="shortcut icon" href="images/ico/favicon.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
@@ -38,26 +38,25 @@
 		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
 			<div class="container"> 
 				<div class="navbar-header"> 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
-						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
-					</button> 
-					<a class="navbar-brand" href="accueil"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
+					 
+					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
-				<div class="pull-right"><a href="logout" class="btn btn-error">Se déconnecter</a>	</div>
-			</div> 
-		</div><!--/navbar--> 
-	</header> <!--/#navigation-->
+				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>	
+				</div> 
+			</div><!--/navbar--> 
+		</header> <!--/#navigation-->
 
-	<section>
-		<?= $this->section('main_content') ?>
-	</section>
-	 
-	<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/main.js"></script>
-</body>
-</html>
+		<section>
+			<?= $this->section('main_content') ?>
+		</section>
+
+		<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
+		<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/main.js"></script>
+		<?=$this->section('js');?>
+	</body>
+	</html>
