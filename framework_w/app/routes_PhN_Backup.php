@@ -7,14 +7,15 @@
 // le # remplace le mot réservé 'Controller'
 	$w_routes = array(
 
+		['GET', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
 		['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],
 		['GET|POST', '/login', 'Users#login', 'users_login'],
 		
 		['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
-		['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
-		['GET|POST', '/actualitesadd', 'Actu#actuIns', 'Actu_Add'],
-
+		['GET|POST', '/actualites/update/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
+		['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
+	);
 // 1- email envoyé par l' artiste. collé dans la table users par l' admin ==> email à l' artiste
 // 2- ecran users : l' utilisateur s' enregistre -> écran addArtiste, on checke l' email. Si pas d' email dans users, la personne ne peut pas ouvrir addArtiste.
 
@@ -23,6 +24,11 @@
 
 	
 		['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],
+
+
+		['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
+		['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],
+
 
 		['GET|POST', '/first_login', 'Users#firstLogin', 'firstlogin'],
 		['GET|POST', '/login', 'Users#login', 'login'],
@@ -35,7 +41,7 @@
         ['GET|POST', '/accueil', 'Users#connect', 'users_connect'],
 		['GET|POST', '/loggin', 'Users#connect', 'loggin'],*/
          ['GET|POST', '/admin', 'Default#backAdmin', 'default_admin']
-	);
+
 
 
 /*

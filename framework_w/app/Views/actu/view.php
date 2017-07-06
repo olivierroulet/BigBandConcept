@@ -1,9 +1,9 @@
-<?php $this->layout('public_layout', ['title' => 'Actualités-évènements']) ?>
+<?php $this->layout('/solopageconnected_layout', ['title' => 'Actualités-évènements']) ?>
 
 <?php $this->start('main_content') ?>
 
 
-<article id="actu">
+<article id="actuView">
 	<h1 align="center">Liste complète des actualités sur les 3 prochains mois</h1>
 	<?php
 // et maintenant on envoit la requête
@@ -24,7 +24,11 @@
 	  <table id="ActuGrid" class="table table-condensed table-hover">
 	  	<thead class="table-bordered headedW" style="font-family:Cuprum; font-weight:bold;">
 	  		<tr><td> 
-	  		<button type="submit" id="ActuINS" name="ActuINS" value="ActuINS" class="btn btn-sm btn-default" title="Ajouter une nouvelle actualité"  style="width:100px;"> 
+	  		<button type="submit" id="ActuINS" name="ActuINS" value="ActuINS" class="btn btn-sm btn-info" title="Ajouter une nouvelle actualité"  style="width:100px;"> 
+
+				<!-- <a href="< ?=$this->url('Actu_Add', ['AC_Id' => $reponse['AC_Id']]);?>">Ajouter</a> -->
+				<a href="<?=$this->url('Actu_Add');?>">Ajouter</a>				
+
 	  		<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
 
 	  			<i class="glyphicon glyphicon-refresh"></i>
