@@ -33,7 +33,10 @@ $w_routes = array(
 	['GET|POST', '/actualites/update/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
 	['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
 
-
+		// INTERFACE ADMINISTRATEUR - ACCUEIL	
+	/*
+	['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
+*/	
 		// INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
 	['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
 	['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],

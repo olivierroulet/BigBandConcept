@@ -22,7 +22,7 @@ class ClientsController extends \W\Controller\Controller
         
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
-
+            $additionalChars = "AaÁáÂâCcĆćĈĉEeÉéÊêIiÍíÎî'";
             if (!v::stringType()->length(2, null)->validate($post['CL_Prenom'])){
                 $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
             }
@@ -39,7 +39,7 @@ class ClientsController extends \W\Controller\Controller
                 $errors[] = 'Les deux adresses mail ne sont pas identiques'; // true
             }
             if($post['CL_Statut_Juridique'] != 'particulier'){
-                if (!v::Alnum()->validate($post['CL_Raison_Sociale'])){
+                if (!v::Alnum($additionalChars)->validate($post['CL_Raison_Sociale'])){
                     $errors[] = 'La raison sociale n\'est pas valide'; 
                 }
             }
@@ -54,7 +54,7 @@ class ClientsController extends \W\Controller\Controller
             if (!v::postalCode('FR')->validate($post['DV_Codepostal'])){
                 $errors[] = 'Le code postal (français) est invalide'; // true
             }
-            if (!v::Alnum()->length(3, null)->validate($post['DV_Ville'])){
+            if (!v::Alnum($additionalChars)->length(3, null)->validate($post['DV_Ville'])){
                 $errors[] = 'Le nom de la localité doit faire au minimum 3 caractères'; // true
             }
 
@@ -106,7 +106,7 @@ class ClientsController extends \W\Controller\Controller
                 $insert = $devis->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
                 $formValid = true;
             }
-                             
+
             if(!empty($insert)){
                 $formValid = true;
             }
@@ -120,7 +120,7 @@ class ClientsController extends \W\Controller\Controller
     'formErrors'	=> $errors,
     ];
 
-    $this->show('employeur/action_form_employeur', $params);
+    $this->redirect('accueil#contact');
 
 }
 

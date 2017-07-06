@@ -149,7 +149,7 @@ class UsersController extends \W\Controller\Controller
          switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->show('views_admin/infosadmin');
+            $this->show('views_admin/accueil_administrateur');
             break;
 
             case 2:
@@ -308,7 +308,7 @@ class UsersController extends \W\Controller\Controller
         }
 
         $user = new UsersModel();
-        $users = $user->findAll();
+        $users = $user->findAll('US_LastName','ASC');
 
         $params = ['users' => $users];
         $this->show('views_admin/liste_des_utilisateurs', $params);
@@ -316,6 +316,7 @@ class UsersController extends \W\Controller\Controller
 
     public function rechercherUnUtilisateur()
     {
+
         $me = $this->getUser(); // utilisateur connecté
          // on stocke son role
         $roleUser=$me['US_idURole'];
@@ -324,30 +325,22 @@ class UsersController extends \W\Controller\Controller
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
-        $post = [];
-        $errors = [];
-        $formValid = false;
 
-        if(!empty($_POST)){
-            $post = array_map('trim', array_map('strip_tags', $_POST));
-
-            if (!v::email()->validate($post['US_email'])){
-                $errors[] = 'L\'adresse mail est invalide'; // true
-            }
-
-            
-
-
+        if (empty($_POST['US_email'])){
+            $this->redirectToRoute('listerlesutilisateurs'); // retour a la liste des utilisateurs
+        }
+        $user = new UsersModel();
+        $users = $user->getUserByUsernameOrEmail($_POST['US_email']);
+        
+        if($users){
+            $resultat[]=$users;
         }
 
-
-        
-
-        $user = new UsersModel();
-        $users = $user->findAll();
-
-        $params = ['users' => $users];
+        $params = ['users' => $resultat,];
         $this->show('views_admin/liste_des_utilisateurs', $params);
     }
+
+
+
 }
 
