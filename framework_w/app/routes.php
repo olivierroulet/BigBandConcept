@@ -8,7 +8,7 @@
 
 	$w_routes = array(
 		['GET|POST', '/', 'Default#home', 'default_home'],
-		['GET|POST', '/', 'Default#accueil', 'accueil'],
+		['GET|POST', '/accueil', 'Default#home', 'accueil'],
 
 	
 		['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],

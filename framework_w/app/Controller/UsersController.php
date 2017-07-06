@@ -167,17 +167,17 @@ class UsersController extends \W\Controller\Controller
             break;
 
             default:
-                $this->showNotFound(); // affichera une page 404
+                $this->redirectToRoute('default_home'); // retour a l'accueil du site
                 break;
             }
 
 
         // Limite l'accès à la page à un utilisateur non connecté
             if(empty($me)){
-            $this->showNotFound(); // affichera une page 404
-
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
-        $this->showNotFound(); // affichera une page 404
+        
+        $this->redirectToRoute('default_home'); // retour a l'accueil du site
 
     }
 

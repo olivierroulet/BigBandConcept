@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/animate.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/main.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/style.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/styleconnected.css') ?>">
 	<link rel="shortcut icon" href="images/ico/favicon.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
@@ -43,21 +43,15 @@
 					</button> 
 					<a class="navbar-brand" href="accueil"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
-				
+				<div class="pull-right"><a href="logout" class="btn btn-error">Se déconnecter</a>	</div>
 			</div> 
 		</div><!--/navbar--> 
 	</header> <!--/#navigation-->
 
-	<br><br>
+	<section>
 		<?= $this->section('main_content') ?>
-	
-	<footer id="footer"> 
-		<div class="container"> 
-			<div class="text-center"> 
-				<p>Copyright &copy; 2017 - <a href="#home">BigBand</a> | All Rights Reserved</p> 
-			</div> 
-		</div> 
-	</footer> <!--/#footer--> 
+	</section>
+	 
 	<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
 	<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 

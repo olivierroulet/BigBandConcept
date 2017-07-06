@@ -17,7 +17,7 @@ class DefaultController extends Controller
 
 	public function accueil()
 	{
-		$this->show('default/home');
+		$this->redirectToRoute('default_home');
 	}
 
     public function backAdmin()

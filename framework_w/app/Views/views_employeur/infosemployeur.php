@@ -1,4 +1,4 @@
-<?php $this->layout('public_layout', ['title' => 'Big Band']) ?>
+<?php $this->layout('solopageconnected_layout', ['title' => 'Big Band']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -6,9 +6,7 @@
 	<div class="container">
 		<div class="clients-wrapper">
 			<div class="row text-center">
-				<div class="col-sm-12">
-				<button class="btn btn-error"><a href="logout">Se déconnecter</a></button>	
-				</div>
+				
 				<div class="col-sm-8 col-sm-offset-2">
 					<h2 class="title-one">Infos Employeur</h2>
 				

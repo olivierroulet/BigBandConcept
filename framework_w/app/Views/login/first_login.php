@@ -1,4 +1,4 @@
-<?php $this->layout('public_layout', ['title' => 'Big Band']) ?>
+<?php $this->layout('solopage_layout', ['title' => 'Big Band']) ?>
 
 <?php $this->start('main_content') ?>
 
