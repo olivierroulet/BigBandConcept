@@ -13,7 +13,7 @@
 			<div class="item active" style="background-image: url(assets/publique/images/slider/slide3.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-							<h2 class="heading animated bounceInDown">Big Band</h2><!-- 
+							<h2 class="heading animated bounceInDown"><img class="img-responsive"  src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 							<p class="animated bounceInUp"></p> 
 							<a class="btn btn-default slider-btn animated fadeIn" href="#"></a> -->
 						</div> 
@@ -21,7 +21,7 @@
 				</div>
 				<div class="item" style="background-image: url(assets/publique/images/slider/slide2.jpg)"> 
 					<div class="carousel-caption"> <div> 
-						<h2 class="heading animated bounceInDown">Big Band</h2><!-- 
+						<h2 class="heading animated bounceInDown"><img class="img-responsive"  src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 						<p class="animated bounceInUp">Everything is outstanding</p> <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a>--> 
 					</div> 
 				</div> 
@@ -29,7 +29,7 @@
 			<div class="item" style="background-image: url(assets/publique/images/slider/slide1.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<h2 class="heading animated bounceInRight">Big Band</h2><!-- 
+						<h2 class="heading animated bounceInRight"><img class="img-responsive" src="assets/publique/images/logobigband.png" alt=""></h2><!-- 
 						<p class="animated bounceInLeft">100% Responsive HTML template</p> 
 						<a class="btn btn-default slider-btn animated bounceInUp" href="#">Get Started</a> -->
 					</div> 
@@ -507,7 +507,7 @@
 												<div class="col-sm-8 col-sm-offset-2">
 													<div class="contact-heading">
 														<h2 class="title-one">Contactez-nous</h2>
-														<p>Pour toute prestation ou renseignement</p>
+														<h4>pour toute prestation</h4>
 													</div>
 												</div>
 											</div>
@@ -613,7 +613,7 @@
 							</div>
 						</div> 
 					</section> <!--/#contact-->
-					<section id="clients" class="parallax-section">
+					<section id="clients" class="">
 						<div class="container">
 							<div class="clients-wrapper">
 								<div class="row text-center">
@@ -635,16 +635,14 @@
 												<label for="password">Mot de passe</label>
 												<input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
 											</div>
-
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
-											<button class="btn btn-primary"><a href="first_login">Premiere connexion</a></button>
+											<a href="first_login" class="btn btn-primary">Premiere connexion</a>
 											<button class="btn btn-success">Se connecter</button>
-											<button class="btn btn-warning"><a href="forgot_password">Mot de passe oublié</a></button>
-										
-
-									</div>
-								</form>
+											<a href="forgot_password" class="btn btn-warning">Mot de passe oublié</a>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</section><!--/#clients-->

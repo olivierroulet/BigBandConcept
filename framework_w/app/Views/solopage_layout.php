@@ -41,27 +41,16 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
 					</button> 
-					<a class="navbar-brand" href="#home"><h1><!--<img src="images/logo.png" alt="logo">-->BIG BAND</h1></a> 
+					<a class="navbar-brand" href="accueil"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
-				<div class="collapse navbar-collapse"> 
-					<ul class="nav navbar-nav navbar-right"> 
-						<li class="scroll active"><a href="home">Accueil</a></li> 
-						<!--<li class="scroll"><a href="#about-us">Prestations</a></li>-->
-						<li class="scroll"><a href="../our-team">Le groupe</a></li> 
-						<li class="scroll"><a href="home#services">Prestations</a></li> 
-						<li class="scroll"><a href="#portfolio">Portfolio</a></li> 
-						<li class="scroll"><a href="#blog">Actualités</a></li> 
-						<li class="scroll"><a href="#contact">Contact</a></li> 
-						<li class="scroll"><a href="#clients">Espace utilisateur</a></li> 
-					</ul> 
-				</div> 
+				
 			</div> 
 		</div><!--/navbar--> 
 	</header> <!--/#navigation-->
 
-	<section>
+	<br><br>
 		<?= $this->section('main_content') ?>
-	</section>
+	
 	<footer id="footer"> 
 		<div class="container"> 
 			<div class="text-center"> 
