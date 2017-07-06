@@ -18,7 +18,7 @@
 					$post = $_POST;
 					$US_email = isset($post['US_email']) ? $post['US_email'] : '';
 					?>
-					<form method="post" action="recherche_utilisateur">
+					<form method="post" action="rechercher_un_utilisateur">
 						<label for="US_email">Email de l'utilisateur</label>
 						<div class="form-group">
 							<label for="US_email">Adresse mail</label>

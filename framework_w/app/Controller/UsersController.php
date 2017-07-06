@@ -316,6 +316,14 @@ class UsersController extends \W\Controller\Controller
 
     public function rechercherUnUtilisateur()
     {
+        $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+        $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+
         $post = [];
         $errors = [];
         $formValid = false;
@@ -327,16 +335,13 @@ class UsersController extends \W\Controller\Controller
                 $errors[] = 'L\'adresse mail est invalide'; // true
             }
 
+            
+
+
         }
 
 
-         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
-         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
-            $this->redirectToRoute('default_home'); // retour a l'accueil du site
-        }
+        
 
         $user = new UsersModel();
         $users = $user->findAll();
