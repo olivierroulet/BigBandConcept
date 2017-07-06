@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 
 
-<article id="actu">
+<article id="actuUpdate">
 	<h1 class="text-center">Mise à jour d'un évènement</h1>
 
 

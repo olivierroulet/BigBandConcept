@@ -1,5 +1,6 @@
 <?php
 
+
 //le masque d'URL à associer 
 // "Default#services",	//le nom du contrôleur et le nom de la méthode à appeler
 // "default_services"	//le nom de cette route-ci
@@ -42,20 +43,5 @@ $w_routes = array(
 
 	);
 
-	/*
-	Exemple donné par Axel ce 2017-07-5 17h00
-	<?php // View 
-	foreach($events as $event){
 
-		echo $event['title'];        echo '<a href="'.$this->url('update_event', ['id' => $event['id']]).'">Modifier</a>';
-        // update_event correspond au nom de la ROUTE 
-	}/events/update/4// Controllerpublic update($id)
-	{
-		if(is_numeric($id)){
-			$this->showNotFound();
-		}
-
-	}// Route
-	['GET', '/events/update/[i:id]', 'Event#update', 'update_event'],
-*/
-
+  

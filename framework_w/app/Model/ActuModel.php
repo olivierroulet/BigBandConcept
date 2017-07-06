@@ -23,17 +23,16 @@ class ActuModel extends \W\Model\Model // Attention à l' arborescence !!!
 	 * @param $offset La position à partir de laquelle récupérer les résultats
 	 * @return array Les données sous forme de tableau multidimensionnel
 	 */
-	public function findWhere($where = '', $orderBy = '', $orderDir = 'ASC', $limit = null, $offset = null)
+	public function findWhere($where = true, $orderBy = '', $orderDir = 'ASC', $limit = null, $offset = null)
 	{
 
 		$sql = 'SELECT * FROM ' . $this->table;
 
-if (!empty($where)){
-	$where =''; 
-
-	 	$dateMax = new DateTime(); // new() renvoit la date du jour système
-        $dateMax->add(new DateInterval('P90D')); // prend 90 jours dans le futur (add)
-}
+		if ($where == true){
+			 	$dateNow = new \DateTime(); // new() renvoit la date du jour système
+		        $dateMax = $dateNow->add(new \DateInterval('P90D')); // prend 90 jours dans le futur (add)
+		        $sql.= ' WHERE 1=1 AND AC_Date BETWEEN NOW() AND "'.$dateMax->format('Y-m-d').'"';
+		}
 
 		if (!empty($orderBy)){
 
