@@ -116,10 +116,11 @@ class UsersController extends \W\Controller\Controller
                 }
             }
 
-            else {?>
+            else {
+                ?>
                 <script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
 
-                
+
                 /*$this->('Le couple identifiant / mot de passe est invalide', 'danger');*/
             }
 
@@ -172,11 +173,11 @@ class UsersController extends \W\Controller\Controller
             }
 
 
-        // Limite l'accès à la page à un utilisateur non connecté
+        // Limite l'accès à la page à un utilisateur connecté
             if(empty($me)){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
-        
+
         $this->redirectToRoute('default_home'); // retour a l'accueil du site
 
     }
@@ -192,8 +193,156 @@ class UsersController extends \W\Controller\Controller
             // Si l'utilisateur est "vide", on a donc bien vider la session, il est donc déconnecté
             $this->redirectToRoute('default_home');
         }
+    }
+
+    public function gestionDesUtilisateurs()
+    {
+
+         $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+         $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+         if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+        $this->show('views_admin/gestion_des_utilisateurs');
+    }
+
+    public function ajouterUnUtilisateur()
+    {
+
+         $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+         $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+         if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+        
+        $post = [];
+        $errors = [];
+        $formValid = false;
+        
+        if(!empty($_POST)){
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+
+            if (!v::stringType()->length(2, null)->validate($post['US_FirstName'])){
+                $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
+            }
+            if (!v::stringType()->length(2, null)->validate($post['US_LastName'])){
+                $errors[] = 'Le nom doit faire au minimum 2 caractères'; // true
+            }
+
+            if (!v::email()->validate($post['US_email'])){
+                $errors[] = 'L\'adresse mail est invalide'; // true
+            }
+            
+            $authRole=[1, 2, 3, 4];
+            if(!in_array($post['US_idURole'], $authRole)){
+                $errors[] = 'Indiquez le rôle de l\'utilisateur à ajouter'; // true
+            }
+
+            if(count($errors) === 0){
+
+                $authModel = new AuthentificationModel();
+
+                $dataUser = [
+                'US_FirstName' => $post['US_FirstName'],
+                'US_LastName' => $post['US_LastName'],
+                'US_email'   => $post['US_email'],
+                'US_idURole'   => $post['US_idURole'],
+                ];
+                    // on verifie que l'utilisateur n'ai pas déjà un compte
+                $user = new UsersModel();
+                $verif = $user -> getUserByUsernameOrEmail($post['US_email']);
+                if($verif){
+                    // L'utilisateur à un id
+                    $idEmployeur=$verif['US_id'];
+                    $errors[] = 'Cet utilisateur a déjà été ajouté !'; 
+                } 
+                else {
+                // L'utilisateur n'a pas de compte utilisateur, on lui en crée un 
+                    $insert = $user->insert($dataUser); 
+                }
+
+                if(!empty($insert)){
+                    $formValid = true;
+                }
+
+            }
+        }
+
+        $params = [
+            // Dans la vue, les clés deviennent des variables
+        'formValid'     => $formValid, 
+        'formErrors'    => $errors,
+        ];
+
+        $this->show('views_admin/ajouter_un_utilisateur', $params);
+    }
+
+    public function updaterUnUtilisateur()
+    {
+
+         $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+         $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+         if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
 
 
+        $this->show('views_admin/liste_des_utilisateurs');
+    }
+
+    public function listerLesUtilisateurs()
+    {
+
+         $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+         $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+         if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+
+        $user = new UsersModel();
+        $users = $user->findAll();
+
+        $params = ['users' => $users];
+        $this->show('views_admin/liste_des_utilisateurs', $params);
+    }
+
+    public function rechercherUnUtilisateur()
+    {
+        $post = [];
+        $errors = [];
+        $formValid = false;
+
+        if(!empty($_POST)){
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+
+            if (!v::email()->validate($post['US_email'])){
+                $errors[] = 'L\'adresse mail est invalide'; // true
+            }
+
+        }
+
+
+         $me = $this->getUser(); // utilisateur connecté
+         // on stocke son role
+         $roleUser=$me['US_idURole'];
+         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+         if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+
+        $user = new UsersModel();
+        $users = $user->findAll();
+
+        $params = ['users' => $users];
+        $this->show('views_admin/liste_des_utilisateurs', $params);
     }
 }
 

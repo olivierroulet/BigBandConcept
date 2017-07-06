@@ -77,5 +77,6 @@
 	<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
 	<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
 	<script type="text/javascript" src="assets/publique/js/main.js"></script>
+	<?=$this->section('js');?>
 </body>
 </html>
