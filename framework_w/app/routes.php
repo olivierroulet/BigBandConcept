@@ -29,8 +29,8 @@
     ['GET|POST', '/lister_les_utilisateurs', 'Users#listerLesUtilisateurs', 'listerlesutilisateurs'],
         
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
-    ['GET|POST', '/actualites/update/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
-    ['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
+    ['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
+    ['GET|POST', '/actualitesadd', 'Actu#actuIns', 'Actu_Add'],
 
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
