@@ -80,7 +80,7 @@
 							<a href="" class="btn btn-block btn-primary">Messages archivés</a>
 						</div>
 						<div class="interface-messagerie">SITE WEB 
-							<a href="" class="btn btn-block btn-primary">Calendrier</a>
+							<a href="actualites" class="btn btn-block btn-primary">Calendrier</a>
 						</div>
 						<div class="interface-messagerie">AGENDA 
 							<a href="" class="btn btn-block btn-primary">A faire aujourd'hui</a>
