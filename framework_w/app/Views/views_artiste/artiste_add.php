@@ -1,10 +1,10 @@
 <?php $this->layout('layout', ['title' => 'Ajout d\' artiste']) ?>
 
 <?php $this->start('main_content') ?>
-<!-- <h2>Enregistrement d'un artiste en base de données</h2>
+<h2>Enregistrement d'un artiste en base de données</h2>
 <p>Bon courage !!!</p>
 <p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p>
- -->
+
 
 
 

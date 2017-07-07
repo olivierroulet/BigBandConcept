@@ -1,21 +1,25 @@
-<?php $this->layout('layout', ['title' => 'Ajout d\' artiste']) ?>
+<?php $this->layout('solopageconnected_layout', ['title' => 'MàJ d\' un artiste']) ?>
 
 <?php $this->start('main_content') ?>
-<!-- <h2>Enregistrement d'un artiste en base de données</h2>
-<p>Bon courage !!!</p>
-<p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p>
- -->
 
+
+<!-- SELECT `AR_Idartiste`, `AR_ID_InUsersTable`, `AR_Etiquette_Artiste`, `AR_Etiquette_Artiste_Inversee`, `AR_Emploi_Occupe`, `AR_Civilite`, `AR_Nom`, `AR_Prenom`, `AR_Pseudo`, `AR_Password`, `AR_Numero`, `AR_Batiment`, `AR_Voie`, `AR_Adresse_Ligne_1`, `AR_Adresse_Ligne_2`, `AR_Code_Postal`, `AR_Ville`, `AR_Telephone_1`, `AR_Telephone_2`, `AR_Adresse_Mail`, `AR_N_De_Securite_Sociale`, `AR_N_Du_Guso`, `AR_Numero_Conges_Spectacle`, `AR_Date_De_Naissance`, `AR_Anniversaire`, `AR_Lieu_De_Naissance`, `AR_Nationalite`, `AR_Etiquette_Dpae`, `AR_NewsLetterYN`, `AR_Etiquette_Feuille_De_Mandat`, `AR_Etiquette_Feuille_De_Presence`, `AR_Createur`, `AR_Date_De_Creation`, `AR_Modificateur`, `AR_Date_De_Modification` FROM `artistes`  -->
 
 
 <!-- ** Fin des boutons NAVIGATION ************************ -->	
 <!-- ** Début du formulaire d' ajout d' ARTISTE ' ************************ -->	
 
+<section id="artistes" class="parallax-section">
+	<div class="container">
+		<div class="clients-wrapper">
+			<div class="row text-center">
 
-<div class="container-fluid" style="width:65%; margin-left: 50px;" align="right">
-	<div class="row main">
-		<div class="main-login main-right">
-			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2>
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="title-one">Fiche Artiste</h2>
+				</div>
+				<div class="col-sm-12"> 
+
+			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Fiche artiste</h2>
 			<?php
 			if(!empty($formErrors)){
 				echo '<p style="color:red">'.implode('<br>', $formErrors);
@@ -83,41 +87,44 @@
 
 <!-- 	<label for "AR_Adresse_Ligne_1">Adresse</label>
 	<input type="text" name="AR_Adresse_Ligne_1" id="AR_Adresse_Ligne_1" value="<?php echo $AR_Adresse_Ligne_1;?>"/> -->
-	<label for "AR_Code_Postal">Code Postal</label>
-	<input type="text" name="AR_Code_Postal" id="AR_Code_Postal" value="<?php echo $AR_Code_Postal;?>"/>
-	<label for "AR_Ville">Ville</label>
-	<input type="text" name="AR_Ville" id="AR_Ville"  value="<?php echo $AR_Ville;?>"/>
+						<label for "AR_Code_Postal">Code Postal</label>
+						<input type="text" name="AR_Code_Postal" id="AR_Code_Postal" value="<?php echo $AR_Code_Postal;?>"/>
+						<label for "AR_Ville">Ville</label>
+						<input type="text" name="AR_Ville" id="AR_Ville"  value="<?php echo $AR_Ville;?>"/>
 
-	<label for "AR_Telephone_1">Téléphone mobile</label>
-	<input type="text" name="AR_Telephone_1" id="AR_Telephone_1" value="<?php echo $AR_Telephone_1;?>" placeholder="+33(0)601020304"/>
-	<label for "AR_Telephone_2">Téléphone fixe</label>
-	<input type="text" name="AR_Telephone_2" id="AR_Telephone_2"  value="<?php echo $AR_Telephone_2;?>"/>
-	<!-- insérer un séparateur -->
-	<label for "AR_N_De_Securite_Sociale">Numéro de Sécurité Sociale</label>
-	<input type="text" name="AR_N_De_Securite_Sociale" id="AR_N_De_Securite_Sociale"  value="<?php echo $AR_N_De_Securite_Sociale;?>"/>
-	<label for "AR_N_Du_Guso">Numéro du GUSO</label>
-	<input type="text" name="AR_N_Du_Guso" id="AR_N_Du_Guso"  value="<?php echo $AR_N_Du_Guso;?>"/>
-	<label for "AR_Numero_Conges_Spectacle">Numéro de Congés Spectacle</label>
-	<input type="text" name="AR_Numero_Conges_Spectacle" id="AR_Numero_Conges_Spectacle"  value="<?php echo $AR_Numero_Conges_Spectacle;?>"/>
-	<label for "AR_Date_De_Naissance">Date de Naissance</label>
-	<input type="date" name="AR_Date_De_Naissance" id="AR_Date_De_Naissance"  value="<?php echo $AR_Date_De_Naissance;?>"/>
-	<label for "AR_Lieu_De_Naissance">Lieu de Naissance</label>
-	<input type="text" name="AR_Lieu_De_Naissance" id="AR_Lieu_De_Naissance"  value="<?php echo $AR_Lieu_De_Naissance;?>"/>
+						<label for "AR_Telephone_1">Téléphone mobile</label>
+						<input type="text" name="AR_Telephone_1" id="AR_Telephone_1" value="<?php echo $AR_Telephone_1;?>" placeholder="+33(0)601020304"/>
+						<label for "AR_Telephone_2">Téléphone fixe</label>
+						<input type="text" name="AR_Telephone_2" id="AR_Telephone_2"  value="<?php echo $AR_Telephone_2;?>"/>
+						<!-- insérer un séparateur -->
+						<label for "AR_N_De_Securite_Sociale">Numéro de Sécurité Sociale</label>
+						<input type="text" name="AR_N_De_Securite_Sociale" id="AR_N_De_Securite_Sociale"  value="<?php echo $AR_N_De_Securite_Sociale;?>"/>
+						<label for "AR_N_Du_Guso">Numéro du GUSO</label>
+						<input type="text" name="AR_N_Du_Guso" id="AR_N_Du_Guso"  value="<?php echo $AR_N_Du_Guso;?>"/>
+						<label for "AR_Numero_Conges_Spectacle">Numéro de Congés Spectacle</label>
+						<input type="text" name="AR_Numero_Conges_Spectacle" id="AR_Numero_Conges_Spectacle"  value="<?php echo $AR_Numero_Conges_Spectacle;?>"/>
+						<label for "AR_Date_De_Naissance">Date de Naissance</label>
+						<input type="date" name="AR_Date_De_Naissance" id="AR_Date_De_Naissance"  value="<?php echo $AR_Date_De_Naissance;?>"/>
+						<label for "AR_Lieu_De_Naissance">Lieu de Naissance</label>
+						<input type="text" name="AR_Lieu_De_Naissance" id="AR_Lieu_De_Naissance"  value="<?php echo $AR_Lieu_De_Naissance;?>"/>
 
-	<label for "AR_Nationalite">Nationalité</label>
-	<input type="text" name="AR_Nationalite" id="AR_Nationalite" value="FR" value="<?php echo $AR_Nationalite;?>" placeholder="code sur 2 caractères en majuscules"/>
+						<label for "AR_Nationalite">Nationalité</label>
+						<input type="text" name="AR_Nationalite" id="AR_Nationalite" value="FR" value="<?php echo $AR_Nationalite;?>" placeholder="code sur 2 caractères en majuscules"/>
 
-	<label for "AR_NewsLetterYN"><i class="fa fa-hand-peace-o fa-lg" aria-hidden="true"></i>Souscrire à la newsletter ?</label>
-	<input type="checkbox" name="AR_NewsLetterYN" checked="<?php echo $AR_NewsLetterYN;?>" title ="cochée = oui">
-	<div class="col col-md-12" align="right">
-		<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
+						<label for "AR_NewsLetterYN"><i class="fa fa-hand-peace-o fa-lg" aria-hidden="true"></i>Souscrire à la newsletter ?</label>
+						<input type="checkbox" name="AR_NewsLetterYN" checked="<?php echo $AR_NewsLetterYN;?>" title ="cochée = oui">
+						<div class="col col-md-12" align="right">
+							<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
+						</div>
+					</div>
+				</form>				
+			</div>
+		</div>
 	</div>
+</div>	
 </div>
-</form>				
-</div>
-</div>
-</div>
-</div>		<!-- <div class="main-login main-center"> -->
+</section>
+<!-- <div class="main-login main-center"> -->
 <!-- ** Fin du formulaire d' ajout d' ARTISTE ' ************************ -->	
 
 <?php $this->stop('main_content') ?>
