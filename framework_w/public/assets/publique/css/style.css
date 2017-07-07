@@ -29,10 +29,6 @@
 	display:none;
 }
 
-#our-team {
-
-}
-
 .single-member{
 	background-color: rgb(150,0,0);
 }
@@ -60,7 +56,8 @@ a:hover footer
 	color:red;
 }
 
-#home {
+#home{
     margin-top: 
         42px;
 } 
+

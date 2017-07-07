@@ -13,7 +13,8 @@ $w_routes = array(
 	['GET|POST', '/', 'Default#home', 'default_home'],
 	['GET|POST', '/accueil', 'Default#home', 'accueil'],
 
-		// REDIRECTION PAGE D'ACCUEIL
+		// TRAITEMENT DU FORMULAIRE EMPLOYEUR
+
 	['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],
 
 		// GESTION DES ARTISTES
@@ -34,9 +35,9 @@ $w_routes = array(
 	['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
 
 		// INTERFACE ADMINISTRATEUR - ACCUEIL	
-	/*
-	['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
-*/	
+	
+	['GET|POST', '/administrateur_accueil', 'Users#redirectRole', 'administrateuraccueil'],
+		
 		// INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
 	['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
 	['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],

@@ -97,7 +97,7 @@ class UsersController extends \W\Controller\Controller
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
             $authModel = new AuthentificationModel();
-            $id_user = $authModel->isValidLoginInfo($post['email'], $post['password']);
+            $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
             $usersModel = new UsersModel();
@@ -149,7 +149,7 @@ class UsersController extends \W\Controller\Controller
          switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->show('views_admin/accueil_administrateur');
+            $this->show('views_admin/administrateur_accueil');
             break;
 
             case 2:
