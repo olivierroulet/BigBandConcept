@@ -37,7 +37,7 @@
 							
 						</div>
 						<div class="interface-employeurs">OUTILS DE FONCTIONNEMENT
-							<a href="gestion_des_utilisateurs" class="btn btn-block btn-primary">Gestion des utilisateurs</a>
+							<a href="gestion_des_utilisateurs" class="btn btn-block btn-primary">Gestion des utilisateurs<span class="pull-right"><?=$nbUtilisateurs;?></span></a>
 							<a href="" class="btn btn-block btn-primary">Simulation de salaire GUSO</a>
 							<a href="" class="btn btn-block btn-primary">Gestion des artistes</a>
 						</div>
@@ -50,8 +50,9 @@
 								<option disabled value="">------------</option>
 								<option value="Les derniers devis">Les derniers devis</option>
 								<option disabled value="">------------</option>
-								<option value="Devis acceptés">Devis acceptés</option>
+								<option value="Devis a faire">Devis à faire</option>
 								<option value="Devis en attente">Devis en attente</option>
+								<option value="Devis acceptés">Devis acceptés</option>
 								<option value="Devis refusés">Devis refusés</option>
 								<option disabled value="">------------</option>
 							</select>
@@ -89,7 +90,19 @@
 			</div>
 			<div class="row text-center">
 				<h4>COMPTE RENDU DE VOTRE BASE DE DONNEES</h4>
+				<div class='col-sm-5 text-center'>
+					<h5>Gestion des employeurs et devis</h5>
+					Fiches employeurs : <?=$nbEmployeurs;?><br>
+					Devis à faire : <?=$nbDevisAFaire;?><br> 
+					Devis en attente : <?=$nbDevisEnAttente;?><br> 
+
+				</div>
+				<div class='col-sm-7 text-center'>
+					<h5>Gestion des futurs contrats</h5>
+					
+				</div>
 			</div>
+
 		</div>
 	</div>
 </section>

@@ -8,51 +8,58 @@ $msg = '';
 if (array_key_exists('email', $_POST)) {
 //    echo date_default_timezone_set('Europe/Paris');
 
-    require 'PHPMailer/PHPMailerAutoload.php';
-
+   // require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php'; pour BigBand Concept
+//   require 'bigband/include/PHPMailerAutoload.php';
+     require 'include/PHPMailer/PHPMailerAutoload.php';
+          
     //Create a new PHPMailer instance
     $mail = new PHPMailer;
     //Tell PHPMailer to use SMTP - requires a local mail server
     //Faster and safer than using mail()
+    $mail->isHTML(true);
     $mail->isSMTP();
-    $mail->Host='smtp.gmail.com';
+    $mail->Username = 'bigbandv4@gmail.com';
+    $mail->Password = 'Gibson-v4';
     $mail->SMTPAuth = true;
-    $mail->Username = 'philippe@philnowak.net';
-    $mail->Password = 'xxx';
+        // $mail->SMTPDebug = 2;
+    $mail->Host='smtp.gmail.com';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 //    $mail->isHTML(true) ;
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
-    $mail->setFrom('philippe@philnowak.net', 'Phil 7CH');
+    $mail->From = 'bigbandv4@gmail.com';
+    $mail->FromName = 'Philo mène';
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail->addAddress('philippenowak@gmail.com', 'Phil from GM');
+    $mail->addAddress('bigbandv4@gmail.com');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
     if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-        $mail->Subject = 'PHPMailer contact form #3';
+        $mail->Subject = $_POST['subject'];
         //Keep it simple - don't use HTML
-        $mail->isHTML(false);
         //Build a simple message body
         $mail->Body = <<<EOT
-Email: {$_POST['email']}
-Name: {$_POST['name']}
-Message: {$_POST['message']}
+        Email: {$_POST['email']}
+        Name: {$_POST['name']}
+        Message: {$_POST['message']}
 EOT;
+
         //Send the message, check for errors
         if (!$mail->send()) {
             //The reason for failing to send will be in $mail->ErrorInfo
             //but you shouldn't display errors to users - process the error, log it on your server.
-            $msg = '<p>Sorry, something went wrong. Please try again later.<pre>' . $mail->ErrorInfo . '<br></pre></p>';
+            $msg = '<p>Apparemment le message n\' est pas passé. Merci de réessayer un peu plus tard.<pre>' . $mail->ErrorInfo . '<br></pre></p>';
         } else {
-            $msg = 'Message sent! Thanks for contacting us.';
+            $msg = 'Message envoyé :-) Merci!';
         }
     } else {
-        $msg = 'Invalid email address, message ignored.';
+        $msg = 'Adresse mail invalide, message ignoré.';
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +68,11 @@ EOT;
     <title>Carte gMaps-DB et formulaire de prise de contact</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-	<link href="include/CSS/bootstrap.min.css" rel="stylesheet"/> 
+<!-- C:\xampp\htdocs\BigBandConcept\framework_w\public\assets\publique\css -->
+
+<!-- 	<link href="public/assets/publique/css/bootstrap.min.css" rel="stylesheet"/>  -->
+  <link href="include/CSS/bootstrap.min.css" rel="stylesheet"/>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
     <script src="https://use.fontawesome.com/795afa09e7.js"></script>
 
@@ -120,13 +131,13 @@ body{
     <h2 align="center">Nous contacter...</h2>
 
    <div class="row col-sm-12">
-    <form class="form-inline" id="contactForm">
+    <form class="form-inline" id="contactForm" method="POST">
         <div class="row col-sm-12"> 
 	    <div class="row col-sm-4"></div> 
             <div class="row col-sm-4">
 		<div class="form-group">
                 <label for="message"><i class="fa fa-home fa-2x"></i>&nbsp;Message</label>
-                <textarea form="contactForm" class="form-control" id="message" rows="8" cols="80">Bonne journée !
+                <textarea form="contactForm" class="form-control" name="message" rows="8" cols="80">Bonne journée !
             </textarea>
 	<div class="col-sm-12">
 &nbsp;
@@ -144,30 +155,33 @@ body{
             Type de sujet&nbsp;</label>
         <select id="subject" name="subject" class="form-control" required="required">
             <option value="na" selected="">Domaine:</option>
-            <option value="service">Service aux Artistes</option>
-            <option value="product">Service aux Employeurs</option>
+            <option value="service-aux-Artistes">Service aux Artistes</option>
+            <option value="service-aux-Employeurs">Service aux Employeurs</option>
             <option value="suggestions">Suggestions</option>
-            <option value="product">Liste de diffusion</option>
+            <option value="Liste-de-Diffusion">Liste de diffusion</option>
         </select>
         &nbsp;
     </div>     
         
         <div class="form-group">
     <label for="name"><i class="fa fa-user fa-2x"></i>&nbsp;Nom</label>
-    <input type="text" class="form-control" id="name" placeholder="Mon nom">
+    <input type="text" class="form-control" name="name" placeholder="Mon nom">
 &nbsp;
         </div>
   <div class="form-group">
     <label for="email"><i class="fa fa-envelope fa-2x"></i>&nbsp;Email</label>
-    <input type="email" class="form-control" id="email" placeholder="prenom.nom@exemple.com">
+    <input type="email" class="form-control" name="email" placeholder="prenom.nom@exemple.com">
   &nbsp;
   </div>
   <div class="form-group">
             
       <button type="submit" class="btn btn-info" value="Envoyer"><strong>Envoyer</strong></button>
+<?= $msg . '<br>'; ?>      
         </div>
 
 </form>
+
+
 </div>
 
 
@@ -209,7 +223,8 @@ body{
         <div id="map_canvas"></div>
     </div>
 
-<!-- fin du formulaire début de la carte liée à l' adresse en BdD -->
+<br>fin du formulaire début de la carte liée à l' adresse en BdD<br>
+
 
 
   <?php
@@ -222,6 +237,8 @@ body{
           while($donnees = $affiche->fetch()){
             $map_address =  $donnees['SI_Address'] .' '. $donnees['SI_Addr_ZipCode'].' '. $donnees['SI_Addr_City'] ;
         }  
+
+echo var_dump($donnees);
 
         if (!$donnees) {
           $map_address =  '19 rue Sénac de Meilhan, 13001, Marseille';
@@ -239,6 +256,8 @@ body{
     //context est une variable de type ressource que l'on va envoyer en paramètre à file_get_contents() pour lui spécifier si on travaille en get, post...
 
   $url = "http://maps.googleapis.com/maps/api/geocode/json??key=AIzaSyB0xJoi5c9MwYIYQlwIEfLqLh95hLtcaYA&address=".urlencode($map_address);
+//    $url = "http://maps.googleapis.com/maps/api/geocode/json??API-key=AIzaSyAGQjPE5dAIpxeK4Zw_FE8VKopsfxZs10E=".urlencode($map_address);
+  
   $lat_long = get_object_vars(json_decode(file_get_contents($url, false, $context)));
     // pick out what we need (lat,lng)
   $coord = 'Lat: '.number_format($lat_long['results'][0]->geometry->location->lat,2) . "° N . Long: " . number_format($lat_long['results'][0]->geometry->location->lng, 2) .'° W';
@@ -247,8 +266,8 @@ body{
 
    ?>     
 
-
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0xJoi5c9MwYIYQlwIEfLqLh95hLtcaYA"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?API-key=AIzaSyAGQjPE5dAIpxeK4Zw_FE8VKopsfxZs10E"></script> -->
 
   <div id="map_canvas"></div>
 <!--  <pre>

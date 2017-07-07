@@ -112,7 +112,7 @@ class ClientsController extends \W\Controller\Controller
             'DV_Datedelaprestation'    => $datePrestaEn,
             'DV_CodePostalPrestation'   => $post['DV_Codepostal'],
             'DV_Lieudelaprestation'   => $post['DV_Ville'],
-            'DV_Statut_Du_Devis'    => 'A faire',
+            'DV_Statut_Du_Devis'    => 'a faire',
             ];
             $devis = new DevisModel();
                 $insert = $devis->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
