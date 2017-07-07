@@ -91,8 +91,7 @@ class ActuController extends \W\Controller\Controller
             if (!v::Date()->validate($post2['AC_Date'])){
                 $errors2[] = 'La date est invalide';    
             }
-             if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com1'])){
-           // if (!v::optional(v::Alnum())->Alnum($additionalChars2)->validate($post2['AC_Com1'])){       
+            if (!v::optional(v::Alnum())->Alnum($additionalChars2)->validate($post2['AC_Com1'])){       
                 $errors2[] = 'Le 1er commentaire doit comporter au minimum 2 caractères'; 
             }
             if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com2'])){

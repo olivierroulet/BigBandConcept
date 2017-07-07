@@ -8,7 +8,9 @@ use Model\ArtistesModel;
 use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
 // Cf http://respect.github.io/Validation/docs/date.html
-
+// Se logger en artiste et pouvoir modifier sa propre fiche uniquement
+// REstructurer les tables contrats & contrats2
+// A faire pour Philippe ce WE: Artistes : lister les artistes, ajouter dès la création d'un user, et modifier QUE SI l' utilisateur loggé est un artiste, et qu' il s' agit bien de sa fiche
 class ArtistesController extends \W\Controller\Controller
 {
     public function addArtiste()
@@ -145,7 +147,7 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
             'formErrors'	=> $errors,
         ];
         // Si on oublie pas d' afficher tout ça dans la méthode show()
-        $this->show('artistes', $params);
+        $this->show('views_artiste/artiste_upd', $params);
         // Après avoir affiché, va falloir se cogner la partie insertion en base
 
     }
@@ -243,36 +245,36 @@ public function updArtiste()
                 $authModel = new AuthentificationModel();
 
                 $data = [
-                'AR_Idartiste' => '',
-                'AR_Prenom' => $post['AR_Prenom'],
-                'AR_Nom'    => $post['AR_Nom'],
-                'AR_Pseudo'     => $post['AR_Pseudo'],
+            //    'AR_Idartiste' => '',
+                'AR_Prenom'         => $post['AR_Prenom'],
+                'AR_Nom'            => $post['AR_Nom'],
+                'AR_Pseudo'         => $post['AR_Pseudo'],
                 'AR_Adresse_Mail'   => $post['AR_Adresse_Mail'],
-                'AR_Password'   => $authModel->hashPassword($post['AR_Password']),
-                'AR_Emploi_Occupe'      => $post['AR_Emploi_Occupe'],
+                'AR_Password'       => $authModel->hashPassword($post['AR_Password']),
+                'AR_Emploi_Occupe'  => $post['AR_Emploi_Occupe'],
                 'AR_Civilite'       => $post['AR_Civilite'],
-                'AR_Numero'     => $post['AR_Numero'],
-                'AR_Voie'       => $post['AR_Voie'],
+                'AR_Numero'         => $post['AR_Numero'],
+                'AR_Voie'           => $post['AR_Voie'],
                 'AR_Batiment'       => $post['AR_Batiment'],
                     // 'AR_Adresse_Ligne_1'     => $post['AR_Adresse_Ligne_1'],
-                'AR_Code_Postal'        => $post['AR_Code_Postal'],
-                'AR_Ville'      => $post['AR_Ville'],
-                'AR_Telephone_1'        => $post['AR_Telephone_1'],
-                'AR_Telephone_2'        => $post['AR_Telephone_2'],
-                'AR_N_De_Securite_Sociale'      => $post['AR_N_De_Securite_Sociale'],
-                'AR_N_Du_Guso'      => $post['AR_N_Du_Guso'],
-                'AR_Numero_Conges_Spectacle'        => $post['AR_Numero_Conges_Spectacle'],
+                'AR_Code_Postal'    => $post['AR_Code_Postal'],
+                'AR_Ville'          => $post['AR_Ville'],
+                'AR_Telephone_1'    => $post['AR_Telephone_1'],
+                'AR_Telephone_2'    => $post['AR_Telephone_2'],
+                'AR_N_De_Securite_Sociale'  => $post['AR_N_De_Securite_Sociale'],
+                'AR_N_Du_Guso'              => $post['AR_N_Du_Guso'],
+                'AR_Numero_Conges_Spectacle'=> $post['AR_Numero_Conges_Spectacle'],
                 'AR_Date_De_Naissance'      => $post['AR_Date_De_Naissance'],
                 'AR_Lieu_De_Naissance'      => $post['AR_Lieu_De_Naissance'],
-                'AR_Nationalite'        => $post['AR_Nationalite'],
-                'AR_NewsLetterYN'       => $post['AR_NewsLetterYN'],
+                'AR_Nationalite'            => $post['AR_Nationalite'],
+                'AR_NewsLetterYN'           => $post['AR_NewsLetterYN'],
                 ];
 
 // ici:question why un model dans un controller ??? // UsersModel est importé via le "use" en haut de la class actuelle
                 /*$Artiste = new ArtistesModel();   // déplacé en début de function*/
-                $insert = $Artiste->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
+                $update = $Artiste->update($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
 
-                if(!empty($insert)){
+                if(!empty($update)){
                     $formValid = true;
                 }
 
@@ -285,7 +287,7 @@ public function updArtiste()
         'formErrors'    => $errors,
         ];
         // Si on oublie pas d' afficher tout ça dans la méthode show()
-        $this->show('artistes', $params);
+        $this->show('views_artiste/artiste_upd', $params);
         // Après avoir affiché, va falloir se cogner la partie insertion en base
 
 
