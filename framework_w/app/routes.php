@@ -17,16 +17,7 @@
 
 $w_routes = array(
 
-
-        // REDIRECTION PAGE D'ACCUEIL
-
-    ['GET|POST', '/', 'Default#home', 'default_home'],
-    ['GET|POST', '/accueil', 'Default#home', 'accueil'],
-
-        // TRAITEMENT DU FORMULAIRE EMPLOYEUR
-    ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],
-
-        // REDIRECTION PAGE D'ACCUEIL    
+         // REDIRECTION PAGE D'ACCUEIL    
     ['GET|POST', '/', 'Default#home', 'default_home'],
     ['GET|POST', '/accueil', 'Default#home', 'accueil'],        
     // TRAITEMENT DU FORMULAIRE EMPLOYEUR    
