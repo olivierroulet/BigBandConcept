@@ -7,7 +7,7 @@
 		<div class="clients-wrapper">
 			<div class="row text-center">
 				<div class="col-sm-1.5 pull-left">
-					<a href="redirect_role" class="btn btn-primary">Menu principal</a>
+					<a href="administrateur_accueil" class="btn btn-primary">Menu principal</a>
 				</div>
 			</div>
 			<div class="row text-center">

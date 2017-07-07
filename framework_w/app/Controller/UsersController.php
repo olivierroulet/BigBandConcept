@@ -149,7 +149,7 @@ class UsersController extends \W\Controller\Controller
          switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->show('views_admin/administrateur_accueil');
+            $this->redirectToRoute('administrateuraccueil');
             break;
 
             case 2:

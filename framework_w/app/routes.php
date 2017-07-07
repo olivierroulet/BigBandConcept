@@ -27,28 +27,21 @@ $w_routes = array(
 	['GET|POST', '/forgot_password', 'Users#forgotPassword', 'forgot_password'],
 	['GET|POST', '/logout', 'Users#logout', 'logout'],
 
-<<<<<<< HEAD
-    // INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
-    ['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
-    ['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],
-    ['GET|POST', '/updater_un_utilisateur', 'Users#listerLesUtilisateurs', 'updaterunutilisateur'],
-    ['GET|POST', '/lister_les_utilisateurs', 'Users#listerLesUtilisateurs', 'listerlesutilisateurs'],
-        
+		// GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
     ['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
     ['GET|POST', '/actualitesadd', 'Actu#actuIns', 'Actu_Add'],
-=======
+
 		// REDIRECTION UTILISATEUR AUTHENTIFIE EN FONCTION DE SON ROLE
 	['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],
->>>>>>> 2039f42f24529aec5788c8dd79734522219be16e
 
-	['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
+		// GESTION DES ACTUALITES
+/*	['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
 	['GET|POST', '/actualites/update/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
 	['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
-
+*/
 		// INTERFACE ADMINISTRATEUR - ACCUEIL	
-	
-	['GET|POST', '/administrateur_accueil', 'Users#redirectRole', 'administrateuraccueil'],
+		['GET|POST', '/administrateur_accueil', 'Admin#compteRendu', 'administrateuraccueil'],
 		
 		// INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
 	['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],

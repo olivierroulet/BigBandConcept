@@ -16,45 +16,22 @@ class DevisModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 	}
 
-// liste des méthodes existantes
-// getUserByUsernameOrEmail($usernameOrEmail)
-// emailExists($email)	
-// usernameExists($username)
-// insérer 2 méthodes : insert & update la table artistes
 
-// Dans Model:
-// function insert(array $data, $stripTags = true)
-// 	public function update(array $data, $id, $stripTags = true)
-
-
-
-
-
-
-//	ci-dessous juste pour l'exemple
 	/**
-	 * Teste si un pseudo est présent en base de données
-	 * @param string $username Le pseudo à tester
+	 * Remonte les devis avec le statut 'à faire'
+	 * @param string $statut -> le statut du devis à tester
 	 * @return boolean true si présent en base de données, false sinon
 	 */
-/*	public function usernameExists($username)
+	public function findAllWithStatut($statut)
 	{
+		if (!is_string($statut)){
+			return false;
+		}
 
-	    $app = getApp();
-
-	    $sql = 'SELECT ' . $app->getConfig('security_username_property') . ' FROM ' . $this->table .
-	           ' WHERE ' . $app->getConfig('security_username_property') . ' = :username LIMIT 1';
-
-	    $dbh = ConnectionModel::getDbh();
-	    $sth = $dbh->prepare($sql);
-	    $sth->bindValue(':username', $username);
-	    if($sth->execute()){
-	        $foundUser = $sth->fetch();
-	        if($foundUser){
-	            return true;
-	        }
-	    }
-
-	    return false;
-	}*/
+		$sql = 'SELECT * FROM ' . $this->table . ' WHERE DV_Statut_Du_Devis = :statut';
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':statut', $statut);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 }
