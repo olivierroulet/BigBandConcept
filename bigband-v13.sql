@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  ven. 07 juil. 2017 à 09:47
--- Version du serveur :  10.1.22-MariaDB
--- Version de PHP :  7.1.4
+-- Client :  127.0.0.1
+-- Généré le :  Ven 07 Juillet 2017 à 16:42
+-- Version du serveur :  10.1.21-MariaDB
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,13 +16,80 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Base de données :  `bigband`
+--
 
-USE `bigband`;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `actu`
+--
+-- Création :  Ven 07 Juillet 2017 à 14:28
+--
+
+CREATE TABLE `actu` (
+  `AC_Id` int(10) NOT NULL,
+  `AC_Date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `AC_DateFin` datetime NOT NULL,
+  `AC_Com1` varchar(50) COLLATE utf8_unicode_ci DEFAULT '',
+  `AC_Com2` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `AC_Num` varchar(8) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `AC_Puce` text COLLATE utf8_unicode_ci NOT NULL,
+  `AC_Lieu` text COLLATE utf8_unicode_ci,
+  `AC_Code_Postal` text COLLATE utf8_unicode_ci,
+  `AC_Adresse` varchar(150) CHARACTER SET utf8 NOT NULL,
+  `AC_Notes` text COLLATE utf8_unicode_ci,
+  `AC_Visibilite` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `actu`
+--
+
+INSERT INTO `actu` (`AC_Id`, `AC_Date`, `AC_DateFin`, `AC_Com1`, `AC_Com2`, `AC_Num`, `AC_Puce`, `AC_Lieu`, `AC_Code_Postal`, `AC_Adresse`, `AC_Notes`, `AC_Visibilite`) VALUES
+(1, '2017-07-14 17:00:00', '2017-07-07 16:22:16', 'Actualité à ne pas rater', 'Actualité à ne pas rater - A afficher urbi et orbi', '', 'une puce ? une puce', 'Stade de France', '93000', '', 'notes', 'Client'),
+(2, '2017-07-13 17:00:00', '2017-07-07 16:22:16', 'Finie la formation !', 'commentaire 2 ', '123456', 'puce 2', 'Lieu 2', '13001', '', 'Notes', 'Public'),
+(3, '2017-07-07 16:30:58', '0000-00-00 00:00:00', 'Fête massive', 'Tombez la chemise', '01234567', 'PUCE : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime excepturi natus tempore obcaecati minus, aspernatur soluta cum voluptatum facere, odio deleniti placeat odit inventore a consectetur suscipit ipsam. Id, ea.', 'Bègles', '33130', 'Derrière la piscine', 'Sur le terrain de basket des intellos', 'Public'),
+(4, '2017-07-07 16:32:53', '0000-00-00 00:00:00', 'Fête de l\' Huma', 'Comm2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime excepturi natus tempore obcaecati minus, aspernatur soluta cum voluptatum facere, odio deleniti placeat odit inventore a consectetur suscipit ipsam. Id, ea.', '01234567', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime excepturi natus tempore obcaecati minus, aspernatur soluta cum voluptatum facere, odio deleniti placeat odit inventore a consectetur suscipit ipsam. Id, ea.', 'Bébègles', '33130', 'Adresse donbi', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime excepturi natus tempore obcaecati minus, aspernatur soluta cum voluptatum facere, odio deleniti placeat odit inventore a consectetur suscipit ipsam. Id, ea.', 'Public');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `agenda`
+--
+-- Création :  Ven 07 Juillet 2017 à 13:37
+--
+
+CREATE TABLE `agenda` (
+  `AG_Idagenda` int(11) UNSIGNED NOT NULL,
+  `AG_PubPriv` int(1) NOT NULL DEFAULT '2',
+  `AG_Etiquette_De_La_Fiche` text COLLATE utf8_unicode_ci,
+  `AG_Id_Fiche_Concernee` int(11) DEFAULT NULL,
+  `AG_Date_De_Rappel` date DEFAULT NULL,
+  `AG_Note` text COLLATE utf8_unicode_ci,
+  `AG_Id_Rappel` int(11) DEFAULT NULL,
+  `AG_Eso_Esta_Hecho` text CHARACTER SET utf8,
+  `AG_RappelParUsrID` int(10) NOT NULL,
+  `AG_UPDINSParUsrID` int(11) NOT NULL DEFAULT '1',
+  `AG_UPDDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `agenda`
+--
+
+INSERT INTO `agenda` (`AG_Idagenda`, `AG_PubPriv`, `AG_Etiquette_De_La_Fiche`, `AG_Id_Fiche_Concernee`, `AG_Date_De_Rappel`, `AG_Note`, `AG_Id_Rappel`, `AG_Eso_Esta_Hecho`, `AG_RappelParUsrID`, `AG_UPDINSParUsrID`, `AG_UPDDate`) VALUES
+(1, 2, 'etiqFich', 0, '2017-07-05', 'note à taper', 1, 'no lo so', 0, 1, '2017-07-01 22:56:32'),
+(2, 2, 'Fiche évènement2 à ne pas manquer. CF la fiche concernée, avec ID de 2', 2, '2017-07-15', 'Note2 évènement2 à ne pas manquer. CF la fiche concernée, avec ID de 2', 1, 'texte en espagnol il semble', 0, 1, '2017-07-01 22:56:32'),
+(3, 1, 'encoe une fête!', 3, '2018-07-03', 'encoe une fête! déjà diffusée en retard', 1, 'blabla', 0, 1, '2017-07-01 22:56:32');
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `artistes`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `artistes` (
@@ -66,7 +131,7 @@ CREATE TABLE `artistes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Déchargement des données de la table `artistes`
+-- Contenu de la table `artistes`
 --
 
 INSERT INTO `artistes` (`AR_Idartiste`, `AR_ID_InUsersTable`, `AR_Etiquette_Artiste`, `AR_Etiquette_Artiste_Inversee`, `AR_Emploi_Occupe`, `AR_Civilite`, `AR_Nom`, `AR_Prenom`, `AR_Pseudo`, `AR_Password`, `AR_Numero`, `AR_Batiment`, `AR_Voie`, `AR_Adresse_Ligne_1`, `AR_Adresse_Ligne_2`, `AR_Code_Postal`, `AR_Ville`, `AR_Telephone_1`, `AR_Telephone_2`, `AR_Adresse_Mail`, `AR_N_De_Securite_Sociale`, `AR_N_Du_Guso`, `AR_Numero_Conges_Spectacle`, `AR_Date_De_Naissance`, `AR_Anniversaire`, `AR_Lieu_De_Naissance`, `AR_Nationalite`, `AR_Etiquette_Dpae`, `AR_NewsLetterYN`, `AR_Etiquette_Feuille_De_Mandat`, `AR_Etiquette_Feuille_De_Presence`, `AR_Createur`, `AR_Date_De_Creation`, `AR_Modificateur`, `AR_Date_De_Modification`) VALUES
@@ -78,6 +143,8 @@ INSERT INTO `artistes` (`AR_Idartiste`, `AR_ID_InUsersTable`, `AR_Etiquette_Arti
 
 --
 -- Structure de la table `bloc_notes`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `bloc_notes` (
@@ -92,6 +159,8 @@ CREATE TABLE `bloc_notes` (
 
 --
 -- Structure de la table `bulletins_de_salaire`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `bulletins_de_salaire` (
@@ -229,10 +298,15 @@ CREATE TABLE `bulletins_de_salaire` (
 --
 -- Structure de la table `clients`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `clients` (
   `CL_Idclient` int(10) UNSIGNED NOT NULL,
   `CL_ID_InUsersTable` int(11) NOT NULL,
+  `CL_Prenom` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `CL_Nom` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `CL_Telephone` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `CL_Etiquetteemployeur` text COLLATE utf8_unicode_ci,
   `CL_Raison_Sociale` text COLLATE utf8_unicode_ci,
   `CL_Statut_Juridique` text COLLATE utf8_unicode_ci,
@@ -256,22 +330,22 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `clients`
+-- Contenu de la table `clients`
 --
 
-INSERT INTO `clients` (`CL_Idclient`, `CL_ID_InUsersTable`, `CL_Etiquetteemployeur`, `CL_Raison_Sociale`, `CL_Statut_Juridique`, `CL_Titulaire_Licence_Entrepreneur_De_Spectacles`, `CL_Code_Postal`, `CL_Ville`, `CL_Departement`, `CL_Createur`, `CL_Date_De_Creation`, `CL_Modificateur`, `CL_Date_De_Modification`, `CL_Habitude_De_Date`, `CL_Date_De_Prise_De_Decision`, `CL_Date_Du_Prochain_Suivi`, `CL_Note_De_Prochain_Suivi`, `CL_Type_Bareme`, `CL_Indicateur_De_Suivi`, `CL_Sortir_Des_Resultats_De_Recherche`, `CL_Statut_Du_Client`, `CL_Id_Message_Correspondant`) VALUES
-(6, 9, NULL, 'comité des fêtes de l\'entrecote', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:00:06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 10, NULL, 'comité des fêtes d\'angoulême', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:05:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 11, NULL, 'COMITE DES FETES DE LA PATATE CHAUDE', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:15:25', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 12, NULL, '', 'particulier', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:32:17', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 13, NULL, '', 'particulier', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:40:41', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 14, NULL, '', 'particulier', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:42:30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 15, NULL, '', 'particulier', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 09:44:38', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `clients` (`CL_Idclient`, `CL_ID_InUsersTable`, `CL_Prenom`, `CL_Nom`, `CL_Telephone`, `CL_Etiquetteemployeur`, `CL_Raison_Sociale`, `CL_Statut_Juridique`, `CL_Titulaire_Licence_Entrepreneur_De_Spectacles`, `CL_Code_Postal`, `CL_Ville`, `CL_Departement`, `CL_Createur`, `CL_Date_De_Creation`, `CL_Modificateur`, `CL_Date_De_Modification`, `CL_Habitude_De_Date`, `CL_Date_De_Prise_De_Decision`, `CL_Date_Du_Prochain_Suivi`, `CL_Note_De_Prochain_Suivi`, `CL_Type_Bareme`, `CL_Indicateur_De_Suivi`, `CL_Sortir_Des_Resultats_De_Recherche`, `CL_Statut_Du_Client`, `CL_Id_Message_Correspondant`) VALUES
+(12, 71, '', '', '', NULL, 'COMITE DES FETES DE LA PATATE CHAUDE', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-06 19:44:58', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 72, '', '', '', NULL, 'COMITE DES FETES DE LA PATATE CHAUDE', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-06 19:45:18', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 73, '', '', '', NULL, 'COMITE DES FETES DE LA PATATE FROIDE', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-06 19:46:13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 74, '', '', '', NULL, 'COMITE DES FETES DE LA PATATE FROIDE \'', 'association loi 1901', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-06 19:47:57', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 75, '', '', '', NULL, '', 'particulier', '', NULL, NULL, NULL, '', '0000-00-00 00:00:00', '', '2017-07-07 14:30:18', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `contacts_utiles`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `contacts_utiles` (
@@ -302,6 +376,8 @@ CREATE TABLE `contacts_utiles` (
 --
 -- Structure de la table `contact_client`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `contact_client` (
   `CC_Idcontactclient` int(10) UNSIGNED NOT NULL,
@@ -330,6 +406,8 @@ CREATE TABLE `contact_client` (
 
 --
 -- Structure de la table `contrats`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `contrats` (
@@ -626,6 +704,8 @@ CREATE TABLE `contrats` (
 --
 -- Structure de la table `contrats_2`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `contrats_2` (
   `CD_Idcontrat2` int(10) UNSIGNED NOT NULL,
@@ -726,6 +806,8 @@ CREATE TABLE `contrats_2` (
 --
 -- Structure de la table `crdb`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `crdb` (
   `CR_Id_Crdb` int(10) UNSIGNED NOT NULL,
@@ -761,6 +843,8 @@ CREATE TABLE `crdb` (
 
 --
 -- Structure de la table `declarations_guso`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `declarations_guso` (
@@ -840,6 +924,8 @@ CREATE TABLE `declarations_guso` (
 --
 -- Structure de la table `declaration_pole_emploi`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `declaration_pole_emploi` (
   `DP_Id_Declaration_Pole_Emploi` int(10) UNSIGNED NOT NULL,
@@ -858,6 +944,8 @@ CREATE TABLE `declaration_pole_emploi` (
 
 --
 -- Structure de la table `demande_devis`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `demande_devis` (
@@ -889,6 +977,8 @@ CREATE TABLE `demande_devis` (
 
 --
 -- Structure de la table `detail_devis`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `detail_devis` (
@@ -1092,6 +1182,8 @@ CREATE TABLE `detail_devis` (
 --
 -- Structure de la table `detail_devis_2`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `detail_devis_2` (
   `D2_Iddetaildevis2` int(10) UNSIGNED NOT NULL,
@@ -1113,11 +1205,13 @@ CREATE TABLE `detail_devis_2` (
 --
 -- Structure de la table `devis`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `devis` (
   `DV_Iddevis` int(10) UNSIGNED NOT NULL,
   `DV_Createur` text COLLATE utf8_unicode_ci,
-  `DV_Date_De_Creation` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `DV_Date_De_Creation` date DEFAULT NULL,
   `DV_Modificateur` text COLLATE utf8_unicode_ci,
   `DV_Date_De_Modification` date DEFAULT NULL,
   `DV_Idclient` int(10) UNSIGNED DEFAULT NULL,
@@ -1150,32 +1244,23 @@ CREATE TABLE `devis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `devis`
+-- Contenu de la table `devis`
 --
 
 INSERT INTO `devis` (`DV_Iddevis`, `DV_Createur`, `DV_Date_De_Creation`, `DV_Modificateur`, `DV_Date_De_Modification`, `DV_Idclient`, `DV_Idcontactclient`, `DV_Sortir_Des_Elements_De_Recherche`, `DV_Transforme_En_Contrat`, `DV_Datedudevis`, `DV_Datedelaprestation`, `DV_Date_Ferme_De_La_Prestation`, `DV_Travail_Sur_La_Date_De_Prestation`, `DV_Reveillon`, `DV_CodePostalPrestation`, `DV_Lieudelaprestation`, `DV_Introduction_Du_Devis`, `DV_Montantdessalaires`, `DV_Montantdescotisations`, `DV_Montantdesfrais`, `DV_Prixtotal`, `DV_Statut_Du_Devis`, `DV_Statut_Du_Devis_Avant_Modification`, `DV_Nom_Du_Fichier`, `DV_Ajoute_A_Google_Agenda`, `DV_Id_Google_Agenda`, `DV_Protection_De_La_Fiche`, `DV_Notes_Sur_Le_Devis`, `DV_Calcul_En_Cours_Oliv`, `DV_Calcul_En_Cours_Pat`, `DV_Calcul_En_Cours_Fabrice`, `DV_Devis_Envoye_Par_Courrier`) VALUES
-(81, NULL, '2017-07-07 07:25:42', NULL, NULL, 6, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(82, NULL, '2017-07-07 07:28:15', NULL, NULL, 6, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(83, NULL, '2017-07-07 07:29:04', NULL, NULL, 6, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(84, NULL, '2017-07-07 07:30:53', NULL, NULL, 6, NULL, NULL, NULL, NULL, '2015-05-09', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(85, NULL, '2017-07-07 07:32:17', NULL, NULL, 9, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '85310', 'NESMY', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(86, NULL, '2017-07-07 07:32:24', NULL, NULL, 9, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '85310', 'NESMY', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(87, NULL, '2017-07-07 07:32:48', NULL, NULL, 6, NULL, NULL, NULL, NULL, '2019-05-06', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(88, NULL, '2017-07-07 07:34:48', NULL, NULL, 8, NULL, NULL, NULL, NULL, '2018-05-07', NULL, NULL, NULL, '49800', 'BRAIN SUR L\'AUTHION', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(89, NULL, '2017-07-07 07:38:13', NULL, NULL, 8, NULL, NULL, NULL, NULL, '2019-05-06', NULL, NULL, NULL, '49800', 'BRAIN SUR L\'AUTHION', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(90, NULL, '2017-07-07 07:40:41', NULL, NULL, 10, NULL, NULL, NULL, NULL, '2019-05-06', NULL, NULL, NULL, '79210', 'MAUZE SUR LE MIGNON', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(91, NULL, '2017-07-07 07:40:46', NULL, NULL, 10, NULL, NULL, NULL, NULL, '2019-05-06', NULL, NULL, NULL, '79210', 'MAUZE SUR LE MIGNON', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(92, NULL, '2017-07-07 07:42:30', NULL, NULL, 11, NULL, NULL, NULL, NULL, '2019-05-05', NULL, NULL, NULL, '79600', 'REPEROUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(93, NULL, '2017-07-07 07:42:32', NULL, NULL, 11, NULL, NULL, NULL, NULL, '2019-05-05', NULL, NULL, NULL, '79600', 'REPEROUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(94, NULL, '2017-07-07 07:43:20', NULL, NULL, 6, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(95, NULL, '2017-07-07 07:44:38', NULL, NULL, 12, NULL, NULL, NULL, NULL, '2018-09-05', NULL, NULL, NULL, '44390', 'PETIT MARS', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(96, NULL, '2017-07-07 07:44:40', NULL, NULL, 12, NULL, NULL, NULL, NULL, '2018-09-05', NULL, NULL, NULL, '44390', 'PETIT MARS', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(97, NULL, '2017-07-07 07:46:18', NULL, NULL, 6, NULL, NULL, NULL, NULL, '2018-02-04', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(5, NULL, NULL, NULL, NULL, 12, NULL, NULL, NULL, NULL, '2019-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, NULL, NULL, NULL, NULL, 13, NULL, NULL, NULL, NULL, '2019-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, NULL, NULL, NULL, NULL, 14, NULL, NULL, NULL, NULL, '2020-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, NULL, NULL, NULL, NULL, 15, NULL, NULL, NULL, NULL, '2020-01-01', NULL, NULL, NULL, '33000', 'BORDEAUX', NULL, NULL, NULL, NULL, NULL, 'A faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, NULL, NULL, NULL, NULL, 16, NULL, NULL, NULL, NULL, '2017-07-07', NULL, NULL, NULL, '33800', 'Bordeaux', NULL, NULL, NULL, NULL, NULL, 'a faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, NULL, NULL, NULL, NULL, 16, NULL, NULL, NULL, NULL, '2017-07-07', NULL, NULL, NULL, '33800', 'Bordeaux', NULL, NULL, NULL, NULL, NULL, 'a faire', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `dpae_imprime`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `dpae_imprime` (
@@ -1216,6 +1301,8 @@ CREATE TABLE `dpae_imprime` (
 --
 -- Structure de la table `essai`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `essai` (
   `ES_Id` int(10) UNSIGNED NOT NULL,
@@ -1227,6 +1314,8 @@ CREATE TABLE `essai` (
 
 --
 -- Structure de la table `feuilles_de_mandat`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `feuilles_de_mandat` (
@@ -1308,6 +1397,8 @@ CREATE TABLE `feuilles_de_mandat` (
 --
 -- Structure de la table `feuilles_de_presence`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `feuilles_de_presence` (
   `FP_Idfeuilledepresence` int(10) UNSIGNED NOT NULL,
@@ -1384,6 +1475,8 @@ CREATE TABLE `feuilles_de_presence` (
 
 --
 -- Structure de la table `feuille_de_mandat`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `feuille_de_mandat` (
@@ -1464,6 +1557,8 @@ CREATE TABLE `feuille_de_mandat` (
 
 --
 -- Structure de la table `guso`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `guso` (
@@ -1601,6 +1696,8 @@ CREATE TABLE `guso` (
 --
 -- Structure de la table `infos_administratives`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `infos_administratives` (
   `IA_Idinfosadministratives` int(10) UNSIGNED NOT NULL,
@@ -1641,6 +1738,8 @@ CREATE TABLE `infos_administratives` (
 --
 -- Structure de la table `lettre_accompagnement_du_contrat`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `lettre_accompagnement_du_contrat` (
   `LA_Idlettre` int(10) UNSIGNED NOT NULL,
@@ -1672,6 +1771,8 @@ CREATE TABLE `lettre_accompagnement_du_contrat` (
 --
 -- Structure de la table `location_u`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `location_u` (
   `LU_Idlocationu` int(10) UNSIGNED NOT NULL,
@@ -1696,6 +1797,8 @@ CREATE TABLE `location_u` (
 --
 -- Structure de la table `messagerie`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `messagerie` (
   `ME_Id` int(10) UNSIGNED NOT NULL,
@@ -1717,6 +1820,8 @@ CREATE TABLE `messagerie` (
 
 --
 -- Structure de la table `messages`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `messages` (
@@ -1743,6 +1848,8 @@ CREATE TABLE `messages` (
 --
 -- Structure de la table `mise_a_jour`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `mise_a_jour` (
   `MJ_Id` int(10) UNSIGNED NOT NULL,
@@ -1764,6 +1871,8 @@ CREATE TABLE `mise_a_jour` (
 --
 -- Structure de la table `navigation_oliv`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `navigation_oliv` (
   `NA_Id_Navigation_Oliv` int(10) UNSIGNED NOT NULL,
@@ -1774,6 +1883,9 @@ CREATE TABLE `navigation_oliv` (
 
 --
 -- Structure de la table `operateur`
+--
+-- Création :  Ven 07 Juillet 2017 à 13:37
+-- Dernière modification :  Ven 07 Juillet 2017 à 13:37
 --
 
 CREATE TABLE `operateur` (
@@ -1801,6 +1913,8 @@ CREATE TABLE `operateur` (
 --
 -- Structure de la table `rappels`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `rappels` (
   `RA_Idrappel` int(10) UNSIGNED NOT NULL,
@@ -1811,7 +1925,7 @@ CREATE TABLE `rappels` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `rappels`
+-- Contenu de la table `rappels`
 --
 
 INSERT INTO `rappels` (`RA_Idrappel`, `RA_Idclient`, `RA_Date_De_Rappel`, `RA_Note_De_Rappel`, `RA_Tache_Effectuee`) VALUES
@@ -1822,6 +1936,8 @@ INSERT INTO `rappels` (`RA_Idrappel`, `RA_Idclient`, `RA_Date_De_Rappel`, `RA_No
 
 --
 -- Structure de la table `ref_codes`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `ref_codes` (
@@ -1837,7 +1953,7 @@ CREATE TABLE `ref_codes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Codes num et alpha pour de petits ensembles de valeurs (moins de 100 plus ou moins statiques) définis par application';
 
 --
--- Déchargement des données de la table `ref_codes`
+-- Contenu de la table `ref_codes`
 --
 
 INSERT INTO `ref_codes` (`RF_CodeID`, `RF_Module`, `RF_ModuleNumCodeValue`, `RF_ModuleAlphaCodeValue`, `RF_ModuleCodeDescription`, `RF_ActiveYN`, `RF_InternalYN`, `RF_Internal2External`, `RF_External2Internal`) VALUES
@@ -1864,6 +1980,8 @@ INSERT INTO `ref_codes` (`RF_CodeID`, `RF_Module`, `RF_ModuleNumCodeValue`, `RF_
 --
 -- Structure de la table `repertoire`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `repertoire` (
   `RE_Id` int(10) UNSIGNED NOT NULL,
@@ -1888,6 +2006,8 @@ CREATE TABLE `repertoire` (
 --
 -- Structure de la table `reset_password`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `reset_password` (
   `RP_id` int(11) NOT NULL,
@@ -1896,7 +2016,7 @@ CREATE TABLE `reset_password` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `reset_password`
+-- Contenu de la table `reset_password`
 --
 
 INSERT INTO `reset_password` (`RP_id`, `RP_idUser`, `RP_token`) VALUES
@@ -1909,6 +2029,8 @@ INSERT INTO `reset_password` (`RP_id`, `RP_idUser`, `RP_token`) VALUES
 
 --
 -- Structure de la table `salaires`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `salaires` (
@@ -1931,6 +2053,8 @@ CREATE TABLE `salaires` (
 
 --
 -- Structure de la table `simulations_guso`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `simulations_guso` (
@@ -2059,6 +2183,8 @@ CREATE TABLE `simulations_guso` (
 --
 -- Structure de la table `simulation_guso`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `simulation_guso` (
   `SG_Id_Guso` int(10) UNSIGNED NOT NULL,
@@ -2141,6 +2267,8 @@ CREATE TABLE `simulation_guso` (
 --
 -- Structure de la table `suivi_client`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `suivi_client` (
   `SU_Idsuiviclient` int(10) UNSIGNED NOT NULL,
@@ -2158,6 +2286,8 @@ CREATE TABLE `suivi_client` (
 --
 -- Structure de la table `table_utilisateur`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `table_utilisateur` (
   `TA_Id` int(10) UNSIGNED NOT NULL,
@@ -2172,6 +2302,8 @@ CREATE TABLE `table_utilisateur` (
 --
 -- Structure de la table `userroles`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `userroles` (
   `UR_ID` int(11) NOT NULL,
@@ -2180,7 +2312,7 @@ CREATE TABLE `userroles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `userroles`
+-- Contenu de la table `userroles`
 --
 
 INSERT INTO `userroles` (`UR_ID`, `UR_RoleDescr`, `UR_ActiveYN`) VALUES
@@ -2193,6 +2325,8 @@ INSERT INTO `userroles` (`UR_ID`, `UR_RoleDescr`, `UR_ActiveYN`) VALUES
 
 --
 -- Structure de la table `users`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:22
 --
 
 CREATE TABLE `users` (
@@ -2210,25 +2344,26 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Users - their contacts and their roles';
 
 --
--- Déchargement des données de la table `users`
+-- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`US_id`, `US_Password`, `US_FirstName`, `US_LastName`, `US_Pseudo`, `US_email`, `US_tel`, `US_idURole`, `US_ActiveYN`, `US_CreationDate`, `US_NewsLetter`) VALUES
-(6, '', 'Bernard', 'SALANIER', '', 'comitepresquile@laposte.net', '0623184650', 2, 1, '2017-07-06 21:57:05', 1),
-(7, '', 'Olivier', 'ROULET', '', 'webdev.oliv@gmail.com', '0676818821', 2, 1, '2017-07-06 22:35:09', 1),
-(8, '', 'Christina', 'POUET', '', 'contact@campinglabreteche.com', '', 2, 1, '2017-07-06 22:54:34', 1),
-(9, '', 'André', 'Duchêne', '', 'contact@olivierroulet.com', '0676818821', 2, 1, '2017-07-07 07:00:06', 1),
-(10, '', 'Yasmina', 'DUTERTRE', '', 'yasmina.dutertre@gmail.com', '0556122365', 2, 1, '2017-07-07 07:05:51', 1),
-(11, '', 'Patrick', 'BOURLET', '', 'esabfootball@orange.fr', '0241661874', 2, 1, '2017-07-07 07:15:25', 1),
-(12, '', 'Patrice', 'MASSON', '', 'patoche-vendeen@hotmail.fr', '0620010874', 2, 1, '2017-07-07 07:32:17', 1),
-(13, '', 'Maryline', 'CHARRON COURREE', '', 'maryline.charron-courree@ville-mauze-mignon.fr', '0549261462', 2, 1, '2017-07-07 07:40:41', 1),
-(14, '', 'Nathalie', 'GRELLIER', '', 'jngrellier@orange.fr', '0672089769', 2, 1, '2017-07-07 07:42:30', 1),
-(15, '', 'Thierry', 'LEDUC', '', 'thierryetmagalie@free.fr', '0626699403', 2, 1, '2017-07-07 07:44:38', 1);
+(2, '$2y$10$c3rMmVJEMrfts9L378VKCexSDn1T5T4S2k8BL2YgI3TMp3XnSVZN.', 'p', 'PhilAdmin', '', 'philippe@philnowak.net', '+33618480017', 1, 1, '2017-06-30 15:31:15', 1),
+(59, '$2y$10$M7IjQjMkCAXDrzno8YN.mOZbFo3M6CZAgKUo6buzdTOVZdybTZhTS', '', '', 'administrateur', 'admin@bigband.fr', '', 1, 1, '2017-07-05 17:33:15', 1),
+(60, '$2y$10$RQ2cqUiUdcgXJpp1GZJER.zNBLz5U1kB44C4YH0EtCY7tQxskLB76', '', '', 'employeur', 'employeur@bigband.fr', '', 2, 1, '2017-07-05 17:32:30', 1),
+(61, '$2y$10$S1yhI3V9r0gCQ919nBhjSuN/WGCGA4yaCmyOPcJYFDnVLHewlz8Fe', '', '', 'artisteb', 'artiste@bigband.fr', '', 3, 1, '2017-07-05 17:33:56', 1),
+(62, '$2y$10$VpA1dnOUZISo23bZmOs2wu9T/zcwY02pzjkYN69Mc8TLZ2wgVAC9a', '', '', 'fanatique', 'fan@bigband.fr', '', 4, 1, '2017-07-05 17:46:01', 1),
+(63, '', 'OLIVIER', 'ROULET', '', 'webdev.oliv@gmail.com', '0676818821', 2, 1, '2017-07-06 08:59:13', 1),
+(72, '$2y$10$mSXc3ms1pjlYnNHpBr4arOnUw7TZNPBDh6D6NuqWySaYHfjk7zYE2', 'Olivier', 'ROULET', 'olivierroulet', 'contact@olivierroulet.com', '0676818821', 1, 1, '2017-07-07 12:32:50', 1),
+(74, '', 'André', 'ROULET', '', 'essai@olivierroulet.com', '0676818821', 2, 1, '2017-07-06 17:47:57', 1),
+(75, '$2y$10$BzLrct2afApQcegKM.zzVuWJ9lzyq1nU8/atYKIdqQgGebENO7MV2', 'Geoffrey', 'MOLLET', 'geoffreymollet', 'geoffrey.mollet@gmail.com', '0123456789', 1, 1, '2017-07-07 13:07:04', 1);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `utilisation_du_logiciel`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `utilisation_du_logiciel` (
@@ -2262,6 +2397,8 @@ CREATE TABLE `utilisation_du_logiciel` (
 --
 -- Structure de la table `verif_fiches_clients_a_suivre`
 --
+-- Création :  Ven 07 Juillet 2017 à 12:15
+--
 
 CREATE TABLE `verif_fiches_clients_a_suivre` (
   `VS_Id_Verification` int(10) UNSIGNED NOT NULL,
@@ -2275,6 +2412,8 @@ CREATE TABLE `verif_fiches_clients_a_suivre` (
 
 --
 -- Structure de la table `versions_obsoletes`
+--
+-- Création :  Ven 07 Juillet 2017 à 12:15
 --
 
 CREATE TABLE `versions_obsoletes` (
@@ -2356,6 +2495,61 @@ CREATE TABLE `v_users_and_roles` (
 -- --------------------------------------------------------
 
 --
+-- Doublure de structure pour la vue `v_users_clients`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `v_users_clients` (
+`AR_Idartiste` int(11) unsigned
+,`AR_ID_InUsersTable` int(10)
+,`AR_Etiquette_Artiste` text
+,`AR_Etiquette_Artiste_Inversee` text
+,`AR_Emploi_Occupe` text
+,`AR_Civilite` text
+,`AR_Nom` text
+,`AR_Prenom` text
+,`AR_Pseudo` varchar(50)
+,`AR_Password` varchar(150)
+,`AR_Numero` text
+,`AR_Batiment` text
+,`AR_Voie` text
+,`AR_Adresse_Ligne_1` text
+,`AR_Adresse_Ligne_2` text
+,`AR_Code_Postal` text
+,`AR_Ville` text
+,`AR_Telephone_1` text
+,`AR_Telephone_2` text
+,`AR_Adresse_Mail` varchar(250)
+,`AR_N_De_Securite_Sociale` text
+,`AR_N_Du_Guso` text
+,`AR_Numero_Conges_Spectacle` text
+,`AR_Date_De_Naissance` date
+,`AR_Anniversaire` text
+,`AR_Lieu_De_Naissance` text
+,`AR_Nationalite` text
+,`AR_Etiquette_Dpae` text
+,`AR_NewsLetterYN` tinyint(1)
+,`AR_Etiquette_Feuille_De_Mandat` text
+,`AR_Etiquette_Feuille_De_Presence` text
+,`AR_Createur` text
+,`AR_Date_De_Creation` datetime
+,`AR_Modificateur` text
+,`AR_Date_De_Modification` datetime
+,`US_id` int(11)
+,`US_Password` varchar(100)
+,`US_FirstName` varchar(25)
+,`US_LastName` varchar(50)
+,`US_Pseudo` varchar(50)
+,`US_email` varchar(50)
+,`US_tel` varchar(50)
+,`US_idURole` int(11)
+,`US_ActiveYN` tinyint(1)
+,`US_CreationDate` timestamp
+,`US_NewsLetter` tinyint(1)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la vue `v_activeuserroles`
 --
 DROP TABLE IF EXISTS `v_activeuserroles`;
@@ -2389,16 +2583,24 @@ DROP TABLE IF EXISTS `v_users_and_roles`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_and_roles`  AS  select `users`.`US_id` AS `US_id`,`users`.`US_Password` AS `US_Password`,`users`.`US_FirstName` AS `US_FirstName`,`users`.`US_LastName` AS `US_LastName`,`users`.`US_email` AS `US_email`,`users`.`US_tel` AS `US_tel`,`users`.`US_idURole` AS `US_idURole`,`users`.`US_ActiveYN` AS `US_ActiveYN`,`users`.`US_CreationDate` AS `US_CreationDate`,`users`.`US_NewsLetter` AS `US_NewsLetter`,`userroles`.`UR_RoleDescr` AS `UR_RoleDescr` from (`users` join `userroles` on(((`users`.`US_idURole` = `userroles`.`UR_ID`) and (`userroles`.`UR_ActiveYN` = 1) and (`users`.`US_ActiveYN` = 1)))) ;
 
+-- --------------------------------------------------------
+
 --
--- Index pour les tables déchargées
+-- Structure de la vue `v_users_clients`
+--
+DROP TABLE IF EXISTS `v_users_clients`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users_clients`  AS  (select `artistes`.`AR_Idartiste` AS `AR_Idartiste`,`artistes`.`AR_ID_InUsersTable` AS `AR_ID_InUsersTable`,`artistes`.`AR_Etiquette_Artiste` AS `AR_Etiquette_Artiste`,`artistes`.`AR_Etiquette_Artiste_Inversee` AS `AR_Etiquette_Artiste_Inversee`,`artistes`.`AR_Emploi_Occupe` AS `AR_Emploi_Occupe`,`artistes`.`AR_Civilite` AS `AR_Civilite`,`artistes`.`AR_Nom` AS `AR_Nom`,`artistes`.`AR_Prenom` AS `AR_Prenom`,`artistes`.`AR_Pseudo` AS `AR_Pseudo`,`artistes`.`AR_Password` AS `AR_Password`,`artistes`.`AR_Numero` AS `AR_Numero`,`artistes`.`AR_Batiment` AS `AR_Batiment`,`artistes`.`AR_Voie` AS `AR_Voie`,`artistes`.`AR_Adresse_Ligne_1` AS `AR_Adresse_Ligne_1`,`artistes`.`AR_Adresse_Ligne_2` AS `AR_Adresse_Ligne_2`,`artistes`.`AR_Code_Postal` AS `AR_Code_Postal`,`artistes`.`AR_Ville` AS `AR_Ville`,`artistes`.`AR_Telephone_1` AS `AR_Telephone_1`,`artistes`.`AR_Telephone_2` AS `AR_Telephone_2`,`artistes`.`AR_Adresse_Mail` AS `AR_Adresse_Mail`,`artistes`.`AR_N_De_Securite_Sociale` AS `AR_N_De_Securite_Sociale`,`artistes`.`AR_N_Du_Guso` AS `AR_N_Du_Guso`,`artistes`.`AR_Numero_Conges_Spectacle` AS `AR_Numero_Conges_Spectacle`,`artistes`.`AR_Date_De_Naissance` AS `AR_Date_De_Naissance`,`artistes`.`AR_Anniversaire` AS `AR_Anniversaire`,`artistes`.`AR_Lieu_De_Naissance` AS `AR_Lieu_De_Naissance`,`artistes`.`AR_Nationalite` AS `AR_Nationalite`,`artistes`.`AR_Etiquette_Dpae` AS `AR_Etiquette_Dpae`,`artistes`.`AR_NewsLetterYN` AS `AR_NewsLetterYN`,`artistes`.`AR_Etiquette_Feuille_De_Mandat` AS `AR_Etiquette_Feuille_De_Mandat`,`artistes`.`AR_Etiquette_Feuille_De_Presence` AS `AR_Etiquette_Feuille_De_Presence`,`artistes`.`AR_Createur` AS `AR_Createur`,`artistes`.`AR_Date_De_Creation` AS `AR_Date_De_Creation`,`artistes`.`AR_Modificateur` AS `AR_Modificateur`,`artistes`.`AR_Date_De_Modification` AS `AR_Date_De_Modification`,`users`.`US_id` AS `US_id`,`users`.`US_Password` AS `US_Password`,`users`.`US_FirstName` AS `US_FirstName`,`users`.`US_LastName` AS `US_LastName`,`users`.`US_Pseudo` AS `US_Pseudo`,`users`.`US_email` AS `US_email`,`users`.`US_tel` AS `US_tel`,`users`.`US_idURole` AS `US_idURole`,`users`.`US_ActiveYN` AS `US_ActiveYN`,`users`.`US_CreationDate` AS `US_CreationDate`,`users`.`US_NewsLetter` AS `US_NewsLetter` from (`artistes` join `users`) where (`artistes`.`AR_ID_InUsersTable` = `users`.`US_id`)) ;
+
+--
+-- Index pour les tables exportées
 --
 
 --
 -- Index pour la table `actu`
 --
 ALTER TABLE `actu`
-  ADD PRIMARY KEY (`AC_Id`),
-  ADD UNIQUE KEY `AC_Num` (`AC_Num`);
+  ADD PRIMARY KEY (`AC_Id`);
 
 --
 -- Index pour la table `agenda`
@@ -2610,14 +2812,14 @@ ALTER TABLE `users`
   ADD KEY `US_idURole` (`US_idURole`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
 -- AUTO_INCREMENT pour la table `actu`
 --
 ALTER TABLE `actu`
-  MODIFY `AC_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `AC_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `agenda`
 --
@@ -2642,7 +2844,7 @@ ALTER TABLE `bulletins_de_salaire`
 -- AUTO_INCREMENT pour la table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `CL_Idclient` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `CL_Idclient` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `contacts_utiles`
 --
@@ -2677,7 +2879,7 @@ ALTER TABLE `demande_devis`
 -- AUTO_INCREMENT pour la table `devis`
 --
 ALTER TABLE `devis`
-  MODIFY `DV_Iddevis` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `DV_Iddevis` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `messagerie`
 --
@@ -2707,9 +2909,9 @@ ALTER TABLE `userroles`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `US_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `US_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
--- Contraintes pour les tables déchargées
+-- Contraintes pour les tables exportées
 --
 
 --
@@ -2717,7 +2919,223 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`US_idURole`) REFERENCES `userroles` (`UR_ID`);
-COMMIT;
+
+
+--
+-- Métadonnées
+--
+USE `phpmyadmin`;
+
+--
+-- Métadonnées pour la table actu
+--
+
+--
+-- Métadonnées pour la table agenda
+--
+
+--
+-- Métadonnées pour la table artistes
+--
+
+--
+-- Métadonnées pour la table bloc_notes
+--
+
+--
+-- Métadonnées pour la table bulletins_de_salaire
+--
+
+--
+-- Métadonnées pour la table clients
+--
+
+--
+-- Métadonnées pour la table contacts_utiles
+--
+
+--
+-- Métadonnées pour la table contact_client
+--
+
+--
+-- Métadonnées pour la table contrats
+--
+
+--
+-- Métadonnées pour la table contrats_2
+--
+
+--
+-- Métadonnées pour la table crdb
+--
+
+--
+-- Métadonnées pour la table declarations_guso
+--
+
+--
+-- Métadonnées pour la table declaration_pole_emploi
+--
+
+--
+-- Métadonnées pour la table demande_devis
+--
+
+--
+-- Métadonnées pour la table detail_devis
+--
+
+--
+-- Métadonnées pour la table detail_devis_2
+--
+
+--
+-- Métadonnées pour la table devis
+--
+
+--
+-- Métadonnées pour la table dpae_imprime
+--
+
+--
+-- Métadonnées pour la table essai
+--
+
+--
+-- Métadonnées pour la table feuilles_de_mandat
+--
+
+--
+-- Métadonnées pour la table feuilles_de_presence
+--
+
+--
+-- Métadonnées pour la table feuille_de_mandat
+--
+
+--
+-- Métadonnées pour la table guso
+--
+
+--
+-- Métadonnées pour la table infos_administratives
+--
+
+--
+-- Métadonnées pour la table lettre_accompagnement_du_contrat
+--
+
+--
+-- Métadonnées pour la table location_u
+--
+
+--
+-- Métadonnées pour la table messagerie
+--
+
+--
+-- Métadonnées pour la table messages
+--
+
+--
+-- Métadonnées pour la table mise_a_jour
+--
+
+--
+-- Métadonnées pour la table navigation_oliv
+--
+
+--
+-- Métadonnées pour la table operateur
+--
+
+--
+-- Métadonnées pour la table rappels
+--
+
+--
+-- Métadonnées pour la table ref_codes
+--
+
+--
+-- Métadonnées pour la table repertoire
+--
+
+--
+-- Métadonnées pour la table reset_password
+--
+
+--
+-- Métadonnées pour la table salaires
+--
+
+--
+-- Métadonnées pour la table simulations_guso
+--
+
+--
+-- Métadonnées pour la table simulation_guso
+--
+
+--
+-- Métadonnées pour la table suivi_client
+--
+
+--
+-- Métadonnées pour la table table_utilisateur
+--
+
+--
+-- Métadonnées pour la table userroles
+--
+
+--
+-- Métadonnées pour la table users
+--
+
+--
+-- Contenu de la table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'bigband', 'users', '{\"CREATE_TIME\":\"2017-07-04 17:23:20\",\"col_order\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"8\",\"7\",\"9\",\"10\"],\"col_visib\":[\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\",\"1\"],\"sorted_col\":\"`US_id` ASC\"}', '2017-07-07 13:06:24');
+
+--
+-- Métadonnées pour la table utilisation_du_logiciel
+--
+
+--
+-- Métadonnées pour la table verif_fiches_clients_a_suivre
+--
+
+--
+-- Métadonnées pour la table versions_obsoletes
+--
+
+--
+-- Métadonnées pour la table v_activeuserroles
+--
+
+--
+-- Métadonnées pour la table v_agd_codes_active
+--
+
+--
+-- Métadonnées pour la table v_agenda_pubpriv
+--
+
+--
+-- Métadonnées pour la table v_users_and_roles
+--
+
+--
+-- Métadonnées pour la table v_users_clients
+--
+
+--
+-- Métadonnées pour la base de données bigband
+--
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

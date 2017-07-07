@@ -76,11 +76,15 @@
 					<div class="col col-md-12" align="left">
 						<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
 					</div>
-						<?php print_r($formErrors); ?>
+					    <?php
+					    if(!empty($formErrors)){
+                			print_r($formErrors);
+                		}
+					 ?>
 				</div>
 
 			</form>				
-						<?php print_r($_POST); ?>
+						<!-- < ?php print_r($_POST); ?> -->
 		</div>
 	</div>
 </div>

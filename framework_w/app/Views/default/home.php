@@ -609,6 +609,7 @@
 																<button type="submit" id="submitDemandeDeDevis" class="btn btn-success">Envoyer</button>
 																<div id="successAjax" class="text-center" style="color:green"></div>
 																<div id="errorsAjax" class="text-center" style="color:red"></div>
+												
 															</div>
 														</div>
 													</div>

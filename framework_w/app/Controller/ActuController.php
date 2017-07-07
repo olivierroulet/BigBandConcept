@@ -25,7 +25,7 @@ class ActuController extends \W\Controller\Controller
     	//Début de l' affichage sans condition
     	$BigBandDB = new ActuModel() ;
     	$reponses =  $BigBandDB->findWhere();
-		//SELECT `AC_Id`, `AC_Date`, `AC_Com1`, `AC_Com2`, `AC_Num`, `AC_Puce`, `AC_Lieu`, `AC_Adresse`, `AC_Code_Postal`, `AC_Notes`, `AC_Visibilite` FROM `actu`
+		//SELECT `AC_Id`, `AC_Date`, `AC_DateFin`, `AC_Com1`, `AC_Com2`, `AC_Num`, `AC_Puce`, `AC_Lieu`, `AC_Adresse`, `AC_Code_Postal`, `AC_Notes`, `AC_Visibilite` FROM `actu`
 
                $data = [
                'reponses' => $reponses
@@ -84,30 +84,28 @@ class ActuController extends \W\Controller\Controller
 
             $post2 = array_map('trim', array_map('strip_tags', $_POST));
 			$additionalChars2 = "AaÁáÂâCcĆćĈĉEeÉéÊêIiÍíÎî";
-
-			// ici téléphone fixe optionnel  v::optional(v::alpha())->validate(null); pas sûr que la syntaxe soit OK
-
-     
+                 
             // if (!v::alnum()->length(2, null)->validate($post2['AC_Puce'])){
-
+//                if (!v::optional(v::Alnum()->Alnum($additionalChars2)->validate($post2['AC_Com1'])){
 
             if (!v::Date()->validate($post2['AC_Date'])){
                 $errors2[] = 'La date est invalide';    
             }
-            if (v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com1'])){
+            if (!v::optional(v::Alnum())->Alnum($additionalChars2)->validate($post2['AC_Com1'])){       
                 $errors2[] = 'Le 1er commentaire doit comporter au minimum 2 caractères'; 
             }
-            if (v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com2'])){
+            if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com2'])){
                 $errors2[] = 'Le 2nd commentaire doit comporter au minimum 2 caractères'; 
 			}
-            if (v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Num'])){
-                $errors2[] = 'Le chiffre au minimum 2 caractères'; 
-			}			
-            if (v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Puce'])){
+   //          if (v::optional(v::Alnum()->length(0, null))->validate($post2['AC_Num'])){
+/*            if (!v::optional(v::Alnum()->Alnum($additionalChars2)->validate($post2['AC_Com1'])){            
+                $errors2[] = 'Le numéro d\'évènement doit être compris entre 2 et 8 caractères'; 
+			}	*/		
+            if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Puce'])){
                 $errors2[] = 'La puce doit comporter au minimum 2 caractères';  
             }
-            if (v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Notes'])){
-                $errors2[] = 'La note doit comporter au minimum 4 caractères'; 
+            if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Notes'])){
+                $errors2[] = 'La note doit comporter au minimum 2 caractères'; 
             }
             if (!v::alnum($additionalChars2)->length(2, null)->validate($post2['AC_Adresse'])){
                 $errors2[] = 'L\' adresse doit comporter au minimum 2 caractères';  
@@ -150,7 +148,7 @@ class ActuController extends \W\Controller\Controller
        		'current_news'	=> $current_news,
             'formValid' 	=> $formValid2, 
             'formErrors'	=> $errors2,
-            'data'    => $post2,
+            'data'          => $post2,
         ];
 
 
