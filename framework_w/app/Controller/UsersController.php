@@ -97,7 +97,7 @@ class UsersController extends \W\Controller\Controller
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
             $authModel = new AuthentificationModel();
-            $id_user = $authModel->isValidLoginInfo($post['email'], $post['password']);
+            $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
             $usersModel = new UsersModel();
@@ -149,7 +149,7 @@ class UsersController extends \W\Controller\Controller
          switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->show('views_admin/infosadmin');
+            $this->show('views_admin/administrateur_accueil');
             break;
 
             case 2:
@@ -308,7 +308,7 @@ class UsersController extends \W\Controller\Controller
         }
 
         $user = new UsersModel();
-        $users = $user->findAll();
+        $users = $user->findAll('US_LastName','ASC');
 
         $params = ['users' => $users];
         $this->show('views_admin/liste_des_utilisateurs', $params);
@@ -316,33 +316,31 @@ class UsersController extends \W\Controller\Controller
 
     public function rechercherUnUtilisateur()
     {
-        $post = [];
-        $errors = [];
-        $formValid = false;
 
-        if(!empty($_POST)){
-            $post = array_map('trim', array_map('strip_tags', $_POST));
-
-            if (!v::email()->validate($post['US_email'])){
-                $errors[] = 'L\'adresse mail est invalide'; // true
-            }
-
-        }
-
-
-         $me = $this->getUser(); // utilisateur connecté
+        $me = $this->getUser(); // utilisateur connecté
          // on stocke son role
-         $roleUser=$me['US_idURole'];
+        $roleUser=$me['US_idURole'];
          // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
+        if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
-        $user = new UsersModel();
-        $users = $user->findAll();
 
-        $params = ['users' => $users];
+        if (empty($_POST['US_email'])){
+            $this->redirectToRoute('listerlesutilisateurs'); // retour a la liste des utilisateurs
+        }
+        $user = new UsersModel();
+        $users = $user->getUserByUsernameOrEmail($_POST['US_email']);
+        
+        if($users){
+            $resultat[]=$users;
+        }
+
+        $params = ['users' => $resultat,];
         $this->show('views_admin/liste_des_utilisateurs', $params);
     }
+
+
+
 }
 

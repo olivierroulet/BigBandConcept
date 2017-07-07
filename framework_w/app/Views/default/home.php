@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 <section id="home">
-	<div class="home-pattern"></div>
+	
 	<div id="main-carousel" class="carousel slide" data-ride="carousel"> 
 		<ol class="carousel-indicators">
 			<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
@@ -51,7 +51,8 @@
 				<p>Un groupe jeune, dynamique et professionnel.</p>
 			</div>
 		</div>
-		<div id="team-carousel" class="carousel slide" data-interval="false">
+		<div class="row text-center">
+			<div id="team-carousel" class="carousel slide" data-interval="false">
 					<!--<a class="member-left" href="#team-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 					<a class="member-right" href="#team-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>-->
 					<div class="carousel-inner team-members">
@@ -120,117 +121,169 @@
 					</div>
 				</div>
 			</div>
-		</section><!--/#Our-Team-->
-		<section id="services" class="parallax-section">
+		</div>
+	</section><!--/#Our-Team-->
+	<section id="services" class="parallax-section">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="title-one">Prestations</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="our-service">
+						<div class="services row">
+							<div class="col-sm-4">
+								<div class="single-service">
+									<i class="fa fa-th"></i>
+									<h2>Musique de rue</h2>
+									<p>Avec toute son énergie BigBand vous propose son nouveau spectacle de rue</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-service">
+									<i class="fa fa-html5"></i>
+									<h2>Soirée privées</h2>
+									<p>L'energie et l'authenticité de BigBand pour vos soirées privées </p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-service">
+									<i class="fa fa-users"></i>
+									<h2>Concerts</h2>
+									<p>Tout le professionnalisme et le show du BigBand</p>
+								</div>
+							</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--/#service-->
+		<section id="portfolio">
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-sm-8 col-sm-offset-2">
-						<h2 class="title-one">Prestations</h2>
+						<h2 class="title-one">Photos</h2>
 						<p></p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="our-service">
-							<div class="services row">
-								<div class="col-sm-4">
-									<div class="single-service">
-										<i class="fa fa-th"></i>
-										<h2>Musique de rue</h2>
-										<p>Avec toute son énergie BigBand vous propose son nouveau spectacle de rue</p>
-									</div>
+				<ul class="portfolio-filter text-center">
+					<li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
+					<li><a class="btn btn-default" href="#" data-filter=".html">Stade de France</a></li>
+					<li><a class="btn btn-default" href="#" data-filter=".wordpress">Francofolies 2016</a></li>
+					<li><a class="btn btn-default" href="#" data-filter=".joomla">HellFest</a></li>
+					<li><a class="btn btn-default" href="#" data-filter=".megento">Les Vieilles Charrues</a></li>
+				</ul><!--/#portfolio-filter-->
+				<div class="portfolio-items">
+					<div class="col-sm-3 col-xs-12 portfolio-item html">
+						<div class="view efffect">
+							<div class="portfolio-image">
+								<img src="assets/publique/images/portfolio/portfolio1.jpg" alt=""></div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
-								<div class="col-sm-4">
-									<div class="single-service">
-										<i class="fa fa-html5"></i>
-										<h2>Soirée privées</h2>
-										<p>L'energie et l'authenticité de BigBand pour vos soirées privées </p>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<div class="single-service">
-										<i class="fa fa-users"></i>
-										<h2>Concerts</h2>
-										<p>Tout le professionnalisme et le show du BigBand</p>
-									</div>
-								</div></div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</section><!--/#service-->
-			<section id="portfolio">
-				<div class="container">
-					<div class="row text-center">
-						<div class="col-sm-8 col-sm-offset-2">
-							<h2 class="title-one">Photos</h2>
-							<p></p>
+						<div class="col-sm-3 col-xs-12 portfolio-item jooma">
+							<div class="view efffect" >
+								<div class="portfolio-image">
+									<img src="assets/publique/images/portfolio/portfolio2.jpg" alt="">
+								</div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								</div>
+							</div>
 						</div>
-					</div>
-					<ul class="portfolio-filter text-center">
-						<li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".html">Stade de France</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".wordpress">Francofolies 2016</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".joomla">HellFest</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".megento">Les Vieilles Charrues</a></li>
-					</ul><!--/#portfolio-filter-->
-					<div class="portfolio-items">
+						<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
+							<div class="view efffect">
+								<div class="portfolio-image">
+									<img src="assets/publique/images/portfolio/portfolio3.jpg" alt="">
+								</div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-12 portfolio-item megento">
+							<div class="view efffect">
+								<div class="portfolio-image">
+									<img src="assets/publique/images/portfolio/portfolio4.jpg" alt="">
+								</div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								</div>
+							</div>
+						</div>
 						<div class="col-sm-3 col-xs-12 portfolio-item html">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/portfolio1.jpg" alt=""></div> 
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
+									<img src="assets/publique/images/portfolio/portfolio5.jpg" alt="">
+								</div> <div class="mask text-center">
+								<h3>Novel</h3>
+								<h4>Lorem ipsum dolor sit amet consectetur</h4>
+								<a href="#"><i class="fa fa-link"></i></a>
+								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
+						<div class="view efffect">
+							<div class="portfolio-image">
+								<img src="assets/publique/images/portfolio/portfolio6.jpg" alt="">
+							</div> 
+							<div class="mask text-center">
+								<h3>Novel</h3>
+								<h4>Lorem ipsum dolor sit amet consectetur</h4>
+								<a href="#"><i class="fa fa-link"></i></a>
+								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-12 portfolio-item html">
+						<div class="view efffect">
+							<div class="portfolio-image">
+								<img src="assets/publique/images/portfolio/portfolio7.jpg" alt="">
+							</div> 
+							<div class="mask text-center">
+								<h3>Novel</h3>
+								<h4>Lorem ipsum dolor sit amet consectetur</h4>
+								<a href="#"><i class="fa fa-link"></i></a>
+								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-12 portfolio-item joomla">
+						<div class="view efffect">
+							<div class="portfolio-image">
+								<img src="assets/publique/images/portfolio/portfolio8.jpg" alt=""></div> 
+								<div class="mask text-center">
+									<h3>Novel</h3>
+									<h4>Lorem ipsum dolor sit amet consectetur</h4>
+									<a href="#"><i class="fa fa-link"></i></a>
+									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item jooma">
-								<div class="view efffect" >
-									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio2.jpg" alt="">
-									</div> 
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio3.jpg" alt="">
-									</div> 
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item megento">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio4.jpg" alt="">
-									</div> 
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item html">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio5.jpg" alt="">
-									</div> <div class="mask text-center">
+						</div>
+						<div class="col-sm-3 col-xs-12 portfolio-item html">
+							<div class="view efffect">
+								<div class="portfolio-image">
+									<img src="assets/publique/images/portfolio/portfolio9.jpg" alt="">
+								</div> 
+								<div class="mask text-center">
 									<h3>Novel</h3>
 									<h4>Lorem ipsum dolor sit amet consectetur</h4>
 									<a href="#"><i class="fa fa-link"></i></a>
@@ -241,33 +294,7 @@
 						<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
 							<div class="view efffect">
 								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/portfolio6.jpg" alt="">
-								</div> 
-								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-12 portfolio-item html">
-							<div class="view efffect">
-								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/portfolio7.jpg" alt="">
-								</div> 
-								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-12 portfolio-item joomla">
-							<div class="view efffect">
-								<div class="portfolio-image">
-									<img src="assets/publique/images/portfolio/portfolio8.jpg" alt=""></div> 
+									<img src="assets/publique/images/portfolio/portfolio10.jpg" alt=""></div> 
 									<div class="mask text-center">
 										<h3>Novel</h3>
 										<h4>Lorem ipsum dolor sit amet consectetur</h4>
@@ -276,60 +303,35 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item html">
+							<div class="col-sm-3 col-xs-12 portfolio-item joomla">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio9.jpg" alt="">
-									</div> 
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="assets/publique/images/portfolio/portfolio10.jpg" alt=""></div> 
+										<img src="assets/publique/images/portfolio/portfolio16.jpg" alt=""></div> 
 										<div class="mask text-center">
 											<h3>Novel</h3>
 											<h4>Lorem ipsum dolor sit amet consectetur</h4>
 											<a href="#"><i class="fa fa-link"></i></a>
-											<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+											<a href="assets/publique/images/portfolio/big-item3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3 col-xs-12 portfolio-item joomla">
+								<div class="col-sm-3 col-xs-12 portfolio-item megento">
 									<div class="view efffect">
 										<div class="portfolio-image">
-											<img src="assets/publique/images/portfolio/portfolio16.jpg" alt=""></div> 
+											<img src="assets/publique/images/portfolio/portfolio12.jpg" alt=""></div> 
 											<div class="mask text-center">
 												<h3>Novel</h3>
 												<h4>Lorem ipsum dolor sit amet consectetur</h4>
 												<a href="#"><i class="fa fa-link"></i></a>
-												<a href="assets/publique/images/portfolio/big-item3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+												<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-3 col-xs-12 portfolio-item megento">
-										<div class="view efffect">
-											<div class="portfolio-image">
-												<img src="assets/publique/images/portfolio/portfolio12.jpg" alt=""></div> 
-												<div class="mask text-center">
-													<h3>Novel</h3>
-													<h4>Lorem ipsum dolor sit amet consectetur</h4>
-													<a href="#"><i class="fa fa-link"></i></a>
-													<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div> 
+								</div>
+							</div> 
 
-							</section> <!--/#portfolio-->
-							
+						</section> <!--/#portfolio-->
+
 							<!--<section id="blog"> 
 								<div class="container">
 									<div class="row text-center clearfix">
@@ -517,6 +519,7 @@
 											<div class="contact-details">
 												<div class="col-sm-12"> 
 													
+													
 													<div id="contact-form-section">
 														<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
 															<div class="row">
@@ -600,8 +603,11 @@
 																	</div>
 																</div><!--Fin de row -->
 															</fieldset>
+															
 															<div class="form-group">
-																<button type="submit" class="btn btn-success">Envoyer</button>
+																<button type="submit" id="submitDemandeDeDevis" class="btn btn-success">Envoyer</button>
+																<div id="errorsAjax" style="color:red"></div>
+																<div id="successAjax" style="color:green"></div>
 															</div>
 														</div>
 													</div>
@@ -626,8 +632,8 @@
 									<form method="POST" action="login">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="Email">Adresse Mail</label>
-												<input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse mail">
+												<label for="username">Nom d'utilisateur ou email</label>
+												<input type="text" class="form-control" name="username" id="username" placeholder="Votre adresse mail ou votre nom d'utilisateur">
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -648,3 +654,42 @@
 					</section><!--/#clients-->
 
 					<?php $this->stop('main_content') ?>
+
+					<?=$this->start('js'); ?>
+					<script>
+						$(document).ready(function(){
+
+
+							$('#submitDemandeDeDevis').on('click', function(e){
+								e.preventDefault();
+								//var $this = $(this); // L'objet jQuery du formulaire
+								$.ajax({
+									url: '<?=$this->url('form_employeur');?>',
+									type: 'post',
+									dataType: 'json',
+									data: $('#contact-form').serialize(),
+									/*success: function(retourJson){
+										if(retourJson.result == true){
+											$('#errorsAjax').hide();
+											$('#successAjax').html(retourJson.success);
+											$(':input','#contact-form')
+											.not(':button, :submit, :reset, :hidden')
+											.val('')
+											.removeAttr('checked')
+											.removeAttr('selected');
+										}
+										else if (retourJson.result == false){
+											$('#successAjax').hide();
+											$('#errorsAjax').html(retourJson.errors);
+										}*/
+									}
+								});
+
+
+
+							});
+
+						});
+
+					</script>
+					<?=$this->stop('js'); ?>

@@ -18,13 +18,14 @@
 					$post = $_POST;
 					$US_email = isset($post['US_email']) ? $post['US_email'] : '';
 					?>
-					<form method="post" action="recherche_utilisateur">
-						<label for="US_email">Email de l'utilisateur</label>
+					<form method="post" action="rechercher_un_utilisateur">
+						
 						<div class="form-group">
-							<label for="US_email">Adresse mail</label>
-							<input type="email" name="US_email" value="<?php echo $US_email;?>" id="US_email" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
+							<label for="US_email">Email de l'utilisateur</label>
+							<input type="text" name="US_email" value="<?php echo $US_email;?>" id="US_email" class="form-control" placeholder="Adresse mail" tabindex="4">
 						</div> 
 						<button type="submit" class="btn btn-success">Rechercher</button>
+						<a href="lister_les_utilisateurs" class="btn btn-success">Tous les utilisateurs</a>
 					</form>
 
 					<h3>Liste des utilisateurs</h3>
@@ -33,7 +34,8 @@
 
 			</div>
 			<div class="row">
-				<?php if(!empty($users)):?>
+				<?php 
+				if(!empty($users)):?>
 					<hr>
 					<?php foreach ($users as $user): 
 
