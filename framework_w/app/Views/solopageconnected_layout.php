@@ -21,19 +21,20 @@
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <body>
-	<div class="preloader">
-		<div class="preloder-wrap">
-			<div class="preloder-inner"> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div>
-			</div>
+<div class="preloader">
+	<div class="preloder-wrap">
+		<div class="preloder-inner"> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div>
 		</div>
-	</div><!--/.preloader-->
+	</div>
+</div>
+<!-- /.preloader -->
 	<header id="navigation"> 
 		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
 			<div class="container"> 

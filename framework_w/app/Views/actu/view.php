@@ -24,10 +24,9 @@
 	  <table id="ActuGrid" class="table table-condensed table-hover">
 	  	<thead class="table-bordered headedW" style="font-family:Cuprum; font-weight:bold;">
 	  		<tr><td> 
-	  		<button type="submit" id="ActuINS" name="ActuINS" value="ActuINS" class="btn btn-sm btn-info" title="Ajouter une nouvelle actualité"  style="width:100px;"> 
-
+	  		<button type="submit" id="ActuINS" name="ActuINS" value="ActuINS" class="btn btn-sm btn-info" title="Ajouter un nouvel évènement"> 
 				<!-- <a href="< ?=$this->url('Actu_Add', ['AC_Id' => $reponse['AC_Id']]);?>">Ajouter</a> -->
-				<a href="<?=$this->url('Actu_Add');?>">Ajouter</a>				
+				<a href="<?=$this->url('Actu_Add');?>"><i class="fa fa-window-restore" aria-hidden="true"></i>Ajouter</a>				
 
 	  		<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
 
@@ -40,7 +39,7 @@
 	  	<td>Visibilité</td>                
 	  	<td>Lieu</td>
 	  	<td>Date de l' évènement</td>
-	  	<td>Commentaires (1 amp; 2)</td>
+	  	<td>Commentaires (1 &amp; 2)</td>
 	  	<td>Puce</td>
 	  	<td>Adresse</td>
 	  	<td>Code Postal</td>
@@ -57,9 +56,9 @@
 	        $Evt = date ('d/m/Y', strtotime($reponse['AC_Date'])); // formattage de la date en français
 	        ?>
 		        <tr class="normal">
-		        	<td align="center"> 
-						<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Modifier</a>
-						<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Supprimer</a>
+		        	<td> 
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Suppr° <i class="fa fa-times" aria-hidden="true"></i></a>
 	
 	        		
 		        	</td>

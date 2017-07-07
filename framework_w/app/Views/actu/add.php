@@ -1,6 +1,10 @@
-<?php $this->layout('public_layout', ['title' => 'Actualités-évènements']) ?>
+<?php $this->layout('solopageconnected_layout', ['title' => 'Actualités-évènements']) ?>
 
 <?php $this->start('main_content') ?>
+
+<section class="parallax-section">
+	<div class="container">
+		<div class="clients-wrapper">
 
 
 <article id="actuAdd">
@@ -30,39 +34,39 @@
 					<!-- 					<div class="padd20"><br><i class="glyphicon glyphicon-triangle-left"></i></div> -->
 				<form class="form form-horizontal" method="post">
 					<div class="col col-md-12">
-						<label for "AC_Date"><i class="fa fa-user fa" aria-hidden="true"></i>Date de l' évènement</label>
-						<input type="text" name="AC_Date" id="AC_Date"/>
-						<label for "AC_Com1"><i class="fa fa-user fa" aria-hidden="true"></i>Commentaire sommaire (50 caractères max)</label>
+						<label for "AC_Date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de l' évènement</label>
+						<input type="date" name="AC_Date" id="AC_Date"/>
+						<label for "AC_Com1"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Commentaire sommaire (50 caractères max)</label>
 						<input type="text" name="AC_Com1" id="AC_Com1"/>
 					</div>
 					<div class="col col-md-12">	
-						<label for "AC_Com2"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Commentaire détaillé (500 caractères max)</label>
+						<label for "AC_Com2"><i class="fa fa-book" aria-hidden="true"></i> Commentaire détaillé (500 caractères max)</label>
 						<input type="text" name="AC_Com2" id="AC_Com2"/>
 					</div>
 						<div class="col col-md-12">
-							<label for "AC_Num"><i class="fa fa-lock fa-lg" aria-hidden="true"></i>Référence unique de l' évènement</label>
+							<label for "AC_Num"><i class="fa fa-folder-o" aria-hidden="true"></i> Référence unique de l' évènement</label>
 							<input type="text" name="AC_Num" id="AC_Num"/>
-							<label for "AC_Puce"><i class="fa fa-unlock fa-lg" aria-hidden="true"></i> Confirmer le mot de passe</label>
+							<label for "AC_Puce"><i class="fa fa-cubes" aria-hidden="true"></i> Puce (demain image)</label>
 							<input type="text" name="AC_Puce" id="AC_Puce"/>
 
 						<div class="col col-md-12">	
-							<label for "AC_Notes"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Note (non publiée, même si public)</label>
+							<label for "AC_Notes"><i class="fa fa-envelope-s" aria-hidden="true"></i> Note (non publiée, même si public)</label>
 							<input type="text" name="AC_Notes" id="AC_Notes"/>
 						</div>
 						<div class="col col-md-12">	
-							<label for "AC_Adresse"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Adresse détaillée du lieu de l' évènement</label>
+							<label for "AC_Adresse"><i class="fa fa-envelope-o" aria-hidden="true"></i> Adresse détaillée du lieu de l' évènement</label>
 							<input type="text" name="AC_Adresse" id="AC_Adresse"/>
 						</div>
 						<div class="col col-md-12">	
-							<label for "AC_Code_Postal"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Code postal</label>
+							<label for "AC_Code_Postal"><i class="fa fa-address-card" aria-hidden="true"></i> Code postal</label>
 							<input type="text" name="AC_Code_Postal" id="AC_Code_Postal"/>
 						</div>
 						<div class="col col-md-12">	
-							<label for "AC_Lieu"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Lieu générique (ex Stade de France ;-)</label>
+							<label for "AC_Lieu"><i class="fa fa-address-card" aria-hidden="true"></i> Lieu générique (ex Stade de France ;-)</label>
 							<input type="text" name="AC_Lieu" id="AC_Lieu"/>
 						</div>																					
 
-						<label for "AC_Visibilite"><i class="fa fa-users fa-lg" aria-hidden="true"></i>Visibilité</label>
+						<label for "AC_Visibilite"><i class="fa fa-eye" aria-hidden="true"></i> Visibilité</label>
 						<select name="AC_Visibilite">
 							<option value="Public">Public</option>
 							<option value="Privé">Privé</option>
@@ -86,5 +90,7 @@
 </div>		<!-- <div class="main-login main-center"> -->
 
 </article>
-
+</div>
+</div>
+</section>
 <?php $this->stop('main_content') ?>
