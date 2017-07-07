@@ -668,7 +668,7 @@
 									type: 'post',
 									dataType: 'json',
 									data: $('#contact-form').serialize(),
-									success: function(retourJson){
+									/*success: function(retourJson){
 										if(retourJson.result == true){
 											$('#errorsAjax').hide();
 											$('#successAjax').html(retourJson.success);
@@ -681,7 +681,7 @@
 										else if (retourJson.result == false){
 											$('#successAjax').hide();
 											$('#errorsAjax').html(retourJson.errors);
-										}
+										}*/
 									}
 								});
 

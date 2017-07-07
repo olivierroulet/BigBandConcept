@@ -16,45 +16,22 @@ class ClientsModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 	}
 
-// liste des méthodes existantes
-// getUserByUsernameOrEmail($usernameOrEmail)
-// emailExists($email)	
-// usernameExists($username)
-// insérer 2 méthodes : insert & update la table artistes
-
-// Dans Model:
-// function insert(array $data, $stripTags = true)
-// 	public function update(array $data, $id, $stripTags = true)
-
-
-
-
-
-
-//	ci-dessous juste pour l'exemple
-	/**
-	 * Teste si un pseudo est présent en base de données
-	 * @param string $username Le pseudo à tester
-	 * @return boolean true si présent en base de données, false sinon
+/**
+	 * Récupère une ligne de la table en fonction d'un identifiant
+	 * @param  integer Identifiant
+	 * @return mixed Les données sous forme de tableau associatif
 	 */
-/*	public function usernameExists($username)
+	public function findClientByIdUser($idUser)
 	{
+		if (!is_numeric($idUser)){
+			return false;
+		}
 
-	    $app = getApp();
+		$sql = 'SELECT * FROM ' . $this->table . ' WHERE CL_ID_InUsersTable = :idUser LIMIT 1';
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':idUser', $idUser);
+		$sth->execute();
 
-	    $sql = 'SELECT ' . $app->getConfig('security_username_property') . ' FROM ' . $this->table .
-	           ' WHERE ' . $app->getConfig('security_username_property') . ' = :username LIMIT 1';
-
-	    $dbh = ConnectionModel::getDbh();
-	    $sth = $dbh->prepare($sql);
-	    $sth->bindValue(':username', $username);
-	    if($sth->execute()){
-	        $foundUser = $sth->fetch();
-	        if($foundUser){
-	            return true;
-	        }
-	    }
-
-	    return false;
-	}*/
+		return $sth->fetch();
+	}
 }
