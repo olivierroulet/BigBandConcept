@@ -510,6 +510,7 @@
 													<div class="contact-heading">
 														<h2 class="title-one">Contactez-nous</h2>
 														<h4>pour toute prestation</h4>
+														
 													</div>
 												</div>
 											</div>
@@ -606,8 +607,8 @@
 															
 															<div class="form-group">
 																<button type="submit" id="submitDemandeDeDevis" class="btn btn-success">Envoyer</button>
-																<div id="errorsAjax" style="color:red"></div>
-																<div id="successAjax" style="color:green"></div>
+																<div id="successAjax" class="text-center" style="color:green"></div>
+																<div id="errorsAjax" class="text-center" style="color:red"></div>
 															</div>
 														</div>
 													</div>
@@ -668,9 +669,10 @@
 									type: 'post',
 									dataType: 'json',
 									data: $('#contact-form').serialize(),
-									/*success: function(retourJson){
+									success: function(retourJson){
 										if(retourJson.result == true){
 											$('#errorsAjax').hide();
+											$('#successAjax').show();
 											$('#successAjax').html(retourJson.success);
 											$(':input','#contact-form')
 											.not(':button, :submit, :reset, :hidden')
@@ -680,8 +682,9 @@
 										}
 										else if (retourJson.result == false){
 											$('#successAjax').hide();
+											$('#errorsAjax').show();
 											$('#errorsAjax').html(retourJson.errors);
-										}*/
+										}
 									}
 								});
 
