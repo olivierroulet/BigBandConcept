@@ -49,23 +49,23 @@
 
 						</div><?php	}?>
 						<div id="contact-form-section">
-						<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
-							<div class="row">
-								<div class="col-lg-4">
-									<div class="form-group">
-										<label for="CL_Prenom">Prénom</label>
-										<input type="text" name="CL_Prenom" value="<?php echo $CL_Prenom;?>" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+							<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label for="CL_Prenom">Prénom</label>
+											<input type="text" name="CL_Prenom" value="<?php echo $CL_Prenom;?>" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+										</div>
 									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-group">
-										<label for="CL_Nom">Nom</label>
-										<input type="text" name="CL_Nom" value="<?php echo $CL_Nom;?>" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label for="CL_Nom">Nom</label>
+											<input type="text" name="CL_Nom" value="<?php echo $CL_Nom;?>" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+										</div>
 									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-group">
-										<label for="CL_Telephone">Telephone</label>
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label for="CL_Telephone">Telephone</label>
 										<input type="text" name="CL_Telephone" value="<?php echo $CL_Telephone;?>" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
 									</div>
 								</div>

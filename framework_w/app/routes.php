@@ -40,13 +40,8 @@ $w_routes = array(
 	// REDIRECTION UTILISATEUR AUTHENTIFIE EN FONCTION DE SON ROLE
 	['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],
 
-	// ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
-	// ['GET|POST', '/actualites/update/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],		
-	// ['GET|POST', '/actualites/add', 'Actu#actuIns', 'Actu_Insert'],
-
-		// INTERFACE ADMINISTRATEUR - ACCUEIL	
-	
-	['GET|POST', '/administrateur_accueil', 'Users#redirectRole', 'administrateuraccueil'],
+	// INTERFACE ADMINISTRATEUR - ACCUEIL	
+	['GET|POST', '/administrateur_accueil', 'Admin#compteRendu', 'administrateuraccueil'],
 		
 		// INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
 	// ['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
