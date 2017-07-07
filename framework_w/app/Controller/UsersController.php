@@ -21,7 +21,7 @@ class UsersController extends \W\Controller\Controller
         $post = [];
         $errors = [];
         $formValid = false;
-        
+
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -56,15 +56,15 @@ class UsersController extends \W\Controller\Controller
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
-                        'US_Pseudo'   => $post['username'],
-                        'US_Password'   => $passwordinsert,
+                            'US_Pseudo'   => $post['username'],
+                            'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
                         if(!empty($update)){
                             $formValid = true; 
                         }
                     } else{
-                    // l'utilisateur n'a déja saisi un mot de passe
+                        // l'utilisateur n'a déja saisi un mot de passe
                         $message = 'Vous êtes déjà inscrit !<br>Si vous ne vous souvenez pas de votre mot de passe, <br>cliquez sur mot de passe oublié'; 
                         $formValid = false; 
                     }
@@ -78,10 +78,10 @@ class UsersController extends \W\Controller\Controller
             }
 
             $params = [
-            // Dans la vue, les clés deviennent des variables
-            'formValid'     => $formValid, 
-            'formErrors'    => $errors,
-            'message'    => $message,
+                // Dans la vue, les clés deviennent des variables
+                'formValid'     => $formValid, 
+                'formErrors'    => $errors,
+                'message'    => $message,
             ];
         }
         $this->show('login/first_login',$params);
@@ -100,10 +100,10 @@ class UsersController extends \W\Controller\Controller
             $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
-            $usersModel = new UsersModel();
+                $usersModel = new UsersModel();
 
                 // $me = $usersModel->getUserByUsernameOrEmail($post['ident']);
-            $me = $usersModel->find($id_user); 
+                $me = $usersModel->find($id_user); 
 
                 // $me contient désormais toutes les infos de l'utilisateur qui veut se connecter
 
@@ -117,8 +117,8 @@ class UsersController extends \W\Controller\Controller
             }
 
             else {
-                ?>
-                <script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
+?>
+<script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
 
 
                 /*$this->('Le couple identifiant / mot de passe est invalide', 'danger');*/
@@ -137,44 +137,44 @@ class UsersController extends \W\Controller\Controller
     public function redirectRole()
     {
         $me = $this->getUser(); // utilisateur connecté
-        
+
         /* On récupere le role 
          1: Admin, 
          2: Employeur, 
          3: Artiste, 
          4: Fan
          */
-         $roleUser=$me['US_idURole'];
+        $roleUser=$me['US_idURole'];
 
-         switch ($roleUser) {
+        switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->show('views_admin/administrateur_accueil');
-            break;
+                $this->show('views_admin/administrateur_accueil');
+                break;
 
             case 2:
                 // Employeur
-            $this->show('views_employeur/infosemployeur');
-            break;
+                $this->show('views_employeur/infosemployeur');
+                break;
 
             case 3:
                 // Artiste
-            $this->show('views_artiste/infosartiste');
-            break;
+                $this->show('views_artiste/infosartiste');
+                break;
 
             case 4:
                 // Fan
-            $this->show('views_fan/infosfan'); 
-            break;
+                $this->show('views_fan/infosfan'); 
+                break;
 
             default:
                 $this->redirectToRoute('default_home'); // retour a l'accueil du site
                 break;
-            }
+        }
 
 
         // Limite l'accès à la page à un utilisateur connecté
-            if(empty($me)){
+        if(empty($me)){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
@@ -198,11 +198,11 @@ class UsersController extends \W\Controller\Controller
     public function gestionDesUtilisateurs()
     {
 
-         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
-         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
+        $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
         $this->show('views_admin/gestion_des_utilisateurs');
@@ -211,18 +211,18 @@ class UsersController extends \W\Controller\Controller
     public function ajouterUnUtilisateur()
     {
 
-         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
-         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
+        $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
-        
+
         $post = [];
         $errors = [];
         $formValid = false;
-        
+
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -236,7 +236,7 @@ class UsersController extends \W\Controller\Controller
             if (!v::email()->validate($post['US_email'])){
                 $errors[] = 'L\'adresse mail est invalide'; // true
             }
-            
+
             $authRole=[1, 2, 3, 4];
             if(!in_array($post['US_idURole'], $authRole)){
                 $errors[] = 'Indiquez le rôle de l\'utilisateur à ajouter'; // true
@@ -247,12 +247,12 @@ class UsersController extends \W\Controller\Controller
                 $authModel = new AuthentificationModel();
 
                 $dataUser = [
-                'US_FirstName' => $post['US_FirstName'],
-                'US_LastName' => $post['US_LastName'],
-                'US_email'   => $post['US_email'],
-                'US_idURole'   => $post['US_idURole'],
+                    'US_FirstName' => $post['US_FirstName'],
+                    'US_LastName' => $post['US_LastName'],
+                    'US_email'   => $post['US_email'],
+                    'US_idURole'   => $post['US_idURole'],
                 ];
-                    // on verifie que l'utilisateur n'ai pas déjà un compte
+                // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new UsersModel();
                 $verif = $user -> getUserByUsernameOrEmail($post['US_email']);
                 if($verif){
@@ -261,7 +261,7 @@ class UsersController extends \W\Controller\Controller
                     $errors[] = 'Cet utilisateur a déjà été ajouté !'; 
                 } 
                 else {
-                // L'utilisateur n'a pas de compte utilisateur, on lui en crée un 
+                    // L'utilisateur n'a pas de compte utilisateur, on lui en crée un 
                     $insert = $user->insert($dataUser); 
                 }
 
@@ -274,8 +274,8 @@ class UsersController extends \W\Controller\Controller
 
         $params = [
             // Dans la vue, les clés deviennent des variables
-        'formValid'     => $formValid, 
-        'formErrors'    => $errors,
+            'formValid'     => $formValid, 
+            'formErrors'    => $errors,
         ];
 
         $this->show('views_admin/ajouter_un_utilisateur', $params);
@@ -284,26 +284,66 @@ class UsersController extends \W\Controller\Controller
     public function updaterUnUtilisateur()
     {
 
-         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
-         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
+        $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
+        if(isset($_GET['id']) AND  !empty($_GET['id'])){
+
+            $get_id = htmlspecialchars($_GET['id']);
+            $update = new UsersModel();
+            $params = $update->find($get_id);
+
+            $data = ['toto'=>$params];
+
+            $this->show('views_admin/updater_un_utilisateur', $data);
+
+        }
+        $post = [];
+        $errors = [];
+
+        if(!empty($_POST)){
+            $post = array_map('trim', array_map('strip_tags', $_POST));  
+
+            if (!v::stringType()->length(2, null)->validate($post['US_FirstName'])){
+                $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
+            }
+            if (!v::stringType()->length(2, null)->validate($post['US_LastName'])){
+                $errors[] = 'Le nom doit faire au minimum 2 caractères'; // true
+            }
+            $authRole=[1, 2, 3, 4];
+            if(!in_array($post['US_idURole'], $authRole)){
+                $errors[] = 'Indiquez le rôle de l\'utilisateur à ajouter'; // true
+            }
+            if(count($errors) === 0){
+                $update = new Model();
+                $updateUser = $update->update($post['US_idRole']);
+                if ($updateUser){
 
 
-        $this->show('views_admin/liste_des_utilisateurs');
+
+
+                    $this->show('views_admin/liste_des_utilisateur');
+
+
+                }
+
+            }
+
+
+        }
     }
-
     public function listerLesUtilisateurs()
     {
 
-         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
-         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
-         if(empty($me) || $roleUser !=1){
+        $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
@@ -318,9 +358,9 @@ class UsersController extends \W\Controller\Controller
     {
 
         $me = $this->getUser(); // utilisateur connecté
-         // on stocke son role
+        // on stocke son role
         $roleUser=$me['US_idURole'];
-         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
         if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
@@ -331,7 +371,7 @@ class UsersController extends \W\Controller\Controller
         }
         $user = new UsersModel();
         $users = $user->getUserByUsernameOrEmail($_POST['US_email']);
-        
+
         if($users){
             $resultat[]=$users;
         }
