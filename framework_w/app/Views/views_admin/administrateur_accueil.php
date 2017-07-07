@@ -37,7 +37,7 @@
 							
 						</div>
 						<div class="interface-employeurs">OUTILS DE FONCTIONNEMENT
-							<a href="gestion_des_utilisateurs" class="btn btn-block btn-primary">Gestion des utilisateurs</a>
+							<a href="gestion_des_utilisateurs" class="btn btn-block btn-primary">Gestion des utilisateurs<span class="pull-right"><?=$nbUtilisateurs;?></span></a>
 							<a href="" class="btn btn-block btn-primary">Simulation de salaire GUSO</a>
 							<a href="" class="btn btn-block btn-primary">Gestion des artistes</a>
 						</div>

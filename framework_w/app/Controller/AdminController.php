@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use Model\ClientsModel as Employeurs;
 use Model\DevisModel as Devis;
+use Model\UsersModel as Users;
 //use \W\Model\UsersModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
@@ -52,11 +53,17 @@ class AdminController extends \W\Controller\Controller
         $devisEnAttente=$devis->findAllWithStatut('en attente');
         $nbDevisEnAttente=count($devisEnAttente);
 
+        //Nb d'utilisateurs
+        $user = new Users();
+        $utilisateurs=$user->findAll();
+        $nbUtilisateurs=count($utilisateurs);
+
 
         $params = [
-        'nbEmployeurs'=> $nbEmployeurs,
-        'nbDevisAFaire'=> $nbDevisAFaire,
-        'nbDevisEnAttente'=> $nbDevisEnAttente,
+        'nbEmployeurs'      =>      $nbEmployeurs,
+        'nbDevisAFaire'     =>      $nbDevisAFaire,
+        'nbDevisEnAttente'  =>      $nbDevisEnAttente,
+        'nbUtilisateurs'    =>      $nbUtilisateurs,
         ];
 
         
