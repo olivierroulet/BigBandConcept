@@ -4,21 +4,40 @@ namespace Controller;
 
 use \W\Controller\Controller;
 // use \W\Model\UsersModel;
-use Model\DevisModel;
-use Model\ClientsModel;
-use Model\UsersModel;
+use Model\DevisModel as Devis;
+use Model\ClientsModel as Clients;
+use Model\UsersModel as Users;
 use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
 // Cf http://respect.github.io/Validation/docs/date.html
 
 class ClientsController extends \W\Controller\Controller
 {
+    public function verifAdmin()
+    {
+            $me = $this->getUser(); // utilisateur connecté
+
+        // Limite l'accès à la page à un utilisateur connecté
+
+        ///////// VERIFICATION DE LA CONNEXION
+            if(empty($me)){
+            $this->redirectToRoute('default_home');// retour a l'accueil du site
+        } 
+        //////// AUTORISE QUE POUR ADMINISTRATEUR
+        $roleUser=$me['US_idURole'];
+        $authLoggedUser=$me['US_FirstName'];
+        if ($roleUser !=1) {
+            $this->redirectToRoute('redirectrole'); // erreur de role on redirige vers la page autorisée
+        }
+        //////// FIN DES VERIFICATION D'USAGE
+    }
+
     public function addEmployeur()
     {
             // déplacé en début de function
         $post = [];
         $errors = [];
-       
+
         
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
@@ -78,14 +97,14 @@ class ClientsController extends \W\Controller\Controller
                 'US_idURole'    => 2,
                 ];
                     // on verifie que l'utilisateur n'ai pas déjà un compte
-                $user = new UsersModel();
+                $user = new Users();
                 $verif = $user -> getUserByUsernameOrEmail($post['CL_Email1']);
                 if($verif){
                     // L'utilisateur à un id
                     $lastid=$verif['US_id'];
-                $client = new ClientsModel();
-                $recherche = $client->findClientByIdUser($lastid);
-                $lastidemployeur = $recherche['CL_Idclient'];
+                    $client = new Clients();
+                    $recherche = $client->findClientByIdUser($lastid);
+                    $lastidemployeur = $recherche['CL_Idclient'];
                 } 
                 else {
                 // L'utilisateur n'a pas de compte utilisateur, on lui en crée un 
@@ -99,7 +118,7 @@ class ClientsController extends \W\Controller\Controller
                 'CL_Statut_Juridique'   => $post['CL_Statut_Juridique'],
                 'CL_Titulaire_Licence_Entrepreneur_De_Spectacles'   => $post['CL_Titulaire_Licence_Entrepreneur_De_Spectacles'],
                 ];
-                $employeur = new ClientsModel();
+                $employeur = new Clients();
                 $insert = $employeur->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
                 // On recupere l'id employeur créé
                 $lastidemployeur = $insert['CL_Idclient'];
@@ -114,7 +133,7 @@ class ClientsController extends \W\Controller\Controller
             'DV_Lieudelaprestation'   => $post['DV_Ville'],
             'DV_Statut_Du_Devis'    => 'a faire',
             ];
-            $devis = new DevisModel();
+            $devis = new Devis();
                 $insert = $devis->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
                 if($insert){
                     $json = [
@@ -141,5 +160,22 @@ class ClientsController extends \W\Controller\Controller
 
         }
     }
+    public function listerTousLesEmployeurs()
+    {
+        $this->verifAdmin();
+
+        $employeurs = new Clients();
+        $employeur = $employeurs->findAllEmployeurs('','CL_Date_De_Creation','DESC',1);
+
+        $params = [
+        'employeur'    =>      $employeur,
+        ];
+
+        
+
+
+        $this->show('views_admin/employeur', $params); // affichage du template employeur
+    }
+
 
 }

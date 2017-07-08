@@ -59,8 +59,8 @@
 						<div class="row item active">
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
-									<img src="assets/publique/images/our-team/member1.jpg" alt="team member" />
-									<h4>Peter Ancelin</h4>
+									<img src="assets/publique/images/our-team/Rowlf_yamaha.jpg" alt="team member" />
+									<h4>Peter ANCELIN</h4>
 									<h5>Keyboards, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -74,8 +74,8 @@
 							</div>
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
-									<img src="assets/publique/images/our-team/member2.jpg" alt="team member" />
-									<h4>Jeffrey Mollet</h4>
+									<img src="assets/publique/images/our-team/29460f41782e75401e0848a8a9d13bdc--animal-muppet-animal-birthday.jpg" alt="team member" />
+									<h4>Geoffrey MOLLET</h4>
 									<h5>Hang Drums, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -89,8 +89,8 @@
 							</div>
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
-									<img src="assets/publique/images/our-team/member3.jpg" alt="team member" />
-									<h4>Philip Nowak</h4>
+									<img src="assets/publique/images/our-team/FloydPepper-reallypurple-withguitar.jpg" alt="team member" />
+									<h4>Philippe NOWAK</h4>
 									<h5>Guitars, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -104,8 +104,8 @@
 							</div>
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
-									<img src="assets/publique/images/our-team/member4.jpg" alt="team member" />
-									<h4>Oliver "magic" ROULET</h4>
+									<img src="assets/publique/images/our-team/030-accordion-player.jpg" alt="team member" />
+									<h4>Oliver "Magic" ROULET</h4>
 									<h5>Accordéons, Vocals</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
@@ -137,14 +137,14 @@
 						<div class="services row">
 							<div class="col-sm-4">
 								<div class="single-service">
-									<i class="fa fa-th"></i>
+									<i class="fa fa-bullhorn"></i>
 									<h2>Musique de rue</h2>
 									<p>Avec toute son énergie BigBand vous propose son nouveau spectacle de rue</p>
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="single-service">
-									<i class="fa fa-html5"></i>
+									<i class="fa fa-home"></i>
 									<h2>Soirée privées</h2>
 									<p>L'energie et l'authenticité de BigBand pour vos soirées privées </p>
 								</div>
@@ -153,7 +153,7 @@
 								<div class="single-service">
 									<i class="fa fa-users"></i>
 									<h2>Concerts</h2>
-									<p>Tout le professionnalisme et le show du BigBand</p>
+									<p>Tout le professionnalisme et le show du BigBand en live</p>
 								</div>
 							</div></div>
 						</div>

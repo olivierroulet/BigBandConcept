@@ -38,6 +38,10 @@ $w_routes = array(
     // REDIRECTION UTILISATEUR AUTHENTIFIE EN FONCTION DE SON ROLE
     ['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],        
 
+
+	#############################
+	## SECTION ADMINISTRATEUR  ##
+	#############################
     // INTERFACE ADMINISTRATEUR - ACCUEIL    
     ['GET|POST', '/administrateur_accueil', 'Admin#compteRendu', 'administrateuraccueil'],
 
@@ -49,6 +53,12 @@ $w_routes = array(
 
     ['GET|POST', '/rechercher_un_utilisateur', 'Users#rechercherUnUtilisateur', 'rechercherunutilisateur'],
     
+ 	// INTERFACE ADMINISTRATEUR - GESTION DES Employeurs
+    ['GET|POST', '/lister_tous_les_employeurs', 'Clients#listerTousLesEmployeurs', 'listertouslesemployeurs'],
+
+    	// INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
+    ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],
+
 
     );
 

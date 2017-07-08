@@ -13,6 +13,26 @@ use Respect\Validation\Validator as v;
 class UsersController extends \W\Controller\Controller
 {
 
+   // vérifie que l'utilisateur est bien connecté
+   // et avec un rôle administrateur 
+   public function verifAdmin()
+   {
+            $me = $this->getUser(); // utilisateur connecté
+
+        // Limite l'accès à la page à un utilisateur connecté
+
+        ///////// VERIFICATION DE LA CONNEXION
+            if(empty($me)){
+            $this->redirectToRoute('default_home');// retour a l'accueil du site
+        } 
+        //////// AUTORISE QUE POUR ADMINISTRATEUR
+        $roleUser=$me['US_idURole'];
+        $authLoggedUser=$me['US_FirstName'];
+        if ($roleUser !=1) {
+            $this->redirectToRoute('redirectrole'); // erreur de role on redirige vers la page autorisée
+        }
+        //////// FIN DES VERIFICATION D'USAGE
+    }
 
 
     public function firstLogin()
@@ -56,8 +76,8 @@ class UsersController extends \W\Controller\Controller
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
-                            'US_Pseudo'   => $post['username'],
-                            'US_Password'   => $passwordinsert,
+                        'US_Pseudo'   => $post['username'],
+                        'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
                         if(!empty($update)){
@@ -79,9 +99,9 @@ class UsersController extends \W\Controller\Controller
 
             $params = [
                 // Dans la vue, les clés deviennent des variables
-                'formValid'     => $formValid, 
-                'formErrors'    => $errors,
-                'message'    => $message,
+            'formValid'     => $formValid, 
+            'formErrors'    => $errors,
+            'message'    => $message,
             ];
         }
         $this->show('login/first_login',$params);
@@ -100,10 +120,10 @@ class UsersController extends \W\Controller\Controller
             $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
-                $usersModel = new UsersModel();
+            $usersModel = new UsersModel();
 
                 // $me = $usersModel->getUserByUsernameOrEmail($post['ident']);
-                $me = $usersModel->find($id_user); 
+            $me = $usersModel->find($id_user); 
 
                 // $me contient désormais toutes les infos de l'utilisateur qui veut se connecter
 
@@ -117,8 +137,8 @@ class UsersController extends \W\Controller\Controller
             }
 
             else {
-?>
-<script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
+                ?>
+                <script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
 
 
                 /*$this->('Le couple identifiant / mot de passe est invalide', 'danger');*/
@@ -144,9 +164,9 @@ class UsersController extends \W\Controller\Controller
          3: Artiste, 
          4: Fan
          */
-        $roleUser=$me['US_idURole'];
+         $roleUser=$me['US_idURole'];
 
-        switch ($roleUser) {
+         switch ($roleUser) {
             case 1:
                 // Administrateur
             $this->redirectToRoute('administrateuraccueil');
@@ -154,27 +174,27 @@ class UsersController extends \W\Controller\Controller
 
             case 2:
                 // Employeur
-                $this->show('views_employeur/infosemployeur');
-                break;
+            $this->show('views_employeur/infosemployeur');
+            break;
 
             case 3:
                 // Artiste
-                $this->show('views_artiste/infosartiste');
-                break;
+            $this->show('views_artiste/infosartiste');
+            break;
 
             case 4:
                 // Fan
-                $this->show('views_fan/infosfan'); 
-                break;
+            $this->show('views_fan/infosfan'); 
+            break;
 
             default:
                 $this->redirectToRoute('default_home'); // retour a l'accueil du site
                 break;
-        }
+            }
 
 
         // Limite l'accès à la page à un utilisateur connecté
-        if(empty($me)){
+            if(empty($me)){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
@@ -247,10 +267,10 @@ class UsersController extends \W\Controller\Controller
                 $authModel = new AuthentificationModel();
 
                 $dataUser = [
-                    'US_FirstName' => $post['US_FirstName'],
-                    'US_LastName' => $post['US_LastName'],
-                    'US_email'   => $post['US_email'],
-                    'US_idURole'   => $post['US_idURole'],
+                'US_FirstName' => $post['US_FirstName'],
+                'US_LastName' => $post['US_LastName'],
+                'US_email'   => $post['US_email'],
+                'US_idURole'   => $post['US_idURole'],
                 ];
                 // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new UsersModel();
@@ -274,8 +294,8 @@ class UsersController extends \W\Controller\Controller
 
         $params = [
             // Dans la vue, les clés deviennent des variables
-            'formValid'     => $formValid, 
-            'formErrors'    => $errors,
+        'formValid'     => $formValid, 
+        'formErrors'    => $errors,
         ];
 
         $this->show('views_admin/ajouter_un_utilisateur', $params);
