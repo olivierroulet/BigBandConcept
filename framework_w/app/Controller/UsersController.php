@@ -15,8 +15,8 @@ class UsersController extends \W\Controller\Controller
 
    // vérifie que l'utilisateur est bien connecté
    // et avec un rôle administrateur 
-   public function verifAdmin()
-   {
+ public function verifAdmin()
+ {
             $me = $this->getUser(); // utilisateur connecté
 
         // Limite l'accès à la page à un utilisateur connecté
@@ -130,23 +130,26 @@ class UsersController extends \W\Controller\Controller
                 $authModel->logUserIn($me); // Remplit la session $_SESSION['user']
 
                 if(!empty($authModel->getLoggedUser())){
+                    $json = [
+                    'result' => true,
+                    ];
                     // Ici la session est complétée avec les infos du membre (hors mdp)
-                    $this->flash('Vous êtes desormais connecté', 'success');
-                    $this->redirectToRoute('redirectrole');
+                    // $this->flash('Vous êtes desormais connecté', 'success');
+                    // $this->redirectToRoute('redirectrole');
                 }
             }
 
             else {
-                ?>
-                <script>alert('Erreur dans votre identifiant ou mot de passe !');</script><?php
-
-
-                /*$this->('Le couple identifiant / mot de passe est invalide', 'danger');*/
+                $json = [
+                'result' => false,
+                'errors' => 'Erreur dans votre identifiant ou mot de passe !',
+                ];
+                
             }
 
         }
-
-        /*$this->redirectToRoute('redirectrole');*/
+        $this->showJson($json);
+        
     }
 
     public function forgotPassword()

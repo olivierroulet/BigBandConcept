@@ -541,92 +541,90 @@
 													<div id="contact-form-section">
 														<form id="contact-form" name="contact-form" method="post" action="formulaire_employeur">
 															<div class="row">
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="CL_Prenom">Prénom</label>
-											<input type="text" name="CL_Prenom" value="<?php echo $CL_Prenom;?>" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="CL_Nom">Nom</label>
-											<input type="text" name="CL_Nom" value="<?php echo $CL_Nom;?>" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="CL_Telephone">Telephone</label>
-										<input type="text" name="CL_Telephone" value="<?php echo $CL_Telephone;?>" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
-									</div>
-								</div>
-							</div><!--Fin de row -->
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label for="CL_Email1">Adresse mail</label>
-										<input type="email" name="CL_Email1" value="<?php echo $CL_Email1;?>" id="CL_Email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
-									</div> 
-								</div>
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label for="CL_Email2">Confirmez votre adresse mail</label>
-										<input type="email" name="CL_Email2" value="<?php echo $CL_Email2;?>" id="CL_Email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
-									</div>
-								</div>
-							</div><!--Fin de row -->
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="form-group">
-										<label for="CL_Raison_Sociale">Raison sociale</label>
-										<input type="text" name="CL_Raison_Sociale" value="<?php echo $CL_Raison_Sociale;?>" id="CL_Raison_Sociale" class="form-control" placeholder="Raison sociale" tabindex="5">
-									</div>
-									<div class="form-group">
-										<label for="CL_Statut_Juridique">Statut juridique</label>
-										<select class="form-control" name="CL_Statut_Juridique" id="CL_Statut_Juridique" tabindex="6">
-											<option <?php if ($CL_Statut_Juridique==''){echo 'selected';}?> value="">Indiquez votre statut juridique</option>
-											<option value='particulier' <?php if ($CL_Statut_Juridique=='particulier'){echo 'selected';}?>>Particulier</option>
-											<option value='entreprise'  <?php if ($CL_Statut_Juridique=='entreprise'){echo 'selected';}?>>Entreprise</option>
-											<option value='administration' <?php if ($CL_Statut_Juridique=='administration'){echo 'selected';}?>>Administration</option>
-											<option value='association loi 1901' <?php if ($CL_Statut_Juridique=='association loi 1901'){echo 'selected';}?>>Association loi 1901</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="CL_Titulaire_Licence_Entrepreneur_De_Spectacles">Titulaire de la licence d'entrepreneur de spectacle
-											<input type="checkbox" <?php if ($CL_Titulaire_Licence_Entrepreneur_De_Spectacles=="on"){echo 'checked';}?> name="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" id="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" tabindex="7">
-										</label>
-									</div>
-								</div>
-							</div><!-- fin de row -->
-							<div class="row">
-								<fieldset>
-									<legend>Votre évènement</legend>
-									<div class="col-lg-4">
+																<div class="col-lg-4">
+																	<div class="form-group">
+																		<label for="CL_Prenom">Prénom</label>
+																		<input type="text" name="CL_Prenom" value="<?php echo $CL_Prenom;?>" id="CL_Prenom" class="form-control" required="required" placeholder="Prénom" tabindex="1">
+																	</div>
+																</div>
+																<div class="col-lg-4">
+																	<div class="form-group">
+																		<label for="CL_Nom">Nom</label>
+																		<input type="text" name="CL_Nom" value="<?php echo $CL_Nom;?>" id="CL_Nom" class="form-control" required="required" placeholder="Nom" tabindex="2">
+																	</div>
+																</div>
+																<div class="col-lg-4">
+																	<div class="form-group">
+																		<label for="CL_Telephone">Telephone</label>
+																		<input type="text" name="CL_Telephone" value="<?php echo $CL_Telephone;?>" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
+																	</div>
+																</div>
+															</div><!--Fin de row -->
+															<div class="row">
+																<div class="col-lg-6">
+																	<div class="form-group">
+																		<label for="CL_Email1">Adresse mail</label>
+																		<input type="email" name="CL_Email1" value="<?php echo $CL_Email1;?>" id="CL_Email1" class="form-control" required="required" placeholder="Adresse mail" tabindex="4">
+																	</div> 
+																</div>
+																<div class="col-lg-6">
+																	<div class="form-group">
+																		<label for="CL_Email2">Confirmez votre adresse mail</label>
+																		<input type="email" name="CL_Email2" value="<?php echo $CL_Email2;?>" id="CL_Email2" class="form-control" required="required" placeholder="Confirmez votre adresse mail" tabindex="4">
+																	</div>
+																</div>
+															</div><!--Fin de row -->
+															<div class="row">
+																<div class="col-lg-12">
+																	<div class="form-group">
+																		<label for="CL_Raison_Sociale">Raison sociale</label>
+																		<input type="text" name="CL_Raison_Sociale" value="<?php echo $CL_Raison_Sociale;?>" id="CL_Raison_Sociale" class="form-control" placeholder="Raison sociale" tabindex="5">
+																	</div>
+																	<div class="form-group">
+																		<label for="CL_Statut_Juridique">Statut juridique</label>
+																		<select class="form-control" name="CL_Statut_Juridique" id="CL_Statut_Juridique" tabindex="6">
+																			<option <?php if ($CL_Statut_Juridique==''){echo 'selected';}?> value="">Indiquez votre statut juridique</option>
+																			<option value='particulier' <?php if ($CL_Statut_Juridique=='particulier'){echo 'selected';}?>>Particulier</option>
+																			<option value='entreprise'  <?php if ($CL_Statut_Juridique=='entreprise'){echo 'selected';}?>>Entreprise</option>
+																			<option value='administration' <?php if ($CL_Statut_Juridique=='administration'){echo 'selected';}?>>Administration</option>
+																			<option value='association loi 1901' <?php if ($CL_Statut_Juridique=='association loi 1901'){echo 'selected';}?>>Association loi 1901</option>
+																		</select>
+																	</div>
+																	<div class="form-group">
+																		<label for="CL_Titulaire_Licence_Entrepreneur_De_Spectacles">Titulaire de la licence d'entrepreneur de spectacle
+																			<input type="checkbox" <?php if ($CL_Titulaire_Licence_Entrepreneur_De_Spectacles=="on"){echo 'checked';}?> name="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" id="CL_Titulaire_Licence_Entrepreneur_De_Spectacles" tabindex="7">
+																		</label>
+																	</div>
+																</div>
+															</div><!-- fin de row -->
+															<div class="row">
+																<fieldset>
+																	<legend>Votre évènement</legend>
+																	<div class="col-lg-4">
 
-										<div class="form-group">
-											<label for="DV_Datedelaprestation">Date de votre évènement</label>
-											<input type="text" name="DV_Datedelaprestation" value="<?php echo $DV_Datedelaprestation;?>" id="DV_Datedelaprestation" class="form-control" placeholder="01/01/2018" tabindex="8">
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="DV_Codepostal">Code postal</label>
-											<input type="text" name="DV_Codepostal" value="<?php echo $DV_Codepostal;?>" id="DV_Codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="DV_Ville">Ville</label>
-											<input type="text" name="DV_Ville" value="<?php echo $DV_Ville;?>" id="DV_Ville" class="form-control" placeholder="Ville" tabindex="10">
-										</div>
-									</div>
-								</div><!--Fin de row -->
+																		<div class="form-group">
+																			<label for="DV_Datedelaprestation">Date de votre évènement</label>
+																			<input type="text" name="DV_Datedelaprestation" value="<?php echo $DV_Datedelaprestation;?>" id="DV_Datedelaprestation" class="form-control" placeholder="01/01/2018" tabindex="8">
+																		</div>
+																	</div>
+																	<div class="col-lg-4">
+																		<div class="form-group">
+																			<label for="DV_Codepostal">Code postal</label>
+																			<input type="text" name="DV_Codepostal" value="<?php echo $DV_Codepostal;?>" id="DV_Codepostal" class="form-control"  placeholder="Code postal" tabindex="9">
+																		</div>
+																	</div>
+																	<div class="col-lg-4">
+																		<div class="form-group">
+																			<label for="DV_Ville">Ville</label>
+																			<input type="text" name="DV_Ville" value="<?php echo $DV_Ville;?>" id="DV_Ville" class="form-control" placeholder="Ville" tabindex="10">
+																		</div>
+																	</div>
+																</div><!--Fin de row -->
 															</fieldset>
-															
+															<div id="successAjaxContactForm" class="text-center" style="color:green"></div>
+															<div id="errorsAjaxContactForm" class="text-center" style="color:red"></div>
 															<div class="form-group">
 																<button type="submit" id="submitDemandeDeDevis" class="btn btn-success">Envoyer</button>
-																<div id="successAjax" class="text-center" style="color:green"></div>
-																<div id="errorsAjax" class="text-center" style="color:red"></div>
-
 															</div>
 														</div>
 													</div>
@@ -647,8 +645,10 @@
 										<p>Employeur</p>
 										<p>Artiste</p>
 										<p>Administrateur</p>
+										<div id="errorsAjaxLoginForm" class="bg-danger text-center" style="color:red"></div>
 									</div>
-									<form method="POST" action="login">
+									
+									<form id="login-form" name="login-form" method="POST" action="login">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="username">Nom d'utilisateur ou email</label>
@@ -663,7 +663,7 @@
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
 											<a href="first_login" class="btn btn-primary">Premiere connexion</a>
-											<button class="btn btn-success">Se connecter</button>
+											<button type="submit" id="submitLoginForm" class="btn btn-success">Se connecter</button>
 											<a href="forgot_password" class="btn btn-warning">Mot de passe oublié</a>
 										</div>
 									</form>
@@ -676,12 +676,11 @@
 
 					<?=$this->start('js'); ?>
 					<script>
-						$(document).ready(function(){
+						$(document).ready(function(){ // Debut du jQuery
 
-
+							// -- Traitement du formulaire de demande de devis en Ajax --
 							$('#submitDemandeDeDevis').on('click', function(e){
-								e.preventDefault();
-								//var $this = $(this); // L'objet jQuery du formulaire
+								e.preventDefault(); // On empeche l'action par default du formulaire
 								$.ajax({
 									url: '<?=$this->url('form_employeur');?>',
 									type: 'post',
@@ -689,28 +688,48 @@
 									data: $('#contact-form').serialize(),
 									success: function(retourJson){
 										if(retourJson.result == true){
-											$('#errorsAjax').hide();
-											$('#successAjax').show();
-											$('#successAjax').html(retourJson.success);
+											$('#errorsAjaxContactForm').hide();
+											$('#successAjaxContactForm').show();
+											$('#successAjaxContactForm').html(retourJson.success);
 											$(':input','#contact-form')
 											.not(':button, :submit, :reset, :hidden')
 											.val('')
 											.removeAttr('checked')
 											.removeAttr('selected');
-										}
-										else if (retourJson.result == false){
-											$('#successAjax').hide();
-											$('#errorsAjax').show();
-											$('#errorsAjax').html(retourJson.errors);
-										}
-									}
-								});
+										} // Fin du if (RetourJson==true)
+										else { 
+											// RetourJson==false
+											$('#successAjaxContactForm').hide();
+											$('#errorsAjaxContactForm').show();
+											$('#errorsAjaxContactForm').html(retourJson.errors);
+										} // Fin du else(RetourJson==false)
+									} // Fin de fonction retourJson
+								}); // Fin du traitement ajax
+							}); // Fin de fonction sur action SubmitDemandeDeDvis
 
-
-
-							});
-
-						});
+							// -- Traitement du formulaire de connexion en Ajax --
+							$('#submitLoginForm').on('click', function(e){
+								e.preventDefault(); // On empeche l'action par default du formulaire
+								$.ajax({
+									url: '<?=$this->url('login');?>',
+									type: 'post',
+									dataType: 'json',
+									data: $('#login-form').serialize(),
+									success: function(retourJson){
+										if(retourJson.result == true){
+											// RetourJson==true
+											$('#errorsAjaxLoginForm').html(''); // On vide la div erreurs ajax
+											// on envoie vers la page de redirection en fonction du role
+											location.href ='redirect_role';
+										} // Fin du if (RetourJson==true)
+										else { 
+											// RetourJson==false
+											$('#errorsAjaxLoginForm').html(retourJson.errors);
+										} // Fin du else(RetourJson==false)
+									} // Fin de fonction retourJson
+								}); // Fin du traitement ajax
+							}); // Fin de fonction sur action SubmitLoginForm
+						}); // Fin du jQuery
 
 					</script>
 					<?=$this->stop('js'); ?>
