@@ -8,6 +8,7 @@ use Model\ArtistesModel;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use Respect\Validation\Validator as v;
+
 // Cf http://respect.github.io/Validation/docs/date.html
 
 class UsersController extends \W\Controller\Controller
@@ -15,8 +16,8 @@ class UsersController extends \W\Controller\Controller
 
    // vérifie que l'utilisateur est bien connecté
    // et avec un rôle administrateur 
- public function verifAdmin()
- {
+   public function verifAdmin()
+   {
             $me = $this->getUser(); // utilisateur connecté
 
         // Limite l'accès à la page à un utilisateur connecté
@@ -37,11 +38,11 @@ class UsersController extends \W\Controller\Controller
 
     public function firstLogin()
     {
-        $params = [];
+
         $post = [];
         $errors = [];
-        $formValid = false;
-
+        $message='';
+        
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -62,17 +63,18 @@ class UsersController extends \W\Controller\Controller
 
             if(count($errors) === 0){
 
-                // on verifie que l'utilisateur ai déjà un id
+                    // on verifie que l'utilisateur ai déjà un id
                 $user = new UsersModel();
                 $verif = $user-> getUserByUsernameOrEmail($post['email']);
+
                 if($verif){
                     // L'utilisateur a bien un id on l'attribue a isUser
                     $idUser=$verif['US_id'];
                     // on verifie maintenant que l'utilisateur n'ai pas de mot de passe
-                    $verif=$user->passwordExists($post['email']);
-                    if($verif){
+                    $verif2=$user->passwordExists($post['email']);
+                    if($verif2){
 
-                        // l'utilisateur n'a pas de mot de passe donc on va mettre a jour le compte
+                                // l'utilisateur n'a pas de mot de passe donc on va mettre a jour le compte
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
@@ -80,31 +82,37 @@ class UsersController extends \W\Controller\Controller
                         'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
-                        if(!empty($update)){
-                            $formValid = true; 
-                        }
+                        $json = [
+                        'result' => true,
+                        'message' => 'Votre compte a été créé,<br><a href=""><span id="successcreateacountlogg>Connectez-vous avec vos nouveaux identifiants.</span></a>',
+                        ];
                     } else{
-                        // l'utilisateur n'a déja saisi un mot de passe
-                        $message = 'Vous êtes déjà inscrit !<br>Si vous ne vous souvenez pas de votre mot de passe, <br>cliquez sur mot de passe oublié'; 
-                        $formValid = false; 
-                    }
-                } 
-                else {
+                                // l'utilisateur a déja créé un mot de passe
+                        $json = [
+                        'result' => false,
+                        'message' => 'Vous êtes déjà inscrit ! Si vous ne vous souvenez pas de votre mot de passe, <br>Revenez à l\'ecran de connexion et cliquez sur mot de passe oublié',
+                        ];
+
+                            } // fin de verif 2
+                        } 
+                        else {
                     // l'utilisateur n'a pas d'id.
-                    $message= 'Vous n\'êtes pas autorisé à vous créer un compte, contactez l\'administrateur du site'; 
-                    $formValid = false; 
-                }                 
+                            $json = [
+                            'result' => false,
+                            'message' => 'Vous n\'êtes pas autorisé à vous créer un compte, contactez l\'administrateur du site',
+                            ];
+                    } // fin de verif          
 
-            }
+            } else {
 
-            $params = [
-                // Dans la vue, les clés deviennent des variables
-            'formValid'     => $formValid, 
-            'formErrors'    => $errors,
-            'message'    => $message,
-            ];
-        }
-        $this->show('login/first_login',$params);
+                $json = [
+                'result' => false,
+                'message' => $message,
+                'errors' => implode('<br>', $errors),
+                ];
+            }// fin de if count errors = 0
+        } // fin de if !empty post
+        $this->showJson($json);
     }
 
     public function login()
@@ -133,9 +141,6 @@ class UsersController extends \W\Controller\Controller
                     $json = [
                     'result' => true,
                     ];
-                    // Ici la session est complétée avec les infos du membre (hors mdp)
-                    // $this->flash('Vous êtes desormais connecté', 'success');
-                    // $this->redirectToRoute('redirectrole');
                 }
             }
 

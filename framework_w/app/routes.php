@@ -6,12 +6,6 @@
 // "Default#services",    //le nom du contrôleur et le nom de la méthode à appeler
 // "default_services"    //le nom de cette route-ci
 // URI           contrôleur/Méthode         Route 
-
-//le masque d'URL à associer
-// "Default#services",    //le nom du contrôleur et le nom de la méthode à appeler
-// "default_services"    //le nom de cette route-ci
-// URI           contrôleur/Méthode         Route
-
 // le # remplace le mot réservé 'Controller'
 // fin des commentaires d' entête 
 
@@ -21,14 +15,14 @@ $w_routes = array(
     ['GET|POST', '/', 'Default#home', 'default_home'],
     ['GET|POST', '/accueil', 'Default#home', 'accueil'],        
     // TRAITEMENT DU FORMULAIRE EMPLOYEUR    
-    ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],        
+    ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],  
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
     ['GET|POST', '/artiste_upd', 'Artistes#updArtiste', 'upd_artistes'],        
-    // GESTION DE LA CONNEXION, DECONNEXION, PREMIERE CONNEXION, PASSWORD OUBLIE
-    ['GET|POST', '/first_login', 'Users#firstLogin', 'firstlogin'],
+    // GESTION DE LA PREMIERE CONNEXION, CONNEXION, PASSWORD OUBLIE, DECONNEXION
+    ['GET|POST', '/firstlogin', 'Users#firstLogin', 'firstlogin'],
     ['GET|POST', '/login', 'Users#login', 'login'],
-    ['GET|POST', '/forgot_password', 'Users#forgotPassword', 'forgot_password'],
+    ['GET|POST', '/forgotpassword', 'Users#forgotPassword', 'forgotpassword'],
     ['GET|POST', '/logout', 'Users#logout', 'logout'],        
     // GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
