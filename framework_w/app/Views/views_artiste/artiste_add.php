@@ -2,11 +2,8 @@
 
 <?php $this->start('main_content') ?>
 <h2>Enregistrement d'un artiste en base de données</h2>
-<p>Bon courage !!!</p>
-<p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p>
-
-
-
+<!-- <p>Bon courage !!!</p>
+<p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p> -->
 
 <!-- ** Fin des boutons NAVIGATION ************************ -->	
 <!-- ** Début du formulaire d' ajout d' ARTISTE ' ************************ -->	

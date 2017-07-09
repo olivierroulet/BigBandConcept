@@ -5,19 +5,30 @@ namespace Controller;
 use \W\Controller\Controller;
 use Model\UsersModel;
 use Model\ArtistesModel;
+use Model\Reset_passwordModel as token;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use Respect\Validation\Validator as v;
+use PHPMailer as Mail;
+
 // Cf http://respect.github.io/Validation/docs/date.html
 
 class UsersController extends \W\Controller\Controller
 {
 
+<<<<<<< HEAD
     // vérifie que l'utilisateur est bien connecté
     // et avec un rôle administrateur 
     public function verifAdmin()
     {
         $me = $this->getUser(); // utilisateur connecté
+=======
+   // vérifie que l'utilisateur est bien connecté
+   // et avec un rôle administrateur 
+   public function verifAdmin()
+   {
+            $me = $this->getUser(); // utilisateur connecté
+>>>>>>> e087edc59f3a68c480ccade984f4e5f3e0bf2554
 
         // Limite l'accès à la page à un utilisateur connecté
 
@@ -37,11 +48,11 @@ class UsersController extends \W\Controller\Controller
 
     public function firstLogin()
     {
-        $params = [];
+
         $post = [];
         $errors = [];
-        $formValid = false;
-
+        $message='';
+        
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -62,17 +73,18 @@ class UsersController extends \W\Controller\Controller
 
             if(count($errors) === 0){
 
-                // on verifie que l'utilisateur ai déjà un id
+                    // on verifie que l'utilisateur ai déjà un id
                 $user = new UsersModel();
                 $verif = $user-> getUserByUsernameOrEmail($post['email']);
+
                 if($verif){
                     // L'utilisateur a bien un id on l'attribue a isUser
                     $idUser=$verif['US_id'];
                     // on verifie maintenant que l'utilisateur n'ai pas de mot de passe
-                    $verif=$user->passwordExists($post['email']);
-                    if($verif){
+                    $verif2=$user->passwordExists($post['email']);
+                    if($verif2){
 
-                        // l'utilisateur n'a pas de mot de passe donc on va mettre a jour le compte
+                                // l'utilisateur n'a pas de mot de passe donc on va mettre a jour le compte
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
@@ -80,23 +92,30 @@ class UsersController extends \W\Controller\Controller
                             'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
-                        if(!empty($update)){
-                            $formValid = true; 
-                        }
+                        $json = [
+                        'result' => true,
+                        'message' => 'Votre compte a été créé,<br><a href=""><span id="successcreateacountlogg>Connectez-vous avec vos nouveaux identifiants.</span></a>',
+                        ];
                     } else{
-                        // l'utilisateur n'a déja saisi un mot de passe
-                        $message = 'Vous êtes déjà inscrit !<br>Si vous ne vous souvenez pas de votre mot de passe, <br>cliquez sur mot de passe oublié'; 
-                        $formValid = false; 
-                    }
-                } 
-                else {
+                                // l'utilisateur a déja créé un mot de passe
+                        $json = [
+                        'result' => false,
+                        'message' => 'Vous êtes déjà inscrit ! Si vous ne vous souvenez pas de votre mot de passe, <br>Revenez à l\'ecran de connexion et cliquez sur mot de passe oublié',
+                        ];
+
+                            } // fin de verif 2
+                        } 
+                        else {
                     // l'utilisateur n'a pas d'id.
-                    $message= 'Vous n\'êtes pas autorisé à vous créer un compte, contactez l\'administrateur du site'; 
-                    $formValid = false; 
-                }                 
+                            $json = [
+                            'result' => false,
+                            'message' => 'Vous n\'êtes pas autorisé à vous créer un compte, contactez l\'administrateur du site',
+                            ];
+                    } // fin de verif          
 
-            }
+                } else {
 
+<<<<<<< HEAD
             $params = [
                 // Dans la vue, les clés deviennent des variables
                 'formValid'     => $formValid, 
@@ -105,6 +124,16 @@ class UsersController extends \W\Controller\Controller
             ];
         }
         $this->show('login/first_login',$params);
+=======
+                    $json = [
+                    'result' => false,
+                    'message' => $message,
+                    'errors' => implode('<br>', $errors),
+                    ];
+            }// fin de if count errors = 0
+        } // fin de if !empty post
+        $this->showJson($json);
+>>>>>>> e087edc59f3a68c480ccade984f4e5f3e0bf2554
     }
 
     public function login()
@@ -133,9 +162,6 @@ class UsersController extends \W\Controller\Controller
                     $json = [
                         'result' => true,
                     ];
-                    // Ici la session est complétée avec les infos du membre (hors mdp)
-                    // $this->flash('Vous êtes desormais connecté', 'success');
-                    // $this->redirectToRoute('redirectrole');
                 }
             }
 
@@ -154,6 +180,98 @@ class UsersController extends \W\Controller\Controller
 
     public function forgotPassword()
     {
+
+        $post = [];
+        $errors = [];
+        $formValid = false;
+
+        if(!empty($_POST)){
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+
+            if (!v::email()->validate($post['forgotEmail'])){
+                $errors[] = 'L\'adresse mail est invalide'; // true
+            }
+
+            // les verifications sont terminées on recherche si l'utilisateur a un compte mail dans la base user et qu'il ait été autorisé a se créer un compte
+
+            $user = new UsersModel();
+            $reqAuthorized = $user->emailExistsAndAuthorized($post['forgotEmail']);
+            if ($reqAuthorized) {
+                // on a trouvé un utilisateur et il est autorisé a se créer un compte
+                // on récupére l'id
+                $idUser=$reqAuthorized['US_id'];
+                $firstname=$reqAuthorized['US_FirstName'];
+                $lastname=$reqAuthorized['US_LastName'];
+                $ident= $firstname.' '.$lastname;
+                $tomail=$reqAuthorized['US_email'];
+                // on créé un token
+                $token = md5(uniqid(rand(), true));
+
+                $dataToken = [
+                'RP_idUser' => $idUser,
+                'RP_token' => $token,
+                ];
+                // on verifie que l'utilisateur n'ai pas déjà un compte
+                $reset = new token();
+                // On stocke le token et l'id user dans la db
+                $insert = $reset->insert($dataToken);
+                $mail = new Mail();
+                
+                // $mail->SMTPDebug = 3;    // Enable verbose debug output
+
+                $mail->isSMTP();    // Set mailer to use SMTP
+                $mail->Host = 'smtp.gmail.com';    // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true; // Enable SMTP authentication
+                $mail->Username = 'bigbandv4@gmail.com';    // SMTP username
+                $mail->Password = 'Gibson-v4';  // SMTP password
+                $mail->SMTPSecure = 'TLS';  // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;   
+                $mail->setFrom('bigbandv4@gmail.com', 'Service Authentification de BigBand.fr');
+                $mail->addAddress($tomail, $ident);   // Add a recipient
+                // $mail->addAddress('ellen@example.com');  // Name is optional
+                // $mail->addReplyTo('info@example.com', 'Information');
+                // $mail->addCC('cc@example.com');
+                // $mail->addBCC('bcc@example.com');
+
+                // $mail->addAttachment('/var/tmp/file.tar.gz');    // Add attachments
+                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');   // Optional name
+                $mail->isHTML(true);     // Set email format to HTML
+                $mail->CharSet = 'UTF-8'; 
+                $mail->Subject = 'Rénitialisation de votre password';
+                $mail->Body    = 'Bonjour '. $firstname.'<br>Vous avez demandé la réinitialisation de votre mot de passe sur le site BigBand.fr,<br>
+                <br>Pour réinitialiser votre mot de passe, cliquez sur le lien suivant : <a href="http://localhost/BigBandConcept/framework_w/public/resetpasswd.php?id='.$idUser . '&token=' .$token. '">Réinitialisez mon mot de passe</a>';
+                //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                if (!$mail->Send()){
+                    $json = [
+                    'result' => false,
+                    'message' => 'une erreur est survenue lors de l\'envoi du mail !',
+                    ];
+                } 
+                else{
+                    $json = [
+                    'result' => true,
+                    'message' => 'Le message a été envoyé',
+                    ];
+                }
+
+            } else {
+            // on a pas trouvé d'utilisateur
+                $json = [
+                'result' => false,
+                'message' => 'Vous n\'etes pas autorisé à utiliser cette fonction, contactez l\'administrateur du site',
+                ];
+
+            } // fin du if reqAuthorized
+            
+            $this->showJson($json);
+        } // FIN DE IF !EMPTY POST
+
+    }
+
+    Public function resetPasswd()
+    {
+        $this->show('login/resetpasswd');
 
     }
 

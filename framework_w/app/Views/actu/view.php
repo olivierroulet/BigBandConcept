@@ -36,7 +36,7 @@
 	  	<!-- Ligne d' entête avant l' affichage des données -->
 	  	<td>Action</td>
 	  	<td>ID</td>
-	  	<td>Visibilité</td>                
+<!-- 	  	<td>Visibilité</td> -->                
 	  	<td>Lieu</td>
 	  	<td>Date de l' évènement</td>
 	  	<td>Commentaires (1 &amp; 2)</td>
@@ -45,7 +45,7 @@
 	  	<td>Code Postal</td>
 
 	  	<td>Notes</td>
-	  	<td>Alive/Dead</td>
+	  	<td>Pub/Priv/Brouillon</td>
 
 	  </thead>
 	  <tbody>
@@ -57,13 +57,13 @@
 	        ?>
 		        <tr class="normal">
 		        	<td> 
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Suppr° <i class="fa fa-times" aria-hidden="true"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i class="fa fa-pencil-square-o" aria-hidden="true" title="modifier"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">  <i class="fa fa-times" aria-hidden="true" title="supprimer"></i></a>
 	
 	        		
 		        	</td>
 		        	<td><?= $reponse['AC_Id']?></td>
-		        	<td><?= $reponse['AC_Visibilite']?></td>
+<!-- 		        	<td>< ?= $reponse['AC_Visibilite']?></td> -->
 		        	<td><strong><?= $reponse['AC_Lieu']?> </strong></td> 
 		        	<td> <?= $Evt?> </td>
 		        	<td><?= $reponse['AC_Com1'] . ' - ' .$reponse['AC_Com2'] ?> </td>
@@ -74,7 +74,7 @@
 
 
 		        	<td><?= $reponse['AC_Notes']?> </td> 
-		        	<td><?= $reponse['AC_ActiveYN']?> </td>
+		        	<td><?= $reponse['AC_Visibilite']?> </td>
 		        </tr>
 		</tbody>    
 		    <?php

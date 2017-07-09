@@ -1,4 +1,17 @@
+<<<<<<< HEAD
+=======
 container{
 	background-color: red;
 	background-image: url('../images/bckground.jpg');
 } 
+table .headedW{
+	font-size: 0.8em;
+}
+@media print {
+    .noprint {display:none !important;}
+    a:link:after, a:visited:after {  
+      display: none;
+      content: "";    
+    }
+}
+>>>>>>> 10a1d580787d89798bb09207a042d763c6fa5d50

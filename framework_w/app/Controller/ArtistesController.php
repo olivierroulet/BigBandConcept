@@ -9,10 +9,36 @@ use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
 // Cf http://respect.github.io/Validation/docs/date.html
 // Se logger en artiste et pouvoir modifier sa propre fiche uniquement
-// REstructurer les tables contrats & contrats2
+// Restructurer les tables contrats & contrats2
 // A faire pour Philippe ce WE: Artistes : lister les artistes, ajouter dès la création d'un user, et modifier QUE SI l' utilisateur loggé est un artiste, et qu' il s' agit bien de sa fiche
 class ArtistesController extends \W\Controller\Controller
 {
+public function viewArtiste()
+    {
+//        if($this->allowTo(['1', '3']) == false){ 
+//            $this->showNotFound();
+//            echo "autorisé aux profils 1 & 3 uniquement";
+//        }
+
+        $Artiste = new ArtistesModel(); // déplacé en début de function
+/*        $post = [];*/
+        $errors = [];
+        $formValid = true;
+
+                // $data = [
+                // 'AR_Idartiste' => '',
+                // ];        
+        $reponses = $Artiste->findAll('AR_Idartiste', 'ASC', null, null);
+        $params = [
+            'formValid'     => $formValid, 
+             'reponses'     => $reponses,
+            // 'formErrors'    => $errors,
+        ];
+// debug($reponses);
+        $this->show('views_artiste/artiste_view', $params);
+
+    }
+
     public function addArtiste()
     {
     	$Artiste = new ArtistesModel();	// déplacé en début de function
@@ -147,7 +173,7 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
             'formErrors'	=> $errors,
         ];
         // Si on oublie pas d' afficher tout ça dans la méthode show()
-        $this->show('views_artiste/artiste_upd', $params);
+        $this->show('views_artiste/artiste_add', $params);
         // Après avoir affiché, va falloir se cogner la partie insertion en base
 
     }

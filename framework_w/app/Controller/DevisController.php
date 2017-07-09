@@ -35,7 +35,7 @@ class DevisController extends \W\Controller\Controller
     {
             $this->verifAdmin();
             $devis = new Devis();
-            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1);
+            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC');
             
             $params = [
         'tousLesDevis'    =>      $tousLesDevis,
@@ -44,7 +44,7 @@ class DevisController extends \W\Controller\Controller
         
 
 
-        $this->show('views_admin/devis', $params); // affichage du template devis
+        $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
             }
 
 }

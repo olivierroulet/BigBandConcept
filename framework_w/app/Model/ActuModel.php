@@ -38,7 +38,7 @@ class ActuModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 			//sécurisation des paramètres, pour éviter les injections SQL
 			if(!preg_match('#^[a-zA-Z0-9_$]+$#', $orderBy)){
-				die('Error: invalid orderBy param');
+				die('Erreur: paramètre \'Order By\' invalide');
 			}
 			$orderDir = strtoupper($orderDir);
 			if($orderDir != 'ASC' && $orderDir != 'DESC'){

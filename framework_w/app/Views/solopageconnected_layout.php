@@ -14,26 +14,34 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/main.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('admin/css/styleconnected.css') ?>">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+	
 	<link rel="shortcut icon" href="images/ico/favicon.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<style 
+	type="text/css">
+		.row-address {
+  			width: 10%;
+		}
+	</style>>
 </head>
 <body>
-	<div class="preloader">
-		<div class="preloder-wrap">
-			<div class="preloder-inner"> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div>
-			</div>
+<div class="preloader">
+	<div class="preloader-wrap">
+		<div class="preloader-inner"> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div>
 		</div>
 	</div>
+</div>
 	<!-- /.preloader -->
 	<header id="navigation"> 
 		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
@@ -43,6 +51,8 @@
 					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
 				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>
+				</div> 
+				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info">Imprimer en PDF</a>	
 				</div> 
 			</div><!--/navbar--> 
 		</header> <!--/#navigation-->

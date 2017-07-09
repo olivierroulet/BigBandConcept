@@ -8,7 +8,13 @@ namespace Model;
 class ArtistesModel extends \W\Model\Model // Attention à l' arborescence !!!
 {
 
-	protected $primaryKey = 'AR_Idartiste'; // cette variable permet de ne pas être coincé par w\Model.php 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->setPrimaryKey('AR_Idartiste'); 
+	 // cette variable permet de ne pas être coincé par w\Model.php 
+	}
+ 	
 	/**
 	 * Constructeur
 	 */
