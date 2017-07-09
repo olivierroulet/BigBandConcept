@@ -1,3 +1,13 @@
 section{
 	background-color: none;
 } 
+table .headedW{
+	font-size: 0.8em;
+}
+@media print {
+    .noprint {display:none !important;}
+    a:link:after, a:visited:after {  
+      display: none;
+      content: "";    
+    }
+}

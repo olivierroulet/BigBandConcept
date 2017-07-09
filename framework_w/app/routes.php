@@ -24,7 +24,8 @@ $w_routes = array(
     ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],        
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
-    ['GET|POST', '/artiste_upd', 'Artistes#updArtiste', 'upd_artistes'],        
+    ['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],        
+    ['GET|POST', '/artistes_view', 'Artistes#viewArtiste', 'view_artistes'],    
     // GESTION DE LA CONNEXION, DECONNEXION, PREMIERE CONNEXION, PASSWORD OUBLIE
     ['GET|POST', '/first_login', 'Users#firstLogin', 'firstlogin'],
     ['GET|POST', '/login', 'Users#login', 'login'],

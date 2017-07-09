@@ -1,9 +1,12 @@
 <?php $this->layout('layout', ['title' => 'Ajout d\' artiste']) ?>
 
 <?php $this->start('main_content') ?>
-<h2>Enregistrement d'un artiste en base de données</h2>
-<!-- <p>Bon courage !!!</p>
-<p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p> -->
+<!-- <h2>Enregistrement d'un artiste en base de données</h2>
+<p>Bon courage !!!</p>
+<p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p>
+ -->
+
+
 
 <!-- ** Fin des boutons NAVIGATION ************************ -->	
 <!-- ** Début du formulaire d' ajout d' ARTISTE ' ************************ -->	
@@ -12,7 +15,7 @@
 <div class="container-fluid" style="width:65%; margin-left: 50px;" align="right">
 	<div class="row main">
 		<div class="main-login main-right">
-			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2>
+			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste artistes.php </h2>
 			<?php
 			if(!empty($formErrors)){
 				echo '<p style="color:red">'.implode('<br>', $formErrors);

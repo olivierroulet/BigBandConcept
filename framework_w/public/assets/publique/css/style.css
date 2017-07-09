@@ -46,13 +46,12 @@
 	color:black;
 }
 
-section #clients{
+section #clients, #artistes{
 	padding-top:250px;
 	padding-bottom:250px;
 }
 
-a:hover footer
-{
+footer a:hover {
 	color:red;
 }
 
@@ -61,3 +60,24 @@ a:hover footer
         42px;
 } 
 
+/* ************* TABLE (Maintenance screen) ******************/ 
+article thead .headedW{
+    font-family: Cuprum, sans-serif; 
+	font-weight: bold; 
+	color: #fff; 
+	text-align: left;
+
+}
+article table {
+    font-family: courier;
+    /*color: #aaa;*/
+}
+
+.rond, .rond2 {
+    border: 1px solid #a1a1a1;
+    border-radius: 10%;
+    background: #dddddd;
+}
+.rond2 {
+	color: red;
+}
