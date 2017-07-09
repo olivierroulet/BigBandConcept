@@ -42,21 +42,20 @@ function format_phone_fr($phone) {
   break;
   }
 }
-// Appel : $phone = format_phone('fr', $phone);
+// Appel de la fonction format_phone_fr : $phone = format_phone('fr', $phone);
 //************************ FIN DE FUNCTION FORMATAGE des N° de téléphone
 
 ?>
 
 <article id="artistes">
-<section id="artistes" class="parallax-section">
+<section id="section-artistes" class="parallax-section">
 	<div class="container">
 		<div class="clients-wrapper">
 			<div class="row text-center">
-			
-				<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-12 col-sm-offset-2">
 					<h2 class="title-one">Entrée des Artistes</h2>
 				</div>
-				<div class="col-sm-12"> 
+				<!-- <div class="col-sm-12">  -->
 	<?php
 // et maintenant on envoit la requête
 	/*1- supposer que l' on est connecté en admin
@@ -75,10 +74,10 @@ function format_phone_fr($phone) {
 	  if(!empty($reponses)) {    ?>
 <!-- SELECT `AR_Idartiste`, `AR_ID_InUsersTable`, `AR_Etiquette_Artiste`, `AR_Etiquette_Artiste_Inversee`, `AR_Emploi_Occupe`, `AR_Civilite`, `AR_Nom`, `AR_Prenom`, `AR_Pseudo`, `AR_Password`, `AR_Numero`, `AR_Batiment`, `AR_Voie`, `AR_Adresse_Ligne_1`, `AR_Adresse_Ligne_2`, `AR_Code_Postal`, `AR_Ville`, `AR_Telephone_1`, `AR_Telephone_2`, `AR_Adresse_Mail`, `AR_N_De_Securite_Sociale`, `AR_N_Du_Guso`, `AR_Numero_Conges_Spectacle`, `AR_Date_De_Naissance`, `AR_Anniversaire`, `AR_Lieu_De_Naissance`, `AR_Nationalite`, `AR_Etiquette_Dpae`, `AR_NewsLetterYN`, `AR_Etiquette_Feuille_De_Mandat`, `AR_Etiquette_Feuille_De_Presence`, `AR_Createur`, `AR_Date_De_Creation`, `AR_Modificateur`, `AR_Date_De_Modification` FROM `artistes`  -->
 
-	  <table id="ArtistesGrid" class="table table-condensed table-hover">
-	  	<thead class="table-bordered headedW" style="font-family:Cuprum; font-weight:bold;">
+	  <table id="ArtistesGrid" class="table table-condensed table-hover ">
+	  	<thead class="table-bordered table-condensed" style="font-family:Cuprum; font-weight:bold;">
 			<tr>
-<td>Action</td><td>ID</td><td>ID In UsersTable</td><td>Etiquette Artiste</td><td>Etiquette Artiste Inversee</td><td>Emploi Occupe</td><td>Civilite</td><td>Prenom</td><td>Nom</td><td>Pseudo</td><td>Adresse Ligne 1</td><td>Adresse Ligne 2</td><td>Telephone mob</td><td>Telephone fix</td><td>Adresse Mail</td><td>N° De Securite Sociale</td><td>N° du Guso</td><td>N° Conges Spectacle</td><td>Date Naissance</td><td>Anniversaire</td><td>Lieu Naissance</td><td>Nationalité</td><td>Etiquette DPAE</td><td>NewsLetter?</td><td>Feuille De Mandat</td><td>Feuille De Presence</td><td>Créé par</td><td>Date de Création</td><td>Modifié par</td><td>Date de Modif°</td>
+<th>Action</th><th>ID</th><th>ID In UsersTable</th><th>Civilite</th><th>Prenom</th><th>Nom</th><th>Pseudo</th><th class="row-address">Adresse Ligne 1</th><th>Adresse Ligne 2</th><th>Téléphone mobile</th><th>Téléphone fixe</th><th>Adresse Mail</th><th>Etiquette Artiste</th><th>Etiquette Artiste Inversee</th><th>Emploi Occupe</th><th>N° De Securite Sociale</th><th>N° du Guso</th><th>N° Conges Spectacle</th><th>Date Naissance</th><th>Anniversaire</th><th>Lieu Naissance</th><th>Nationalité</th><th>Etiquette DPAE</th><th>NewsLetter?</th><th>Feuille De Mandat</th><th>Feuille De Presence</th><th>Créé par</th><th>Date de Création</th><th>Modifié par</th><th>Date de Modif°</th>
 			</tr>
 	  </thead>
   <tbody>
@@ -93,31 +92,36 @@ function format_phone_fr($phone) {
         $DateMaj = date ('d/m/Y', strtotime($reponse['AR_Date_De_Modification']));
         $DateNaiss = date ('d/m/Y', strtotime($reponse['AR_Date_De_Naissance']));
         $phone1 = format_phone('fr', $reponse['AR_Telephone_1']);
-        if (is_null($reponse['AR_Batiment'])) {
-        	$numero1 ='';
+        // if (is_null($reponse['AR_Batiment'])) {
+        // 	$batiment ='';
+        // } 
+        // else {
+        // 	$batiment = $reponse['AR_Batiment'];
+        // }	
 
-        }
+        //}
         ?>
-        <tr class="normal">
+        <tr style="font-family:courier; font-size: 0.8em;">
         	<td> 
-			<a href="<?=$this->url('upd_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+			<a href="<?=$this->url('upd_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>">  <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
         	</td>
         	<td><?= $reponse['AR_Idartiste']?></td>
         	<td><?= $reponse['AR_ID_InUsersTable']?></td>		        	
-        	<td><strong><?= $reponse['AR_Etiquette_Artiste']?> </strong></td> 
-        	<td><?= $reponse['AR_Etiquette_Artiste'] . ' - ' .$reponse['AR_Etiquette_Artiste_Inversee'] ?> </td>
-        	<td> <?= $reponse['AR_Emploi_Occupe']?> </td>
+
         	<td><?= $reponse['AR_Civilite']?> </td> 
         	<td><?= $reponse['AR_Prenom']?> </td> 
-        	<td><?= $reponse['AR_Nom']?> </td> 					
+        	<td><?= strtoupper($reponse['AR_Nom'])?> </td> 					
         	<td><?= $reponse['AR_Pseudo']?> </td>
     <!-- 	</tr><tr> -->
 
-        	<td><?= $reponse['AR_Numero'] . ', ' . ['AR_Batiment'].' - ' . ['AR_Voie']. ' - ' .['AR_Adresse_Ligne_1']?> </td>
-        	<td><?= ' - '. $reponse['AR_Adresse_Ligne_2'] .' [' . ['AR_Code_Postal']. '] ' .['AR_Ville']?> </td>
+        	<td><?= $reponse['AR_Numero'] . ', ' . $reponse['AR_Batiment'] .' ' . $reponse['AR_Voie']. ' ' . $reponse['AR_Adresse_Ligne_1']?> </td>
+        	<td><?= ' '. $reponse['AR_Adresse_Ligne_2'] .' [' . $reponse['AR_Code_Postal']. '] ' . $reponse['AR_Ville']?> </td>
         	<td><?= $phone1 ?> </td>
         	<td><?= $reponse['AR_Telephone_2']?> </td>
         	<td><?= $reponse['AR_Adresse_Mail']?> </td>
+        	<td><?= $reponse['AR_Etiquette_Artiste']?></td> 
+        	<td><?= $reponse['AR_Etiquette_Artiste'] . ' - ' .$reponse['AR_Etiquette_Artiste_Inversee'] ?> </td>
+        	<td><?= $reponse['AR_Emploi_Occupe']?> </td>        	
         	<td><?= $reponse['AR_N_De_Securite_Sociale']?> </td>
         	<td><?= $reponse['AR_N_Du_Guso']?> </td>
         	<td><?= $reponse['AR_Numero_Conges_Spectacle']?> </td>
@@ -141,12 +145,13 @@ function format_phone_fr($phone) {
 	        ?>
 
 	    </table>
-
+</div>
 
 				</div>
 			</div>
-		</div>
-	</div>
+<!-- 		</div>
+	</div> -->
+
 </section>
 </article>
 <?php $this->stop('main_content') ?>

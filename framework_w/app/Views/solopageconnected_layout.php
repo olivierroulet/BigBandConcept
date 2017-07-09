@@ -21,9 +21,13 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<style type="text/css">
+		.row-address {
+  			width: 30%;
+		}
+	</style>>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="preloader">
 	<div class="preloader-wrap">
 		<div class="preloader-inner"> 
@@ -34,21 +38,9 @@
 			<div class="ball"></div> 
 			<div class="ball"></div> 
 			<div class="ball"></div>
-=======
-	<div class="preloader">
-		<div class="preloder-wrap">
-			<div class="preloder-inner"> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div> 
-				<div class="ball"></div>
-			</div>
->>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
 		</div>
 	</div>
+</div>
 	<!-- /.preloader -->
 	<header id="navigation"> 
 		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
