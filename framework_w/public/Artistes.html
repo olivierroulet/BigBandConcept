@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<meta name="description" content="Outil professionnel de promotion et de gestion de groupe de musique : Big Band">
+	<meta name="keywords" content="" /> 
+	<meta name="author" content=""> 
+	<title>Artistes de Big Band</title>
+	<link rel="stylesheet" href="public/assets/publique/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/assets/publique/css/prettyPhoto.css">
+	<link rel="stylesheet" href="public/assets/publique/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/assets/publique/css/animate.css">
+	<link rel="stylesheet" href="public/assets/publique/css/main.css">
+	<link rel="stylesheet" href="public/assets/publique/css/responsive.css">
+	<link rel="stylesheet" href="public/assets/admin/css/styleconnected.css">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="images/ico/favicon.png"> 
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+<div class="preloader">
+	<div class="preloader-wrap">
+		<div class="preloader-inner"> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div> 
+			<div class="ball"></div>
+		</div>
+	</div>
+</div>
+<!-- /.preloader -->
+	<header id="navigation"> 
+		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
+			<div class="container"> 
+				<div class="navbar-header noprint"> 
+					 
+					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
+				</div> 
+				<div class="pull-right" ><a href="logout" class="btn btn-danger">Se déconnecter</a>	
+				</div> 
+				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info">Imprimer en PDF</a>	
+				</div> 
+			</div><!--/navbar--> 
+		</header> <!--/#navigation-->
+<code>
+    D:\WebForce3\BigBandConcept\framework_w\public>wkhtmltopdf --disable-javascript --default-header -O Landscape --load-error-handling ignore Artistes.html 123-couleurs.pdf
+
+    https://davidwalsh.name/send-text-message
+    as in:
+    mail("5558675309@txt.att.net", "", "Your packaged has arrived!", "From: David Walsh <david@davidwalsh.name>\r\n");
+    d' après la fonction mail de PHP:
+    bool mail ( string $to , string $subject , string $message [, string $additional_headers [, string $additional_parameters ]] )
+
+
+</code>
+		<section>
+			
+
+<article id="artistes">
+<section id="artistes" class="parallax-section">
+	<div class="container">
+		<div class="clients-wrapper">
+			<div class="row text-center">
+			
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="title-one">Entrée des Artistes</h2>
+				</div>
+				<div class="col-sm-12"> 
+	<!-- SELECT `AR_Idartiste`, `AR_ID_InUsersTable`, `AR_Etiquette_Artiste`, `AR_Etiquette_Artiste_Inversee`, `AR_Emploi_Occupe`, `AR_Civilite`, `AR_Nom`, `AR_Prenom`, `AR_Pseudo`, `AR_Password`, `AR_Numero`, `AR_Batiment`, `AR_Voie`, `AR_Adresse_Ligne_1`, `AR_Adresse_Ligne_2`, `AR_Code_Postal`, `AR_Ville`, `AR_Telephone_1`, `AR_Telephone_2`, `AR_Adresse_Mail`, `AR_N_De_Securite_Sociale`, `AR_N_Du_Guso`, `AR_Numero_Conges_Spectacle`, `AR_Date_De_Naissance`, `AR_Anniversaire`, `AR_Lieu_De_Naissance`, `AR_Nationalite`, `AR_Etiquette_Dpae`, `AR_NewsLetterYN`, `AR_Etiquette_Feuille_De_Mandat`, `AR_Etiquette_Feuille_De_Presence`, `AR_Createur`, `AR_Date_De_Creation`, `AR_Modificateur`, `AR_Date_De_Modification` FROM `artistes`  -->
+
+	  <table id="ArtistesGrid" class="table table-condensed table-hover">
+	  	<thead class="table-bordered headedW" style="font-family:Cuprum; font-weight:bold;">
+			<tr>
+<td>Action</td><td>ID</td><td>ID In UsersTable</td><td>Etiquette Artiste</td><td>Etiquette Artiste Inversee</td><td>Emploi Occupe</td><td>Civilite</td><td>Prenom</td><td>Nom</td><td>Pseudo</td><td>Adresse Ligne 1</td><td>Adresse Ligne 2</td><td>Telephone mob</td><td>Telephone fix</td><td>Adresse Mail</td><td>N° De Securite Sociale</td><td>N° du Guso</td><td>N° Conges Spectacle</td><td>Date Naissance</td><td>Anniversaire</td><td>Lieu Naissance</td><td>Nationalité</td><td>Etiquette DPAE</td><td>NewsLetter?</td><td>Feuille De Mandat</td><td>Feuille De Presence</td><td>Créé par</td><td>Date de Création</td><td>Modifié par</td><td>Date de Modif°</td>
+			</tr>
+	  </thead>
+  <tbody>
+  <!-- Fin de l' entête. On affiche les données ci-dessous -->
+
+  	        <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>1</td>
+        	<td>4</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td> niente </td>
+        	<td>Mr </td> 
+        	<td>philippe </td> 
+        	<td>nowak </td> 					
+        	<td>PhilTheNil </td>
+    <!-- 	</tr><tr> -->
+        	<td>19, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td>0676818821 </td>
+        	<td>0676818821 </td>
+        	<td>philippe@philnowak.net </td>
+        	<td>159046249804360 </td>
+        	<td>0123456789 </td>
+        	<td>0123456 </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td>Lens </td>
+        	<td>FR </td>
+        	<td> </td>
+        	<td>0 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>04/07/2017 </td>
+        </tr>
+	</tbody>    
+		            <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>8</td>
+        	<td>4</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td> niente </td>
+        	<td>Mr </td> 
+        	<td>Jean </td> 
+        	<td>De la Fontaine </td> 					
+        	<td>Johnny Ah que </td>
+    <!-- 	</tr><tr> -->
+        	<td>19, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td>0676818821 </td>
+        	<td>0676818821 </td>
+        	<td>phil@phil.net </td>
+        	<td>159046249804360 </td>
+        	<td>0123456789 </td>
+        	<td>0123456 </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td>Cassis </td>
+        	<td>FR </td>
+        	<td> </td>
+        	<td>0 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>04/07/2017 </td>
+        </tr>
+	</tbody>    
+		            <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>12</td>
+        	<td>4</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td> niente </td>
+        	<td>Mr </td> 
+        	<td>philippe </td> 
+        	<td>De la Fontaine </td> 					
+        	<td>bbb </td>
+    <!-- 	</tr><tr> -->
+        	<td>19, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td>0676818821 </td>
+        	<td> </td>
+        	<td>phil@phil.fr </td>
+        	<td>159046249804360 </td>
+        	<td>0123456789 </td>
+        	<td>0123456 </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td>Lens </td>
+        	<td>FR </td>
+        	<td> </td>
+        	<td>0 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>04/07/2017 </td>
+        </tr>
+	</tbody>    
+		            <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>13</td>
+        	<td>76</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td>  </td>
+        	<td> </td> 
+        	<td> </td> 
+        	<td> </td> 					
+        	<td> </td>
+    <!-- 	</tr><tr> -->
+        	<td>, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>1 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>09/07/2017 </td>
+        </tr>
+	</tbody>    
+		            <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>16</td>
+        	<td>79</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td>  </td>
+        	<td> </td> 
+        	<td> </td> 
+        	<td> </td> 					
+        	<td> </td>
+    <!-- 	</tr><tr> -->
+        	<td>, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>pepe@toto.fr </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>1 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>09/07/2017 </td>
+        </tr>
+	</tbody>    
+		            <tr class="normal">
+        	<td> 
+			<a href="/bigbandconcept/framework_w/public/artistes_upd">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        	</td>
+        	<td>17</td>
+        	<td>81</td>		        	
+        	<td><strong> </strong></td> 
+        	<td> -  </td>
+        	<td>  </td>
+        	<td> </td> 
+        	<td> </td> 
+        	<td> </td> 					
+        	<td> </td>
+    <!-- 	</tr><tr> -->
+        	<td>, Array Array Array </td>
+        	<td> -  [Array] Array </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>dede@dede.fr </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>01/01/1970 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td>1 </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> </td>
+        	<td> 01/01/1970 </td>
+        	<td> </td>
+        	<td>09/07/2017 </td>
+        </tr>
+	</tbody>    
+		    
+	    </table>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</article>
+		</section>
+
+		<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
+		<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
+		<script type="text/javascript" src="assets/publique/js/main.js"></script>
+			</body>
+	</html>

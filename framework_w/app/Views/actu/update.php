@@ -8,8 +8,8 @@
 <article id="actuUpdate">
 	<h1 class="text-center">Mise à jour d'un évènement</h1>
 
-
-	<div>
+<?= $_SESSION['user'] ; ?>
+ 	<div>
 		Titre <input type="text" value="<?=$current_news['AC_Com1'];?>">
 		<br>
 		<button type="nav" class="btn btn-default"> <?=$current_news['AC_Id'];?></button>

@@ -76,8 +76,9 @@
                         $datetime2 = date_create($sysdate2);
                         $interval = date_diff($datetime1, $datetime2);
                         echo ' depuis '. $interval->format('%d jours %h heures %i minutes et %s secondes');
-                    }
                         echo  'Page vue '. $visits . ' fois dans votre session';
+                    }
+
                     ?>
                 </p>
             </div>

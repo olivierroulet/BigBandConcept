@@ -15,7 +15,7 @@
 <div class="container-fluid" style="width:65%; margin-left: 50px;" align="right">
 	<div class="row main">
 		<div class="main-login main-right">
-			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2>
+			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste artistes.php </h2>
 			<?php
 			if(!empty($formErrors)){
 				echo '<p style="color:red">'.implode('<br>', $formErrors);

@@ -901,5 +901,39 @@
 
 						}); // Fin du jQuery
 					</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
+<!-- Source : https://cookieconsent.insites.com/download/ -->
+
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000000"
+    },
+    "button": {
+      // "background": "#f71559"
+      "background": "#eeeeee"
+    }
+  },
+  "type": "opt-out",
+  "content": {
+    "message": "Ce site utilise des cookies pour améliorer votre navigation",
+    "dismiss": "Autoriser",
+    "deny": "Refuser les cookies",
+    "link": "En savoir plus...",
+    "href": "#CookiePolicy"
+  }
+})});
+</script>
+
+
+
+
 					<?=$this->stop('js'); ?>
 
