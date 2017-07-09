@@ -4,7 +4,11 @@
 	background-color:red;
 }
 #navigation .navbar {
-	background: rgba(0, 0, 0, 0.92);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
+background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.95) 48%, rgba(0,0,0,0.71) 83%, rgba(0,0,0,0.35) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#59000000',GradientType=0 ); /* IE6-9 */
 }
 
 #navigation .navbar-nav.navbar-right li a{
@@ -46,7 +50,11 @@
 	color:black;
 }
 
+<<<<<<< HEAD
 section #clients, #artistes{
+=======
+#logginForm{
+>>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
 	padding-top:250px;
 	padding-bottom:250px;
 }
@@ -57,9 +65,10 @@ footer a:hover {
 
 #home{
     margin-top: 
-        42px;
+        -42px;
 } 
 
+<<<<<<< HEAD
 /* ************* TABLE (Maintenance screen) ******************/ 
 article thead .headedW{
     font-family: Cuprum, sans-serif; 
@@ -80,4 +89,26 @@ article table {
 }
 .rond2 {
 	color: red;
+=======
+.single-service:hover,
+.single-service:hover i {
+	color:black;
+}
+#clients{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
+background: rgb(188,188,188); /* Old browsers */
+background: -moz-linear-gradient(-45deg, rgba(188,188,188,1) 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(188,188,188,1) 0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(188,188,188,1) 0%,rgba(239,239,239,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#clients label
+{
+	color:rgb(50,50,50);
+}
+
+#clients h2, #clients p{
+	color:black;
+>>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
 }

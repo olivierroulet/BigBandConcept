@@ -18,20 +18,66 @@ class DevisModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 
 	/**
-	 * Remonte les devis avec le statut 'à faire'
-	 * @param string $statut -> le statut du devis à tester
-	 * @return boolean true si présent en base de données, false sinon
+	 * Récupère toutes les lignes de la table
+	 * @param $statut le statut des devis a chercher
+	 * @param $orderBy La colonne en fonction de laquelle trier
+	 * @param $orderDir La direction du tri, ASC ou DESC
+	 * @param $limit Le nombre maximum de résultat à récupérer
+	 * @param $offset La position à partir de laquelle récupérer les résultats
+	 * @return array Les données sous forme de tableau multidimensionnel
 	 */
-	public function findAllWithStatut($statut)
-	{
-		if (!is_string($statut)){
-			return false;
-		}
 
-		$sql = 'SELECT * FROM ' . $this->table . ' WHERE DV_Statut_Du_Devis = :statut';
+	public function findAllDevis($statut = "", $orderBy = "", $orderDir = 'ASC', $limit = null, $offset = null)
+	{
+		$sql = 'SELECT * FROM ' . $this->table . ' INNER JOIN clients on DV_Idclient=CL_Idclient INNER JOIN users on CL_ID_InUsersTable=US_Id ';
+		
+		if (!empty($statut)){
+
+			//sécurisation des paramètres, pour éviter les injections SQL
+			if ($statut && !is_string($statut)){
+				die('Error: invalid limit param');
+			}
+			$sql .= ' WHERE DV_Statut_Du_Devis = :statut';
+		}			
+
+		if (!empty($orderBy)){
+
+			if(!preg_match('#^[a-zA-Z0-9_$]+$#', $orderBy)){
+				die('Error: invalid orderBy param');
+			}
+			$orderDir = strtoupper($orderDir);
+			if($orderDir != 'ASC' && $orderDir != 'DESC'){
+				die('Error: invalid orderDir param');
+			}
+			if ($limit && !is_int($limit)){
+				die('Error: invalid limit param');
+			}
+
+			if ($offset && !is_int($offset)){
+				die('Error: invalid offset param');
+			}
+
+			if($orderBy!=''){
+				$sql .= ' ORDER BY '.$orderBy.' '.$orderDir;
+			}
+		}
+		if($limit){
+			$sql .= ' LIMIT '.$limit;
+			if($offset){
+				$sql .= ' OFFSET '.$offset;
+			}
+		}
 		$sth = $this->dbh->prepare($sql);
-		$sth->bindValue(':statut', $statut);
+		if ($statut){
+			$sth->bindValue(':statut', $statut);
+		}
 		$sth->execute();
 		return $sth->fetchAll();
 	}
 }
+
+
+
+
+
+

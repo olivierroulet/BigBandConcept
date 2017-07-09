@@ -1,5 +1,6 @@
-section{
-	background-color: none;
+container{
+	background-color: red;
+	background-image: url('../images/bckground.jpg');
 } 
 table .headedW{
 	font-size: 0.8em;

@@ -34,4 +34,50 @@ class ClientsModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 		return $sth->fetch();
 	}
+
+
+/**
+	 * Récupère toutes les lignes de la table employeur, liée à la table user
+	 * @param $orderBy La colonne en fonction de laquelle trier
+	 * @param $orderDir La direction du tri, ASC ou DESC
+	 * @param $limit Le nombre maximum de résultat à récupérer
+	 * @param $offset La position à partir de laquelle récupérer les résultats
+	 * @return array Les données sous forme de tableau multidimensionnel
+	 */
+	public function findAllEmployeurs($orderBy = "", $orderDir = 'ASC', $limit = null, $offset = null)
+	{
+		$sql = 'SELECT * FROM ' . $this->table . ' INNER JOIN users on CL_ID_InUsersTable=US_Id ';
+		
+		
+		if (!empty($orderBy)){
+
+			if(!preg_match('#^[a-zA-Z0-9_$]+$#', $orderBy)){
+				die('Error: invalid orderBy param');
+			}
+			$orderDir = strtoupper($orderDir);
+			if($orderDir != 'ASC' && $orderDir != 'DESC'){
+				die('Error: invalid orderDir param');
+			}
+			if ($limit && !is_int($limit)){
+				die('Error: invalid limit param');
+			}
+
+			if ($offset && !is_int($offset)){
+				die('Error: invalid offset param');
+			}
+
+			if($orderBy!=''){
+				$sql .= ' ORDER BY '.$orderBy.' '.$orderDir;
+			}
+		}
+		if($limit){
+			$sql .= ' LIMIT '.$limit;
+			if($offset){
+				$sql .= ' OFFSET '.$offset;
+			}
+		}
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 }

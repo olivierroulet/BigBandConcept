@@ -655,11 +655,11 @@ navbar navbar-inverse navbar-fixed-top {
 }
 
 .single-service:hover {
-	background-color: #fc7700;
+	background-color: red;
 }
 
 .single-service:hover i {
-	color:#fc7700;
+	color:red;
 	-moz-transform: scale(1.1) rotate(360deg);
 	-webkit-transform: scale(1.1) rotate(360deg);
 	-o-transform: scale(1.1) rotate(360deg);

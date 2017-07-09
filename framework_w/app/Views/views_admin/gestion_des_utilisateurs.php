@@ -20,7 +20,7 @@
 					<a href="ajouter_un_utilisateur" class="btn btn-block btn-primary">Ajouter un utilisateur</a>
 				</div>
 				<div class="col-sm-3">
-					<a href="updater_un_utilisateur" class="btn btn-block btn-primary">Mettre à jour un utilisateur</a>
+					<a href="lister_les_utilisateurs" class="btn btn-block btn-primary">Rechercher / Lister les utilisateurs</a>
 				</div>
 
 			</div>

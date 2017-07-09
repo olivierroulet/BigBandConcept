@@ -23,6 +23,7 @@
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <body>
+<<<<<<< HEAD
 <div class="preloader">
 	<div class="preloader-wrap">
 		<div class="preloader-inner"> 
@@ -33,18 +34,30 @@
 			<div class="ball"></div> 
 			<div class="ball"></div> 
 			<div class="ball"></div>
+=======
+	<div class="preloader">
+		<div class="preloder-wrap">
+			<div class="preloder-inner"> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div> 
+				<div class="ball"></div>
+			</div>
+>>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
 		</div>
 	</div>
-</div>
-<!-- /.preloader -->
+	<!-- /.preloader -->
 	<header id="navigation"> 
 		<div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
 			<div class="container"> 
 				<div class="navbar-header"> 
-					 
+					
 					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
-				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>	
+				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>
 				</div> 
 				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info">Imprimer en PDF</a>	
 				</div> 

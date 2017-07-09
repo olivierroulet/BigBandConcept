@@ -31,6 +31,7 @@ class AdminController extends \W\Controller\Controller
         } 
         //////// AUTORISE QUE POUR ADMINISTRATEUR
         $roleUser=$me['US_idURole'];
+        $authLoggedUser=$me['US_FirstName'];
         if ($roleUser !=1) {
             $this->redirectToRoute('redirectrole'); // erreur de role on redirige vers la page autorisée
         }
@@ -43,14 +44,14 @@ class AdminController extends \W\Controller\Controller
         $employeurs=$employeur->findAll();
         $nbEmployeurs=count($employeurs);
 
-        //Nb de devis a faire
+       //Nb de devis a faire
         $devis = new Devis();
-        $devisAFaire=$devis->findAllWithStatut('a faire');
+        $devisAFaire=$devis->findAllDevis('a faire');
         $nbDevisAFaire=count($devisAFaire);
 
         //Nb de devis en attente
         $devis = new Devis();
-        $devisEnAttente=$devis->findAllWithStatut('en attente');
+        $devisEnAttente=$devis->findAllDevis('en attente');
         $nbDevisEnAttente=count($devisEnAttente);
 
         //Nb d'utilisateurs
@@ -60,6 +61,7 @@ class AdminController extends \W\Controller\Controller
 
 
         $params = [
+        'authLoggedUser'    =>      $authLoggedUser,
         'nbEmployeurs'      =>      $nbEmployeurs,
         'nbDevisAFaire'     =>      $nbDevisAFaire,
         'nbDevisEnAttente'  =>      $nbDevisEnAttente,

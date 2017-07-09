@@ -29,6 +29,11 @@
 							echo '<p style="color:red">'.implode('<br>', $formErrors);
 							?>
 						</div>
+						<div class="status success alert-success" style="">
+							<?php
+							echo '<p style="color:red">'.implode('<br>', $formErrors);
+							?>
+						</div>
 						<?php
 					}
 					
