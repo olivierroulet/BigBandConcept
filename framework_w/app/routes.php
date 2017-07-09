@@ -19,10 +19,13 @@ $w_routes = array(
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
     ['GET|POST', '/artiste_upd', 'Artistes#updArtiste', 'upd_artistes'],        
-    // GESTION DE LA PREMIERE CONNEXION, CONNEXION, PASSWORD OUBLIE, DECONNEXION
+    
+    // GESTION DE LA PREMIERE CONNEXION, CONNEXION, PASSWORD OUBLIE, RESET PASSWORD, DECONNEXION
     ['GET|POST', '/firstlogin', 'Users#firstLogin', 'firstlogin'],
     ['GET|POST', '/login', 'Users#login', 'login'],
     ['GET|POST', '/forgotpassword', 'Users#forgotPassword', 'forgotpassword'],
+    ['GET|POST', '/login/resetpasswd', 'Users#resetPasswd', 'resetpasswd'],
+
     ['GET|POST', '/logout', 'Users#logout', 'logout'],        
     // GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
