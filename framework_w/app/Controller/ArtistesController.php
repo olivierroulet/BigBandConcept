@@ -17,7 +17,7 @@ public function viewArtiste()
     {
 //        if($this->allowTo(['1', '3']) == false){ 
 //            $this->showNotFound();
-            echo "autorisé aux profils 1 & 3 uniquement";
+//            echo "autorisé aux profils 1 & 3 uniquement";
 //        }
 
         $Artiste = new ArtistesModel(); // déplacé en début de function

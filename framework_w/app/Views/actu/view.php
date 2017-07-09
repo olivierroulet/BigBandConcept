@@ -57,8 +57,8 @@
 	        ?>
 		        <tr class="normal">
 		        	<td> 
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Modif° <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">Suppr° <i class="fa fa-times" aria-hidden="true"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i class="fa fa-pencil-square-o" aria-hidden="true" title="modifier"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">  <i class="fa fa-times" aria-hidden="true" title="supprimer"></i></a>
 	
 	        		
 		        	</td>

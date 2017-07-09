@@ -24,32 +24,33 @@ par exemple.
 http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf_0.10.0_rc2-doc.html#Page%20Options
 */
 
-$pages = 'pages.html';
+// $pages = 'pages.html';
+$pages = $_POST['from']; // 'http://localhost/bigbandconcept/framework_w/public/artistes_view';
 $header = false;
 $footer = false ; // 'footer.html';
-$output = 'out.pdf';
+$output = $_POST['to']; // 'out.pdf';
 
 $command = array();
-// -disable-javascript ???
-$command[] ='wkhtmltopdf -n -O Landscape ';
-//$command[] = escapeshellarg($pages);
 
+$command[] ='wkhtmltopdf -n -O Landscape ' ; //  . $_GET['p'];
+//$command[] = escapeshellarg($pages);
+// echo var_dump($_POST);
 
 if($header) {
-	$command[] = '--header-html ' . escapeshellarg($header);
+//	$command[] = '--header-html ' . escapeshellarg($header);
 }
 if($footer) {
-	$command[] = '--footer-html ' . escapeshellarg($footer);
+//	$command[] = '--footer-html ' . escapeshellarg($footer);
 }
 
 $command[] = escapeshellarg($pages);
 $command[] = '>';
-$command[] = escapeshallarg($output);
+$command[] = escapeshellarg($output);
 
 
 ob_start();
 passthru(implode(' ', $command));
 $content = ob_get_contents();
 ob_end_clean();
-
+echo "done<hr>";
 ?>
