@@ -42,4 +42,30 @@ class UsersModel extends \W\Model\UsersModel // Attention à l' arborescence !!!
 	   return false;
 	}
 
+    	public function update(array $data, $US_id, $stripTags = true)
+	{
+		if (!is_numeric($US_id)){
+			return false;
+		}
+		
+		$sql = 'UPDATE ' . $this->table . ' SET ';
+		foreach($data as $key => $value){
+			$sql .= "`$key` = :$key, ";
+		}
+		// Supprime les caractères superflus en fin de requète
+		$sql = substr($sql, 0, -2);
+		$sql .= ' WHERE ' . $this->primaryKey .' = :US_id';
+
+		$sth = $this->dbh->prepare($sql);
+		foreach($data as $key => $value){
+			$value = ($stripTags) ? strip_tags($value) : $value;
+			$sth->bindValue(':'.$key, $value);
+		}
+		$sth->bindValue(':US_id', $US_id);
+
+		if(!$sth->execute()){
+			return false;
+		}
+		return $this->find($US_id);
+	}
 }

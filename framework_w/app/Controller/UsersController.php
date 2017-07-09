@@ -13,16 +13,16 @@ use Respect\Validation\Validator as v;
 class UsersController extends \W\Controller\Controller
 {
 
-   // vérifie que l'utilisateur est bien connecté
-   // et avec un rôle administrateur 
- public function verifAdmin()
- {
-            $me = $this->getUser(); // utilisateur connecté
+    // vérifie que l'utilisateur est bien connecté
+    // et avec un rôle administrateur 
+    public function verifAdmin()
+    {
+        $me = $this->getUser(); // utilisateur connecté
 
         // Limite l'accès à la page à un utilisateur connecté
 
         ///////// VERIFICATION DE LA CONNEXION
-            if(empty($me)){
+        if(empty($me)){
             $this->redirectToRoute('default_home');// retour a l'accueil du site
         } 
         //////// AUTORISE QUE POUR ADMINISTRATEUR
@@ -76,8 +76,8 @@ class UsersController extends \W\Controller\Controller
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
-                        'US_Pseudo'   => $post['username'],
-                        'US_Password'   => $passwordinsert,
+                            'US_Pseudo'   => $post['username'],
+                            'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
                         if(!empty($update)){
@@ -99,9 +99,9 @@ class UsersController extends \W\Controller\Controller
 
             $params = [
                 // Dans la vue, les clés deviennent des variables
-            'formValid'     => $formValid, 
-            'formErrors'    => $errors,
-            'message'    => $message,
+                'formValid'     => $formValid, 
+                'formErrors'    => $errors,
+                'message'    => $message,
             ];
         }
         $this->show('login/first_login',$params);
@@ -120,10 +120,10 @@ class UsersController extends \W\Controller\Controller
             $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
-            $usersModel = new UsersModel();
+                $usersModel = new UsersModel();
 
                 // $me = $usersModel->getUserByUsernameOrEmail($post['ident']);
-            $me = $usersModel->find($id_user); 
+                $me = $usersModel->find($id_user); 
 
                 // $me contient désormais toutes les infos de l'utilisateur qui veut se connecter
 
@@ -131,7 +131,7 @@ class UsersController extends \W\Controller\Controller
 
                 if(!empty($authModel->getLoggedUser())){
                     $json = [
-                    'result' => true,
+                        'result' => true,
                     ];
                     // Ici la session est complétée avec les infos du membre (hors mdp)
                     // $this->flash('Vous êtes desormais connecté', 'success');
@@ -141,15 +141,15 @@ class UsersController extends \W\Controller\Controller
 
             else {
                 $json = [
-                'result' => false,
-                'errors' => 'Erreur dans votre identifiant ou mot de passe !',
+                    'result' => false,
+                    'errors' => 'Erreur dans votre identifiant ou mot de passe !',
                 ];
-                
+
             }
 
         }
         $this->showJson($json);
-        
+
     }
 
     public function forgotPassword()
@@ -167,37 +167,37 @@ class UsersController extends \W\Controller\Controller
          3: Artiste, 
          4: Fan
          */
-         $roleUser=$me['US_idURole'];
+        $roleUser=$me['US_idURole'];
 
-         switch ($roleUser) {
+        switch ($roleUser) {
             case 1:
                 // Administrateur
-            $this->redirectToRoute('administrateuraccueil');
-            break;
+                $this->redirectToRoute('administrateuraccueil');
+                break;
 
             case 2:
                 // Employeur
-            $this->show('views_employeur/infosemployeur');
-            break;
+                $this->show('views_employeur/infosemployeur');
+                break;
 
             case 3:
                 // Artiste
-            $this->show('views_artiste/infosartiste');
-            break;
+                $this->show('views_artiste/infosartiste');
+                break;
 
             case 4:
                 // Fan
-            $this->show('views_fan/infosfan'); 
-            break;
+                $this->show('views_fan/infosfan'); 
+                break;
 
             default:
                 $this->redirectToRoute('default_home'); // retour a l'accueil du site
                 break;
-            }
+        }
 
 
         // Limite l'accès à la page à un utilisateur connecté
-            if(empty($me)){
+        if(empty($me)){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
@@ -270,10 +270,10 @@ class UsersController extends \W\Controller\Controller
                 $authModel = new AuthentificationModel();
 
                 $dataUser = [
-                'US_FirstName' => $post['US_FirstName'],
-                'US_LastName' => $post['US_LastName'],
-                'US_email'   => $post['US_email'],
-                'US_idURole'   => $post['US_idURole'],
+                    'US_FirstName' => $post['US_FirstName'],
+                    'US_LastName' => $post['US_LastName'],
+                    'US_email'   => $post['US_email'],
+                    'US_idURole'   => $post['US_idURole'],
                 ];
                 // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new UsersModel();
@@ -297,8 +297,8 @@ class UsersController extends \W\Controller\Controller
 
         $params = [
             // Dans la vue, les clés deviennent des variables
-        'formValid'     => $formValid, 
-        'formErrors'    => $errors,
+            'formValid'     => $formValid, 
+            'formErrors'    => $errors,
         ];
 
         $this->show('views_admin/ajouter_un_utilisateur', $params);
@@ -309,56 +309,97 @@ class UsersController extends \W\Controller\Controller
 
         $me = $this->getUser(); // utilisateur connecté
         // on stocke son role
+        //        $get_id = htmlspecialchars($_GET['id']);
         $roleUser=$me['US_idURole'];
         // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
         if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
         if(isset($_GET['id']) AND  !empty($_GET['id'])){
-
             $get_id = htmlspecialchars($_GET['id']);
+
+
+
             $update = new UsersModel();
             $params = $update->find($get_id);
+            if ($params == true){
+                $data = ['toto'=>$params];
 
-            $data = ['toto'=>$params];
+                $this->show('views_admin/updater_un_utilisateur', $data);
+            }
+            else{
 
-            $this->show('views_admin/updater_un_utilisateur', $data);
+                'cet utilisateur n\'existe pas';
+            }
 
+        }
+        else{
+
+            'L\id n\'est pas correct';
         }
         $post = [];
         $errors = [];
+        $formValid = false;
 
         if(!empty($_POST)){
-            $post = array_map('trim', array_map('strip_tags', $_POST));  
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+//            $get_id = htmlspecialchars($_GET['id']);
+            //            if (!v::stringType()->length(2, null)->validate($post['US_FirstName'])){
+            //                $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
+            //            }
+            //            if (!v::stringType()->length(2, null)->validate($post['US_LastName'])){
+            //                $errors[] = 'Le nom doit faire au minimum 2 caractères'; // true
+            //            }
+            //
+            //            if (!v::email()->validate($post['US_email'])){
+            //                $errors[] = 'L\'adresse mail est invalide'; // true
+            //            }
+            //
+            //            $authRole=[1, 2, 3, 4];
+            //            if(!in_array($post['US_idURole'], $authRole)){
+            //                $errors[] = 'Indiquez le rôle de l\'utilisateur à ajouter'; // true
+            //            }
 
-            if (!v::stringType()->length(2, null)->validate($post['US_FirstName'])){
-                $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
+            //            if(count($errors) === 0){
+
+
+
+            $dataUser = [
+                'US_id' => $post['US_id'],
+                'US_FirstName' => $post['US_FirstName'],
+                'US_LastName' => $post['US_LastName'],
+                'US_email'   => $post['US_email'],
+                'US_idURole'   => $post['US_idURole'],
+            ];
+            $update = new UsersModel();
+            $insert = $update->update($dataUser,$post['US_id']); 
+            //                }
+
+            if($insert == true ){
+                $formValid = true;
+                echo 'bravo';
+                $params = [
+                    // Dans la vue, les clés deviennent des variables
+                    'formValid'     => $formValid, 
+                    'formErrors'    => $errors,
+                ];
+
+                $this->show('views_admin/liste_des_utilisateurs', $params);
             }
-            if (!v::stringType()->length(2, null)->validate($post['US_LastName'])){
-                $errors[] = 'Le nom doit faire au minimum 2 caractères'; // true
+            else {
+
+                echo 'erreur';
             }
-            $authRole=[1, 2, 3, 4];
-            if(!in_array($post['US_idURole'], $authRole)){
-                $errors[] = 'Indiquez le rôle de l\'utilisateur à ajouter'; // true
-            }
-            if(count($errors) === 0){
-                $update = new Model();
-                $updateUser = $update->update($post['US_idRole']);
-                if ($updateUser){
-
-
-
-
-                    $this->show('views_admin/liste_des_utilisateur');
-
-
-                }
-
-            }
-
 
         }
+
+
+
+
+
+
     }
+
     public function listerLesUtilisateurs()
     {
 

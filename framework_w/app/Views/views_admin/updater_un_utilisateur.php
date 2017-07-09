@@ -30,18 +30,27 @@
                 </div>
 
             </div>
-            <div class="row">
-                <form method="POST">
-                    <div class="form-inline">
-                        <input name="US_FirstName"type="text" value="<?= $toto['US_FirstName']?>">
-                        <input name="US_LastName"type="text" value="<?= $toto['US_LastName']?>">
+            <div class="row text-center">
+                <form method="POST" action ="updater_un_utilisateur?id=<?php $toto['US_id']?>" class="form-inline">
+                    <div class="form-group">
+                         <label for="US_FirstName">Prenom</label>
+                        <input name="US_FirstName" type="text" value="<?= $toto['US_FirstName']?>">
+                        <label for="US_LastName">Nom</label>
+                        <input name="US_LastName" type="text" value="<?= $toto['US_LastName']?>">
+                        <label for="US_Pseudo">Pseudo</label>
+                        <input name="US_Pseudo" type="text" value="<?= $toto['US_Pseudo']?>">
+                        <label for="US_email">Email</label>
+                        <input name="US_email" type="text" value="<?= $toto['US_email']?>">
+                        <label for="US_tel">téléphone</label>
+                        <input name="US_tel" type="text" value="<?= $toto['US_tel']?>">
+                        <label for="US_idURole">Role</label>
                         <select name="US_idURole" id="">
                             <option <?php if ($toto['US_idURole'] == 1){echo 'selected';}?> value="Administrateur">Administrateur</option>
                             <option <?php if ($toto['US_idURole'] == 2){echo 'selected';}?> value="Client/Employeur">Client/Employeur</option>
                             <option <?php if ($toto['US_idURole'] == 3){echo 'selected';}?> value="Artiste">Artiste</option>
                             <option <?php if ($toto['US_idURole'] == 4){echo 'selected';}?> value="Fan">Fan</option>
                         </select>
-                        <input type="submit" class="btn btn-block btn-primary" value="mettre a jour">
+                        <button type="submit" class="btn btn-block btn-primary" value="">mettre a jour</button>
                     </div>
                 </form>
 
