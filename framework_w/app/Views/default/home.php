@@ -75,6 +75,7 @@
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
 										<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-facebook"></i></a>
 										<a href="#"><i class="fa fa-twitter"></i></a>
 										<a href="#"><i class="fa fa-google-plus"></i></a>
 										<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -659,7 +660,7 @@
 												</div>
 											</div>
 											<div class="col-sm-8 col-sm-offset-2">
-												<button id="btnFirstLogin" class="btn btn-default">Premiere connexion</button>
+												<button id="btnFirstLogin" class="btn btn-sdefault">Premiere connexion</button>
 												<button id="submitLoginForm" class="btn btn-success">Se connecter</button>
 												<button id="btnForgotPassword" class="btn btn-default">Mot de passe oublié</button>
 											</div>
