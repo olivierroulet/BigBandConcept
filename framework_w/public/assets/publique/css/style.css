@@ -1,7 +1,7 @@
 #navigation .navbar-inverse .navbar-nav .active a, 
 #navigation .navbar-inverse .navbar-nav .active a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover { 
-	background-color:red;
+	background-color:darkred;
 }
 #navigation .navbar {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
@@ -12,7 +12,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 
 #navigation .navbar-nav.navbar-right li a{
-	color:rgb(180,180,180);
+	color: #fff;
 }
 
 #main-carousel .carousel-inner h2{
@@ -47,7 +47,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 .single-service:hover{
 	background-color:black;
-	color:white;
+	color:black;
+}
+
+
+section #clients, #artistes{
+    
+}
+
+#logginForm{
+
+	padding-top:250px;
+	padding-bottom:250px;
 }
 
 footer a:hover {
@@ -80,27 +91,40 @@ article table {
 }
 .rond2 {
 	color: red;
+    }
+.single-service:hover{
+    color : snow;
 }
-.single-service:hover,
 .single-service:hover i {
-	
+	color: darkred;
 }
 #clients{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
-background: rgb(188,188,188); /* Old browsers */
-background: -moz-linear-gradient(-45deg, rgba(188,188,188,1) 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, rgba(188,188,188,1) 0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, rgba(188,188,188,1) 0%,rgba(239,239,239,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: black; /* Old browsers */
+background: -moz-linear-gradient(-45deg, black, 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, black,0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, black, 0%, black, 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #clients label
 {
-	color:rgb(50,50,50);
+	color:snow;
 }
 
 #clients h2, #clients p{
-	color:black;
+	color:snow;
 
 }
 
+.btn-primary {
+    background-color: lightcoral;
+}
+
+.btn-success {
+    background-color: lightcoral;
+}
+
+.btn-warning {
+     background-color: rgb (158, 30, 2);
+}
