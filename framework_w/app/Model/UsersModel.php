@@ -24,25 +24,48 @@ class UsersModel extends \W\Model\UsersModel // Attention à l' arborescence !!!
 	public function passwordExists($email)
 	{
 
-	   $app = getApp();
+		$sql = 'SELECT * FROM ' . $this->table .
+		' WHERE US_email = :email AND US_Password = :password';
 
-	   $sql = 'SELECT * FROM ' . $this->table .
-	          ' WHERE US_email = :email AND US_Password = :password';
-
-	   $sth = $this->dbh->prepare($sql);
-	   $sth->bindValue(':email', $email);
-	   $sth->bindValue(':password', '');
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':email', $email);
+		$sth->bindValue(':password', '');
 		if($sth->execute()){
-	       $foundUser = $sth->fetch();
-	       if($foundUser){
-	           return true;
-	       }
-	   }
+			$foundUser = $sth->fetch();
+			if($foundUser){
+				return true;
+			}
+		}
 
-	   return false;
+		return false;
 	}
 
-    	public function update(array $data, $US_id, $stripTags = true)
+	/**
+	 * Teste si un utilisateur dont le nom est present en bdd a un password associé
+	 * @param string $email L'email à tester
+	 * @return mixed l'utilisateur si trouvé, false sinon
+	 */
+
+	public function emailExistsAndAuthorized($email)
+	{
+
+		$sql = 'SELECT * FROM ' . $this->table . 
+		' WHERE US_email = :email AND US_AuthorizedYN=true LIMIT 1';
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->bindValue(':email', $email);
+		
+		if($sth->execute()){
+			$foundUser = $sth->fetch();
+			if($foundUser){
+				return $foundUser;
+			}
+		}
+
+		return false;
+	}
+
+	public function update(array $data, $US_id, $stripTags = true)
 	{
 		if (!is_numeric($US_id)){
 			return false;

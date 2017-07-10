@@ -22,8 +22,8 @@
 </head>
 <body>
 	<div class="preloader">
-		<div class="preloder-wrap">
-			<div class="preloder-inner"> 
+		<div class="preloader-wrap">
+			<div class="preloader-inner"> 
 				<div class="ball"></div> 
 				<div class="ball"></div> 
 				<div class="ball"></div> 
