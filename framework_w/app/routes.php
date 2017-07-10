@@ -18,22 +18,14 @@ $w_routes = array(
     ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],  
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
-<<<<<<< HEAD
     ['GET|POST', '/artiste_upd', 'Artistes#updArtiste', 'upd_artistes'],        
-    
+    ['GET|POST', '/artistes_view', 'Artistes#viewArtiste', 'view_artistes'],  
+
     // GESTION DE LA PREMIERE CONNEXION, CONNEXION, PASSWORD OUBLIE, RESET PASSWORD, DECONNEXION
-=======
-    ['GET|POST', '/artistes_upd', 'Artistes#updArtiste', 'upd_artistes'],        
-    ['GET|POST', '/artistes_view', 'Artistes#viewArtiste', 'view_artistes'],    
-    // GESTION DE LA CONNEXION, DECONNEXION, PREMIERE CONNEXION, PASSWORD OUBLIE
-    ['GET|POST', '/first_login', 'Users#firstLogin', 'firstlogin'],
-    // GESTION DE LA PREMIERE CONNEXION, CONNEXION, PASSWORD OUBLIE, DECONNEXION
->>>>>>> 10a1d580787d89798bb09207a042d763c6fa5d50
     ['GET|POST', '/firstlogin', 'Users#firstLogin', 'firstlogin'],
     ['GET|POST', '/login', 'Users#login', 'login'],
     ['GET|POST', '/forgotpassword', 'Users#forgotPassword', 'forgotpassword'],
     ['GET|POST', '/login/resetpasswd', 'Users#resetPasswd', 'resetpasswd'],
-
     ['GET|POST', '/logout', 'Users#logout', 'logout'],        
     // GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
