@@ -5,9 +5,11 @@ namespace Controller;
 use \W\Controller\Controller;
 use Model\UsersModel;
 use Model\ArtistesModel;
+use Model\Reset_passwordModel as token;
 use \W\Security\AuthentificationModel;
 use \W\Security\AuthorizationModel;
 use Respect\Validation\Validator as v;
+use PHPMailer as Mail;
 
 // Cf http://respect.github.io/Validation/docs/date.html
 
@@ -16,15 +18,15 @@ class UsersController extends \W\Controller\Controller
 
    // vérifie que l'utilisateur est bien connecté
    // et avec un rôle administrateur 
-   public function verifAdmin()
-   {
+ public function verifAdmin()
+ {
             $me = $this->getUser(); // utilisateur connecté
 
 
         // Limite l'accès à la page à un utilisateur connecté
 
         ///////// VERIFICATION DE LA CONNEXION
-        if(empty($me)){
+            if(empty($me)){
             $this->redirectToRoute('default_home');// retour a l'accueil du site
         } 
         //////// AUTORISE QUE POUR ADMINISTRATEUR
@@ -79,8 +81,8 @@ class UsersController extends \W\Controller\Controller
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
-                            'US_Pseudo'   => $post['username'],
-                            'US_Password'   => $passwordinsert,
+                        'US_Pseudo'   => $post['username'],
+                        'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
                         $json = [
@@ -104,14 +106,14 @@ class UsersController extends \W\Controller\Controller
                             ];
                     } // fin de verif          
 
-            } else {
+                } else {
 
 
-                   $json = [
-                    'result' => false,
-                    'message' => $message,
-                    'errors' => implode('<br>', $errors),
-                    ];
+                 $json = [
+                 'result' => false,
+                 'message' => $message,
+                 'errors' => implode('<br>', $errors),
+                 ];
 
             }// fin de if count errors = 0
         } // fin de if !empty post
@@ -132,10 +134,10 @@ class UsersController extends \W\Controller\Controller
             $id_user = $authModel->isValidLoginInfo($post['username'], $post['password']);
 
             if($id_user > 0){ // Ici, on à un id de l'utilisateur
-                $usersModel = new UsersModel();
+            $usersModel = new UsersModel();
 
                 // $me = $usersModel->getUserByUsernameOrEmail($post['ident']);
-                $me = $usersModel->find($id_user); 
+            $me = $usersModel->find($id_user); 
 
                 // $me contient désormais toutes les infos de l'utilisateur qui veut se connecter
 
@@ -143,15 +145,15 @@ class UsersController extends \W\Controller\Controller
 
                 if(!empty($authModel->getLoggedUser())){
                     $json = [
-                        'result' => true,
+                    'result' => true,
                     ];
                 }
             }
 
             else {
                 $json = [
-                    'result' => false,
-                    'errors' => 'Erreur dans votre identifiant ou mot de passe !',
+                'result' => false,
+                'errors' => 'Erreur dans votre identifiant ou mot de passe !',
                 ];
 
             }
@@ -161,8 +163,100 @@ class UsersController extends \W\Controller\Controller
 
     }
 
-    public function forgotPassword()
+        public function forgotPassword()
     {
+
+        $post = [];
+        $errors = [];
+        $formValid = false;
+
+        if(!empty($_POST)){
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+
+            if (!v::email()->validate($post['forgotEmail'])){
+                $errors[] = 'L\'adresse mail est invalide'; // true
+            }
+
+            // les verifications sont terminées on recherche si l'utilisateur a un compte mail dans la base user et qu'il ait été autorisé a se créer un compte
+
+            $user = new UsersModel();
+            $reqAuthorized = $user->emailExistsAndAuthorized($post['forgotEmail']);
+            if ($reqAuthorized) {
+                // on a trouvé un utilisateur et il est autorisé a se créer un compte
+                // on récupére l'id
+                $idUser=$reqAuthorized['US_id'];
+                $firstname=$reqAuthorized['US_FirstName'];
+                $lastname=$reqAuthorized['US_LastName'];
+                $ident= $firstname.' '.$lastname;
+                $tomail=$reqAuthorized['US_email'];
+                // on créé un token
+                $token = md5(uniqid(rand(), true));
+
+                $dataToken = [
+                'RP_idUser' => $idUser,
+                'RP_token' => $token,
+                ];
+                // on verifie que l'utilisateur n'ai pas déjà un compte
+                $reset = new token();
+                // On stocke le token et l'id user dans la db
+                $insert = $reset->insert($dataToken);
+                $mail = new Mail();
+                
+                // $mail->SMTPDebug = 3;    // Enable verbose debug output
+
+                $mail->isSMTP();    // Set mailer to use SMTP
+                $mail->Host = 'smtp.gmail.com';    // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true; // Enable SMTP authentication
+                $mail->Username = 'bigbandv4@gmail.com';    // SMTP username
+                $mail->Password = 'Gibson-v4';  // SMTP password
+                $mail->SMTPSecure = 'TLS';  // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;   
+                $mail->setFrom('bigbandv4@gmail.com', 'Service Authentification de BigBand.fr');
+                $mail->addAddress($tomail, $ident);   // Add a recipient
+                // $mail->addAddress('ellen@example.com');  // Name is optional
+                // $mail->addReplyTo('info@example.com', 'Information');
+                // $mail->addCC('cc@example.com');
+                // $mail->addBCC('bcc@example.com');
+
+                // $mail->addAttachment('/var/tmp/file.tar.gz');    // Add attachments
+                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');   // Optional name
+                $mail->isHTML(true);     // Set email format to HTML
+                $mail->CharSet = 'UTF-8'; 
+                $mail->Subject = 'Rénitialisation de votre password';
+                $mail->Body    = 'Bonjour '. $firstname.'<br>Vous avez demandé la réinitialisation de votre mot de passe sur le site BigBand.fr,<br>
+                <br>Pour réinitialiser votre mot de passe, cliquez sur le lien suivant : <a href="http://localhost/BigBandConcept/framework_w/public/resetpasswd.php?id='.$idUser . '&token=' .$token. '">Réinitialisez mon mot de passe</a>';
+                //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                if (!$mail->Send()){
+                    $json = [
+                    'result' => false,
+                    'message' => 'une erreur est survenue lors de l\'envoi du mail !',
+                    ];
+                } 
+                else{
+                    $json = [
+                    'result' => true,
+                    'message' => 'Le message a été envoyé',
+                    ];
+                }
+
+            } else {
+            // on a pas trouvé d'utilisateur
+                $json = [
+                'result' => false,
+                'message' => 'Vous n\'etes pas autorisé à utiliser cette fonction, contactez l\'administrateur du site',
+                ];
+
+            } // fin du if reqAuthorized
+            
+            $this->showJson($json);
+        } // FIN DE IF !EMPTY POST
+
+    }
+
+    Public function resetPasswd()
+    {
+        $this->show('login/resetpasswd');
 
     }
 
@@ -176,37 +270,37 @@ class UsersController extends \W\Controller\Controller
          3: Artiste, 
          4: Fan
          */
-        $roleUser=$me['US_idURole'];
+         $roleUser=$me['US_idURole'];
 
-        switch ($roleUser) {
+         switch ($roleUser) {
             case 1:
                 // Administrateur
-                $this->redirectToRoute('administrateuraccueil');
-                break;
+            $this->redirectToRoute('administrateuraccueil');
+            break;
 
             case 2:
                 // Employeur
-                $this->show('views_employeur/infosemployeur');
-                break;
+            $this->show('views_employeur/infosemployeur');
+            break;
 
             case 3:
                 // Artiste
-                $this->show('views_artiste/infosartiste');
-                break;
+            $this->show('views_artiste/infosartiste');
+            break;
 
             case 4:
                 // Fan
-                $this->show('views_fan/infosfan'); 
-                break;
+            $this->show('views_fan/infosfan'); 
+            break;
 
             default:
                 $this->redirectToRoute('default_home'); // retour a l'accueil du site
                 break;
-        }
+            }
 
 
         // Limite l'accès à la page à un utilisateur connecté
-        if(empty($me)){
+            if(empty($me)){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
 
@@ -279,10 +373,10 @@ class UsersController extends \W\Controller\Controller
                 $authModel = new AuthentificationModel();
 
                 $dataUser = [
-                    'US_FirstName' => $post['US_FirstName'],
-                    'US_LastName' => $post['US_LastName'],
-                    'US_email'   => $post['US_email'],
-                    'US_idURole'   => $post['US_idURole'],
+                'US_FirstName' => $post['US_FirstName'],
+                'US_LastName' => $post['US_LastName'],
+                'US_email'   => $post['US_email'],
+                'US_idURole'   => $post['US_idURole'],
                 ];
                 // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new UsersModel();
@@ -306,8 +400,8 @@ class UsersController extends \W\Controller\Controller
 
         $params = [
             // Dans la vue, les clés deviennent des variables
-            'formValid'     => $formValid, 
-            'formErrors'    => $errors,
+        'formValid'     => $formValid, 
+        'formErrors'    => $errors,
         ];
 
         $this->show('views_admin/ajouter_un_utilisateur', $params);
@@ -372,10 +466,10 @@ class UsersController extends \W\Controller\Controller
 
 
             $dataUser = [
-                'US_FirstName' => $post['US_FirstName'],
-                'US_LastName' => $post['US_LastName'],
-                'US_email'   => $post['US_email'],
-                'US_idURole'   => $post['US_idURole'],
+            'US_FirstName' => $post['US_FirstName'],
+            'US_LastName' => $post['US_LastName'],
+            'US_email'   => $post['US_email'],
+            'US_idURole'   => $post['US_idURole'],
             ];
             $user = new UsersModel();
             $update = $user->update($dataUser,$post['idToModif']); 
@@ -388,22 +482,22 @@ class UsersController extends \W\Controller\Controller
                     // Dans la vue, les clés deviennent des variables
                     'formValid'     => $formValid, 
                     'formErrors'    => $errors,
-                ]*/
-                ;
+                    ]*/
+                    ;
 
-                $this->redirectToRoute('listerlesutilisateurs');
-            }
-            else {
+                    $this->redirectToRoute('listerlesutilisateurs');
+                }
+                else {
 
-                echo 'erreur';
+                    echo 'erreur';
+                }
+
             }
 
         }
 
-    }
-
-    public function listerLesUtilisateurs()
-    {
+        public function listerLesUtilisateurs()
+        {
 
         $me = $this->getUser(); // utilisateur connecté
         // on stocke son role

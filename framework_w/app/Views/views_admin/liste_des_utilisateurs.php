@@ -55,8 +55,8 @@
 					}?>
 
 					<div class='row text-center'>
-						<div class='col-sm-2'>
-							<a class="btn btn-warning" href="updater_un_utilisateur?id=<?php echo $user['US_id'];?>">Modifer</a>
+						<div class='col-sm-1'>
+							<a class="btn btn-warning" href="updater_un_utilisateur?id=<?php echo $user['US_id'];?>">Modifier</a>
 						</div>
 						<div class='col-sm-4'>
 							<?=$user['US_FirstName']. ' ' . $user['US_LastName'] ; ?>
@@ -66,6 +66,9 @@
 						</div>
 						<div class='col-sm-2'>
 							<?=$role; ?>
+						</div>
+						<div class='col-sm-1'>
+							<a class="btn btn-danger" href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>
 						</div>
 					</div>
 					<hr>
