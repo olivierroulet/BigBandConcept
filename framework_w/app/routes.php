@@ -11,7 +11,7 @@
 
 $w_routes = array(
 
-         // REDIRECTION PAGE D'ACCUEIL    
+    // REDIRECTION PAGE D'ACCUEIL    
     ['GET|POST', '/', 'Default#home', 'default_home'],
     ['GET|POST', '/accueil', 'Default#home', 'accueil'],        
     // TRAITEMENT DU FORMULAIRE EMPLOYEUR    
@@ -27,7 +27,7 @@ $w_routes = array(
     ['GET|POST', '/forgotpassword', 'Users#forgotPassword', 'forgotpassword'],
     ['GET|POST', '/login/resetpasswd', 'Users#resetPasswd', 'resetpasswd'],
     ['GET|POST', '/logout', 'Users#logout', 'logout'],  
-      
+
     // GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
     ['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],        
@@ -42,7 +42,7 @@ $w_routes = array(
     // INTERFACE ADMINISTRATEUR - ACCUEIL    
     ['GET|POST', '/administrateur_accueil', 'Admin#compteRendu', 'administrateuraccueil'],
 
-        // INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
+    // INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
     ['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
     ['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],
     ['GET|POST', '/updater_un_utilisateur', 'Users#formulaireUpdate', 'updaterunutilisateur'],
@@ -50,14 +50,17 @@ $w_routes = array(
     ['GET|POST', '/supprimer_un_utilisateur', 'Users#supprimerUnUtilisateur', 'supprimerunutilisateur'],
 
     ['GET|POST', '/rechercher_un_utilisateur', 'Users#rechercherUnUtilisateur', 'rechercherunutilisateur'],
-    
+
     // INTERFACE ADMINISTRATEUR - GESTION DES Employeurs
     ['GET|POST', '/lister_tous_les_employeurs', 'Clients#listerTousLesEmployeurs', 'listertouslesemployeurs'],
 
-        // INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
-    ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],
+    // INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
+    ['GET|POST', '/lister_tous_les_devis', 'Devis#listeInfoGroupe', 'listertouslesdevis'],
 
+    //Gestion et updatye du groupe 
 
-    );
+    ['GET|POST', '/parametre_groupe', 'Groupe#listeInfoGroupe', 'infogroupe'],
+
+);
 
 
