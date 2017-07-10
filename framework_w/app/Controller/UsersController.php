@@ -313,7 +313,7 @@ class UsersController extends \W\Controller\Controller
         $this->show('views_admin/ajouter_un_utilisateur', $params);
     }
 
-    public function updaterUnUtilisateur()
+    public function formulaireUpdate()
     {
 
         $me = $this->getUser(); // utilisateur connecté
@@ -324,15 +324,13 @@ class UsersController extends \W\Controller\Controller
         if(empty($me) || $roleUser !=1){
             $this->redirectToRoute('default_home'); // retour a l'accueil du site
         }
+
         if(isset($_GET['id']) AND  !empty($_GET['id'])){
             $get_id = htmlspecialchars($_GET['id']);
-
-
-
-            $update = new UsersModel();
-            $params = $update->find($get_id);
-            if ($params == true){
-                $data = ['toto'=>$params];
+            $user = new UsersModel();
+            $recherche = $user->find($get_id);
+            if ($recherche == true){
+                $data = ['idToModif'=>$recherche];
 
                 $this->show('views_admin/updater_un_utilisateur', $data);
             }
@@ -352,7 +350,7 @@ class UsersController extends \W\Controller\Controller
 
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
-//            $get_id = htmlspecialchars($_GET['id']);
+            $get_id = htmlspecialchars($_GET['id']);
             //            if (!v::stringType()->length(2, null)->validate($post['US_FirstName'])){
             //                $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
             //            }
@@ -374,26 +372,26 @@ class UsersController extends \W\Controller\Controller
 
 
             $dataUser = [
-                'US_id' => $post['US_id'],
                 'US_FirstName' => $post['US_FirstName'],
                 'US_LastName' => $post['US_LastName'],
                 'US_email'   => $post['US_email'],
                 'US_idURole'   => $post['US_idURole'],
             ];
-            $update = new UsersModel();
-            $insert = $update->update($dataUser,$post['US_id']); 
+            $user = new UsersModel();
+            $update = $user->update($dataUser,$post['idToModif']); 
             //                }
 
-            if($insert == true ){
+            if($update == true ){
                 $formValid = true;
                 echo 'bravo';
-                $params = [
+                /*$params = [
                     // Dans la vue, les clés deviennent des variables
                     'formValid'     => $formValid, 
                     'formErrors'    => $errors,
-                ];
+                ]*/
+                ;
 
-                $this->show('views_admin/liste_des_utilisateurs', $params);
+                $this->redirectToRoute('listerlesutilisateurs');
             }
             else {
 
@@ -401,11 +399,6 @@ class UsersController extends \W\Controller\Controller
             }
 
         }
-
-
-
-
-
 
     }
 

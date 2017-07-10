@@ -630,8 +630,7 @@
 						</div> 
 					</section> <!--/#contact-->
 					<section id="clients">
-
-						<div id="sectionLogginForm">
+						<div id="sectionLoginForm">
 							<div class="container">
 								<div class="clients-wrapper">
 									<div class="row text-center">
@@ -660,9 +659,9 @@
 												</div>
 											</div>
 											<div class="col-sm-8 col-sm-offset-2">
-												<button id="btnFirstLogin" class="btn btn-primary">Premiere connexion</button>
+												<button id="btnFirstLogin" class="btn btn-default">Premiere connexion</button>
 												<button id="submitLoginForm" class="btn btn-success">Se connecter</button>
-												<button id="btnForgotPassword" class="btn btn-warning">Mot de passe oublié</button>
+												<button id="btnForgotPassword" class="btn btn-default">Mot de passe oublié</button>
 											</div>
 										</form>
 									</div>
@@ -670,8 +669,8 @@
 									</div>
 								</div>
 							</div>
-						</div><!-- fin de sectionLogginForm>-->
-						<div id="sectionFirstLogginForm">
+						</div><!-- fin de sectionLoginForm>-->
+						<div id="sectionFirstLoginForm">
 							<div class="container">
 								<div class="clients-wrapper">
 									<div class="row text-center">
@@ -718,7 +717,7 @@
 									</div>
 								</div>
 							</div>
-						</div><!-- fin de sectionFirstLogginForm>-->
+						</div><!-- fin de sectionFirstLoginForm>-->
 						<div id="sectionForgotPasswordForm">
 							<div class="container">
 								<div class="clients-wrapper">
@@ -750,7 +749,7 @@
 									</div>
 								</div>
 							</div>
-						</div><!-- fin de sectionFirstLogginForm>-->
+						</div><!-- fin de sectionForgotPasswordForm>-->
 						
 						
 					</section><!--/#clients-->
@@ -761,29 +760,29 @@
 					<script>
 						$(document).ready(function(){ // Debut du jQuery
 							// on affiche la section du formulaire de connexion par defaut et on cache les autres sections
-							$('#sectionLogginForm').show();
-							$('#sectionFirstLogginForm').hide();
+							$('#sectionLoginForm').show();
+							$('#sectionFirstLoginForm').hide();
 							$('#sectionForgotPasswordForm').hide();
 
 							// -- Action sur bouton btnFirstLogin --
 							$('#btnFirstLogin').on('click', function(e){
 								e.preventDefault();
-								$('#sectionLogginForm').hide();
-								$('#sectionFirstLogginForm').show();
+								$('#sectionLoginForm').hide();
+								$('#sectionFirstLoginForm').show();
 								$('#sectionForgotPasswordForm').hide();
 								}); // Fin de fonction sur action bouton btnFirstLogin
 
 							$('.btnBackLogin').on('click', function(e){
 								e.preventDefault();
-								$('#sectionLogginForm').show();
-								$('#sectionFirstLogginForm').hide();
+								$('#sectionLoginForm').show();
+								$('#sectionFirstLoginForm').hide();
 								$('#sectionForgotPasswordForm').hide();
 								}); // Fin de fonction sur action bouton btnbackLogin
 
 							$('#btnForgotPassword').on('click', function(e){
 								e.preventDefault();
-								$('#sectionLogginForm').hide();
-								$('#sectionFirstLogginForm').hide();
+								$('#sectionLoginForm').hide();
+								$('#sectionFirstLoginForm').hide();
 								$('#sectionForgotPasswordForm').show();
 								}); // Fin de fonction sur action bouton btnbackLogin
 

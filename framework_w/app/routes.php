@@ -45,7 +45,7 @@ $w_routes = array(
         // INTERFACE ADMINISTRATEUR - GESTION DES UTILISATEURS
     ['GET|POST', '/gestion_des_utilisateurs', 'Users#gestionDesUtilisateurs', 'gestiondesutilisateurs'],
     ['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],
-    ['GET|POST', '/updater_un_utilisateur', 'Users#updaterUnUtilisateur', 'updaterunutilisateur'],
+    ['GET|POST', '/updater_un_utilisateur', 'Users#formulaireUpdate', 'updaterunutilisateur'],
     ['GET|POST', '/lister_les_utilisateurs', 'Users#listerLesUtilisateurs', 'listerlesutilisateurs'],
 
     ['GET|POST', '/rechercher_un_utilisateur', 'Users#rechercherUnUtilisateur', 'rechercherunutilisateur'],

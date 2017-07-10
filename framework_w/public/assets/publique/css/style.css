@@ -46,17 +46,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 }
 
 .single-service:hover{
-	background-color:red;
-	color:black;
-}
-
-<<<<<<< HEAD
-section #clients, #artistes{
-=======
-#logginForm{
->>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
-	padding-top:250px;
-	padding-bottom:250px;
+	background-color:black;
+	color:white;
 }
 
 footer a:hover {
@@ -68,7 +59,7 @@ footer a:hover {
         -42px;
 } 
 
-<<<<<<< HEAD
+
 /* ************* TABLE (Maintenance screen) ******************/ 
 article thead .headedW{
     font-family: Cuprum, sans-serif; 
@@ -89,10 +80,10 @@ article table {
 }
 .rond2 {
 	color: red;
-=======
+}
 .single-service:hover,
 .single-service:hover i {
-	color:black;
+	
 }
 #clients{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
@@ -110,5 +101,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', end
 
 #clients h2, #clients p{
 	color:black;
->>>>>>> 4ca8a8dbe2edda6a7a5e5c685d49bee65a3ea1d6
+
 }
+
