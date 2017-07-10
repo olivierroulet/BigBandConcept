@@ -26,7 +26,8 @@ $w_routes = array(
     ['GET|POST', '/login', 'Users#login', 'login'],
     ['GET|POST', '/forgotpassword', 'Users#forgotPassword', 'forgotpassword'],
     ['GET|POST', '/login/resetpasswd', 'Users#resetPasswd', 'resetpasswd'],
-    ['GET|POST', '/logout', 'Users#logout', 'logout'],        
+    ['GET|POST', '/logout', 'Users#logout', 'logout'],  
+      
     // GESTION DES ACTUALITES
     ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
     ['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],        
@@ -34,7 +35,6 @@ $w_routes = array(
 
     // REDIRECTION UTILISATEUR AUTHENTIFIE EN FONCTION DE SON ROLE
     ['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],        
-
 
     #############################
     ## SECTION ADMINISTRATEUR  ##

@@ -723,21 +723,21 @@
 							<div class="container">
 								<div class="clients-wrapper">
 									<div class="row text-center">
-										<div style="height:7em;">
+										<div style="height:15em;">
 										</div>
-										<div class="col-sm-6 col-sm-offset-3">
+										<div class="col-sm-8 col-sm-offset-2">
 											<h2 class="title-one">Mot de passe oublié</h2>
-											<p>Entrez votre adresse mail pour recevoir un lien<br>de réinitialisation de votre mot de passe</p>
+											<p>Entrez votre adresse email pour recevoir un lien<br>de réinitialisation de votre mot de passe</p>
 										</div>
 										<div class="col-sm-12"> 
 											<div id="successAjaxForgotPasswordForm" class="text-center" style="color:green"></div>
 											<div id="errorsAjaxForgotPasswordForm" class="text-center" style="color:red"></div>
 										</div>
 										<form id="forgot-password-form" name="forgot-password-form" method="POST">
-											<div class="col-sm-6 col-sm-offset-3">
+											<div class="col-sm-12">
 												<div class="form-group">
-													<label for="forgotEmail">Votre adresse Mail</label>
-													<input type="email" class="form-control" name="forgotEmail" id="forgotEmail" placeholder="Votre adresse mail">
+													<label for="email">Votre adresse Mail</label>
+													<input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse mail">
 												</div>
 											</div>
 											<div class="col-sm-8 col-sm-offset-2">
@@ -745,7 +745,7 @@
 												<button id="submitForgotPasswordForm" class="btn btn-success">Envoyer</button>
 											</div>
 										</form>
-										<div style="height:30em;">
+										<div style="height:20em;">
 										</div>
 									</div>
 								</div>
@@ -870,14 +870,14 @@
 										} // Fin du else(RetourJson==false)
 									} // Fin de fonction retourJson*/
 								}); // Fin du traitement ajax
-							}); // Fin de fonction sur action SubmitFirstLoginForm
+							}); // Fin de fonction sur action SubmitLoginForm
 							
 
 
 							// -- Traitement du formulaire mot de passe oublié --
 							$('#submitForgotPasswordForm').on('click', function(e){
 								e.preventDefault(); // On empeche l'action par default du formulaire
-								$.ajax({ // Debut du Traitement du formulaire mot de passe oublié en Ajax
+								$.ajax({ // Debut du Traitement du formulaire de connexion en Ajax
 									url: '<?=$this->url('forgotpassword');?>',
 									type: 'post',
 									dataType: 'json',
@@ -887,6 +887,7 @@
 											// RetourJson==true
 											$('#successAjaxForgotPasswordForm').html(retourJson.message); // on inscrit le message de reussite dans la div
 											$('#errorsAjaxForgotPasswordForm').html(''); // On vide la div erreurs ajax
+											// on envoie vers la page de redirection en fonction du role
 											
 										} // Fin du if (RetourJson==true)
 										else { 
@@ -896,7 +897,7 @@
 										} // Fin du else(RetourJson==false)
 									} // Fin de fonction retourJson
 								}); // Fin du traitement ajax
-							}); // Fin de fonction sur action SubmitForgotPasswordForm
+							}); // Fin de fonction sur action SubmitLoginForm
 
 
 						}); // Fin du jQuery
@@ -932,8 +933,5 @@ window.cookieconsent.initialise({
 })});
 </script>
 
-
-
-
-					<?=$this->stop('js'); ?>
+<?=$this->stop('js'); ?>
 

@@ -95,7 +95,6 @@ class ClientsController extends \W\Controller\Controller
                 'US_email'   => $post['CL_Email1'],
                 'US_tel'   => $post['CL_Telephone'],
                 'US_idURole'    => 2,
-                'US_AuthorizedYN' => false, // à la création de la demande de devis l'utilisateur n'a pas le droit de se créer un compte 
                 ];
                     // on verifie que l'utilisateur n'ai pas déjà un compte
                 $user = new Users();
