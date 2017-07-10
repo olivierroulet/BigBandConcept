@@ -52,7 +52,7 @@ function format_phone_fr($phone) {
    <div class="container">
     <div class="clients-wrapper">
      <div class="row text-center">
-      <div class="col-sm-12 col-sm-offset-2">
+      <div class="col-sm-10 col-sm-offset-2">
        <h2 class="title-one">Entrée des Artistes</h2>
      </div>
      <div class="col-sm-1.5 pull-left">

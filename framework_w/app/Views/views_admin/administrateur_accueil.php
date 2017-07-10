@@ -62,6 +62,7 @@
 							</select>
 							<a href="" class="btn btn-block btn-default active">Rechercher un devis</a>
 						</div>
+						
 					</div>
 					<div class="col-sm-3 text-center">
 						<div class="interface-contrats">
