@@ -19,7 +19,7 @@ class UsersController extends \W\Controller\Controller
    public function verifAdmin()
    {
             $me = $this->getUser(); // utilisateur connecté
->>>>>>> e087edc59f3a68c480ccade984f4e5f3e0bf2554
+
 
         // Limite l'accès à la page à un utilisateur connecté
 
