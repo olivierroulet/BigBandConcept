@@ -39,7 +39,7 @@
 							
 						</div>
 						<div class="interface-employeurs">OUTILS DE FONCTIONNEMENT
-							<a href="gestion_des_utilisateurs" class="btn btn-block btn-default active">Gestion des utilisateurs<span class="pull-right"><?=$nbUtilisateurs;?></span></a>
+							<a href="gestion_des_utilisateurs" class="btn btn-block btn-default active">Gestion des utilisateurs<span class="btn-number pull-right"><?=$nbUtilisateurs;?></span></a>
 							<a href="" class="btn btn-block btn-default active">Simulation de salaire GUSO</a>
 							<a href="artistes_view" class="btn btn-block btn-default active">Gestion des artistes</a>
 							<a href="parametre_groupe" class="btn btn-block btn-default active">Le Groupe</a>
@@ -63,6 +63,7 @@
 							</select>
 							<a href="" class="btn btn-block btn-default active">Rechercher un devis</a>
 						</div>
+						
 					</div>
 					<div class="col-sm-3 text-center">
 						<div class="interface-contrats">
