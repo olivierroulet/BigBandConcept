@@ -1,68 +1,68 @@
 #navigation .navbar-inverse .navbar-nav .active a, 
 #navigation .navbar-inverse .navbar-nav .active a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover { 
-	background-color:darkred;
+    background-color: #c9232a;
 }
 #navigation .navbar {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
-background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.95) 48%, rgba(0,0,0,0.71) 83%, rgba(0,0,0,0.35) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#59000000',GradientType=0 ); /* IE6-9 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.95) 48%, rgba(0,0,0,0.71) 83%, rgba(0,0,0,0.35) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 38%,rgba(0,0,0,0.95) 48%,rgba(0,0,0,0.71) 83%,rgba(0,0,0,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#59000000',GradientType=0 ); /* IE6-9 */
 }
 
 #navigation .navbar-nav.navbar-right li a{
-	color: #fff;
+    color: white;
 }
 
 #main-carousel .carousel-inner h2{
-	color:white;
-	text-shadow: 4px 4px 4px rgb(150,0,0);
+    color:white;
+    text-shadow: 4px 4px 4px rgb(150,0,0);
 }
 
 .navbar-brand h1{
-	color:red;
-	text-shadow: 2px 2px 2px rgb(155,0,0);
+    color:red;
+    text-shadow: 2px 2px 2px rgb(155,0,0);
 }
 
 #our-team .title-one{
-	color:rgb(180,180,180);
+    color:rgb(180,180,180);
 }
 
 .title-one:after, .title-one:before{
-	display:none;
+    display:none;
 }
 
 .single-member{
-	background-color: rgb(150,0,0);
+    background-color: rgb(150,0,0);
 }
 #formulaire, #contact-form-section{
-	height:auto;
+    height:auto;
 }
 
 .btn[type=submit]{
-	font-size: 1.2em;
-	color:white;
+    font-size: 1.2em;
+    color:white;
 }
 
 .single-service:hover{
-	background-color:black;
-	color:black;
+    background-color:black;
+    color:black;
 }
 
 
 section #clients, #artistes{
-    
+
 }
 
 #logginForm{
 
-	padding-top:250px;
-	padding-bottom:250px;
+    padding-top:250px;
+    padding-bottom:250px;
 }
 
 footer a:hover {
-	color:red;
+    color:red;
 }
 
 #home{
@@ -74,9 +74,9 @@ footer a:hover {
 /* ************* TABLE (Maintenance screen) ******************/ 
 article thead .headedW{
     font-family: Cuprum, sans-serif; 
-	font-weight: bold; 
-	color: #fff; 
-	text-align: left;
+    font-weight: bold; 
+    color: #fff; 
+    text-align: left;
 
 }
 article table {
@@ -90,41 +90,52 @@ article table {
     background: #dddddd;
 }
 .rond2 {
-	color: red;
-    }
+    color: red;
+}
 .single-service:hover{
     color : snow;
 }
 .single-service:hover i {
-	color: darkred;
+    color: darkred;
 }
 #clients{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
-background: black; /* Old browsers */
-background: -moz-linear-gradient(-45deg, black, 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, black,0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, black, 0%, black, 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
+    background: #434543; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, black, 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, black,0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, black, 0%, black, 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 #clients label
 {
-	color:snow;
+    color:snow;
 }
 
 #clients h2, #clients p{
-	color:snow;
+    color:snow;
 
 }
 
 .btn-primary {
-    background-color: lightcoral;
+    background-color: #132959;
 }
 
 .btn-success {
-    background-color: lightcoral;
+    background-color:green;
 }
 
 .btn-warning {
-     background-color: rgb (158, 30, 2);
+    background-color: rgb (158, 30, 2);
+}
+
+#btnFirstLogin
+{
+    color: white;
+    background-color: #234CA5;
+    border-color: #457DBB;
+}
+
+#footer a {
+    color : #c9232a;
 }

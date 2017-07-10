@@ -539,6 +539,58 @@ class UsersController extends \W\Controller\Controller
         $params = ['users' => $resultat,];
         $this->show('views_admin/liste_des_utilisateurs', $params);
     }
+    
+    
+    public function supprimerUnUtilisateur()
+    {
+        
+                $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+        
+        if (isset($_GET['id']) and !empty($_GET['id'])){
+            $get_id = htmlspecialchars($_GET['id']);
+            $delete = new UsersModel();
+            $suppression = $delete->delete($get_id);
+            if($suppression = true){
+                
+                
+                 $this->redirectToRoute('listerlesutilisateurs');
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        
+        
 
 
 

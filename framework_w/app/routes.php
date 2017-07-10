@@ -47,6 +47,7 @@ $w_routes = array(
     ['GET|POST', '/ajouter_un_utilisateur', 'Users#ajouterUnUtilisateur', 'ajouterunutilisateur'],
     ['GET|POST', '/updater_un_utilisateur', 'Users#formulaireUpdate', 'updaterunutilisateur'],
     ['GET|POST', '/lister_les_utilisateurs', 'Users#listerLesUtilisateurs', 'listerlesutilisateurs'],
+    ['GET|POST', '/supprimer_un_utilisateur', 'Users#supprimerUnUtilisateur', 'supprimerunutilisateur'],
 
     ['GET|POST', '/rechercher_un_utilisateur', 'Users#rechercherUnUtilisateur', 'rechercherunutilisateur'],
     
