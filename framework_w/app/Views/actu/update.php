@@ -8,7 +8,7 @@
 <article id="actuUpdate">
 	<h1 class="text-center">Mise à jour d'un évènement</h1>
 
-<?= $_SESSION['user'] ; ?>
+// <?= $_SESSION['user'] ; ?>
  	<div>
 		Titre <input type="text" value="<?=$current_news['AC_Com1'];?>">
 		<br>
@@ -65,7 +65,7 @@
 						<label for "AC_Visibilite"><i class="fa fa-eye" aria-hidden="true"></i> Visibilité</label>
 						<select name="AC_Visibilite">
 							<option value="Public">Public</option>
-							<option value="Privé">Privé</option>
+							<option value="Restreint">Privé</option>
 							<option value="Brouillon">Brouillon</option>
 						</select>    
 						</div>                    

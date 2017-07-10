@@ -15,10 +15,10 @@ class ArtistesController extends \W\Controller\Controller
 {
 public function viewArtiste()
     {
-//        if($this->allowTo(['1', '3']) == false){ 
-//            $this->showNotFound();
-//            echo "autorisé aux profils 1 & 3 uniquement";
-//        }
+       if($this->allowTo(['1', '3']) == false){ 
+           $this->showNotFound();
+           echo "autorisé aux profils 1 & 3 uniquement";
+       }
 
         $Artiste = new ArtistesModel(); // déplacé en début de function
 /*        $post = [];*/
@@ -38,6 +38,34 @@ public function viewArtiste()
         $this->show('views_artiste/artiste_view', $params);
 
     }
+
+public function deactArtiste($AR_Idartiste)
+    {
+        if($this->allowTo(['1', '3']) == false){ 
+            $this->showNotFound();
+        }
+debug($_GET);
+        $Artiste = new ArtistesModel();
+        $current_artist = $Artiste->find($AR_Idartiste);
+        $disable = $current_artist['AR_ActiveYN'];
+        $update = [];
+        
+        if ($disable == 0) {
+            $disable = 1 ;
+        }
+        else {
+            $disable = 0;
+        }; 
+
+        $data = [
+            'AR_ActiveYN' => $disable,
+        ];
+        $update = $Artiste->update($data, (int) $AR_Idartiste);
+
+        $this->redirectToRoute('view_artistes');
+
+    }
+
 
     public function addArtiste()
     {
