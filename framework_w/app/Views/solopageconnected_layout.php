@@ -50,9 +50,9 @@
 					
 					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
 				</div> 
-				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>
+				<div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
 				</div> 
-				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info">Imprimer en PDF</a>	
+				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info" id="buttonimpradmin">Imprimer en PDF</a>	
 				</div> 
 			</div><!--/navbar--> 
 		</header> <!--/#navigation-->

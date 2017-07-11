@@ -63,15 +63,30 @@ body  section {
 	top: 0;
 }
 
-.btn-danger {
-    background-color: dimgrey;
-    border-color: dimgrey ;
+#buttondecadmin {
+    background-color: #B1221C;
+    border-color: #B1221C ;
 }
 
+#buttondecadmin:hover {
+     background-color: #C44C51 ;
+}
+
+#buttonimpradmin:hover {
+    background-color: #457DBB ;
+   
+}
+
+
+
+
+
+
 .btn-info {
-    color: #fff;
-    background-color: darkslategrey;
-    border-color: darkslategrey;
+    
+    background-color: #234CA5;
+    border-color:  #234CA5;
+   
 }
 
 
@@ -79,7 +94,7 @@ body  section {
     padding-left:8px;
     padding-right: 8px;    
 
-    background-color: orange;
+    background-color: darkblue;
    
     } 
     
@@ -88,7 +103,7 @@ body  section {
     
     color:black;
     
-    
+
     
 }
 

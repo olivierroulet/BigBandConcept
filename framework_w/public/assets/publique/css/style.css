@@ -119,11 +119,17 @@ article table {
 }
 
 .btn-primary {
-    background-color: #132959;
+    background-color: #234CA5;
 }
+
+
 
 .btn-success {
     background-color:green;
+}
+
+.btn-success:hover {
+    background-color:#4cae4c;
 }
 
 .btn-warning {
@@ -136,6 +142,16 @@ article table {
     background-color: #234CA5;
     border-color: #457DBB;
 }
+
+#btnFirstLogin:hover
+{
+ 
+    background-color: #457DBB;
+   
+}
+
+
+
 
 #footer a {
     color : #c9232a;
