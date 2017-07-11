@@ -53,8 +53,7 @@
 				</div> 
 				<div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
 				</div> 
-				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info" id="buttonimpradmin">Imprimer en PDF</a>	
-				</div> 
+				 
 			</div><!--/navbar--> 
         </div>
 		</header> <!--/#navigation-->
@@ -112,8 +111,7 @@
                     </div> 
                     <div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
                     </div> 
-                    <div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info" id="buttonimpradmin">Imprimer en PDF</a>	
-                    </div> 
+                    
                 </div><!--/navbar--> 
             </div>
         </header> <!--/#navigation-->
