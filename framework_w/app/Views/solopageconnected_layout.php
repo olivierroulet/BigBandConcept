@@ -108,7 +108,7 @@
                 <div class="container"> 
                     <div class="navbar-header"> 
 
-                        <a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
+                        <a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband3.png" alt=""></h1></a>  
                     </div> 
                     <div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
                     </div> 

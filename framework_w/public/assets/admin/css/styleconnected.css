@@ -84,12 +84,7 @@ body  section {
  /* MODAL PANEL*/
 .panel-body{
     color:black;
-<<<<<<< HEAD
-
-    
-=======
 }
->>>>>>> 050deb2384019da12eb30f4de9acd105cb2032bf
 
 .modal-content {
     background-color: ghostwhite;
@@ -120,3 +115,22 @@ body  section {
 #reveniralalistemodal:hover {
     background-color: #457DBB;
 }
+
+#btnwarninggestionutilis {
+    background-color: 
+}
+
+#btn-recherche-gestion-utilisateur {
+    background-color: #398439;
+    border  : none;
+}
+#btn-recherche-gestion-utilisateur:hover {
+    background-color: #4CAE4C;
+    
+}
+
+
+
+
+
+
