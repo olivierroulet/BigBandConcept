@@ -21,7 +21,7 @@
                                 <h3 class="panel-title">Nom du Groupe</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Name']?>">
+                                <input name="GI_Name" type="text" value="<?php echo $group['GI_Name']?>">
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 <h3 class="panel-title">Photo</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_PhotoMainPagePath']?>>">
+                                <input name="GI_PhotoMainPagePath" type="text" value="<?php echo $group['GI_PhotoMainPagePath']?>>">
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                 <h3 class="panel-title">Logo</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Logo']?>">
+                                <input name="GI_Logo" type="text" value="<?php echo $group['GI_Logo']?>">
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                                 <h3 class="panel-title">Adresse</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Address']?>">
+                                <input name="GI_Address" type="text" value="<?php echo $group['GI_Address']?>">
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <h3 class="panel-title">Code Postal</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Addr_ZipCode']?>">
+                                <input name="GI_Addr_ZipCode" type="text" value="<?php echo $group['GI_Addr_ZipCode']?>">
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                 <h3 class="panel-title">Ville</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Addr_City']?>">
+                                <input name="GI_Addr_City" type="text" value="<?php echo $group['GI_Addr_City']?>">
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <h3 class="panel-title">Heure d'ouverture</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_OpeningHours']?>">
+                                <input name="GI_OpeningHours" type="text" value="<?php echo $group['GI_OpeningHours']?>">
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <h3 class="panel-title">Commentaire</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value="<?php echo $group['GI_Comments']?>">
+                                <input name="GI_Comments" type="text" value="<?php echo $group['GI_Comments']?>">
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                                 <h3 class="panel-title">News</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" value=" <?php echo $group['GI_News']?>">
+                                <input  name="GI_News" type="text" value=" <?php echo $group['GI_News']?>">
                             </div>
                         </div>
                     </div>
