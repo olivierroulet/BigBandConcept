@@ -6,67 +6,68 @@
 	<div class="container">
 		<div class="clients-wrapper">
 			<div class="row text-center">
-				<div class="col-sm-1.5 pull-left">
-					<a href="redirect_role" class="btn btn-primary">Menu principal</a></div>
-					<div class="col-sm-6">
-                       <a href="redirect_role" class="btn btn-primary">précédent</a>
-                   </div>
-               </div>
-           </div>
-           <div class="row text-center">
-            <div class="col-sm-6 col-sm-offset-3">
-               <h2 class="title-one">Devis</h2>
-           </div>
+				<div class="col-sm-2 pull-left">
+					<a href="redirect_role" class="btn btn-block btn-primary">Menu principal</a>
+                    <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+                    <a href="redirect_role" class="btn btn-block btn-default">suiv.</a>
+                </div>
+           
        </div>
-       <div class="row">
-           <form> <!-- debut du formulaire -->
-               <hr>
-               <?php 
-               if(!empty($tousLesDevis)):?>
+       <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+           <h2 class="title-one">Devis</h2>
+       </div>
+       
+   </div>
+   <div class="row">
+       <form> <!-- debut du formulaire -->
+           <hr>
+           <?php 
+           if(!empty($tousLesDevis)):?>
 
-               <?php foreach ($tousLesDevis as $devis): 
+           <?php foreach ($tousLesDevis as $devis): 
 
-               ?>
-               <div class='row text-left'>
+           ?>
+           <div class='row text-left'>
+            <div class='col-sm-3'>
                 <div class='col-sm-3'>
-                    <div class='col-sm-3'>
-                        Dest : 
-                    </div><!-- fin de col sm-3>-->
-                    <div class='col-sm-9'>
-                        <?= $devis['CL_Raison_Sociale']?><br>
-                        <?= $devis['US_FirstName'] . ' ' . $devis['US_LastName'];?><br>
-                        <?= $devis['CL_Code_Postal'] . ' ' . $devis['CL_Ville'];?><br>
-                    </div><!-- fin de col sm-9>-->
-                </div> <!-- fin de col sm-3 >-->
+                    Dest : 
+                </div><!-- fin de col sm-3>-->
+                <div class='col-sm-9'>
+                    <?= $devis['CL_Raison_Sociale']?><br>
+                    <?= $devis['US_FirstName'] . ' ' . $devis['US_LastName'];?><br>
+                    <?= $devis['CL_Code_Postal'] . ' ' . $devis['CL_Ville'];?><br>
+                </div><!-- fin de col sm-9>-->
+            </div> <!-- fin de col sm-3 >-->
+            <div class='col-sm-3'>
                 <div class='col-sm-3'>
-                    <div class='col-sm-3'>
-                        Exp : 
-                    </div><!-- fin de col sm-3>-->
-                    <div class='col-sm-9'>
-                        <div class="form-group">
-                            <select class="form-control" name="operateurselect"  id="operateurselect">
-                                <option disabled value=''></option>
-                                <?php foreach ($tousLesOperateurs as $operateur): ?>
-                                    <option value='<?=$operateur['OP_Idoperateur'];?>'><?= $operateur['OP_Civilite'] . ' ' . $operateur['OP_Prenom'] . ' ' . $operateur['OP_Nom'];?></option>   
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-                        <?= $ourShop['GI_Name'];?><br>
-                        <?= $operateur['OP_Civilite'] . ' ' . $operateur['OP_Prenom'] . ' ' . $operateur['OP_Nom'];?><br>
-                        <?= $operateur['OP_Adresse_Ligne_1'];?><br>
-                        <?= $operateur['OP_Adresse_Ligne_2'];?><br>
-                        <?= $operateur['OP_Code_Postal'] . ' ' . $operateur['OP_Ville'];?><br>
-                    </div><!-- fin de col sm-9>-->
-                </div> <!-- fin de col sm-3 >-->
-                <div class='col-sm-4'>
-                  Id : <?= $devis['DV_Iddevis'];?>
-                  <br> Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
-                  <div id="mapG3"></div><div id="couverturecarte"></div> 
-              </div>
-
+                    Exp : 
+                </div><!-- fin de col sm-3>-->
+                <div class='col-sm-9'>
+                    <div class="form-group">
+                        <select class="form-control" name="operateurselect"  id="operateurselect">
+                            <option disabled value=''></option>
+                            <?php foreach ($tousLesOperateurs as $operateur): ?>
+                                <option value='<?=$operateur['OP_Idoperateur'];?>'><?= $operateur['OP_Civilite'] . ' ' . $operateur['OP_Prenom'] . ' ' . $operateur['OP_Nom'];?></option>   
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <?= $ourShop['GI_Name'];?><br>
+                    <?= $operateur['OP_Civilite'] . ' ' . $operateur['OP_Prenom'] . ' ' . $operateur['OP_Nom'];?><br>
+                    <?= $operateur['OP_Adresse_Ligne_1'];?><br>
+                    <?= $operateur['OP_Adresse_Ligne_2'];?><br>
+                    <?= $operateur['OP_Code_Postal'] . ' ' . $operateur['OP_Ville'];?><br>
+                </div><!-- fin de col sm-9>-->
+            </div> <!-- fin de col sm-3 >-->
+            <div class='col-sm-4'>
+              Id : <?= $devis['DV_Iddevis'];?>
+              <br> Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
+              <div id="mapG3"></div><div id="couverturecarte"></div> 
           </div>
+
       </div>
   </div>
+</div>
 </div>
 </form> <!-- fin du formulaire -->
 
