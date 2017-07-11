@@ -17,6 +17,7 @@
 				<div class="col-sm-8 col-sm-offset-2">
 					<h2 class="title-one">Fiche Artiste</h2>
 				</div>
+			</div>	
 				<div class="col-sm-12"> 
 
 			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Fiche artiste</h2>
@@ -122,7 +123,6 @@
 						</div>
 					</div>
 				</form>				
-			</div>
 		</div>
 	</div>
 </div>	
