@@ -38,7 +38,7 @@ class DevisController extends \W\Controller\Controller
             $this->verifAdmin();
             
             $devis = new Devis();
-            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,1);
+            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,4);
             
             $operateur = new Operateur();
             $tousLesOperateurs = $operateur->findAll();

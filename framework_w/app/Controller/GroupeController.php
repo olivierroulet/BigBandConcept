@@ -17,6 +17,14 @@ class GroupeController extends \W\Controller\Controller
 
     public function listeInfoGroupe() 
     {
+            $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        //        $get_id = htmlspecialchars($_GET['id']);
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
 
         $id = 1;
 
@@ -32,7 +40,16 @@ class GroupeController extends \W\Controller\Controller
     
     public function updateInfoGroupe()
     {
-        if(isset($_POST) and !empty($_POST))
+            $me = $this->getUser(); // utilisateur connecté
+        // on stocke son role
+        //        $get_id = htmlspecialchars($_GET['id']);
+        $roleUser=$me['US_idURole'];
+        // Limite l'accès à la page à un utilisateur connecté et avec le role administrateur
+        if(empty($me) || $roleUser !=1){
+            $this->redirectToRoute('default_home'); // retour a l'accueil du site
+        }
+      
+        if(!empty($_POST))
         {
            $post = array_map('trim', array_map('strip_tags', $_POST));
             
@@ -45,24 +62,19 @@ class GroupeController extends \W\Controller\Controller
                 'GI_Logo' => $post['GI_Logo'],
                 'GI_Address' => $post['GI_Address'],
                 'GI_Addr_ZipCode' => $post['GI_Addr_ZipCode'],
-                
-                
-                
-            ]
+                'GI_OpeningHours' => $post['GI_OpeningHours'],
+                'GI_Comments' => $post['GI_Comments'],
+                'GI_News' => $post['GI_News'],
+  
+            ];
             $update = new GroupeinfoModel();
             $newupdate = $update->update($data,$id);
             if($newupdate == true)
             {
                 
-                 $this->redirectToRoute('info_groupe');
+                 $this->redirectToRoute('infogroupe');
                 
             }
-            
-            
-            
-            
-            
-            
             
             
             
