@@ -56,7 +56,7 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
 
                 <div class='row text-center'>
                     <div class='col-sm-1'>
-                        <a class="btn btn-warning" href="updater_un_utilisateur?id=<?php echo $user['US_id'];?>">Modifier</a>
+                        <a class="btn btn-warning" id="btnwarninggestionutilis "href="updater_un_utilisateur?id=<?php echo $user['US_id'];?>">Modifier</a>
                     </div>
                     <div class='col-sm-4'>
                         <?=$user['US_FirstName']. ' ' . $user['US_LastName'] ; ?>
@@ -80,14 +80,14 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">ATTENTION !</h4>
+                                        <h4 class="modal-title" id="avertomodalbody">ATTENTION !</h4>
                                     </div>
-                                    <div class="modal-body">
-                                        <p>Voulez vous vraiment supprimer cet utilisateur ? Sa suppresion sera definitive</p>
+                                    <div class="modal-body" id="avertomodalbody">
+                                        Voulez vous vraiment supprimer cet utilisateur ? Sa suppression sera définitive.
                                     </div>
                                     <div class="modal-footer">
-                                        <a class="btn btn-default" href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Revenir à la liste</button>
+                                        <a class="btn btn-default" id="boutonsupprmodal"href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="reveniralalistemodal">Revenir à la liste</button>
                                     </div>
                                 </div>
 

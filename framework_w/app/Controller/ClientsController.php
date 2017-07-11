@@ -165,17 +165,17 @@ class ClientsController extends \W\Controller\Controller
         $this->verifAdmin();
 
         $employeurs = new Clients();
-        $employeur = $employeurs->findAllEmployeurs('','CL_Date_De_Creation','DESC',1);
+        $employeur = $employeurs->findAllEmployeurs('','CL_Date_De_Creation','DESC',1,1);
 
         $params = [
-        'employeur'    =>      $employeur,
+        'employeurs'    =>      $employeur,
         ];
 
         
+        
 
-
-        $this->show('views_admin/employeur', $params); // affichage du template employeur
+        $this->show('views_employeur/liste_des_employeurs', $params); // affichage du template employeur
     }
 
 
-}
+}#3F4C6B
