@@ -15,26 +15,6 @@ class ArtistesModel extends \W\Model\Model // Attention à l' arborescence !!!
 	 // cette variable permet de ne pas être coincé par w\Model.php 
 	}
  	
-	/**
-	 * Constructeur
-	 */
-/*	public function __construct(){
-		$app = getApp();
-		// Définit la table en fonction de la config
-		$this->setTable($app->getConfig('security_user_table'));
-
-		$this->dbh = ConnectionModel::getDbh();
-	}*/
-
-// liste des méthodes existantes
-// getUserByUsernameOrEmail($usernameOrEmail)
-// emailExists($email)	
-// usernameExists($username)
-// insérer 2 méthodes : insert & update la table artistes
-
-// Dans Model:
-// function insert(array $data, $stripTags = true)
-// 	public function update(array $data, $id, $stripTags = true)
 
 
 

@@ -97,15 +97,16 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                     </div>
 
                 </div>
-            
-            <hr>
 
-            <?php endforeach; ?>
-            <?php else: ?>
-            <div class="alert alert-danger">
-                Aucun utilisateur !
+                <hr>
+
+                <?php endforeach; ?>
+                <?php else: ?>
+                <div class="alert alert-danger">
+                    Aucun utilisateur !
+                </div>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
         </div>
     </div>
 </section>

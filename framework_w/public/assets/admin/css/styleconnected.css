@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6, .title-one{
 
 body {
 	color: white;
-	text-shadow: 1px 1px 2px black;
+    
+
 }
 
 #mapG3 {
@@ -41,3 +42,50 @@ body {
         border-radius: 7px 7px 7px 7px;
         z-index: 2;
       }
+
+body  section {
+    background-color: 3f4c6b;
+}
+
+.title-one:after {
+	color: midnightblue;
+	content: "";
+	position: absolute;
+	right: -40px;
+	top: -2px;
+}
+
+.title-one:before {
+	color: midnightblue;
+	content: "";
+	left: -40px;
+	position: absolute;
+	top: 0;
+}
+
+.btn-danger {
+    background-color: dimgrey;
+    border-color: dimgrey ;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+}
+
+.btn-number {
+    padding-left: 8px;
+    padding-right: 8px;
+    
+    
+    background-color: orange;
+   
+    
+} 
+    
+
+
+
+
+

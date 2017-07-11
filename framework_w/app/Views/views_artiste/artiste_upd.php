@@ -17,6 +17,7 @@
 				<div class="col-sm-8 col-sm-offset-2">
 					<h2 class="title-one">Fiche Artiste</h2>
 				</div>
+			</div>	
 				<div class="col-sm-12"> 
 
 			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Fiche artiste</h2>
@@ -28,6 +29,7 @@
 			}    
 // on récupère la saisie si v::validator a trouvé des erreurs.
 			$post = $_POST;
+			$AR_ActiveYN = isset($post['AR_ActiveYN']) ? $post['AR_ActiveYN'] : '';
 			$AR_Prenom = isset($post['AR_Prenom']) ? $post['AR_Prenom'] : '';
 			$AR_Nom = isset($post['AR_Nom']) ? $post['AR_Nom'] : '';
 			$AR_Pseudo = isset($post['AR_Pseudo']) ? $post['AR_Pseudo'] : '';
@@ -55,6 +57,9 @@
 			<div class="col col-md-12 mobiform">						
 				<form class="form form-horizontal" method="post">
 					<div class="col col-md-12">
+						<label for "AR_ActiveYN"><i class="fa fa-user fa" aria-hidden="true"></i>Actif=1</label>
+						<input type="text" name="AR_ActiveYN" value="<?php echo $AR_ActiveYN;?>" id="AR_ActiveYN"/>
+
 						<label for "AR_Prenom"><i class="fa fa-user fa" aria-hidden="true"></i>Prénom</label>
 						<input type="text" name="AR_Prenom" value="<?php echo $AR_Prenom;?>" id="AR_Prenom"/>
 						<label for "AR_Nom"><i class="fa fa-user fa" aria-hidden="true"></i>Nom de famille</label>
@@ -118,7 +123,6 @@
 						</div>
 					</div>
 				</form>				
-			</div>
 		</div>
 	</div>
 </div>	
