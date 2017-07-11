@@ -41,7 +41,7 @@
                         <h3 class="panel-title">Logo</h3>
                     </div>
                     <div class="panel-body">
-                        <img src="<?php echo $group['GI_Logo']?>" alt="">
+                       <?php echo $group['GI_Logo']?>
                     </div>
                 </div>
             </div>
