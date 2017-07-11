@@ -39,10 +39,9 @@
          ?>
          <div class='row text-left'>
             <div class='col-sm-3'>
-                <div class='col-sm-3'>
-                    Dest : 
-                </div><!-- fin de col -->
-                <div class='col-sm-9'>
+
+                <div class='col-sm-9 text-center'>
+                    Destinataire :<br>
                     <?= $devis['CL_Raison_Sociale']?><br>
                     <?= $devis['US_FirstName'] . ' ' . $devis['US_LastName'];?><br>
                     <?= $devis['CL_Code_Postal'] . ' ' . $devis['CL_Ville'];?><br>
@@ -80,9 +79,21 @@
             </div> <!-- fin de col -->
         </div>
         <hr>
+        <div class='col-sm-5'>
+            Donnees sur la prestation
+        </div>
+        <div class='col-sm-3 col-sm-offset-5'>
+            Donnees sur les déplacements
+            <div class="form-group">
+                <input class="text" name="kilometrageallerretour" id="kilometrageallerretour"></div>
+                <input class="text" name="dureetrajetmn" id="dureetrajetmn"></div>
+                <input class="text" name="dureetrajeth" id="dureetrajeth"></div>
+                <input class="text" name="coutdeplacements" id="coutdeplacements"></div>
+            </div>
+        </div>
 
     </div>
-    <div id="mapG3" class="img-responsive"></div> 
+    <!--<div id="mapG3" class="img-responsive"></div> -->
 </div>
 </div>
 </div>
@@ -109,35 +120,59 @@ debug($tousLesOperateurs);
 <?php $address=$devis['DV_CodePostalPrestation'].",".$devis['DV_Lieudelaprestation']; ?>
 <script type="text/javascript">
 
-    var infobulle;
-    var myMarker;
-    var search_addr;
-    function coordonneesGPS(){      
-        address = '<?php echo $address ?>';
-        geocoder = new GClientGeocoder();
-        z = 7;
-        geocoder.getLatLng(
-            address,
-            function(point) {                               
-                if (!point) {
-                    alert("- "+address+" n'existe pas");
-                }
-                else {                                  
-                    var a =  point.lat();                        
-                    var b =  point.lng();
-                    searchCoord(address,a,b,z);                             
-                }});                    
-    }  
-    function searchCoord(address,a,b,z){
-
-        map = new GMap2(document.getElementById('mapG3'));
+$(document).ready(function(){ // Debut du jQuery
+                            // on affiche la section du formulaire de connexion par defaut et on cache les autres sections
+                            $('#DV_Datedudevis').on('change', function (e){
+                                alert();
 
 
-        map.setCenter(new GLatLng(a,b), z);                             
-        if(address!=''){
-            var geocoder = new GClientGeocoder();
-            geocoder.getLatLng(address, function(point){ map.setCenter(point,z); });
-        }
+
+                            
+                            
+
+                            
+
+
+
+
+
+                            var myMarker;
+                            var search_addr;
+                            var map;
+                            var gdir;
+                            var geocoder = null;
+                            var addressMarker;
+
+                            function resetonload() {
+                                document.demandededevis.coutdeplacements.value="";
+                            }
+
+                            function coordonneesGPS(){      
+                                address = '<?php echo $address ?>';
+                                geocoder = new GClientGeocoder();
+                                z = 7;
+                                geocoder.getLatLng(
+                                    address,
+                                    function(point) {                               
+                                        if (!point) {
+                                            alert("- "+address+" n'existe pas");
+                                        }
+                                        else {                                  
+                                            var a =  point.lat();                        
+                                            var b =  point.lng();
+                                            searchCoord(address,a,b,z);                             
+                                        }});                    
+                            }  
+                            function searchCoord(address,a,b,z){
+
+                                map = new GMap2(document.getElementById('mapG3'));
+
+
+                                map.setCenter(new GLatLng(a,b), z);                             
+                                if(address!=''){
+                                    var geocoder = new GClientGeocoder();
+                                    geocoder.getLatLng(address, function(point){ map.setCenter(point,z); });
+                                }
                 myMarker = createMarker(new GLatLng(a,b)); // Ajout du marqueur
                 map.addOverlay(myMarker);        
             }   
@@ -153,6 +188,8 @@ debug($tousLesOperateurs);
                 return marker;
             }         
             coordonneesGPS();
+});
+            }); // Fin du jQuery
         </script>
         <?php $this->stop('js') ?>
 

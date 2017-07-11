@@ -24,8 +24,8 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                             <label for="US_email">Email de l'utilisateur</label>
                             <input type="text" name="US_email" value="<?php echo $US_email;?>" id="US_email" class="form-control" placeholder="Adresse mail" tabindex="4">
                         </div> 
-                        <button type="submit" class="btn btn-success">Rechercher</button>
-                        <a href="lister_les_utilisateurs" class="btn btn-success">Tous les utilisateurs</a>
+                        <button type="submit" class="btn btn-success" id="btn-recherche-gestion-utilisateur" >Rechercher</button>
+                        <a href="lister_les_utilisateurs" class="btn btn-success" id="btn-recherche-gestion-utilisateur">Tous les utilisateurs</a>
                     </form>
 
                     <h3>Liste des utilisateurs</h3>

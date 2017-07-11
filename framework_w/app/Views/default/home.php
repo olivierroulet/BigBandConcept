@@ -522,7 +522,7 @@
 												<div class="col-sm-8 col-sm-offset-2">
 													<div class="contact-heading">
 														<h2 class="title-one">Contactez-nous</h2>
-														<h4>pour toute prestation</h4>
+														<h4>pour tous renseignements</h4>
 														
 													</div>
 												</div>
