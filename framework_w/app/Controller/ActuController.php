@@ -29,18 +29,6 @@ class ActuController extends \W\Controller\Controller
 
                $data = [
                'reponses' => $reponses
-                	// 'AC_Id' => $reponse['AC_Id'],
-                 //    'AC_Date' => $reponse['AC_Date'],
-                 //    'AC_Com1' => $reponse['AC_Com1'],
-                 //    'AC_Com2' => $reponse['AC_Com2'],
-                 //    'AC_Num' => $reponse['AC_Num'],
-                 //    'AC_Puce' => $reponse['AC_Puce'],
-                 //    'AC_Notes' => $reponse['AC_Notes'],
-                 //    'AC_Adresse' => $reponse['AC_Adresse'],
-                 //    'AC_Code_Postal' => $reponse['AC_Code_Postal'],
-                 //    'AC_Lieu' => $reponse['AC_Lieu'],
-                 //    'AC_Visibilite' => $reponse['AC_Visibilite'],                    
-
                 ];
 
         // Si on oublie pas d' afficher tout ça dans la méthode show()
@@ -123,7 +111,7 @@ class ActuController extends \W\Controller\Controller
             // if (!v::alnum()->length(2, null)->validate($post2['AC_Puce'])){
 //                if (!v::optional(v::Alnum()->Alnum($additionalChars2)->validate($post2['AC_Com1'])){
 
-            if (!v::Date()->validate($post2['AC_Date'])){
+/*            if (!v::Date()->validate($post2['AC_Date'])){
                 $errors2[] = 'La date est invalide';    
             }
             if (!v::optional(v::Alnum())->Alnum($additionalChars2)->validate($post2['AC_Com1'])){       
@@ -131,11 +119,13 @@ class ActuController extends \W\Controller\Controller
             }
             if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Com2'])){
                 $errors2[] = 'Le 2nd commentaire doit comporter au minimum 2 caractères'; 
-			}
+			}*/
+
    //          if (v::optional(v::Alnum()->length(0, null))->validate($post2['AC_Num'])){
 /*            if (!v::optional(v::Alnum()->Alnum($additionalChars2)->validate($post2['AC_Com1'])){            
                 $errors2[] = 'Le numéro d\'évènement doit être compris entre 2 et 8 caractères'; 
 			}	*/		
+            /*
             if (!v::optional(v::Alnum()->length(2, null))->validate($post2['AC_Puce'])){
                 $errors2[] = 'La puce doit comporter au minimum 2 caractères';  
             }
@@ -150,7 +140,7 @@ class ActuController extends \W\Controller\Controller
             }
             if (!v::alnum($additionalChars2)->length(2, null)->validate($post2['AC_Lieu'])){
                 $errors2[] = 'Le lieu doit comporter au minimum 2 caractères';  
-            }
+            }*/
 
             // Si on a pas d'erreurs, on met à jour
             if(count($errors2) === 0){
@@ -210,7 +200,7 @@ class ActuController extends \W\Controller\Controller
 
 			// Syntaxe de validation de champ optionnel ==> v::optional(v::alpha())->validate(null);  
 
-            if (!v::Date()->validate($post['AC_Date'])){
+/*            if (!v::Date()->validate($post['AC_Date'])){
                 $errors[] = 'La date est invalide'; 
             }
             if (!v::alnum($additionalChars)->length(2, null)->validate($post['AC_Com1'])){
@@ -236,7 +226,7 @@ class ActuController extends \W\Controller\Controller
             }
             if (!v::alnum($additionalChars)->length(2, null)->validate($post['AC_Lieu'])){
                 $errors[] = 'Le lieu doit comporter au minimum 2 caractères';  
-            }
+            }*/
 
             // Si on a pas d'erreurs, on insère
             if(count($errors) === 0){

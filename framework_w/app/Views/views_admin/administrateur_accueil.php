@@ -85,11 +85,11 @@
 					</div>
 					<div class="col-sm-3 text-center">
 						<div class="interface-messagerie">MESSAGERIE WEB
-							<a href="" class="btn btn-block btn-default active">Boite de reception</a>
+							<a href="" class="btn btn-block btn-default active">Boite de réception</a>
 							<a href="" class="btn btn-block btn-default active">Messages archivés</a>
 						</div>
 						<div class="interface-messagerie">SITE WEB 
-							<a href="actualites" class="btn btn-block btn-default active">Calendrier</a>
+							<a href="Actu" class="btn btn-block btn-default active">Actualités - Evènements</a>
 						</div>
 						<div class="interface-messagerie">AGENDA 
 							<a href="" class="btn btn-block btn-default active">A faire aujourd'hui</a>
