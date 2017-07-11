@@ -250,9 +250,8 @@ function searchCoord(address,a,b,z){
                 }
                 $(document).ready(function(){
                     jQuery(window).load(function(){
-                        
-            initialize();       
-            setVerifFormulaire('royan',address,'fr');  
+                        initialize();       
+                        setVerifFormulaire('royan',address,'fr');  
                     });
                     
 

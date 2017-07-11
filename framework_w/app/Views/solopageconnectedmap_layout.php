@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -49,17 +50,13 @@
             </div>
         </header> <!--/#navigation-->
 
-        <section>
-            <?= $this->section('main_content') ?>
-        </section>
-
-        <script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
-        <script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
-        <script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
-        <script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
-        <script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
-        <script type="text/javascript" src="assets/publique/js/main.js"></script>
-        <?=$this->section('js');?>
-    </body>
-</html>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/bootstrap.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/smoothscroll.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.isotope.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.prettyPhoto.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.parallax.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/main.js');?>"></script>
+		<?=$this->section('js');?>
+	</body>
+	</html>

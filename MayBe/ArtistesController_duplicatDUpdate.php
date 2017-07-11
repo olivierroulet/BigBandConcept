@@ -43,6 +43,67 @@ public function viewArtiste()
     }
 
 
+    public function getOneArtiste($AR_Idartiste)
+    {
+        if($this->allowTo(['1', '3']) == false){ 
+            $this->showNotFound();
+        }
+        
+        if(!is_numeric($AR_Idartiste) || empty($AR_Idartiste)){
+
+            $this->showNotFound(); 
+        }
+
+        $ArtisteOne = new ArtistesModel();   // déplacé en début de function
+        // Récupération de l'actualité courante (passée en ID)
+        $current_Artiste = $ArtisteOne->find($AR_Idartiste);
+        $update = [];
+
+        if(!empty($_POST)){
+
+            // verif formulaire
+
+            if(count($errors) === 0){
+                $dataAO = [
+                    'AR_Prenom' => $ArtisteOne['AR_Prenom'],
+                    'AR_Nom'    => $post['AR_Nom'],
+                    'AR_Pseudo'     => $post['AR_Pseudo'],
+                    'AR_Adresse_Mail'   => $post['AR_Adresse_Mail'],
+                    'AR_Password'   => $authModel->hashPassword($post['AR_Password']),
+                    'AR_Emploi_Occupe'      => $post['AR_Emploi_Occupe'],
+                    'AR_Civilite'       => $post['AR_Civilite'],
+                    'AR_Numero'     => $post['AR_Numero'],
+                    'AR_Voie'       => $post['AR_Voie'],
+                    'AR_Batiment'       => $post['AR_Batiment'],
+                    // 'AR_Adresse_Ligne_1'     => $post['AR_Adresse_Ligne_1'],
+                    'AR_Code_Postal'        => $post['AR_Code_Postal'],
+                    'AR_Ville'      => $post['AR_Ville'],
+                    'AR_Telephone_1'        => $post['AR_Telephone_1'],
+                    'AR_Telephone_2'        => $post['AR_Telephone_2'],
+                    'AR_N_De_Securite_Sociale'      => $post['AR_N_De_Securite_Sociale'],
+                    'AR_N_Du_Guso'      => $post['AR_N_Du_Guso'],
+                    'AR_Numero_Conges_Spectacle'        => $post['AR_Numero_Conges_Spectacle'],
+                    'AR_Date_De_Naissance'      => $post['AR_Date_De_Naissance'],
+                    'AR_Lieu_De_Naissance'      => $post['AR_Lieu_De_Naissance'],
+                    'AR_Nationalite'        => $post['AR_Nationalite'],
+                    'AR_NewsLetterYN'       => $post['AR_NewsLetterYN'],
+                ];
+                $update = $ArtisteOne->update($data, (int) $AR_Idartiste);
+                
+            }
+        }
+        $params = [
+            // Dans la vue, les clés deviennent des variables
+            'artiste' => $current_Artiste,
+            'adi'     => $dataAO, 
+
+        ];
+        $this->show('views_artiste/artiste_upd', $params);   
+
+    }
+
+
+
 public function deactArtiste($AR_Idartiste)
     {
         if($this->allowTo(['1', '3']) == false){ 
@@ -102,9 +163,9 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
                 //if (!v::stringType()->alpha()->length(2, 30)->validate($title)){		
                 $errors[] = 'L\'adresse mail est invalide'; // true
             }
-    //         if ((!v::Alnum()->length(8, null)->validate($post['AR_Password'])) || ($post['AR_Password'] != $post['mdp2'])) {
-				// $errors[] = 'Les 2 mots de passe ne concordent pas, ou ne font pas au minimum 8 caractères'; // true
-    //         }
+            if ((!v::Alnum()->length(8, null)->validate($post['AR_Password'])) || ($post['AR_Password'] != $post['mdp2'])) {
+				$errors[] = 'Les 2 mots de passe ne concordent pas, ou ne font pas au minimum 8 caractères'; // true
+            }
             if (!v::stringType()->length(5, null)->validate($post['AR_Emploi_Occupe'])){
                 $errors[] = 'L\' emploi occupé doit faire au minimum 5 caractères';  
             }
@@ -246,9 +307,9 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
                 //if (!v::stringType()->alpha()->length(2, 30)->validate($title)){      
                 $errors[] = 'L\'adresse mail est invalide'; // true
             }
-            // if ((!v::Alnum()->length(8, null)->validate($post['AR_Password'])) || ($post['AR_Password'] != $post['mdp2'])) {
-            //     $errors[] = 'Les 2 mots de passe ne concordent pas, ou ne font pas au minimum 8 caractères'; // true
-            // }
+            if ((!v::Alnum()->length(8, null)->validate($post['AR_Password'])) || ($post['AR_Password'] != $post['mdp2'])) {
+                $errors[] = 'Les 2 mots de passe ne concordent pas, ou ne font pas au minimum 8 caractères'; // true
+            }
             if (!v::stringType()->length(5, null)->validate($post['AR_Emploi_Occupe'])){
                 $errors[] = 'L\' emploi occupé doit faire au minimum 5 caractères';  
             }
@@ -293,7 +354,7 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
                 $errors[] = 'Le Numéro de Congés Spectacle doit faire 7 caractères'; // true
             }
             // ici date et format
-            if (!v::date()->validate($post['AR_Date_De_Naissance'])){
+            if (!v::date('d-m-Y')->validate($post['AR_Date_De_Naissance'])){
                 $errors[] = 'La date de naissance est incorrecte'; // true
             }
 
@@ -313,7 +374,7 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
                 'AR_Nom'            => $post['AR_Nom'],
                 'AR_Pseudo'         => $post['AR_Pseudo'],
                 'AR_Adresse_Mail'   => $post['AR_Adresse_Mail'],
-                // 'AR_Password'       => $authModel->hashPassword($post['AR_Password']),
+                'AR_Password'       => $authModel->hashPassword($post['AR_Password']),
                 'AR_Emploi_Occupe'  => $post['AR_Emploi_Occupe'],
                 'AR_Civilite'       => $post['AR_Civilite'],
                 'AR_Numero'         => $post['AR_Numero'],

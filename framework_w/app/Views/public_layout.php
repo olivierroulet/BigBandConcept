@@ -74,13 +74,13 @@
 			</div> 
 		</div> 
 	</footer> <!--/#footer--> 
-	<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/main.js"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.js');?>"></script> 
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/bootstrap.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/smoothscroll.js');?>"></script> 
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.isotope.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.prettyPhoto.js');?>"></script> 
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.parallax.js');?>"></script> 
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/main.js');?>"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<?=$this->section('js');?>
 </body>

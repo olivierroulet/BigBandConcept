@@ -7,7 +7,7 @@
 		<div class="clients-wrapper">
 			<div class="row text-center">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h2 class="title-one">Liste complète des actualités sur les 3 prochains mois</h2>
+					<h2 class="title-one">Actualités sur les 3 prochains mois</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -61,17 +61,18 @@
 	  	<?php 
 	  	foreach($reponses as $reponse) {
 	        $Evt = date ('d/m/Y', strtotime($reponse['AC_Date'])); // formattage de la date en français
+	        $EvtFin = date ('d/m/Y', strtotime($reponse['AC_DateFin'])); // formattage de la date en français
 	        ?>
 		        <tr class="normal">
 		        	<td> 
 					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i class="fa fa-pencil-square-o" aria-hidden="true" title="modifier"></i></a>
 
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>">  <i class="fa fa-times" aria-hidden="true" title="supprimer"></i></a>
+					<a href="<?=$this->url('Actu_Display', ['AC_Id' => $reponse['AC_Id']]);?>">  <i class="fa fa-times" aria-hidden="true" title="supprimer"></i></a>
 		        	</td>
 		        	<td><?= $reponse['AC_Id']?></td>
-<!-- 		        	<td>< ?= $reponse['AC_Visibilite']?></td> -->
 		        	<td><strong><?= $reponse['AC_Lieu']?> </strong></td> 
 		        	<td><?= $Evt?> </td>
+		        	<td><?= $EvtFin?> </td>
 		        	<td><?= $reponse['AC_Com1'] ?></td>
 		        	<td><?=$reponse['AC_Com2'] ?></td>
 		        	<td> <?= $reponse['AC_Puce']?></td>
