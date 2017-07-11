@@ -80,9 +80,9 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">ATTENTION !</h4>
+                                        <h4 class="modal-title" id="avertomodalbody">ATTENTION !</h4>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" id="avertomodalbody">
                                         Voulez vous vraiment supprimer cet utilisateur ? Sa suppression sera définitive
                                     </div>
                                     <div class="modal-footer">

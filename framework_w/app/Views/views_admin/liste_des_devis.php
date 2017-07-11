@@ -6,43 +6,52 @@
 	<div class="container">
 		<div class="clients-wrapper">
 			<div class="row text-center">
-				<div class="col-sm-2 pull-left">
-					<a href="redirect_role" class="btn btn-block btn-primary">Menu principal</a>
+				<div class="col-sm-2">
+					<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
                     <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
                     <a href="redirect_role" class="btn btn-block btn-default">suiv.</a>
                 </div>
-           
-       </div>
-       <div class="row text-center">
-        <div class="col-sm-6 col-sm-offset-3">
-           <h2 class="title-one">Devis</h2>
-       </div>
-       
-   </div>
-   <div class="row">
-       <form> <!-- debut du formulaire -->
-           <hr>
-           <?php 
-           if(!empty($tousLesDevis)):?>
+                <div class="col-sm-2">
+                    <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau devis</a>
+                    <a href="redirect_role" class="btn btn-block btn-default"><i class="fa fa-address-card-o" aria-hidden="true"></i> Fiche employeur</a>
+                </div>
+                <div class="col-sm-6">
+                 <h2 class="title-one">Devis</h2>
+             </div>
+             <div class="col-sm-2">
+                <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Recherche</a>
+                <a href="redirect_role" class="btn btn-block btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer le devis</a>
+            </div>
+        </div> <!-- fin de row -->
+        <div class="row text-center">
 
-           <?php foreach ($tousLesDevis as $devis): 
+        </div>
 
-           ?>
-           <div class='row text-left'>
+    </div>
+    <div class="row">
+     <form> <!-- debut du formulaire -->
+         <hr>
+         <?php 
+         if(!empty($tousLesDevis)):?>
+
+         <?php foreach ($tousLesDevis as $devis): 
+
+         ?>
+         <div class='row text-left'>
             <div class='col-sm-3'>
                 <div class='col-sm-3'>
                     Dest : 
-                </div><!-- fin de col sm-3>-->
+                </div><!-- fin de col -->
                 <div class='col-sm-9'>
                     <?= $devis['CL_Raison_Sociale']?><br>
                     <?= $devis['US_FirstName'] . ' ' . $devis['US_LastName'];?><br>
                     <?= $devis['CL_Code_Postal'] . ' ' . $devis['CL_Ville'];?><br>
-                </div><!-- fin de col sm-9>-->
-            </div> <!-- fin de col sm-3 >-->
+                </div><!-- fin de col -->
+            </div> <!-- fin de col -->
             <div class='col-sm-3'>
                 <div class='col-sm-3'>
                     Exp : 
-                </div><!-- fin de col sm-3>-->
+                </div><!-- fin de col -->
                 <div class='col-sm-9'>
                     <div class="form-group">
                         <select class="form-control" name="operateurselect"  id="operateurselect">
@@ -57,16 +66,25 @@
                     <?= $operateur['OP_Adresse_Ligne_1'];?><br>
                     <?= $operateur['OP_Adresse_Ligne_2'];?><br>
                     <?= $operateur['OP_Code_Postal'] . ' ' . $operateur['OP_Ville'];?><br>
-                </div><!-- fin de col sm-9>-->
-            </div> <!-- fin de col sm-3 >-->
-            <div class='col-sm-4'>
-              Id : <?= $devis['DV_Iddevis'];?>
-              <br> Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
-              <div id="mapG3"></div><div id="couverturecarte"></div> 
-          </div>
+                </div><!-- fin de col -->
+            </div> <!-- fin de col -->
+            <div class='col-sm-3 text-center'>  
+                Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
+                <br><br>
+                <label for="DV_Datedudevis">Date du devis</label>
+                <input type="text" class="form-control" name="DV_Datedudevis" id="DV_Datedudevis" placeholder="Date du devis">
+            </div> <!-- fin de col -->
+            <div class='col-sm-3 text-center'>
+                Id Devis : <?= $devis['DV_Iddevis'];?><br>
+                ID Employeur : <?= $devis['CL_Idclient'];?>
+            </div> <!-- fin de col -->
+        </div>
+        <hr>
 
-      </div>
-  </div>
+    </div>
+    <div id="mapG3" class="img-responsive"></div> 
+</div>
+</div>
 </div>
 </div>
 </form> <!-- fin du formulaire -->
@@ -74,7 +92,7 @@
 
 <?php endforeach; ?>
 <?php else: ?>
- <div class="alert alert-danger">
+   <div class="alert alert-danger">
     Aucun devis !
 </div>
 <?php endif; 
