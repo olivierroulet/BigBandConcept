@@ -21,8 +21,8 @@
             </div>
 
             <div class="row">
-                
-                </div>
+
+            </div>
             <div class="row text-center">
                 <form method="POST" action ="updater_un_utilisateur?id=<?php $idToModif['US_id']?>" class="form-inline">
                     <div class="form-group">
@@ -49,9 +49,10 @@
                 </form>
 
             </div>
+        </div>
+    </div>
+</section>
 
-            </section>
-
-        <?php $this->stop('main_content') ?>
+<?php $this->stop('main_content') ?>
 
 

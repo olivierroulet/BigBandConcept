@@ -74,14 +74,23 @@ body  section {
     border-color: darkslategrey;
 }
 
+
 #pins {
     padding-left:8px;
     padding-right: 8px;    
+
     background-color: orange;
    
     } 
     
-
+.panel-body{
+    
+    
+    color:black;
+    
+    
+    
+}
 
 
 

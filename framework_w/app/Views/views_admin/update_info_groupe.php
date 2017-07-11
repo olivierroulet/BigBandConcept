@@ -12,103 +12,105 @@
 
                 </div>
             </div>
-       <br>
+            <br>
             <div class="row">
-            <form method="POST" action="update_info_groupe">
+                <form action="update_info_groupe" method="POST">
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Nom du Groupe</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Name']?>">
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Nom du Groupe</h3>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Photo</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_PhotoMainPagePath']?>>">
+                            </div>
+                        </div>
                     </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_Name']?>
+
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Logo</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Logo']?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Photo</h3>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Adresse</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Address']?>">
+                            </div>
+                        </div>
                     </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_PhotoMainPagePath']?>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Code Postal</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Addr_ZipCode']?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Logo</h3>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Ville</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Addr_City']?>">
+                            </div>
+                        </div>
                     </div>
-                    <input class="panel-body">
-                        <img src="<?php echo $group['GI_Logo']?>" alt="">
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Heure d'ouverture</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_OpeningHours']?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Adresse</h3>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Commentaire</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value="<?php echo $group['GI_Comments']?>">
+                            </div>
+                        </div>
                     </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_Address']?>
+                    <div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">News</h3>
+                            </div>
+                            <div class="panel-body">
+                                <input type="text" value=" <?php echo $group['GI_News']?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Code Postal</h3>
-                    </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_Addr_ZipCode']?>
-                    </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Ville</h3>
-                    </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_Addr_City']?>
-                    </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Heure d'ouverture</h3>
-                    </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_OpeningHours']?>
-                    </div>
-                </div>
-           
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Commentaire</h3>
-                    </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_Comments']?>
-                    </div>
-                </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">News</h3>
-                    </div>
-                    <input class="panel-body">
-                        <?php echo $group['GI_News']?>
-                    </div>
-                </div>
-            
-                <button type="submit" class="btn btn-warning">Update</button>
+                    <button class="btn btn-warning" type="submit">Update</button>
                 </form>
             </div>
+
 
 
         </div>

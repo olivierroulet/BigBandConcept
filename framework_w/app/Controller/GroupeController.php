@@ -38,8 +38,19 @@ class GroupeController extends \W\Controller\Controller
             
             $id = 1;
                 
+            $data = [
+                
+                'GI_Name' => $post['GI_Name'],
+                'GI_PhotoMainPagePath' => $post['GI_PhotoMainPagePath'],
+                'GI_Logo' => $post['GI_Logo'],
+                'GI_Address' => $post['GI_Address'],
+                'GI_Addr_ZipCode' => $post['GI_Addr_ZipCode'],
+                
+                
+                
+            ]
             $update = new GroupeinfoModel();
-            $newupdate = $update->update($id);
+            $newupdate = $update->update($data,$id);
             if($newupdate == true)
             {
                 
@@ -60,7 +71,13 @@ class GroupeController extends \W\Controller\Controller
         
         
         
-        
+         $id = 1;
+
+
+        $afficher = new GroupeInfoModel();
+        $show = $afficher->find($id);
+        $params = ['group' => $show];
+            $this->show('views_admin/update_info_groupe', $params);
         
         
         
