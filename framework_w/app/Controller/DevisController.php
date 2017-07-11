@@ -11,7 +11,6 @@ use Model\OperateurModel as Operateur;
 use Model\UsersModel;
 use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
-// Cf http://respect.github.io/Validation/docs/date.html
 
 class DevisController extends \W\Controller\Controller
 {
@@ -38,7 +37,7 @@ class DevisController extends \W\Controller\Controller
             $this->verifAdmin();
             
             $devis = new Devis();
-            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,1);
+            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,0);
             
             $operateur = new Operateur();
             $tousLesOperateurs = $operateur->findAll();

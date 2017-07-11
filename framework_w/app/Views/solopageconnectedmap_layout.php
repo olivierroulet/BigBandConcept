@@ -49,7 +49,9 @@
                 </div><!--/navbar--> 
             </div>
         </header> <!--/#navigation-->
-
+<section>
+            <?= $this->section('main_content') ?>
+        </section>
 	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.js');?>"></script>
 	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/bootstrap.min.js');?>"></script>
 	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/smoothscroll.js');?>"></script>
