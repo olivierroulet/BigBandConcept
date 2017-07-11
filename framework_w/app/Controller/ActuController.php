@@ -50,6 +50,41 @@ class ActuController extends \W\Controller\Controller
 	} // fin de function Display
 
 
+    public function actuDeact($AC_Id)
+    {
+
+        // On bloque l'acccès à la page, uniquement pour les admins (id: 1) et les artistes (id: 3)
+        // $this->allowTo() Retourne true si l'id_role de l'utilisateur est dans la liste, sinon false (ou redirect vers page login si non connecté)
+        if($this->allowTo(['1', '3']) == false){ 
+            $this->showNotFound();
+        }
+
+        
+        if(!is_numeric($AC_Id) || empty($AC_Id)){
+            $this->showNotFound(); 
+        }
+
+        $Actu2 = new ActuModel();   // déplacé en début de function
+        // Récupération de l'actualité courante (passée en ID)
+        $current_news = $Actu2->find($AC_Id);
+        $disable = $current_news['AC_Visibilite'];
+        $update = [];
+        if ($disable !== 'Restreint') {
+            $disable = 'Restreint' ;
+        }
+
+        $data = [
+            'AC_Visibilite' => $disable,
+        ];
+        $update = $current_news->update($data, (int) $AC_Id);
+
+        $this->redirectToRoute('Actu_Display');        
+
+
+    } // fin de function actuDeact
+
+
+
     public function actuUpd($AC_Id)
     {
 

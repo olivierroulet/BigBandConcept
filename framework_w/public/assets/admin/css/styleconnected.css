@@ -49,15 +49,15 @@ body  section {
 
 .title-one:after {
 	color: midnightblue;
-	content: "";
-	position: absolute;
+/*	content: ""; 
+*/	position: absolute;
 	right: -40px;
 	top: -2px;
 }
 
 .title-one:before {
 	color: midnightblue;
-	content: "";
+/*	content: "";*/
 	left: -40px;
 	position: absolute;
 	top: 0;

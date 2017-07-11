@@ -14,11 +14,11 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/main.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('admin/css/style.css') ?>">
-	<link rel="shortcut icon" href="images/ico/favicon.png"> 
+<!-- 	<link rel="shortcut icon" href="images/ico/favicon.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
-	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png"> -->
 </head>
 <body>
 	<div class="preloader">
@@ -58,13 +58,13 @@
 			</div> 
 		</div> 
 	</footer> <!--/#footer--> 
-	<script type="text/javascript" src="assets/publique/js/jquery.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/smoothscroll.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="assets/publique/js/jquery.prettyPhoto.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/jquery.parallax.js"></script> 
-	<script type="text/javascript" src="assets/publique/js/main.js"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/bootstrap.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/smoothscroll.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.isotope.min.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.prettyPhoto.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.parallax.js');?>"></script>
+	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/main.js');?>"></script>
 	<?=$this->section('js');?>
 </body>
 </html>
