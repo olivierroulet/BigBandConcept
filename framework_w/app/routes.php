@@ -18,7 +18,7 @@ $w_routes = array(
     ['GET|POST', '/formulaire_employeur', 'Clients#addEmployeur', 'form_employeur'],  
     // GESTION DES ARTISTES
     ['GET|POST', '/artistes_add', 'Artistes#addArtiste', 'default_artistes'],
-    ['GET|POST', '/artiste_upd', 'Artistes#updArtiste', 'upd_artistes'],        
+    ['GET|POST', '/artiste_upd/[i:AR_Idartiste]', 'Artistes#updArtiste', 'upd_artistes'],        
     ['GET|POST', '/artistes_view', 'Artistes#viewArtiste', 'view_artistes'],  
     ['GET|POST', '/artistes_view/[i:AR_Idartiste]', 'Artistes#deactArtiste', 'deact_artistes'],
 
@@ -30,9 +30,10 @@ $w_routes = array(
     ['GET|POST', '/logout', 'Users#logout', 'logout'],  
       
     // GESTION DES ACTUALITES
-    ['GET|POST', '/actualites', 'Actu#actuDisplay', 'Actu_Display'],
-    ['GET|POST', '/actualitesupdate/[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],        
-    ['GET|POST', '/actualitesadd', 'Actu#actuIns', 'Actu_Add'],      
+    ['GET|POST', '/actu', 'Actu#actuDisplay', 'Actu_Display'],
+    ['GET|POST', '/actu_upd[i:AC_Id]', 'Actu#actuUpd', 'Actu_Update'],        
+    ['GET|POST', '/actu[i:AC_Id]', 'Actu#actuDeact', 'Actu_Deact'],          
+    ['GET|POST', '/actuadd', 'Actu#actuIns', 'Actu_Add'],      
 
     // REDIRECTION UTILISATEUR AUTHENTIFIE EN FONCTION DE SON ROLE
     ['GET|POST', '/redirect_role', 'Users#redirectRole', 'redirectrole'],        

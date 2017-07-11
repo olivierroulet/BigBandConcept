@@ -33,3 +33,13 @@ END IF;
 
 END
 _________________________ fin de `INSArtisteAfterUserINS` _________________________________________________________
+
+CREATE TRIGGER `INS_DevisDansSes2Fils` AFTER INSERT ON `devis`
+ FOR EACH ROW BEGIN
+    INSERT INTO detail_devis SET 
+        DE_Id_Devis = NEW.DV_Iddevis;
+        
+    INSERT INTO detail_devis SET 
+        detail_devis_2 = NEW.DV_Iddevis;
+END
+_________________________ fin de `INS_DevisDansSes2Fils` _________________________________________________________
