@@ -81,7 +81,7 @@ body  section {
 } 
 
 
- /* MODAL PANEL*/
+/* MODAL PANEL*/
 .panel-body{
     color:black;
 }
@@ -100,7 +100,8 @@ body  section {
 }
 
 #boutonsupprmodal:hover {
-    background-color: #C44C51 ;
+    background-color: #B1221C ;
+    color: white;
 }
 
 #avertomodalbody {
@@ -114,17 +115,19 @@ body  section {
 
 #reveniralalistemodal:hover {
     background-color: #457DBB;
+    color: white;
 }
 
 #btn-warning-gestion-utilis {
-    background-color: #790000;
+    background-color: #21201E;
     border: none;
-    color: lightgrey;
+    color: whitesmoke;
 }
 
 #btn-warning-gestion-utilis:hover {
-    background-color: #C44C51 ;
+    background-color: red;
     border: none;
+    
 }
 
 #btn-warning-gestion-modifier {
@@ -134,8 +137,9 @@ body  section {
 }
 
 #btn-warning-gestion-modifier:hover {
-    background-color:  ;
+    background-color:  #457DBB;
     border: none;
+    color: white;
 }
 
 #btn-recherche-gestion-utilisateur {
@@ -144,4 +148,28 @@ body  section {
 }
 #btn-recherche-gestion-utilisateur:hover {
     background-color: #4CAE4C;
+    color: white;
 }
+
+
+#panel-heading-color {
+     background-color: #080830;
+    border: none;
+    color: lightgrey;
+}
+
+#panel-body-color {
+    background-color: whitesmoke;
+}
+
+#btn-color-update {
+    background-color: #21201E;
+    border :none;
+}
+
+
+
+
+
+
+
