@@ -101,12 +101,7 @@ article table {
 #clients{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
     background: #434543; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, black, 0%, rgba(239,239,239,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, black,0%,rgba(239,239,239,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, black, 0%, black, 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#efefef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
 #clients label
 {
     color:snow;
@@ -118,11 +113,17 @@ article table {
 }
 
 .btn-primary {
-    background-color: #132959;
+    background-color: #234CA5;
 }
+
+
 
 .btn-success {
     background-color:green;
+}
+
+.btn-success:hover {
+    background-color:#4cae4c;
 }
 
 .btn-warning {
@@ -136,8 +137,19 @@ article table {
     border-color: #457DBB;
 }
 
-#footer a {
+#btnFirstLogin:hover
+{
+    background-color: #457DBB;
+}
+
+
+
+
+#footer a 
+{
     color : #c9232a;
 }
+
+
 
 

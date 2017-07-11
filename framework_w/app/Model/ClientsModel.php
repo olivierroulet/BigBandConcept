@@ -70,14 +70,17 @@ class ClientsModel extends \W\Model\Model // Attention à l' arborescence !!!
 				$sql .= ' ORDER BY '.$orderBy.' '.$orderDir;
 			}
 		}
-		if($limit){
+/*		if($limit){
 			$sql .= ' LIMIT '.$limit;
 			if($offset){
 				$sql .= ' OFFSET '.$offset;
 			}
-		}
+		}*/
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();
 		return $sth->fetchAll();
 	}
 }
+
+
+//`CL_Idclient`, `CL_Prenom`, `CL_Nom`, `CL_Telephone`, `CL_Raison_Sociale`, `CL_Statut_Juridique`, `CL_Titulaire_Licence_Entrepreneur_De_Spectacles`, `CL_Code_Postal`, `CL_Ville`, `CL_Habitude_De_Date`, `CL_Date_De_Prise_De_Decision`, `CL_Date_Du_Prochain_Suivi`, `CL_Type_Bareme`, `CL_Indicateur_De_Suivi`, `CL_Statut_Du_Client`

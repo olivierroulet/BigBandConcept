@@ -34,21 +34,20 @@ class ClientsController extends \W\Controller\Controller
 
     public function addEmployeur()
     {
-            // déplacé en début de function
+            
         $post = [];
         $errors = [];
-
         
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
             
             $additionalChars = "AaÁáÂâCcĆćĈĉEeÉéÊêIiÍíÎî'";
 
-            if (!v::stringType()->length(2, null)->validate($post['CL_Prenom'])){
+            if (!v::Alnum($additionalChars)->length(2, null)->validate($post['CL_Prenom'])){
                 $errors[] = 'Le prénom doit faire au minimum 2 caractères'; // true
             }
 
-            if (!v::stringType()->length(2, null)->validate($post['CL_Nom'])){
+            if (!v::Alnum($additionalChars)->length(2, null)->validate($post['CL_Nom'])){
                 $errors[] = 'Le nom doit faire au minimum 2 caractères'; // true
             }
 
@@ -79,8 +78,8 @@ class ClientsController extends \W\Controller\Controller
                 $errors[] = 'La date de la prestation est incorrecte'; // true
             }
 
-            if (!v::postalCode('FR')->validate($post['DV_Codepostal'])){
-                $errors[] = 'Le code postal (français) est invalide'; // true
+            if (!v::Alnum()->validate($post['DV_Codepostal'])){
+                $errors[] = 'Le code postal  n\'est pas valide'; // true
             }
 
             if (!v::Alnum($additionalChars)->length(3, null)->validate($post['DV_Ville'])){
@@ -146,7 +145,7 @@ class ClientsController extends \W\Controller\Controller
                 else {
                     $json = [
                     'result' => false,
-                    'errors' => 'Une erreur est survenue ! :(',
+                    'errors' => 'Une erreur est survenue ! :-(',
                     ];
                 }
             } // count($errors)
@@ -165,18 +164,23 @@ class ClientsController extends \W\Controller\Controller
     {
         $this->verifAdmin();
 
-        $employeurs = new Clients();
-        $employeur = $employeurs->findAllEmployeurs('','CL_Date_De_Creation','DESC',1);
+        $employeur = new Clients();
+        $employeurs = $employeur->findAllEmployeurs('','CL_Date_De_Creation','DESC',1,1);
 
         $params = [
-        'employeur'    =>      $employeur,
+        'employeurs'    =>      $employeurs,
         ];
 
         
+        
 
-
-        $this->show('views_admin/employeur', $params); // affichage du template employeur
+        $this->show('views_employeur/liste_des_employeurs', $params); // affichage du template employeur
     }
 
 
 }
+                
+                
+                
+                
+   

@@ -37,7 +37,7 @@
                     if($formValid == true){ ?>
                     <div class="alert alert-succes" style="">
                         <?php
-                        echo '<p style="color:green">L\'utilisateur a bien etais ajouté';
+                        echo '<p style="color:green">L\'utilisateur a bien été ajouté';
                         ?>
                     </div>
 
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="col-sm-8 col-sm-offset-2">
-                        <button type="submit" class="btn btn-success">Ajouter cet utilisateur</button>
+                        <button type="submit" class="btn btn-success" id="btn-recherche-gestion-utilisateur">Ajouter cet utilisateur</button>
                     </div>
                 </form>
             </div>

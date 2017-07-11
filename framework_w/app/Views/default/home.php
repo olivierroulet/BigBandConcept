@@ -522,7 +522,7 @@
 												<div class="col-sm-8 col-sm-offset-2">
 													<div class="contact-heading">
 														<h2 class="title-one">Contactez-nous</h2>
-														<h4>pour toute prestation</h4>
+														<h4>pour tous renseignements</h4>
 														
 													</div>
 												</div>
@@ -642,8 +642,8 @@
 											<p>Employeur</p>
 											<p>Artiste</p>
 											<p>Administrateur</p>
-											<div id="successAjaxLoginForm" class="text-center" style="color:green"></div>
-											<div id="errorsAjaxLoginForm" class="text-center" style="color:red"></div>
+											<div id="successAjaxLoginForm" class="text-center" style="color:Lime"></div>
+											<div id="errorsAjaxLoginForm" class="text-center" style="color:Orange"></div>
 										</div>
 
 										<form id="login-form" name="login-form" method="POST">
@@ -682,8 +682,8 @@
 											<h2 class="title-one">Premiere connexion</h2>
 										</div>
 										<div class="col-sm-12"> 
-											<div id="successAjaxFirstLoginForm" class="text-center" style="color:green"></div>
-											<div id="errorsAjaxFirstLoginForm" class="text-center" style="color:red"></div>
+											<div id="successAjaxFirstLoginForm" class="text-center" style="color:Lime"></div>
+											<div id="errorsAjaxFirstLoginForm" class="text-center" style="color:Orange"></div>
 										</div>
 										<form id="first-login-form" name="first-login-form" method="POST">
 											<div class="col-sm-12">
@@ -730,8 +730,8 @@
 											<p>Entrez votre adresse mail pour recevoir un lien<br>de réinitialisation de votre mot de passe</p>
 										</div>
 										<div class="col-sm-12"> 
-											<div id="successAjaxForgotPasswordForm" class="text-center" style="color:green"></div>
-											<div id="errorsAjaxForgotPasswordForm" class="text-center" style="color:red"></div>
+											<div id="successAjaxForgotPasswordForm" class="text-center" style="color:Lime"></div>
+											<div id="errorsAjaxForgotPasswordForm" class="text-center" style="color:Orange"></div>
 										</div>
 										<form id="forgot-password-form" name="forgot-password-form" method="POST">
 											<div class="col-sm-6 col-sm-offset-3">

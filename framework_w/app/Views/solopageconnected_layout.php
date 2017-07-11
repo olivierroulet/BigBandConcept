@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -26,7 +27,7 @@
 		.row-address {
   			width: 10%;
 		}
-	</style>>
+	</style>
 </head>
 <body>
 <div class="preloader">
@@ -48,18 +49,49 @@
 			<div class="container"> 
 				<div class="navbar-header"> 
 					
-					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband2.png" alt=""></h1></a>  
+					<a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband3.png" alt=""></h1></a>  
 				</div> 
-				<div class="pull-right"><a href="logout" class="btn btn-danger">Se déconnecter</a>
+				<div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
 				</div> 
-				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info">Imprimer en PDF</a>	
+				<div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info" id="buttonimpradmin">Imprimer en PDF</a>	
 				</div> 
 			</div><!--/navbar--> 
+        </div>
 		</header> <!--/#navigation-->
 
-		<section>
-			<?= $this->section('main_content') ?>
-		</section>
+    <body>
+        <div class="preloader">
+            <div class="preloader-wrap">
+                <div class="preloader-inner"> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div> 
+                    <div class="ball"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.preloader -->
+        <header id="navigation"> 
+            <div class="navbar navbar-inverse navbar-fixed-top" role="banner"> 
+                <div class="container"> 
+                    <div class="navbar-header"> 
+
+                        <a class="navbar-brand" href="logout"><h1><img src="assets/publique/images/logobigband3.png" alt=""></h1></a>  
+                    </div> 
+                    <div class="pull-right"><a href="logout" class="btn btn-danger" id="buttondecadmin">Se déconnecter</a>
+                    </div> 
+                    <div class="pull-right"><a href="artiste_liste_PDF.php" class="btn btn-info" id="buttonimpradmin">Imprimer en PDF</a>	
+                    </div> 
+                </div><!--/navbar--> 
+            </div>
+        </header> <!--/#navigation-->
+
+        <section>
+            <?= $this->section('main_content') ?>
+        </section>
 
 	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/jquery.js');?>"></script>
 	<script type="text/javascript" src="<?=$this->assetUrl('/publique/js/bootstrap.min.js');?>"></script>
