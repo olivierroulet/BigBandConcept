@@ -116,8 +116,26 @@ body  section {
     background-color: #457DBB;
 }
 
-#btnwarninggestionutilis {
-    background-color: 
+#btn-warning-gestion-utilis {
+    background-color: #790000;
+    border: none;
+    color: lightgrey;
+}
+
+#btn-warning-gestion-utilis:hover {
+    background-color: #C44C51 ;
+    border: none;
+}
+
+#btn-warning-gestion-modifier {
+    background-color: #080830;
+    border: none;
+    color: lightgrey;
+}
+
+#btn-warning-gestion-modifier:hover {
+    background-color:  ;
+    border: none;
 }
 
 #btn-recherche-gestion-utilisateur {
@@ -126,8 +144,9 @@ body  section {
 }
 #btn-recherche-gestion-utilisateur:hover {
     background-color: #4CAE4C;
-    
 }
+
+
 
 
 
