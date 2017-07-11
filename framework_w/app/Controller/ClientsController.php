@@ -164,11 +164,11 @@ class ClientsController extends \W\Controller\Controller
     {
         $this->verifAdmin();
 
-        $employeurs = new Clients();
-        $employeur = $employeurs->findAllEmployeurs('','CL_Date_De_Creation','DESC',1,1);
+        $employeur = new Clients();
+        $employeurs = $employeur->findAllEmployeurs('','CL_Date_De_Creation','DESC',1,1);
 
         $params = [
-        'employeurs'    =>      $employeur,
+        'employeurs'    =>      $employeurs,
         ];
 
         
@@ -178,4 +178,9 @@ class ClientsController extends \W\Controller\Controller
     }
 
 
-}#3F4C6B
+}
+                
+                
+                
+                
+   
