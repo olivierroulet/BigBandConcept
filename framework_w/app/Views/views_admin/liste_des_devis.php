@@ -29,7 +29,7 @@
 
     </div>
     <div class="row">
-     <form> <!-- debut du formulaire -->
+     <form name="devis"> <!-- debut du formulaire -->
          <hr>
          <?php 
          if(!empty($tousLesDevis)):?>
@@ -70,8 +70,10 @@
             <div class='col-sm-3 text-center'>  
                 Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
                 <br><br>
-                <label for="DV_Datedudevis">Date du devis</label>
-                <input type="text" class="form-control" name="DV_Datedudevis" id="DV_Datedudevis" placeholder="Date du devis">
+                <div class=form-group>
+                    <label for="DV_Datedudevis">Date du devis</label>
+                    <input type="text" class="form-control" name="DV_Datedudevis" id="DV_Datedudevis" placeholder="Date du devis">
+                </div>
             </div> <!-- fin de col -->
             <div class='col-sm-3 text-center'>
                 Id Devis : <?= $devis['DV_Iddevis'];?><br>
@@ -82,24 +84,32 @@
         <div class='col-sm-5'>
             Donnees sur la prestation
         </div>
-        <div class='col-sm-3 col-sm-offset-5'>
+        <div class='col-sm-3'>
             Donnees sur les déplacements
             <div class="form-group">
-                <input class="text" name="kilometrageallerretour" id="kilometrageallerretour"></div>
-                <input class="text" name="dureetrajetmn" id="dureetrajetmn"></div>
-                <input class="text" name="dureetrajeth" id="dureetrajeth"></div>
-                <input class="text" name="coutdeplacements" id="coutdeplacements"></div>
+                <label for="kilometrageallerretour">Kilometres (A/R)</label><br>
+                <input class="text" name="kilometrageallerretour" id="kilometrageallerretour">
+            </div>
+            <div class="form-group">
+                <label for="kilometrageallerretour">duree trajet mn</label><br>
+                <input class="text" name="dureetrajetmn" id="dureetrajetmn">
+            </div>
+            <div class="form-group">
+                <label for="kilometrageallerretour">duree trajet h</label><br>
+                <input class="text" name="dureetrajeth" id="dureetrajeth">
+            </div>
+            <div class="form-group">
+                <label for="kilometrageallerretour">cout des deplacements</label><br>
+                <input class="text" name="coutdeplacements" id="coutdeplacements">
             </div>
         </div>
-
+        <div class="col-sm-4">
+            <div id="mapG3" class="img-responsive"></div> 
+        </div>
     </div>
-    <!--<div id="mapG3" class="img-responsive"></div> -->
-</div>
-</div>
-</div>
+
 </div>
 </form> <!-- fin du formulaire -->
-
 
 <?php endforeach; ?>
 <?php else: ?>
@@ -117,62 +127,45 @@ debug($tousLesOperateurs);
 </section>
 <?php $this->stop('main_content') ?>
 <?php $this->start('js') ?>
-<?php $address=$devis['DV_CodePostalPrestation'].",".$devis['DV_Lieudelaprestation']; ?>
+
+<?php
+/****AFFICHAGE DE LA CARTE ****/
+$address=$devis['DV_CodePostalPrestation'].",".$devis['DV_Lieudelaprestation']; 
+?>
 <script type="text/javascript">
+   /****AFFICHAGE DE LA CARTE ****/
+   var myMarker;
+   var search_addr;
+   var map;
+   var gdir;
+   var geocoder = null;
+   var addressMarker;
+   function coordonneesGPS(){      
+    address = '<?php echo $address ?>';
+    geocoder = new GClientGeocoder();
+    z = 7;
+    geocoder.getLatLng(
+        address,
+        function(point) {                               
+            if (!point) {
+                alert("- "+address+" n'existe pas");
+            }
+            else {                                  
+                var a =  point.lat();                        
+                var b =  point.lng();
+                searchCoord(address,a,b,z);                             
+            }});                    
+}  
+function searchCoord(address,a,b,z){
 
-$(document).ready(function(){ // Debut du jQuery
-                            // on affiche la section du formulaire de connexion par defaut et on cache les autres sections
-                            $('#DV_Datedudevis').on('change', function (e){
-                                alert();
-
-
-
-                            
-                            
-
-                            
-
-
-
-
-
-                            var myMarker;
-                            var search_addr;
-                            var map;
-                            var gdir;
-                            var geocoder = null;
-                            var addressMarker;
-
-                            function resetonload() {
-                                document.demandededevis.coutdeplacements.value="";
-                            }
-
-                            function coordonneesGPS(){      
-                                address = '<?php echo $address ?>';
-                                geocoder = new GClientGeocoder();
-                                z = 7;
-                                geocoder.getLatLng(
-                                    address,
-                                    function(point) {                               
-                                        if (!point) {
-                                            alert("- "+address+" n'existe pas");
-                                        }
-                                        else {                                  
-                                            var a =  point.lat();                        
-                                            var b =  point.lng();
-                                            searchCoord(address,a,b,z);                             
-                                        }});                    
-                            }  
-                            function searchCoord(address,a,b,z){
-
-                                map = new GMap2(document.getElementById('mapG3'));
+    map = new GMap2(document.getElementById('mapG3'));
 
 
-                                map.setCenter(new GLatLng(a,b), z);                             
-                                if(address!=''){
-                                    var geocoder = new GClientGeocoder();
-                                    geocoder.getLatLng(address, function(point){ map.setCenter(point,z); });
-                                }
+    map.setCenter(new GLatLng(a,b), z);                             
+    if(address!=''){
+        var geocoder = new GClientGeocoder();
+        geocoder.getLatLng(address, function(point){ map.setCenter(point,z); });
+    }
                 myMarker = createMarker(new GLatLng(a,b)); // Ajout du marqueur
                 map.addOverlay(myMarker);        
             }   
@@ -188,9 +181,96 @@ $(document).ready(function(){ // Debut du jQuery
                 return marker;
             }         
             coordonneesGPS();
-});
-            }); // Fin du jQuery
+
+            /****FIN DE TRAITEMENT DE L'AFFICHAGE DE LA CARTE ****/
         </script>
-        <?php $this->stop('js') ?>
+
+        <script>
+            /**** CALCUL DES DISTANCES ****/
+function alerter(){
+    alert('go');
+}
+            var map;
+            var gdir;
+            var geocoder = null;
+            var addressMarker;
+
+            function resetonload() {
+                document.demandededevis.coutdeplacements.value="";
+            }
+
+            function initialize()
+            {
+                if (GBrowserIsCompatible())
+                {      
+                    gdir = new GDirections(map, document.getElementById("directions"));
+                    GEvent.addListener(gdir, "load", onGDirectionsLoad); <!-- Charge la partie pour les distances -->
+                    GEvent.addListener(gdir, "error", handleErrors); <!-- Charge la partie pour les messages d erreurs -->
+                }
+            }
+
+            function setVerifFormulaire(from, villemanifestation, codepostalmanifestation, locale)
+            {   
+
+                if(document.demandededevis.coutdeplacements.value == "") 
+                {
+
+                    var cp=codepostalmanifestation;
+                    destin="";
+                    to=villemanifestation;
+                    destin=String(to + " " +cp); 
+                    setDirections(from, destin, locale);return false;}
+                }
+                function setDirections(fromAddress, toAddress, locale)
+                {
+                    gdir.load("from: " + fromAddress + " to: " + toAddress, { "locale": locale });
+                }
+                function handleErrors()
+                {
+                    if (gdir.getStatus().code == G_GEO_UNKNOWN_ADDRESS)
+                        alert("Aucune location géographique correspondante n'a pu être trouvée pour l'une des adresses spécifiées.\n\nVERIFIEZ VOTRE SAISIE\nOU SAISISSEZ UNE LOCALITE PROCHE OU CHEF LIEU DE CANTON !");
+                    else if (gdir.getStatus().code == G_GEO_SERVER_ERROR)
+                        alert("La demande d'itinéraire n'a pu être calculée avec succès, aucune raison de l'échec n'est connu.");
+                    else if (gdir.getStatus().code == G_GEO_MISSING_QUERY)
+                        alert("The HTTP q parameter was either missing or had no value. For geocoder requests, this means that an empty address was specified as input. For directions requests, this means that no query was specified in the input.\n Error code: " + gdir.getStatus().code);
+                    else if (gdir.getStatus().code == G_GEO_BAD_KEY)
+                        alert("La clé (Key) n'est pas valide ou ne correspond pas au nom de domaine. \n Error code: " + gdir.getStatus().code);
+                    else if (gdir.getStatus().code == G_GEO_BAD_REQUEST)
+                        alert("La demande d'itinéraire n'a pu être correctement parsé.\n Error code: " + gdir.getStatus().code);
+                    else alert("Une erreur inconnue est survenue.");
+                }
+                function onGDirectionsLoad()
+                {
+                    var reg=new RegExp("&nbsp;", "g");
+                    kilometrage = gdir.getDistance().meters;
+                    var dureemn = (gdir.getDuration().seconds / 60).toFixed(0);
+                    var dureeh = gdir.getDuration().html;
+                    var allerretour = (Math.round(((kilometrage/1000)*2)*100)/100);
+                    var cout = (Math.round((allerretour*0.30)*100)/100);
+                    var annonce = "Kilometrage aller/retour : " + allerretour + " kms. ";
+                    document.getElementById("kilometrageallerretour").value = allerretour;
+                    document.getElementById("dureetrajetmn").value = dureemn;
+                    document.getElementById("dureetrajeth").value = dureeh;
+                    document.getElementById("coutdeplacements").value = cout;
+                    placer_date();
+                    if(document.demandededevis.coutdeplacements.value != "") 
+                        {document.demandededevis.submit.click();}   
+                }
+
+
+
+                $(document).ready(function(){
+
+                    $('#coutdeplacements').on('click', function(e){
+
+            // var reponse = ObtenirLesDistances('niort','bordeaux', '33000', 'FR');  
+            alert();              
+            alerter();               
+            }); // Fin de fonction sur action 
+
+                    /******  FIN DE L'OBTENTION ET DU TRAITEMENT DES DISTANCES ******/
+}); // Fin du jQuery
+</script>
+<?php $this->stop('js') ?>
 
 
