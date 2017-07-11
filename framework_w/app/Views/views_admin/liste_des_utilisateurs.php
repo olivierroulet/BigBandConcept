@@ -83,10 +83,10 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                                         <h4 class="modal-title">ATTENTION !</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Voulez vous vraiment supprimer cet utilisateur ? Sa suppresion sera definitive</p>
+                                        Voulez vous vraiment supprimer cet utilisateur ? Sa suppression sera définitive
                                     </div>
                                     <div class="modal-footer">
-                                        <a class="btn btn-default" href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>
+                                        <a class="btn btn-default" id="boutonsupprmodal"href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Revenir à la liste</button>
                                     </div>
                                 </div>

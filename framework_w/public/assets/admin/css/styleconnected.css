@@ -1,66 +1,66 @@
 body{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,99afab+33,8ea6a2+50,829d98+67,4e5c5a+82,0e0e0e+100;Grey+3D */
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+0,3f4c6b+100;Blue+Grey+Flat */
-background: rgb(63,76,107); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(63,76,107,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,99afab+33,8ea6a2+50,829d98+67,4e5c5a+82,0e0e0e+100;Grey+3D */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+0,3f4c6b+100;Blue+Grey+Flat */
+    background: rgb(63,76,107); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(63,76,107,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(63,76,107,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
 }
 #navigation .navbar {
-background-color:black;
+    background-color:black;
 }
 
 h1, h2, h3, h4, h5, h6, .title-one{
-	color: white;
-	text-shadow: 1px 1px 2px black;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 body {
-	color: white;
-    
+    color: white;
+
 
 }
 
 #mapG3 {
-	  	width: 321px;
-        height: 184px;
-        padding :0px 0px 0px 0px;
-        
-        background-color: white;
-        border-radius: 7px 7px 7px 7px;
-        border : 1px solid #555;
-        box-shadow: 2px 2px 2px #555;
-        z-index: 1;
-      }
+    width: 321px;
+    height: 184px;
+    padding :0px 0px 0px 0px;
+
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    border : 1px solid #555;
+    box-shadow: 2px 2px 2px #555;
+    z-index: 1;
+}
 
 #couverturecarte {
-	  	
-        width: 329px;
-        height: 192px;
-       
-        border-radius: 7px 7px 7px 7px;
-        z-index: 2;
-      }
+
+    width: 329px;
+    height: 192px;
+
+    border-radius: 7px 7px 7px 7px;
+    z-index: 2;
+}
 
 body  section {
     background-color: 3f4c6b;
 }
 
 .title-one:after {
-	color: midnightblue;
-	content: "";
-	position: absolute;
-	right: -40px;
-	top: -2px;
+    color: midnightblue;
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: -2px;
 }
 
 .title-one:before {
-	color: midnightblue;
-	content: "";
-	left: -40px;
-	position: absolute;
-	top: 0;
+    color: midnightblue;
+    content: "";
+    left: -40px;
+    position: absolute;
+    top: 0;
 }
 
 #buttondecadmin {
@@ -69,43 +69,51 @@ body  section {
 }
 
 #buttondecadmin:hover {
-     background-color: #C44C51 ;
+    background-color: #C44C51 ;
 }
 
 #buttonimpradmin:hover {
     background-color: #457DBB ;
-   
+
 }
 
 
 
-
-
-
 .btn-info {
-    
+
     background-color: #234CA5;
     border-color:  #234CA5;
-   
+
 }
 
 
 #pins {
     margin-left:  20px;
-  
-    background-color: #234CA5;
-   
-    } 
-    
-.panel-body{
-    
-    
-    color:black;
-    
 
-    
+    background-color: #234CA5;
+
+} 
+
+
+ /* MODAL PANEL*/
+.panel-body{
+    color:black;
 }
 
+.modal-content {
+    background-color: gainsboro;
+}
 
+.modal-header {
+    color: chartreuse;
+}
+
+#boutonsupprmodal {
+    background-color: #B1221C;
+}
+
+#boutonsupprmodal:hover {
+    background-color: #C44C51 ;
+}
 
 
