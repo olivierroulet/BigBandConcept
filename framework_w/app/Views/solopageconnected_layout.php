@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<<<<<<< HEAD
+
 <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -58,7 +58,7 @@
 			</div><!--/navbar--> 
         </div>
 		</header> <!--/#navigation-->
-=======
+
     <head>
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -74,7 +74,7 @@
         <link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
         <link rel="stylesheet" href="<?= $this->assetUrl('admin/css/styleconnected.css') ?>">
         <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
->>>>>>> 050deb2384019da12eb30f4de9acd105cb2032bf
+
 
         <link rel="shortcut icon" href="images/ico/favicon.png"> 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
