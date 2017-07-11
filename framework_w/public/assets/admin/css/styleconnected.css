@@ -18,12 +18,9 @@ h1, h2, h3, h4, h5, h6, .title-one{
 
 body {
     color: white;
-
-
 }
 
 #mapG3 {
-
     width: 321px;
     height: 184px;
     padding :0px 0px 0px 0px;
@@ -68,24 +65,19 @@ body  section {
 
 #buttonimpradmin:hover {
     background-color: #457DBB ;
-
 }
 
 
 
 .btn-info {
-
     background-color: #234CA5;
     border-color:  #234CA5;
-
 }
 
 
 #pins {
-    margin-left:  20px;
-
+    margin-left: 20px;
     background-color: #234CA5;
-
 } 
 
 
@@ -113,4 +105,13 @@ body  section {
 
 #avertomodalbody {
     color: black;
+}
+
+#reveniralalistemodal {
+    background-color: #234CA5;
+    color: white;
+}
+
+#reveniralalistemodal:hover {
+    background-color: #457DBB;
 }
