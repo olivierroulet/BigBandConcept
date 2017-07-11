@@ -29,7 +29,7 @@
 
     </div>
     <div class="row">
-     <form name="devis"> <!-- debut du formulaire -->
+     <form name="calculdudevis"> <!-- debut du formulaire -->
          <hr>
          <?php 
          if(!empty($tousLesDevis)):?>
@@ -100,7 +100,7 @@
             </div>
             <div class="form-group">
                 <label for="kilometrageallerretour">cout des deplacements</label><br>
-                <input class="text" name="coutdeplacements" id="coutdeplacements">
+                <input disabled class="text" name="coutdeplacements" id="coutdeplacements">
             </div>
         </div>
         <div class="col-sm-4">
@@ -187,17 +187,11 @@ function searchCoord(address,a,b,z){
 
         <script>
             /**** CALCUL DES DISTANCES ****/
-function alerter(){
-    alert('go');
-}
+
             var map;
             var gdir;
             var geocoder = null;
             var addressMarker;
-
-            function resetonload() {
-                document.demandededevis.coutdeplacements.value="";
-            }
 
             function initialize()
             {
@@ -212,7 +206,7 @@ function alerter(){
             function setVerifFormulaire(from, villemanifestation, codepostalmanifestation, locale)
             {   
 
-                if(document.demandededevis.coutdeplacements.value == "") 
+                if(document.calculdudevis.coutdeplacements.value == "") 
                 {
 
                     var cp=codepostalmanifestation;
@@ -252,21 +246,15 @@ function alerter(){
                     document.getElementById("dureetrajetmn").value = dureemn;
                     document.getElementById("dureetrajeth").value = dureeh;
                     document.getElementById("coutdeplacements").value = cout;
-                    placer_date();
-                    if(document.demandededevis.coutdeplacements.value != "") 
-                        {document.demandededevis.submit.click();}   
+                    
                 }
-
-
-
                 $(document).ready(function(){
-
-                    $('#coutdeplacements').on('click', function(e){
-
-            // var reponse = ObtenirLesDistances('niort','bordeaux', '33000', 'FR');  
-            alert();              
-            alerter();               
-            }); // Fin de fonction sur action 
+                    jQuery(window).load(function(){
+                        
+            initialize();       
+            setVerifFormulaire('royan',address,'fr');  
+                    });
+                    
 
                     /******  FIN DE L'OBTENTION ET DU TRAITEMENT DES DISTANCES ******/
 }); // Fin du jQuery
