@@ -21,18 +21,14 @@ body {
 }
 
 #mapG3 {
-    width: 321px;
-    height: 184px;
-    padding :0px 0px 0px 0px;
-
-    background-color: white;
-    border-radius: 7px 7px 7px 7px;
-    border : 1px solid #555;
-    box-shadow: 2px 2px 2px #555;
-    z-index: 1;
+    width:100%;
+    height: 250px;
+    
+    border : 1px solid black;
+    
+    box-shadow: 2px 2px 4px #555;
+   
 }
-
-
 
 body  section {
     background-color: 3f4c6b;
@@ -167,8 +163,11 @@ body  section {
     border :none;
 }
 
-
-
+.form-control-2[type=text], .form-control-2[type=select]{
+    background: none;
+    border:none;
+    color:white;
+}
 
 
 

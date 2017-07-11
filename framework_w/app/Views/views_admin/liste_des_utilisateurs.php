@@ -34,7 +34,8 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
 
             </div>
             <div class="row">
-                <?php 
+                <?php
+                debug($users); 
                 if(!empty($users)):?>
                 <hr>
                 <?php foreach ($users as $user): 
@@ -58,14 +59,17 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                     <div class='col-sm-1'>
                         <a class="btn btn-warning" id="btn-warning-gestion-modifier" href="updater_un_utilisateur?id=<?php echo $user['US_id'];?>">Modifier</a>
                     </div>
-                    <div class='col-sm-4'>
+                    <div class='col-sm-3'>
                         <?=$user['US_FirstName']. ' ' . $user['US_LastName'] ; ?>
                     </div>
-                    <div class='col-sm-4'>
+                    <div class='col-sm-3'>
                         <?=$user['US_email']; ?>
                     </div>
                     <div class='col-sm-2'>
                         <?=$role; ?>
+                    </div>
+                    <div class='col-sm-2'>
+                        <?php if($user['US_ActiveYN']==1){echo 'autorisé';} else {echo 'non autorisé';}?>
                     </div>
                     <div class='col-sm-1'>
                         <!--							<a class="btn btn-danger" href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>-->

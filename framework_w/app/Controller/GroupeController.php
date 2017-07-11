@@ -62,6 +62,7 @@ class GroupeController extends \W\Controller\Controller
                 'GI_Logo' => $post['GI_Logo'],
                 'GI_Address' => $post['GI_Address'],
                 'GI_Addr_ZipCode' => $post['GI_Addr_ZipCode'],
+                'GI_Addr_City' => $post['GI_Addr_City'],
                 'GI_OpeningHours' => $post['GI_OpeningHours'],
                 'GI_Comments' => $post['GI_Comments'],
                 'GI_News' => $post['GI_News'],

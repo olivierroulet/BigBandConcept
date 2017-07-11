@@ -29,7 +29,7 @@ class DevisModel extends \W\Model\Model // Attention à l' arborescence !!!
 
 	public function findAllDevis($statut = "", $orderBy = "", $orderDir = 'ASC', $limit = null, $offset = null)
 	{
-		$sql = 'SELECT * FROM ' . $this->table . ' INNER JOIN clients on DV_Idclient=CL_Idclient INNER JOIN users on CL_ID_InUsersTable=US_Id ';
+		$sql = 'SELECT * FROM ' . $this->table . ' INNER JOIN detail_devis on DE_Id_Devis=DV_Iddevis INNER JOIN detail_devis_2 on D2_Iddevis= DV_Iddevis INNER JOIN clients on DV_Idclient=CL_Idclient INNER JOIN users on CL_ID_InUsersTable=US_Id ';
 		
 		if (!empty($statut)){
 

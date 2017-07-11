@@ -649,8 +649,8 @@
 										<form id="login-form" name="login-form" method="POST">
 											<div class="col-sm-6">
 												<div class="form-group">
-													<label for="username">Nom d'utilisateur ou email</label>
-													<input type="text" class="form-control" name="username" id="username" placeholder="Votre adresse mail ou votre nom d'utilisateur">
+													<label for="username">Email</label>
+													<input type="text" class="form-control" name="username" id="username" placeholder="Votre adresse mail">
 												</div>
 											</div>
 											<div class="col-sm-6">
@@ -690,12 +690,6 @@
 												<div class="form-group">
 													<label for="email">Adresse Mail</label>
 													<input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse mail">
-												</div>
-											</div>
-											<div class="col-sm-12">
-												<div class="form-group">
-													<label for="username">Pseudo</label>
-													<input type="text" class="form-control" name="username" id="username" placeholder="Votre nom d'utilisateur">
 												</div>
 											</div>
 											<div class="col-sm-6">

@@ -28,15 +28,15 @@
                     <div class="form-group">
                         <input hidden name="idToModif" id="idToModif" type="text" value="<?= $idToModif['US_id']?>">
                         <label for="US_FirstName">Prenom</label>
-                        <input name="US_FirstName" type="text" value="<?= $idToModif['US_FirstName']?>"><br>
+                        <input class="form-control" name="US_FirstName" type="text" value="<?= $idToModif['US_FirstName']?>"><br>
                         <label for="US_LastName">Nom</label>
-                        <input name="US_LastName" type="text" value="<?= $idToModif['US_LastName']?>"><br>
+                        <input class="form-control" name="US_LastName" type="text" value="<?= $idToModif['US_LastName']?>"><br>
                         <label for="US_Pseudo">Pseudo</label>
-                        <input name="US_Pseudo" type="text" value="<?= $idToModif['US_Pseudo']?>"><br>
+                        <input class="form-control" name="US_Pseudo" type="text" value="<?= $idToModif['US_Pseudo']?>"><br>
                         <label for="US_email">Email</label>
-                        <input name="US_email" type="text" value="<?= $idToModif['US_email']?>"><br>
+                        <input class="form-control" name="US_email" type="text" value="<?= $idToModif['US_email']?>"><br>
                         <label for="US_tel">téléphone</label>
-                        <input name="US_tel" type="text" value="<?= $idToModif['US_tel']?>"><br>
+                        <input class="form-control" name="US_tel" type="text" value="<?= $idToModif['US_tel']?>"><br>
                         <label for="US_idURole">Role</label>
                         <select name="US_idURole" id="">
                             <option <?php if ($idToModif['US_idURole'] == 1){echo 'selected';}?> value="1">Administrateur</option>

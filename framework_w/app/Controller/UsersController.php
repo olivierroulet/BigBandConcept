@@ -560,39 +560,13 @@ class UsersController extends \W\Controller\Controller
                 
                 
                  $this->redirectToRoute('listerlesutilisateurs');
-                
-                
+    
                 
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
+              
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
-        
-        
-
-
-
+ 
 }
 
