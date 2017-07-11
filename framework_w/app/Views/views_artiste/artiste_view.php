@@ -12,7 +12,7 @@
 			  	$OK= 'OK';
 			  }	
 			}
-
+debug ($_SESSION);
 //************************ DEBUT DE FUNCTION FORMATAGE des N° de téléphone
 
 function format_phone($country, $phone) {
@@ -49,7 +49,6 @@ function format_phone_fr($phone) {
 
 ?>
 
-
 <section id="section-artistes" class="parallax-section">
  	<div class="container-fluid">
 		<div class="clients-wrapper">
@@ -60,7 +59,6 @@ function format_phone_fr($phone) {
       </div>
     </div>
 
-
 	<?php
 // et maintenant on envoit la requête
 	/*1- supposer que l' on est connecté en admin
@@ -69,8 +67,7 @@ function format_phone_fr($phone) {
 
 	  if(!empty($reponses)) {    ?>
 
-  <div class="table-responsive">
-
+ <div class="table-responsive">
   <table id="ArtistesGrid" class="table table-hover table-responsive">
     <thead class="table-bordered">
      <tr>
