@@ -15,7 +15,7 @@
             <div class="row text-center">
             
     <?php $employeur=$employeurs[0];
-debug($employeur);?>
+?>
                 <h2 class="title-one">Gestion des employeurs</h2>
                 <form method="POST" action="employeur_suivant">
                     <button type="submit" class="btn btn-primary">Suivant</button>
