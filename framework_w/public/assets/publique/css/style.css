@@ -1,7 +1,7 @@
 #navigation .navbar-inverse .navbar-nav .active a, 
 #navigation .navbar-inverse .navbar-nav .active a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover { 
-    background-color: #c9232a;
+    background-color: yellow;
 }
 #navigation .navbar {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
@@ -118,38 +118,59 @@ article table {
 
 
 
+/* BOUTON "SE CONNECTER" */
 .btn-success {
-    background-color:green;
+    background-color: #006600;
+    border: none;
+}
+.btn-success:hover {
+    background-color: #004d00;
 }
 
-.btn-success:hover {
-    background-color:#4cae4c;
+
+
+/* BTN ENVOI DEMANDE DE DEVIS*/
+#submitDemandeDeDevis {
+    background-color: #008000;
+    border: none;
 }
+#submitDemandeDeDevis:hover {
+    background-color: #004d00;
+}
+
 
 .btn-warning {
     background-color: rgb (158, 30, 2);
 }
 
+
+
+
+/* BTN "PREMIERE CONNEXION" */
 #btnFirstLogin
 {
     color: white;
-    background-color: #234CA5;
-    border-color: #457DBB;
+    background-color: #0059b3;
+    border: none;
 }
-
 #btnFirstLogin:hover
 {
-    background-color: #457DBB;
+    background-color:  #004d99;
 }
 
 
+/* BORDER DU PORTFOLIO-FILTER*/
 
 
+
+
+
+
+/* COULEUR "BigBand" FOOTER*/
 #footer a 
 {
     color : #c9232a;
 }
-
 
 
 
