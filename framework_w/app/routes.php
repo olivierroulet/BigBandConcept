@@ -55,8 +55,8 @@ $w_routes = array(
     
     // INTERFACE ADMINISTRATEUR - GESTION DES Employeurs
     ['GET|POST', '/lister_tous_les_employeurs', 'Clients#listerTousLesEmployeurs', 'listertouslesemployeurs'],
-    ['GET|POST', '/employeursuivant', 'Clients#employeurSuivant', 'employeursuivant'],
-    ['GET|POST', '/employeurprecedent', 'Clients#employeurPrecedent', 'employeurprecedent'],
+    ['GET|POST', '/employeur_suivant', 'Clients#employeurSuivant', 'employeursuivant'],
+    ['GET|POST', '/employeur_precedent', 'Clients#employeurPrecedent', 'employeurprecedent'],
 
         // INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
     ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],

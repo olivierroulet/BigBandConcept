@@ -187,8 +187,8 @@ class ClientsController extends \W\Controller\Controller
             $next = $employeur->findNextEmployeur($post['actualIdClient']);
             $params = ['employeurs'=> $next];
             
-            
-              $this->show('views_employeur/liste_des_employeurs', $params); 
+            debug($params);
+              $this->show('views_employeur/employeur_suivant', $params); 
             
             
         }
@@ -202,9 +202,9 @@ class ClientsController extends \W\Controller\Controller
             $employeur = new Clients();
             $previous = $employeur->findPreviousEmployeur($post['actualIdClient']);
             $params = ['employeurs'=> $previous];
+            debug($params);
             
-            
-              $this->show('views_employeur/liste_des_employeurs', $params); 
+              $this->show('views_employeur/employeur_precedent', $params); 
                        
         }
     }
