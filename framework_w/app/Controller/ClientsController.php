@@ -163,10 +163,10 @@ class ClientsController extends \W\Controller\Controller
     public function listerTousLesEmployeurs()
     {
         $this->verifAdmin();
-
+        
         $employeur = new Clients();
-        $employeurs = $employeur->findAllEmployeurs('','CL_Date_De_Creation','DESC',1,1);
-
+        $employeurs = $employeur->findAllEmployeurs("", 'ASC',1,0);
+        
         $params = [
         'employeurs'    =>      $employeurs,
         ];
@@ -175,7 +175,42 @@ class ClientsController extends \W\Controller\Controller
         
 
         $this->show('views_employeur/liste_des_employeurs', $params); // affichage du template employeur
+        
     }
+    
+    public function employeurSuivant()
+    {
+        if (!empty($_POST['actualIdClient']))
+        {
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+            $employeur = new Clients();
+            $next = $employeur->findNextEmployeur($post['actualIdClient']);
+            $params = ['employeurs'=> $next];
+            
+            
+              $this->show('views_employeur/liste_des_employeurs', $params); 
+            
+            
+        }
+    }
+    
+     public function employeurPrecedent()
+    {
+            if (!empty($_POST['actualIdClient']))
+        {
+            $post = array_map('trim', array_map('strip_tags', $_POST));
+            $employeur = new Clients();
+            $previous = $employeur->findPreviousEmployeur($post['actualIdClient']);
+            $params = ['employeurs'=> $previous];
+            
+            
+              $this->show('views_employeur/liste_des_employeurs', $params); 
+                       
+        }
+    }
+    
+    
+    
 
 
 }

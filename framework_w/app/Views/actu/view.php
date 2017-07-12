@@ -10,7 +10,37 @@
 					<h2 class="title-one">Actualités sur les 3 prochains mois</h2>
 				</div>
 			</div>
+
+
+			<div class="clients-wrapper">
+				<div class="row text-center">
+					<div class="col-md-12">
+					<div class="col-md-8">&nbsp;</div>
+						<div class="col-md-2">
+							<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="<?=$this->url('Actu_Add');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-refresh"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Ajouter un évènement</a>
+							
+							<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
+						</div>
+						<div class="col-md-12">
+								<!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+									<a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+						</div>
+					</div> <!-- fin de row -->
+				</div>
+				<div class="row">
+				&nbsp;
+				</div>
+
+			</div>
+
+
+
 			<div class="row">
+
+
 
 	<?php
 // et maintenant on envoit la requête
@@ -29,33 +59,24 @@
 
 	  if(!empty($reponses)) {    ?>
 	  	<table id="ActuGrid" class="table table-condensed table-hover">
-	  		<thead class="table-bordered headedW" style="font-family:Cuprum; font-weight:bold;">
-	  		<tr><td> 
-	  		<button type="submit" id="ActuINS" name="ActuINS" value="ActuINS" class="btn btn-sm btn-info" title="Ajouter un nouvel évènement"> 
-				<!-- <a href="< ?=$this->url('Actu_Add', ['AC_Id' => $reponse['AC_Id']]);?>">Ajouter</a> -->
-					<a href="<?=$this->url('Actu_Add');?>"><i class="fa fa-window-restore" aria-hidden="true"></i>Ajouter</a>				
 
-		  		<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
-
-		  			<i class="glyphicon glyphicon-refresh"></i>
-		  		</button>
-		  	</td></tr>
-		  	<!-- Ligne d' entête avant l' affichage des données -->
-		  	<td>Modif° Désactiv°</td>
-		  	<td>ID</td>
-		<!-- 	  	<td>Visibilité</td> -->                
-		  	<td>Lieu</td>
-		  	<td>Date de l' évènement</td>
-		  	<td>Description sommaire</td>
-		  	<td>Description détaillée</td>
-		  	<td>Puce</td>
-		  	<td>Adresse</td>
-		  	<td>Code Postal</td>
-		  	<td>Notes</td>
-		  	<td>Pub/Restreint/Brouillon</td>
+	  		<thead class="table-bordered" style="font-family:Cuprum; font-weight:bold;">
+			  	<!-- Ligne d' entête avant l' affichage des données -->
+		  	<th>Modif° Désactiv°</th>
+		  	<th>ID</th>
+		  	<th>Lieu</th>
+		  	<th>Date de l' évènement</th>
+		  	<th>Description sommaire</th>
+		  	<th>Description détaillée</th>
+		  	<th>Puce</th>
+		  	<th>Adresse</th>
+		  	<th>Code Postal</th>
+		  	<th>Notes</th>
+		  	<th>Pub/Restreint/Brouillon</th>
 
 	  		</thead>
 	  <tbody>
+
 	  <!-- Fin de l' entête. On affiche les données ci-dessous -->
 
 	  	<?php 

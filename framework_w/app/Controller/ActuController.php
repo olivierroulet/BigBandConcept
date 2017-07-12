@@ -148,6 +148,7 @@ class ActuController extends \W\Controller\Controller
                 $toto2[]=1;
                 $data2 = [
                     'AC_Date' 		=> $post2['AC_Date'],
+                    'AC_DateFin'    => $post2['AC_DateFin'],
                     'AC_Com1' 		=> $post2['AC_Com1'],
                     'AC_Com2' 		=> $post2['AC_Com2'],
                     'AC_Num' 		=> $post2['AC_Num'],
@@ -242,13 +243,26 @@ class ActuController extends \W\Controller\Controller
                     'AC_Code_Postal'=> $post['AC_Code_Postal'],
                     'AC_Lieu' 		=> $post['AC_Lieu'],
 					'AC_Visibilite' => $post['AC_Visibilite'],
+                    'AC_DateFin' => $post['AC_DateFin'],
                 ];
 				//  var_dump($data);
                 $insert = $Actu->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
 
                 if(!empty($insert)){
                     $formValid = true;
+                    $json = [
+                    'result' => true,
+                    'success' => 'L\' évènement a bien été enregistré.',
+                    ];
                 }
+
+                else {
+                    $json = [
+                    'result' => false,
+                    'errors' => 'Une erreur est survenue. Support en français et anglais au 3887 ou via le formulaire de contact',
+                    ];
+                }
+
             } // fin de count($errors)
 		} // Fin de  !empty
 

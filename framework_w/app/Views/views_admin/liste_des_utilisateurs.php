@@ -16,7 +16,7 @@
                     <h3>Rechercher un utilisateur</h3>
                     <?php
     $post = $_POST;
-$US_email = isset($post['US_email']) ? $post['US_email'] : '';
+    $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                     ?>
                     <form method="post" action="rechercher_un_utilisateur">
 
@@ -35,7 +35,7 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
             </div>
             <div class="row">
                 <?php
- 
+
                 if(!empty($users)):?>
                 <hr>
                 <?php foreach ($users as $user): 
