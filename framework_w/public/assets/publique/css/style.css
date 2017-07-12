@@ -148,21 +148,10 @@ article table {
 }
 
 
-/* BORDER DU PORTFOLIO-FILTER*/
+/* BORDER DU  PORTFOLIO ET PORTFOLIO-FILTER*/
 .mask.text-center {
     border-color: #cc0000;
 }
-
-
-/* COULEUR "BigBand" FOOTER*/
-#footer a 
-{
-    color : #c9232a;
-}
-
-
-
-
 #portfolio 
 .portfolio-filter li a:hover, 
 #portfolio 
@@ -179,7 +168,11 @@ article table {
 }
 
 
-
+/* COULEUR "BigBand" FOOTER*/
+#footer a 
+{
+    color : #c9232a;
+}
 
 
 
