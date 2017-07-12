@@ -65,14 +65,15 @@
 		  	<th>Modif° Désactiv°</th>
 		  	<th>ID</th>
 		  	<th>Lieu</th>
-		  	<th>Date de l' évènement</th>
-		  	<th>Description sommaire</th>
+		  	<th>Début de l' évènement</th>
+		  	<th>Fin de l' évènement</th>
+		  	<th>Accroche</th>
 		  	<th>Description détaillée</th>
 		  	<th>Puce</th>
 		  	<th>Adresse</th>
 		  	<th>Code Postal</th>
 		  	<th>Notes</th>
-		  	<th>Pub/Restreint/Brouillon</th>
+		  	<th class="text-center">Pub Restreint Brouillon</th>
 
 	  		</thead>
 	  <tbody>
@@ -86,9 +87,9 @@
 	        ?>
 		        <tr class="normal">
 		        	<td> 
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i style="color:black;" class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="modifier"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i style="color:black;" class="fa fa-pencil-square-o fa-1x" aria-hidden="true" title="modifier"></i></a>
 
-					<a href="<?=$this->url('Actu_Display', ['AC_Id' => $reponse['AC_Id']]);?>">  <i style="color:cherryred;" class="fa fa-times fa-2x" aria-hidden="true" title="désactiver cet évènement. Pas de suppression physique"></i></a>
+					<a href="<?=$this->url('Actu_Display', ['AC_Id' => $reponse['AC_Id']]);?>">  <i style="color:cherryred;" class="fa fa-times fa-1x" aria-hidden="true" title="désactiver cet évènement. Pas de suppression physique"></i></a>
 		        	</td>
 		        	<td><?= $reponse['AC_Id']?></td>
 		        	<td><strong><?= $reponse['AC_Lieu']?> </strong></td> 
