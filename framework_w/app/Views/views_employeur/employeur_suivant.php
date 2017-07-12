@@ -13,16 +13,15 @@
             </div>
 
             <div class="row text-center">
-            
-    <?php $employeur=$employeurs[0];
-debug($employeur);?>
+                <?php $employeur=$employeurs[0];
+debug($employeurs);?>
                 <h2 class="title-one">Gestion des employeurs</h2>
                 <form method="POST" action="employeur_suivant">
                     <button type="submit" class="btn btn-primary">Suivant</button>
-                    <input name="actualIdClient" type="hidden" value="<?php echo $employeur['CL_Idclient'];?>">
+                    <input name="actualIdClient" type="hidden" value="<?=$employeurs['CL_Idclient'];?>">
                 </form>
                 <form method="POST" action="employeur_precedent">
-                    <input name="actualIdClient" type="hidden" value="<?=$employeur['CL_Idclient'];?>">
+                    <input name="actualIdClient" type="hidden" value="<?=$employeurs['CL_Idclient'];?>">
                     <button  type="submit" class="btn btn-primary">Precedent</button>
                 </form>
                 <?php 
