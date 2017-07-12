@@ -7,9 +7,18 @@
 		<div class="clients-wrapper">
 			<div class="row text-center">
 				<div class="col-sm-2">
-					<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
-                    <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
-                    <a href="redirect_role" class="btn btn-block btn-default">suiv.</a>
+                    <?php 
+                    if (!isset($enr)){
+                        $enr=0;
+                    }
+                    if ($ndDeDevis>$enr){$suivant=$enr+1;}
+                    if ($enr>0){$precedent=$enr-1;}
+                   ?>
+ 
+                    <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+                    <a href="<?=$this->url('devisprecedent',['enr' => $precedent]);?>" class="btn btn-block btn-default">préc.</a>
+
+                    <a href="<?=$this->url('devissuivant',['enr' => $suivant]);?>" class="btn btn-block btn-default">suiv.</a>
                 </div>
                 <div class="col-sm-2">
                     <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau devis</a>
@@ -32,6 +41,7 @@
      <form name="calculdudevis" method="POST" action="updater_le_devis"> <!-- debut du formulaire -->
          <hr>
          <?php
+
          if(!empty($tousLesDevis)):?>
 
          <?php foreach ($tousLesDevis as $devis): 
@@ -60,7 +70,7 @@
                         </select>
 
                     </div>
-                    
+
                     <?= $ourShop['GI_Name'];?><br>
                     <?= $tousLesOperateurs[$devis['DE_Id_Operateur']-1]['OP_Civilite'] . ' ' . $tousLesOperateurs[$devis['DE_Id_Operateur']-1]['OP_Prenom'] . ' ' . $tousLesOperateurs[$devis['DE_Id_Operateur']-1]['OP_Nom'];?><br>
                     <?= $tousLesOperateurs[$devis['DE_Id_Operateur']-1]['OP_Adresse_Ligne_1'];?><br>

@@ -196,10 +196,10 @@ class UsersController extends \W\Controller\Controller
                 // On stocke le token et l'id user dans la db
                 $insert = $reset->insert($dataToken);
                 $mail = new Mail();
-                //$mail->SMTPDebug = 3;    // Enable verbose debug output
-                $mail->isSMTP();    // Set mailer to use SMTP
-                $mail->Host = 'smtp.gmail.com';    // Specify main and backup SMTP servers
-                $mail->SMTPAuth = true; // Enable SMTP authentication
+                //$mail->SMTPDebug = 3;             // Enable verbose debug output
+                $mail->isSMTP();                    // Set mailer to use SMTP
+                $mail->Host = 'smtp.gmail.com';     // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;             // Enable SMTP authentication
                 $mail->Username = 'bigbandv4@gmail.com';    // SMTP username
                 $mail->Password = 'Gibson-v4';  // SMTP password
                 $mail->SMTPSecure = 'ssl';  // Enable TLS encryption, `ssl` also accepted

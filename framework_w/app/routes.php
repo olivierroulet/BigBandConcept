@@ -60,6 +60,8 @@ $w_routes = array(
 
         // INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
     ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],
+    ['GET|POST', '/devis_suivant[i:enr]', 'Devis#devisOffset', 'devissuivant'],
+    ['GET|POST', '/devis_precedent[i:enr]', 'Devis#devisOffset', 'devisprecedent'],
     ['GET|POST', '/updater_le_devis', 'Devis#updaterLeDevis', 'updaterledevis'],   
     
         // Info groupe et update

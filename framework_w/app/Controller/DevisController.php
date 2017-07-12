@@ -14,8 +14,11 @@ use Model\UsersModel;
 use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
 
+
+   
+
 class DevisController extends \W\Controller\Controller
-{
+{ 
     public function verifAdmin()
     {
             $me = $this->getUser(); // utilisateur connecté
@@ -39,7 +42,10 @@ class DevisController extends \W\Controller\Controller
         $this->verifAdmin();
 
         $devis = new Devis();
-        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,0);
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',NULL,NULL);
+        $nbDeDevis=count($tousLesDevis);
+
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',1,0);
 
         $operateur = new Operateur();
         $tousLesOperateurs = $operateur->findAll();
@@ -52,6 +58,38 @@ class DevisController extends \W\Controller\Controller
         'tousLesDevis'          =>        $tousLesDevis,
         'ourShop'               =>        $ourShop,
         'tousLesOperateurs'     =>        $tousLesOperateurs,
+        'nbDeDevis'             =>        $nbDeDevis,
+        'offset'                =>        0,
+        ];
+
+        $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
+    }
+
+    public function devisOffset($enr = 0)
+    {
+        
+        $this->verifAdmin();
+       
+        $devis = new Devis();
+        $Devis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',NULL,NULL);
+        $nbDeDevis=count($Devis);
+
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC', 1, (int) $enr);
+
+        $operateur = new Operateur();
+        $tousLesOperateurs = $operateur->findAll();
+
+        $ourshop = new Groupeinfo();
+        $requeteOurShop = $ourshop->findAll();
+        $ourShop=$requeteOurShop[0];
+
+        $params = [
+        'tousLesDevis'          =>        $tousLesDevis,
+        'ourShop'               =>        $ourShop,
+        'tousLesOperateurs'     =>        $tousLesOperateurs,
+        'offset'                =>        $offset,
+        'nbDeDevis'             =>        $nbDeDevis,
+        'enr'                   =>        $enr,
         ];
 
         $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
@@ -157,6 +195,6 @@ class DevisController extends \W\Controller\Controller
         }
         $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
             // $this->redirectToRoute('listertouslesdevis'); // on redirige vers l'affichage
-        }
-
     }
+
+}
