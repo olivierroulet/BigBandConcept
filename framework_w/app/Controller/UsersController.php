@@ -53,9 +53,6 @@ class UsersController extends \W\Controller\Controller
                 $errors[] = 'L\'adresse mail est invalide'; // true
             }
 
-            if (!v::Alnum()->length(8, null)->validate($post['username'])){
-                $errors[] = 'Votre pseudo doit faire au minimum 8 caractères'; // true
-            }
             if (!v::Alnum()->length(8, null)->validate($post['password1'])){
                 $errors[] = 'Le mot de passe doit faire au minimum 8 caractères'; // true
             }
@@ -81,7 +78,6 @@ class UsersController extends \W\Controller\Controller
                         $authModel = new AuthentificationModel();
                         $passwordinsert=$authModel->hashPassword($post['password1']);
                         $data = [
-                        'US_Pseudo'   => $post['username'],
                         'US_Password'   => $passwordinsert,
                         ];
                         $update=$user->update($data,$idUser);
@@ -191,7 +187,6 @@ class UsersController extends \W\Controller\Controller
                 $tomail=$reqAuthorized['US_email'];
                 // on créé un token
                 $token = md5(uniqid(rand(), true));
-
                 $dataToken = [
                 'RP_idUser' => $idUser,
                 'RP_token' => $token,
@@ -201,16 +196,14 @@ class UsersController extends \W\Controller\Controller
                 // On stocke le token et l'id user dans la db
                 $insert = $reset->insert($dataToken);
                 $mail = new Mail();
-                
-                // $mail->SMTPDebug = 3;    // Enable verbose debug output
-
+                //$mail->SMTPDebug = 3;    // Enable verbose debug output
                 $mail->isSMTP();    // Set mailer to use SMTP
                 $mail->Host = 'smtp.gmail.com';    // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true; // Enable SMTP authentication
                 $mail->Username = 'bigbandv4@gmail.com';    // SMTP username
                 $mail->Password = 'Gibson-v4';  // SMTP password
-                $mail->SMTPSecure = 'TLS';  // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 587;   
+                $mail->SMTPSecure = 'ssl';  // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 465;   
                 $mail->setFrom('bigbandv4@gmail.com', 'Service Authentification de BigBand.fr');
                 $mail->addAddress($tomail, $ident);   // Add a recipient
                 // $mail->addAddress('ellen@example.com');  // Name is optional
@@ -470,6 +463,7 @@ class UsersController extends \W\Controller\Controller
             'US_LastName' => $post['US_LastName'],
             'US_email'   => $post['US_email'],
             'US_idURole'   => $post['US_idURole'],
+            'US_AuthorizedYN'     => $post['US_AuthorizedYN'],
             ];
             $user = new UsersModel();
             $update = $user->update($dataUser,$post['idToModif']); 

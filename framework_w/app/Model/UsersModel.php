@@ -50,7 +50,7 @@ class UsersModel extends \W\Model\UsersModel // Attention à l' arborescence !!!
 	{
 
 		$sql = 'SELECT * FROM ' . $this->table . 
-		' WHERE US_email = :email AND US_AuthorizedYN=true LIMIT 1';
+		' WHERE US_email = :email AND US_AuthorizedYN=1 LIMIT 1';
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->bindValue(':email', $email);

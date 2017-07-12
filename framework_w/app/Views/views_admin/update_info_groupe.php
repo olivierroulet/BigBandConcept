@@ -17,7 +17,7 @@
                 <form action="update_info_groupe" method="POST">
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Nom du Groupe</h3>
                             </div>
                             <div class="panel-body">
@@ -28,7 +28,7 @@
 
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Photo</h3>
                             </div>
                             <div class="panel-body">
@@ -39,7 +39,7 @@
 
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Logo</h3>
                             </div>
                             <div class="panel-body">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Adresse</h3>
                             </div>
                             <div class="panel-body">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Code Postal</h3>
                             </div>
                             <div class="panel-body">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Ville</h3>
                             </div>
                             <div class="panel-body">
@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Heure d'ouverture</h3>
                             </div>
                             <div class="panel-body">
@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">Commentaire</h3>
                             </div>
                             <div class="panel-body">
@@ -99,7 +99,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading" id="panel-heading-color">
                                 <h3 class="panel-title">News</h3>
                             </div>
                             <div class="panel-body">
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-warning" type="submit">Update</button>
+                    <button class="btn btn-warning" id="btn-color-update" type="submit">Update</button>
                 </form>
             </div>
 
