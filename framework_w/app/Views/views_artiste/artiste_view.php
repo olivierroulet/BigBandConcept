@@ -108,7 +108,7 @@ function format_phone_fr($phone) {
     foreach($reponses as $reponse) {
       $DateNaiss = date ('d/m/Y', strtotime($reponse['AR_Date_De_Naissance']));
       $phone1 = format_phone('fr', $reponse['AR_Telephone_1']);
-      $actifYN = preg_replace("/[^0][^1]/", "Inactif","Actif", $reponse['AR_ActiveYN']);
+      $actifYN = preg_replace("/[^1][^0]/", " ","inactif", $reponse['AR_ActiveYN']);
       ?>
       <tr style="font-size: 0.8em;">  <!-- style="font-family:courier; font-size: 0.8em;" -->
        <td> 
@@ -118,7 +118,9 @@ function format_phone_fr($phone) {
         <a href="<?=$this->url('deact_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
       </td>
 
-      <td><?= $reponse['AR_ActiveYN'] . ' ' . $actifYN ?></td> 
+<!--       <td><?= $reponse['AR_ActiveYN'] . ' ' . $actifYN ?></td>  -->
+      <td><?= $actifYN ?></td> 
+
       <td><?= $reponse['AR_Civilite']?> </td> 
       <td><?= $reponse['AR_Prenom']?> </td> 
       <td><?= strtoupper($reponse['AR_Nom'])?> </td> 					

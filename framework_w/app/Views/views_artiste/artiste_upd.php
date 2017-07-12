@@ -3,6 +3,30 @@
 <?php $this->start('main_content') ?>
 
 <section id="artistes" class="parallax-section">
+
+      <div class="clients-wrapper">
+        <div class="row text-center">
+          <div class="col-md-12">
+          <div class="col-md-8">&nbsp;</div>
+            <div class="col-md-2">
+              <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+            </div>
+            <div class="col-sm-2">
+                <!-- hypothétique uri -->
+            </div>
+            <div class="col-md-12">
+                <!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+                  <a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+            </div>
+          </div> <!-- fin de row -->
+        </div>
+        <div class="row">
+        &nbsp;
+        </div>
+
+      </div>
+
+      
 	<div class="container">
 		<div class="clients-wrapper">
 				<div class="row text-center">
