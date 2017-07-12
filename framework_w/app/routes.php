@@ -57,7 +57,8 @@ $w_routes = array(
     ['GET|POST', '/lister_tous_les_employeurs', 'Clients#listerTousLesEmployeurs', 'listertouslesemployeurs'],
 
         // INTERFACE ADMINISTRATEUR - GESTION DES DEVIS
-    ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],   
+    ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],
+    ['GET|POST', '/updater_le_devis', 'Devis#updaterLeDevis', 'updaterledevis'],   
     
         // Info groupe et update
     ['GET|POST', '/info_groupe', 'Groupe#listeInfoGroupe', 'infogroupe'],
