@@ -18,16 +18,22 @@
 			<div class="clients-wrapper">
 				<div class="row text-center">
 					<div class="col-md-12">
-					<div class="col-md-8">&nbsp;</div>
+					<div class="col-md-12">&nbsp;</div>
+					<div class="col-md-4">&nbsp;</div>
 						<div class="col-md-2">
 							<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
 						</div>
-						<div class="col-sm-2">
-							<a href="<?=$this->url('Actu_Add');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-refresh"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Ajouter un évènement</a>
+						<div class="col-md-3">
+							<a href="<?=$this->url('Actu_Add');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-triangle-top"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Ajouter un évènement</a>
 							
 							<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
 						</div>
-						<div class="col-md-12">
+						<div class="col-lg-3">
+							<a href="<?=$this->url('Actu_Display');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-circle-arrow-left"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Retour à la liste des évènements</a>
+							
+							<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
+						</div>						
+						<div class="col-md-2">
 								<!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
 									<a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
 						</div>
@@ -36,7 +42,7 @@
 				<div class="row">
 				&nbsp;
 				</div>
-
+<div class="col-md-12">&nbsp;</div>
 			</div>
 
 
@@ -48,24 +54,24 @@
 				<hr> -->
 			<div class="col col-md-12">	
 
-		<form class="form form-horizontal" method="POST">
+		<form id= "eventadd" class="form form-horizontal" method="POST">
 
 				<div class="col col-md-12">
 				    <fieldset class="form-group row">
 					<div class="col col-md-3 text-left">
 						<label for "AC_Date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de début de l' évènement</label>
-						<input type="datetime" size="16" name="AC_Date" id="AC_Date"/>
+						<input type="datetime" size="16" name="AC_Date" id="AC_Date" value ="<?=gmDate("Y-m-d H:i:s");?>"  />
 					</div>
 					<div class="col col-md-3 text-left">
 						<label for "AC_DateFin"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de fin de l' évènement</label>
-						<input type="datetime" size="16" name="AC_DateFin" id="AC_DateFin"/>
+						<input type="datetime" size="16" name="AC_DateFin" id="AC_DateFin" value ="<?=gmDate("Y-m-d H:i:s");?>"/>
 					</div>					
 					<div class="col col-md-3 text-left">
-						<label for "AC_Num"><i class="fa fa-folder-o" aria-hidden="true"></i> Référence de l' évènement</label>
+						<label for "AC_Num"><i class="fa fa-folder-o" aria-hidden="true"></i> Référence de l' évènement (8c)</label>
 						<input type="text" size="12" name="AC_Num" id="AC_Num"/>
 					</div>					
 					<div class="col col-md-2 text-right">																		
-						<label for "AC_Visibilite"><i class="fa fa-eye" aria-hidden="true"></i> Visibilité</label>
+						<label for "AC_Visibilite"><i class="fa fa-eye" aria-hidden="true"></i> Diffusion</label><br>
 						<select name="AC_Visibilite">
 							<option value="Public">Public</option>
 							<option value="Restreint">Restreint</option>
@@ -133,5 +139,23 @@
 </article>
 </div>
 </div>
+    <script type="text/javascript">
+        function SetEvtEndDate () {
+        	// alert ("entrée dans la fonction");
+            var EvtStartDate = document.getElementById ("AC_Date");
+            var EvtStopDate = document.getElementById ("AC_DateFin");
+			
+		//	if (EvtStopDate == EvtStartDate){
+                EvtStopDate.value  = EvtStopDate.setHours(EvtStartDate.getHours() + 6 ); /*hours*/
+				// alert ('Start date : ' + EvtStartDate.value + 'Stop date : ' + EvtStopDate.value);
+		//	}			
+ 			return;
+            
+        }
+        SetEvtEndDate();
+    </script>
+
+
+
 </section>
 <?php $this->stop('main_content') ?>

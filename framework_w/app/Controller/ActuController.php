@@ -249,15 +249,15 @@ class ActuController extends \W\Controller\Controller
                 $insert = $Actu->insert($data); // Retourne false si une erreur survient ou les nouvelles données insérées sous forme de array()
 
                 if(!empty($insert)){
-                    $formValid = true;
-                    $json = [
+                $formValid = true;
+                    $notif = [
                     'result' => true,
                     'success' => 'L\' évènement a bien été enregistré.',
                     ];
                 }
 
                 else {
-                    $json = [
+                    $notif = [
                     'result' => false,
                     'errors' => 'Une erreur est survenue. Support en français et anglais au 3887 ou via le formulaire de contact',
                     ];
@@ -265,13 +265,13 @@ class ActuController extends \W\Controller\Controller
 
             } // fin de count($errors)
 		} // Fin de  !empty
-
-
+        $this->flash('Bien entendu', 'info');
        $params = [
             // Dans la vue, les clés deviennent des variables
             'formValid' 	=> $formValid, 
             'formErrors'	=> $errors,
-             'data'			=> $data,
+            'data'			=> $data,
+            'notif'         => $notif,
         ];
        // Si on oublie pas d' afficher tout ça dans la méthode show() c'est encore MIEUXxxx !!!
         $this->show('actu/add', $params);
