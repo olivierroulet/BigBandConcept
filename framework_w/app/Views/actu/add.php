@@ -15,30 +15,62 @@
 				</div>
 	<div class="row text-center">
 
-		<div class="container-fluid">
-			<div class="row main text-center">
+			<div class="clients-wrapper">
+				<div class="row text-center">
+					<div class="col-md-12">
+					<div class="col-md-8">&nbsp;</div>
+						<div class="col-md-2">
+							<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="<?=$this->url('Actu_Add');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-refresh"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Ajouter un évènement</a>
+							
+							<!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
+						</div>
+						<div class="col-md-12">
+								<!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+									<a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+						</div>
+					</div> <!-- fin de row -->
+				</div>
+				<div class="row">
+				&nbsp;
+				</div>
+
+			</div>
+
+
+
+	<div class="container-fluid">
+	
+		<div class="row main">
 <!-- 			<h2 class="text-center"><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un évènement</h2>
 				<hr> -->
-				<div class="col col-md-12">	
-		<form class="form form-horizontal" method="POST">
+			<div class="col col-md-12">	
+			<form class="form form-horizontal" method="POST">
+
 					<div class="col col-md-6 text-right">
-						<label for "AC_Date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de l' évènement</label>
-						<input type="date" name="AC_Date" id="AC_Date"/>
+						<label for "AC_Date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de début de l' évènement</label>
+						<input type="datetime" name="AC_Date" id="AC_Date"/>
 					</div>	
+					<div class="col col-md-6 text-right">
+						<label for "AC_DateFin"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Date de fin de l' évènement</label>
+						<input type="datetime" name="AC_DateFin" id="AC_DateFin"/>
+					</div>						
 					<div class="col col-md-6 text-right">						
-						<label for "AC_Com1"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Commentaire sommaire (50 c max)<exp>*</exp></label>
-						<input type="text" name="AC_Com1" id="AC_Com1"/>
+						<label for "AC_Com1"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Description (50c max)<exp>*</exp></label>
+						<textarea name="AC_Com1" id="AC_Com1" cols="30" rows="6"/> </textarea>
 					</div>
-					<div class="col col-md-6 text-right">	
-						<label for "AC_Com2"><i class="fa fa-book" aria-hidden="true"></i> Commentaire détaillé (500 c max)</label>
+					<div class="col col-md-6 text-right">
+						<label for "AC_Com2"><i class="fa fa-book" aria-hidden="true"></i> Description détaillée (500c max)</label>
 						<input type="text" name="AC_Com2" id="AC_Com2"/>
 					</div>
 					<div class="col col-md-6 text-right">
-						<label for "AC_Puce"><i class="fa fa-cubes" aria-hidden="true"></i> Puce (demain image)</label>
+						<label for "AC_Puce"><i class="fa fa-cubes" aria-hidden="true"></i> Chemin du media</label>
 						<input type="text" name="AC_Puce" id="AC_Puce"/>
 					</div>
-					<div class="col col-md-6 text-right>	
-						<label for "AC_Notes"><i class="fa fa-envelope" aria-hidden="true"></i>  Note interne (non publiée, même si public)</label>
+					<div class="col col-md-12 text-right>	
+						<label for "AC_Notes"><i class="fa fa-envelope" aria-hidden="true"></i>  Note interne</label>
 						<input type="text" name="AC_Notes" id="AC_Notes"/>
 					</div>					
 					<div class="col col-md-6 text-right">
@@ -68,14 +100,16 @@
 
 <div class="col col-md-12" align="right"></div>
 					<div class="col col-md-12" align="right">
-						<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
+						<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Enregistrer</button>
 					</div>
 
 				</div>
+			</form>			
 
-			</form>				
 		</div>
+
 	</div>
+
 </div>
 </div>		<!-- <div class="main-login main-center"> -->
 
