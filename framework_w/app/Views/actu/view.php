@@ -86,9 +86,9 @@
 	        ?>
 		        <tr class="normal">
 		        	<td> 
-					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i class="fa fa-pencil-square-o" aria-hidden="true" title="modifier"></i></a>
+					<a href="<?=$this->url('Actu_Update', ['AC_Id' => $reponse['AC_Id']]);?>"> <i style="color:black;" class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="modifier"></i></a>
 
-					<a href="<?=$this->url('Actu_Display', ['AC_Id' => $reponse['AC_Id']]);?>">  <i class="fa fa-times" aria-hidden="true" title="supprimer"></i></a>
+					<a href="<?=$this->url('Actu_Display', ['AC_Id' => $reponse['AC_Id']]);?>">  <i style="color:cherryred;" class="fa fa-times fa-2x" aria-hidden="true" title="désactiver cet évènement. Pas de suppression physique"></i></a>
 		        	</td>
 		        	<td><?= $reponse['AC_Id']?></td>
 		        	<td><strong><?= $reponse['AC_Lieu']?> </strong></td> 
@@ -115,5 +115,17 @@
 		</div>
 		</div>
 	</div>
+
+    <div class="row" style="padding-top:100px;">
+        <div class="col col-sm-12" id="go-top">
+            <p align="center" style="font-size:3em;">
+                <a class="smoothscroll" title="Haut de page" href="#actuView">
+                    <span class="glyphicon glyphicon-upload" align="center" style="color:rgba(3, 3, 3, 0.5);" aria-hidden="true"></span>
+                </a>
+            </p>
+        </div>
+        <hr>
+
+    </div>	
 </section>
 <?php $this->stop('main_content'); ?>

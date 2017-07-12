@@ -12,7 +12,7 @@
 			  	$OK= 'OK';
 			  }	
 			}
-debug ($_SESSION);
+// debug ($_SESSION);
 //************************ DEBUT DE FUNCTION FORMATAGE des N° de téléphone
 
 function format_phone($country, $phone) {
@@ -129,6 +129,19 @@ function format_phone_fr($phone) {
        </table>
   </div> 
 </div>
+
+    <div class="row" style="padding-top:100px;">
+        <div class="col col-sm-12" id="go-top">
+            <p align="center" style="font-size:3em;">
+                <a class="smoothscroll" title="Haut de page" href="#section-artistes">
+                    <span class="glyphicon glyphicon-upload" align="center" style="color:rgba(3, 3, 3, 0.5);" aria-hidden="true"></span>
+                </a>
+            </p>
+        </div>
+        <hr>
+
+    </div>  
+
 </section>
 
 <?php $this->stop('main_content') ?>
