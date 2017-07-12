@@ -62,6 +62,7 @@ $w_routes = array(
     ['GET|POST', '/lister_tous_les_devis', 'Devis#listerTousLesDevis', 'listertouslesdevis'],
     ['GET|POST', '/devis_suivant[i:enr]', 'Devis#devisOffset', 'devissuivant'],
     ['GET|POST', '/devis_precedent[i:enr]', 'Devis#devisOffset', 'devisprecedent'],
+    ['GET|POST', '/afficher_un_devis[i:DV_Iddevis]', 'Devis#afficherUnDevis', 'afficherundevis'],
     ['GET|POST', '/updater_le_devis', 'Devis#updaterLeDevis', 'updaterledevis'],   
     
         // Info groupe et update

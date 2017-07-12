@@ -11,14 +11,33 @@
                     if (!isset($enr)){
                         $enr=0;
                     }
-                    if ($ndDeDevis>$enr){$suivant=$enr+1;}
-                    if ($enr>0){$precedent=$enr-1;}
-                   ?>
- 
-                    <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
-                    <a href="<?=$this->url('devisprecedent',['enr' => $precedent]);?>" class="btn btn-block btn-default">préc.</a>
+                    if ($enr<$nbDeDevis-1){
+                        $suivant=$enr+1;
+                    } else {
+                        $suivant=$enr;
+                    }
+                    if ($suivant>$nbDeDevis){
+                        $suivant=$nbDeDevis;
+                    }
+                    if ($enr>0){
+                        $precedent=$enr-1;
+                    } else {
+                        $precedent=0;
+                        $suivant=1;
+                    }
+                    $fiche = $enr+1;
 
-                    <a href="<?=$this->url('devissuivant',['enr' => $suivant]);?>" class="btn btn-block btn-default">suiv.</a>
+                    ?>
+
+                    <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+                    <div class='row'>
+                        <div class='col-sm-6'>
+                            <a href="<?=$this->url('devisprecedent',['enr' => $precedent]);?>" class="btn btn-block btn-default">préc.</a>
+                        </div>
+                        <div class='col-sm-6'>
+                            <a href="<?=$this->url('devissuivant',['enr' => $suivant]);?>" class="btn btn-block btn-default">suiv.</a>
+                        </div>
+                    </div> fiche n° <?=$fiche;?> / <?=$nbDeDevis;?>
                 </div>
                 <div class="col-sm-2">
                     <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau devis</a>
@@ -87,6 +106,8 @@
                     <input type="text" class="form-control upd" name="DV_Datedudevis" id="DV_Datedudevis" value=<?=$datedudevis_fr;?> placeholder="01/01/2000">
                 </div><br>
                 Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
+                <br><br>
+                <h4>Date de la prestation : <?=date ('d/m/Y', strtotime($devis['DV_Datedelaprestation']));?></h4>
             </div> <!-- fin de col -->
             <div class='col-sm-3 text-center'>
                 <label for="DV_Iddevis">Id Devis : </label> <input name="DV_Iddevis" id="DV_Iddevis" type="text" size="3" class="form-control-2" value="<?= $devis['DV_Iddevis'];?>"><br>
@@ -130,16 +151,30 @@
             <div class='row'>
                 <div class="form-group">
                     <input class="form-control-2" size="3" type="text" disabled name="kilometrageallerretour" id="kilometrageallerretour">kms
-                </div>
-                <div class="form-group">
-                    duree d'un trajet : <input type="text" disabled class="form-control-2" name="dureetrajeth" id="dureetrajeth">
-                </div>
-                <div class="form-group">
-                    Coûts des déplacements</label><br>
+
+                    <br>duree d'un trajet : <input type="text" disabled class="form-control-2" name="dureetrajeth" id="dureetrajeth">
+
+                    <br>Coûts des déplacements</label><br>
                     <input class="form-control-2" type="text" size="3" name="coutdeplacements" id="coutdeplacements">€
+                    <br>
+                    <input hidden class="form-control-2 upd"  type="text" name="DV_Prixtotal" id="DV_Prixtotal" value=<?= $devis['DV_Prixtotal'];?>>
+                    <h4>Prix total : <?= $devis['DV_Prixtotal'];?></h4>
+
                 </div>
-                <button class="btn btn-success" type="submit">Valider</button>
-                <h4><?='Prix total : '.$devis['DV_Prixtotal'];?> </h4>
+                <?php 
+                if ($nbDeDevis==1){
+                    ?>
+                    <button class="btn btn-block btn-success" type="submit">Valider</button>
+                    <?php 
+                } 
+                else {
+                    ?>
+                    <a class="btn btn-block btn-warning" href="<?=$this->url('afficherundevis', ['DV_Iddevis' => $devis['DV_Iddevis']]);?>">Travailler sur ce devis</a>
+                    <?php
+                }
+
+                ?>
+
             </div>
         </div>
         <div class="col-sm-4">
@@ -159,10 +194,6 @@
     Aucun devis !
 </div>
 // <?php endif; 
-// debug($tousLesDevis);
-// debug($ourShop);
-// debug($tousLesOperateurs);
-
 ?>
 </div>
 </div>
@@ -177,6 +208,8 @@ $addressdepart=$ourShop['GI_Addr_ZipCode'].",".$ourShop['GI_Addr_City'];
 ?>
 <script type="text/javascript">
    /****AFFICHAGE DE LA CARTE ****/
+   var initialadevis = '<?php echo $devis['DV_CodePostalPrestation']; ?>';
+   var initialbdevis = '<?php echo $devis['DV_Lieudelaprestation']; ?>';
    var myMarker;
    var search_addr;
    var map;
@@ -294,9 +327,10 @@ function searchCoord(address,a,b,z){
                 }
                 $(document).ready(function(){
                     jQuery(window).load(function(){
-                        initialize();
-
-                        setVerifFormulaire(addressdepart,address,'fr');  
+                        //if ((initialadevis!-'')||(initialadevis!='')) {
+                            initialize();
+                            setVerifFormulaire(addressdepart,address,'fr');  
+                        //}
                     });
                     
 

@@ -15,7 +15,7 @@ use \W\Security\AuthentificationModel;
 use Respect\Validation\Validator as v;
 
 
-   
+
 
 class DevisController extends \W\Controller\Controller
 { 
@@ -67,9 +67,9 @@ class DevisController extends \W\Controller\Controller
 
     public function devisOffset($enr = 0)
     {
-        
+
         $this->verifAdmin();
-       
+
         $devis = new Devis();
         $Devis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',NULL,NULL);
         $nbDeDevis=count($Devis);
@@ -87,9 +87,35 @@ class DevisController extends \W\Controller\Controller
         'tousLesDevis'          =>        $tousLesDevis,
         'ourShop'               =>        $ourShop,
         'tousLesOperateurs'     =>        $tousLesOperateurs,
-        'offset'                =>        $offset,
         'nbDeDevis'             =>        $nbDeDevis,
         'enr'                   =>        $enr,
+        ];
+
+        $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
+    }
+
+    public function afficherUnDevis($id)
+    {
+        $this->verifAdmin();
+
+        $devis = new Devis();
+        $tousLesDevis = $devis->findDevis($id);
+
+        $nbDeDevis=count($tousLesDevis);
+
+        $operateur = new Operateur();
+        $tousLesOperateurs = $operateur->findAll();
+
+        $ourshop = new Groupeinfo();
+        $requeteOurShop = $ourshop->findAll();
+        $ourShop=$requeteOurShop[0];
+
+        $params = [
+        'tousLesDevis'          =>        $tousLesDevis,
+        'ourShop'               =>        $ourShop,
+        'tousLesOperateurs'     =>        $tousLesOperateurs,
+        'nbDeDevis'             =>        $nbDeDevis,
+        'offset'                =>        0,
         ];
 
         $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
@@ -105,7 +131,7 @@ class DevisController extends \W\Controller\Controller
 
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
-            
+
             // on a pas le temps de faire les verifs pour la soutenance 
             // mais elle seraient bien sur ajoutées...
 
@@ -176,25 +202,27 @@ class DevisController extends \W\Controller\Controller
             $Detaildevis= new Detaildevis();
             $update = $Detaildevis->update($dataDetailDevis,$post['DE_Iddetaildudevis']);
 
-            $devis = new Devis();
-            $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,0);
+            $this->afficherUnDevis($post['DV_Iddevis']);
 
-            $operateur = new Operateur();
-            $tousLesOperateurs = $operateur->findAll();
+            // $devis = new Devis();
+            // $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,0);
 
-            $ourshop = new Groupeinfo();
-            $requeteOurShop = $ourshop->findAll();
-            $ourShop=$requeteOurShop[0];
+            // $operateur = new Operateur();
+            // $tousLesOperateurs = $operateur->findAll();
 
-            $params = [
-            'tousLesDevis'          =>        $tousLesDevis,
-            'ourShop'               =>        $ourShop,
-            'tousLesOperateurs'     =>        $tousLesOperateurs,
-            'post'                  =>        $post,
-            ];
+            // $ourshop = new Groupeinfo();
+            // $requeteOurShop = $ourshop->findAll();
+            // $ourShop=$requeteOurShop[0];
+
+            // $params = [
+            // 'tousLesDevis'          =>        $tousLesDevis,
+            // 'ourShop'               =>        $ourShop,
+            // 'tousLesOperateurs'     =>        $tousLesOperateurs,
+            // 'post'                  =>        $post,
+            // ];
         }
-        $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
-            // $this->redirectToRoute('listertouslesdevis'); // on redirige vers l'affichage
+        // $this->show('views_admin/liste_des_devis', $params); // affichage du template devis
+        //     // $this->redirectToRoute('listertouslesdevis'); // on redirige vers l'affichage
     }
 
 }
