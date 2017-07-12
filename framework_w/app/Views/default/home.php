@@ -681,7 +681,7 @@
 										<div class="col-sm-8 col-sm-offset-2">
 											<h2 class="title-one">Premiere connexion</h2>
 										</div>
-										<div class="col-sm-12"> 
+										<div class="col-sm-12">
 											<div id="successAjaxFirstLoginForm" class="text-center" style="color:Lime"></div>
 											<div id="errorsAjaxFirstLoginForm" class="text-center" style="color:Orange"></div>
 										</div>
@@ -840,7 +840,6 @@
 							// -- Traitement du formulaire de premiere connexion --
 							$('#submitFirstLoginForm').on('click', function(e){
 								e.preventDefault(); // On empeche l'action par default du formulaire
-								
 								$.ajax({ // Debut du Traitement du formulaire de premiere connexion en Ajax
 									url: '<?=$this->url('firstlogin');?>',
 									type: 'post',
@@ -848,16 +847,16 @@
 									data: $('#first-login-form').serialize(),
 									success: function(retourJson){
 										if(retourJson.result == true){
-											// RetourJson==true
-											//$('#successAjaxFirstLoginForm').show(); 
+											//On vide la div erreurs ajax
+											$('#errorsAjaxFirstLoginForm').html('');
+											$('#successAjaxFirstLoginForm').show(); 
 											$('#successAjaxFirstLoginForm').html(retourJson.message);
-											$('#errorsAjaxFirstLoginForm').html(''); // On vide la div erreurs ajax
-											// on envoie vers la page de redirection en fonction du role
-											
+										  // on envoie vers la page de redirection en fonction du role
 										} // Fin du if (RetourJson==true)
-										else if(retourJson.result == false){ 
+										else { 
 											// RetourJson==false
-											//$('#errorsAjaxFirstLoginForm').show();
+											console.log('faux');
+											$('#errorsAjaxFirstLoginForm').show();
 											$('#successAjaxFirstLoginForm').html(''); // On vide la div success ajax
 											$('#errorsAjaxFirstLoginForm').html(retourJson.message);
 											$('#errorsAjaxFirstLoginForm').html(retourJson.errors);

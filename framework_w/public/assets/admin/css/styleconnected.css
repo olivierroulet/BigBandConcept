@@ -169,6 +169,21 @@ body  section {
     color:white;
 }
 
+.btn-danger.active {
+text-transform: uppercase;
+}
+
+.btn-success.active {
+text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
 
 
 

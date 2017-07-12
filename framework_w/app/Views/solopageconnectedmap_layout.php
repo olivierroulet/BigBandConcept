@@ -16,10 +16,6 @@
         <link rel="stylesheet" href="<?= $this->assetUrl('publique/css/responsive.css') ?>">
         <link rel="stylesheet" href="<?= $this->assetUrl('admin/css/styleconnected.css') ?>">
         <link rel="shortcut icon" href="images/ico/favicon.png"> 
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"> 
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"> 
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"> 
-        <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
         <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;sensor=false&amp;key=AIzaSyBf9Wsrb27kOXKUoEBq3V3PBfANi3VtJkE" type="text/javascript"></script>
     </head>
     <body>

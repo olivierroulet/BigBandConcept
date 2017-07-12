@@ -35,7 +35,7 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
             </div>
             <div class="row">
                 <?php
-                debug($users); 
+ 
                 if(!empty($users)):?>
                 <hr>
                 <?php foreach ($users as $user): 
@@ -69,7 +69,7 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
                         <?=$role; ?>
                     </div>
                     <div class='col-sm-2'>
-                        <?php if($user['US_ActiveYN']==1){echo 'autorisé';} else {echo 'non autorisé';}?>
+                        <?php if($user['US_AuthorizedYN']==1){echo 'autorisé';} else {echo 'non autorisé';}?>
                     </div>
                     <div class='col-sm-1'>
                         <!--							<a class="btn btn-danger" href="supprimer_un_utilisateur?id=<?php echo $user['US_id'];?>">Supprimer</a>-->
