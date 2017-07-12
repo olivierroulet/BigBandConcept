@@ -49,6 +49,8 @@ function format_phone_fr($phone) {
 
 ?>
 
+
+
 <section id="section-artistes" class="parallax-section">
  	<div class="container-fluid">
 		<div class="clients-wrapper">
@@ -58,6 +60,31 @@ function format_phone_fr($phone) {
 				</div>
       </div>
     </div>
+
+      <div class="clients-wrapper">
+        <div class="row text-center">
+          <div class="col-md-12">
+          <div class="col-md-8">&nbsp;</div>
+            <div class="col-md-2">
+              <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+            </div>
+            <div class="col-sm-2">
+                <!-- hypothétique uri -->
+            </div>
+            <div class="col-md-12">
+                <!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+                  <a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+            </div>
+          </div> <!-- fin de row -->
+        </div>
+        <div class="row">
+        &nbsp;
+        </div>
+
+      </div>
+
+
+
 
 	<?php
 // et maintenant on envoit la requête
@@ -71,7 +98,7 @@ function format_phone_fr($phone) {
   <table id="ArtistesGrid" class="table table-hover table-responsive">
     <thead class="table-bordered">
      <tr>
-      <th>+</th><th>-</th><th>Actif?</th><th>Civilite</th><th>Prenom</th><th>Nom</th><th>Pseudo</th><th>Numéro</th><th>Voie</th><th>Bât.</th><th>Adresse Ligne 1</th><th>Adresse Ligne 2</th><th>Code Postal</th><th>Ville</th><th>Téléphone mobile</th><th>Téléphone fixe</th><th>Adresse Mail</th><th>Emploi Occupe</th><th>N° de Sécurité Sociale</th><th>N° du Guso</th><th>N° Conges Spectacle</th><th>Date Naissance</th><th>Lieu Naissance</th><th>Nationalité</th><th>NewsLetter?</th><th>ID</th><th>ID In UsersTable</th>
+      <th colspan="2">Actions</th><th>Actif?</th><th>Civilite</th><th>Prenom</th><th>Nom</th><th>Pseudo</th><th>Numéro</th><th>Voie</th><th>Bât.</th><th>Adresse Ligne 1</th><th>Adresse Ligne 2</th><th>Code Postal</th><th>Ville</th><th>Téléphone mobile</th><th>Téléphone fixe</th><th>Adresse Mail</th><th>Emploi Occupe</th><th>N° de Sécurité Sociale</th><th>N° du Guso</th><th>N° Conges Spectacle</th><th>Date Naissance</th><th>Lieu Naissance</th><th>Nationalité</th><th>NewsLetter?</th><th>ID</th><th>ID In UsersTable</th>
     </tr>
   </thead>
   <tbody>
@@ -81,17 +108,17 @@ function format_phone_fr($phone) {
     foreach($reponses as $reponse) {
       $DateNaiss = date ('d/m/Y', strtotime($reponse['AR_Date_De_Naissance']));
       $phone1 = format_phone('fr', $reponse['AR_Telephone_1']);
-//        $actifYN = preg_replace("/[^0-9]/", "", $reponse['AR_ActiveYN']);
+      $actifYN = preg_replace("/[^0][^1]/", "Inactif","Actif", $reponse['AR_ActiveYN']);
       ?>
       <tr style="font-size: 0.8em;">  <!-- style="font-family:courier; font-size: 0.8em;" -->
        <td> 
-         <a href="<?=$this->url('upd_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+         <a href="<?=$this->url('upd_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
        </td>
        <td>
-        <a href="<?=$this->url('deact_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="<?=$this->url('deact_artistes', ['AR_Idartiste' => $reponse['AR_Idartiste']]);?>"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
       </td>
 
-      <td><?= $reponse['AR_ActiveYN']?> </td> 
+      <td><?= $reponse['AR_ActiveYN'] . ' ' . $actifYN ?></td> 
       <td><?= $reponse['AR_Civilite']?> </td> 
       <td><?= $reponse['AR_Prenom']?> </td> 
       <td><?= strtoupper($reponse['AR_Nom'])?> </td> 					
