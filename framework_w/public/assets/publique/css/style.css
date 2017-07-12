@@ -1,7 +1,7 @@
 #navigation .navbar-inverse .navbar-nav .active a, 
 #navigation .navbar-inverse .navbar-nav .active a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover { 
-    background-color: yellow;
+    background-color: #c9232a;
 }
 #navigation .navbar {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+38,0.95+48,0.71+83,0.35+100 */
@@ -61,9 +61,6 @@ section #clients, #artistes{
     padding-bottom:250px;
 }
 
-footer a:hover {
-    color:red;
-}
 
 #home{
     margin-top: 
@@ -102,20 +99,15 @@ article table {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,efefef+100 */
     background: #434543; /* Old browsers */
 }
-#clients label
-{
+#clients label{
     color:snow;
 }
-
 #clients h2, #clients p{
     color:snow;
-
 }
-
 .btn-primary {
     background-color: #234CA5;
 }
-
 
 
 /* BOUTON "SE CONNECTER" */
@@ -126,7 +118,6 @@ article table {
 .btn-success:hover {
     background-color: #004d00;
 }
-
 
 
 /* BTN ENVOI DEMANDE DE DEVIS*/
@@ -144,8 +135,6 @@ article table {
 }
 
 
-
-
 /* BTN "PREMIERE CONNEXION" */
 #btnFirstLogin
 {
@@ -159,11 +148,24 @@ article table {
 }
 
 
-/* BORDER DU PORTFOLIO-FILTER*/
-
-
-
-
+/* BORDER DU  PORTFOLIO ET PORTFOLIO-FILTER*/
+.mask.text-center {
+    border-color: #cc0000;
+}
+#portfolio 
+.portfolio-filter li a:hover, 
+#portfolio 
+.portfolio-filter li a:focus,
+#portfolio 
+.portfolio-filter li a:active , 
+#portfolio 
+.portfolio-filter li .active{
+	border: 1px solid #cc0000;
+	color: #cc0000;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	opacity: 1;
+}
 
 
 /* COULEUR "BigBand" FOOTER*/
@@ -171,6 +173,14 @@ article table {
 {
     color : #c9232a;
 }
+
+
+
+
+
+
+
+
 
 
 

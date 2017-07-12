@@ -178,10 +178,10 @@
 							<div class="portfolio-image">
 								<img src="assets/publique/images/portfolio/portfolio1.jpg" alt=""></div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>Voix</h3>
+									<h4>La voix d'Olivier est hors du commun.</h4>
+									
+									<a href="assets/publique/images/portfolio/portfolio1.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -191,10 +191,10 @@
 									<img src="assets/publique/images/portfolio/portfolio2.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>...</h3>
+									<h4>The show must go on.</h4>
+								
+									<a href="assets/publique/images/portfolio/portfolio2.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -204,10 +204,10 @@
 									<img src="assets/publique/images/portfolio/portfolio3.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>WOW</h3>
+									<h4>Le set de Philippe</h4>
+									
+									<a href="assets/publique/images/portfolio/portfolio3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -217,10 +217,10 @@
 									<img src="assets/publique/images/portfolio/portfolio4.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>Choristes</h3>
+									<h4>hands up !</h4>
+									
+									<a href="assets/publique/images/portfolio/portfolio4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -229,10 +229,10 @@
 								<div class="portfolio-image">
 									<img src="assets/publique/images/portfolio/portfolio5.jpg" alt="">
 								</div> <div class="mask text-center">
-								<h3>Novel</h3>
-								<h4>Lorem ipsum dolor sit amet consectetur</h4>
-								<a href="#"><i class="fa fa-link"></i></a>
-								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								<h3>BOSS</h3>
+								<h4>Le pedalboard de Philippe</h4>
+								
+								<a href="assets/publique/images/portfolio/portfolio5.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 							</div>
 						</div>
 					</div>
@@ -242,10 +242,10 @@
 								<img src="assets/publique/images/portfolio/portfolio6.jpg" alt="">
 							</div> 
 							<div class="mask text-center">
-								<h3>Novel</h3>
-								<h4>Lorem ipsum dolor sit amet consectetur</h4>
-								<a href="#"><i class="fa fa-link"></i></a>
-								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								<h3>Solo</h3>
+								<h4>Un solo d'anthologie de Philippe</h4>
+								
+								<a href="assets/publique/images/portfolio/portfolio6.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 							</div>
 						</div>
 					</div>
@@ -255,10 +255,10 @@
 								<img src="assets/publique/images/portfolio/portfolio7.jpg" alt="">
 							</div> 
 							<div class="mask text-center">
-								<h3>Novel</h3>
-								<h4>Lorem ipsum dolor sit amet consectetur</h4>
-								<a href="#"><i class="fa fa-link"></i></a>
-								<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+								<h3>Solo</h3>
+								<h4> Un Guest prestigieux... </h4>
+								
+								<a href="assets/publique/images/portfolio/portfolio7.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 							</div>
 						</div>
 					</div>
@@ -267,10 +267,10 @@
 							<div class="portfolio-image">
 								<img src="assets/publique/images/portfolio/portfolio8.jpg" alt=""></div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>Pierre...</h3>
+									<h4>... aux synthés</h4>
+									
+									<a href="assets/publique/images/portfolio/portfolio8.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -280,10 +280,10 @@
 									<img src="assets/publique/images/portfolio/portfolio9.jpg" alt="">
 								</div> 
 								<div class="mask text-center">
-									<h3>Novel</h3>
-									<h4>Lorem ipsum dolor sit amet consectetur</h4>
-									<a href="#"><i class="fa fa-link"></i></a>
-									<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+									<h3>Console</h3>
+									<h4>Du son, des lights</h4>
+									
+									<a href="assets/publique/images/portfolio/portfolio9.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
 							</div>
 						</div>
@@ -292,10 +292,10 @@
 								<div class="portfolio-image">
 									<img src="assets/publique/images/portfolio/portfolio10.jpg" alt=""></div> 
 									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="assets/publique/images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+										<h3>Master Class</h3>
+										<h4>Avec Philippe </h4>
+										
+										<a href="assets/publique/images/portfolio/portfolio10.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 									</div>
 								</div>
 							</div>
@@ -304,10 +304,10 @@
 									<div class="portfolio-image">
 										<img src="assets/publique/images/portfolio/portfolio16.jpg" alt=""></div> 
 										<div class="mask text-center">
-											<h3>Novel</h3>
-											<h4>Lorem ipsum dolor sit amet consectetur</h4>
-											<a href="#"><i class="fa fa-link"></i></a>
-											<a href="assets/publique/images/portfolio/big-item3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+											<h3>Live</h3>
+											<h4>à Coachella</h4>
+										
+											<a href="assets/publique/images/portfolio/portfolio16.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 										</div>
 									</div>
 								</div>
@@ -316,10 +316,10 @@
 										<div class="portfolio-image">
 											<img src="assets/publique/images/portfolio/portfolio12.jpg" alt=""></div> 
 											<div class="mask text-center">
-												<h3>Novel</h3>
-												<h4>Lorem ipsum dolor sit amet consectetur</h4>
-												<a href="#"><i class="fa fa-link"></i></a>
-												<a href="assets/publique/images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+												<h3>BBC</h3>
+												<h4>Live à la BBC</h4>
+												
+												<a href="assets/publique/images/portfolio/portfolio12.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 											</div>
 										</div>
 									</div>

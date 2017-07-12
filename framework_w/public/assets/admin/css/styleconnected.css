@@ -127,12 +127,12 @@ body  section {
 
 /* BOUTON "SUPPRIMER" GESTION UTILISATEUR */
 #btn-warning-gestion-utilis {
-    background-color: #21201E;
+    background-color: #222211;
     border: none;
     color: whitesmoke;
 }
 #btn-warning-gestion-utilis:hover {
-    background-color: red;
+    background-color: #B1221C;
     border: none;
 }
 
@@ -145,7 +145,7 @@ body  section {
     color: lightgrey;
 }
 #btn-warning-gestion-modifier:hover {
-    background-color:  #457DBB;
+    background-color:  #006600;
     border: none;
     color: white;
 }
