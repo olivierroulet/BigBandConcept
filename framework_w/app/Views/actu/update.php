@@ -20,10 +20,33 @@
 					<div class="col col-md-12">			
 					<div class="col col-md-12"> &nbsp; </div>				
 
+
+      <div class="clients-wrapper">
+        <div class="row text-center">
+          <div class="col-md-12">
+          <div class="col-md-8">&nbsp;</div>
+            <div class="col-md-2">
+              <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+            </div>
+            <div class="col-sm-2">
+                <!-- hypothétique uri -->
+            </div>
+            <div class="col-md-12">
+                <!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+                  <a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+            </div>
+          </div> <!-- fin de row -->
+        </div>
+        <div class="row">
+        &nbsp;
+        </div>
+      </div>
+
+
 <!-- ___________________ début du formulaire ___________________ -->				
 
 		<form class="form form-horizontal" method="POST">
-
+		
 				<div class="col col-md-12">
 				    <fieldset class="form-group row">
 					<div class="col col-md-3 text-left">
@@ -84,7 +107,7 @@
 				</div>
 				<div class="col col-md-12"> &nbsp; </div>				
 			<div class="col col-md-12 text-right">
-				<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Valider</button>
+				<button type="submit" class="btn btn-info"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Valider</button>
 			</div>
 		<?php
 			if(!empty($formErrors)){
