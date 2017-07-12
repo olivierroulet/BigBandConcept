@@ -13,20 +13,20 @@
 			<div class="item active" style="background-image: url(assets/publique/images/slider/slide3.jpg)"> 
 				<div class="carousel-caption"> 
 					<div> 
-						<img class="img-responsive center-block animated bounceInDown"  src="assets/publique/images/logobigband.png" alt="">
+						<img class="img-responsive center-block animated bounceInDown"  src="assets/publique/images/logobigband.png" alt="photo d'un public lors d'un concert">
 					</div> 
 				</div> 
 			</div>
 			<div class="item" style="background-image: url(assets/publique/images/slider/slide2.jpg)"> 
 				<div class="carousel-caption"> <div> 
-					<img class="img-responsive center-block animated bounceInDown"  src="assets/publique/images/logobigband.png" alt="">
+					<img class="img-responsive center-block animated bounceInDown"  src="assets/publique/images/logobigband.png" alt="photo d'un public lors d'un concert">
 				</div> 
 			</div> 
 		</div> 
 		<div class="item" style="background-image: url(assets/publique/images/slider/slide1.jpg)"> 
 			<div class="carousel-caption"> 
 				<div> 
-					<img class="img-responsive center-block animated bounceInRight" src="assets/publique/images/logobigband.png" alt="">
+					<img class="img-responsive center-block animated bounceInRight" src="assets/publique/images/logobigband.png" alt="photo d'un public lors d'un concert">
 				</div> 
 			</div> 
 		</div>
@@ -43,7 +43,7 @@
 		<div class="row text-center">
 			<div class="col-sm-8 col-sm-offset-2">
 				<h2 class="title-one">Le Groupe</h2>
-				<p>Un groupe jeune, dynamique et professionnel.</p>
+				
 			</div>
 		</div>
 		<div class="row text-center">
@@ -55,8 +55,8 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/Rowlf_yamaha.jpg" alt="team member" />
-									<h4>Peter ANCELIN</h4>
-									<h5>Keyboards, Vocals</h5>
+									<h4>Pierre ANCELIN</h4>
+									<h5>Clavier, Chant</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
 										<a href="#"><i class="fa fa-facebook"></i></a>
@@ -71,11 +71,11 @@
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/29460f41782e75401e0848a8a9d13bdc--animal-muppet-animal-birthday.jpg" alt="team member" />
 									<h4>Geoffrey MOLLET</h4>
-									<h5>Hang Drums, Vocals</h5>
+									<h5>Hang Drums, Chant</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
 										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-facebook"></i></a>
+										
 										<a href="#"><i class="fa fa-twitter"></i></a>
 										<a href="#"><i class="fa fa-google-plus"></i></a>
 										<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -87,7 +87,7 @@
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/FloydPepper-reallypurple-withguitar.jpg" alt="team member" />
 									<h4>Philippe NOWAK</h4>
-									<h5>Guitars, Vocals</h5>
+									<h5>Guitares, Chant</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
 										<a href="#"><i class="fa fa-facebook"></i></a>
@@ -101,8 +101,8 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="single-member">
 									<img src="assets/publique/images/our-team/030-accordion-player.jpg" alt="team member" />
-									<h4>Oliver "Magic" ROULET</h4>
-									<h5>Accordéons, Vocals</h5>
+									<h4>Olivier ROULET</h4>
+									<h5>Accordéons, Chant</h5>
 									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>-->
 									<div class="socials">
 										<a href="#"><i class="fa fa-facebook"></i></a>

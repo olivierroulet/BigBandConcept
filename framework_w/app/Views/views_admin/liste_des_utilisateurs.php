@@ -35,7 +35,7 @@ $US_email = isset($post['US_email']) ? $post['US_email'] : '';
             </div>
             <div class="row">
                 <?php
-                debug($users); 
+                 
                 if(!empty($users)):?>
                 <hr>
                 <?php foreach ($users as $user): 
