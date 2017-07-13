@@ -17,14 +17,23 @@
     <?php $employeur=$employeurs[0];
 ?>
                 <h2 class="title-one">Gestion des employeurs</h2>
-                <form method="POST" action="employeur_suivant">
-                    <button type="submit" class="btn btn-primary">Suivant</button>
-                    <input name="actualIdClient" type="hidden" value="<?php echo $employeur['CL_Idclient'];?>">
-                </form>
-                <form method="POST" action="employeur_precedent">
-                    <input name="actualIdClient" type="hidden" value="<?=$employeur['CL_Idclient'];?>">
-                    <button  type="submit" class="btn btn-primary">Precedent</button>
-                </form>
+                <div class="col col-md-12">
+                    <div class="col col-md-6 text-right">
+                        <form method="POST" action="employeur_precedent">
+                    
+                            <input name="actualIdClient" type="hidden" value="<?=$employeur['CL_Idclient'];?>">
+                            <button  type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-backward" align="center" style="color:rgba(3, 3, 3, 0.5);" aria-hidden="true"></span>  Précédent </button>
+                        </form>
+                    </div>
+                    <div class="col col-md-6 text-left">
+                        <form method="POST" action="employeur_suivant">
+                            <input name="actualIdClient" type="hidden" value="<?php echo $employeur['CL_Idclient'];?>">
+                            <button type="submit" class="btn btn-primary">  Suivant  <span class="glyphicon glyphicon-forward" align="center" style="color:rgba(3, 3, 3, 0.5);" aria-hidden="true"></span></button>
+                            
+                        </form>
+                    </div>
+
+                </div>
                 <?php 
                 if(!empty($employeurs)):?>
                 <hr>
@@ -33,7 +42,7 @@
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading" id="panel-heading-color">
-                            <h3 class="panel-title">Prenom</h3>
+                            <h3 class="panel-title">Prénom</h3>
                         </div>
                         <div class="panel-body">
                             <?=$employeur['US_FirstName'];?>               </div>
@@ -129,7 +138,7 @@
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading" id="panel-heading-color">
-                            <h3 class="panel-title">Bareme</h3>
+                            <h3 class="panel-title">Barême</h3>
                         </div>
                         <div class="panel-body">
                             <?=$employeur['CL_Type_Bareme'];?>

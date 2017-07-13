@@ -1,4 +1,4 @@
-<?php $this->layout('solopageconnected_layout', ['title' => 'Artistes de Big Band']) ?>
+<?php $this->layout('/solopageconnected_layout', ['title' => 'Artistes de Big Band']) ?>
 
 
 <?php $this->start('main_content') ?>
@@ -69,7 +69,9 @@ function format_phone_fr($phone) {
               <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
             </div>
             <div class="col-sm-2">
-                <!-- hypothétique uri -->
+              <a href="<?=$this->url('default_artistes');?>" class="btn btn-block btn-primary"><i class="glyphicon glyphicon-refresh"></i><i class="fa fa-window-restore" aria-hidden="true"></i> Ajouter un artiste</a>
+              
+              <!-- < ?= '<a href="' .$this->url('ActuINS', ['AC_Id' => $reponse['AC_Id']]).'">Insérer</a>'; ?> -->
             </div>
             <div class="col-md-12">
                 <!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
