@@ -42,10 +42,10 @@ class DevisController extends \W\Controller\Controller
         $this->verifAdmin();
 
         $devis = new Devis();
-        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',NULL,NULL);
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',NULL,NULL);
         $nbDeDevis=count($tousLesDevis);
 
-        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',1,0);
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',1,0);
 
         $operateur = new Operateur();
         $tousLesOperateurs = $operateur->findAll();
@@ -71,10 +71,10 @@ class DevisController extends \W\Controller\Controller
         $this->verifAdmin();
 
         $devis = new Devis();
-        $Devis = $devis->findAllDevis('','DV_Date_De_Creation','ASC',NULL,NULL);
+        $Devis = $devis->findAllDevis('','DV_Date_De_Creation','DESC',NULL,NULL);
         $nbDeDevis=count($Devis);
 
-        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','ASC', 1, (int) $enr);
+        $tousLesDevis = $devis->findAllDevis('','DV_Date_De_Creation','DESC', 1, (int) $enr);
 
         $operateur = new Operateur();
         $tousLesOperateurs = $operateur->findAll();
