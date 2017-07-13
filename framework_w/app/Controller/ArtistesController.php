@@ -331,6 +331,7 @@ Le Numéro de Congés Spectacle doit faire au minimum 7 caractères */
                 'AR_Lieu_De_Naissance'      => $post['AR_Lieu_De_Naissance'],
                 'AR_Nationalite'            => $post['AR_Nationalite'],
                 'AR_NewsLetterYN'           => $post['AR_NewsLetterYN'],
+                'AR_ActiveYN'               => $post['AR_ActiveYN'],                    
                 ];
 
 // ici:question why un model dans un controller ??? // UsersModel est importé via le "use" en haut de la class actuelle

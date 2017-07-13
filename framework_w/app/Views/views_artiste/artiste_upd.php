@@ -64,11 +64,11 @@
 			$AR_NewsLetterYN = isset($post['AR_NewsLetterYN']) ? $post['AR_NewsLetterYN'] : '';
 
 			?>
-			<div class="col col-md-12 table-bordered">						
+			<div class="col col-md-12 table-bordered" id="panel-heading-color">						
 <!-- ***********************************  début du formulaire  *********************************** -->
 				<form class="form" method="POST">
 				<div class="form-group">
-			<div class="col col-md-12">&nbsp;  </div>
+			<div class="col col-md-12" id="panel-heading-color"> &nbsp;  </div>
 
 				<div class="col col-md-12">
 					<div class="col col-md-4 text-left">		
@@ -91,7 +91,7 @@
 					<div class="col col-md-3 text-left">						
 						<label for "AR_Civilite"> Civilité </label><br>
 						<select class="form-control" name="AR_Civilite" id="AR_Civilite" >
-							<option value="Mr">Mr</option>
+							<option value="Mr">M.</option>
 							<option value="Mme">Mme</option>
 						</select>
 					</div>					
@@ -184,7 +184,7 @@
 						</div>
 			<div class="col col-md-12"> &nbsp; </div>						
 						<div class="col col-md-12 text-right">
-							<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi </button>
+							<button type="submit" class="btn btn-default" id="btn-color-envoi"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi </button>
 						</div>
 					</div>
 			<div class="col col-md-12"> &nbsp; </div>
