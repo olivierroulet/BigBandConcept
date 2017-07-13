@@ -1,18 +1,53 @@
-<?php $this->layout('layout', ['title' => 'Ajout d\' artiste']) ?>
+<?php $this->layout('solopageconnected_layout', ['title' => 'Ajout d\' artiste']) ?>
 
 <?php $this->start('main_content') ?>
-<h2>Enregistrement d'un artiste en base de données</h2>
-<!-- <p>Bon courage !!!</p>
+<!-- <h2>Enregistrement d'un artiste en base de données</h2>
+ --><!-- <p>Bon courage !!!</p>
 <p>lien vers la doc<a href="../docs/tuto/" title="Documentation de BigBand">docs/tuto</a></p> -->
 
 <!-- ** Fin des boutons NAVIGATION ************************ -->	
 <!-- ** Début du formulaire d' ajout d' ARTISTE ' ************************ -->	
+<section id="artistes" class="parallax-section">
+
+      <div class="clients-wrapper">
+        <div class="row text-center">
+          <div class="col-md-12">
+          <div class="col-md-8">&nbsp;</div>
+            <div class="col-md-2">
+              	<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+            </div>
+            <div class="col-sm-2">
+                <!-- hypothétique uri -->
+            </div>
+            <div class="col-md-12">
+                <!--  <a href="redirect_role" class="btn btn-block btn-default">préc.</a>
+                  <a href="redirect_role" class="btn btn-block btn-default">suiv.</a> -->
+            </div>
+          </div> <!-- fin de row -->
+        </div>
+        <div class="row">
+        &nbsp;
+        </div>
+
+      </div>
+
+      
+	<div class="container">
+		<div class="clients-wrapper">
+				<div class="row text-center">
+					<div class="col-md-12">
+						<h2 class="title-one"><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2>
+					</div>
+				</div>	
+			<div class="col-md-12">
+
+
 
 
 <div class="container-fluid" style="width:65%; margin-left: 50px;" align="right">
 	<div class="row main">
 		<div class="main-login main-right">
-			<h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2>
+			<!-- <h2><i class="fa fa-file-o fa-md" aria-hidden="true"></i> Ajout d'un artiste</h2> -->
 			<?php
 			if(!empty($formErrors)){
 				echo '<p style="color:red">'.implode('<br>', $formErrors);
@@ -45,72 +80,138 @@
 			$AR_NewsLetterYN = isset($post['AR_NewsLetterYN']) ? $post['AR_NewsLetterYN'] : '';
 
 			?>
-			<div class="col col-md-12 mobiform">						
-				<form class="form form-horizontal" method="post">
-					<div class="col col-md-12">
-						<label for "AR_Prenom"><i class="fa fa-user fa" aria-hidden="true"></i>Prénom</label>
-						<input type="text" name="AR_Prenom" value="<?php echo $AR_Prenom;?>" id="AR_Prenom"/>
-						<label for "AR_Nom"><i class="fa fa-user fa" aria-hidden="true"></i>Nom de famille</label>
-						<input type="text" name="AR_Nom" id="AR_Nom" value="<?php echo $AR_Nom;?>"placeholder="de la Fontaine"/>
-						<label for "AR_Pseudo"><i class="fa fa-user fa" aria-hidden="true"></i>Pseudo / Nom de scène</label>
-						<input type="text" name="AR_Pseudo" id="AR_Pseudo" value="<?php echo $AR_Pseudo;?>"placeholder="Nom de scène"/>
+			<div class="col col-md-12">			&nbsp;	</div>
+				<div class="col col-md-12 table-bordered">	
+<!-- ****************** début du formulaire ***************************				 -->
+				<form class="form" method="post">
+					<div class="form-group">
+					<div class="col col-md-12">&nbsp;  </div>
+
+						<div class="col col-md-12">
+							<div class="col col-md-4">
+								<label for "AR_Prenom"><i class="fa fa-user fa" aria-hidden="true"></i>Prénom</label>
+								<input type="text" class="form-control" name="AR_Prenom" value="<?php echo $AR_Prenom;?>" id="AR_Prenom"/>
+							</div>
+							<div class="col col-md-4">
+								<label for "AR_Nom"><i class="fa fa-user fa" aria-hidden="true"></i>Nom de famille</label>
+								<input type="text" class="form-control" name="AR_Nom" id="AR_Nom" value="<?php echo $AR_Nom;?>" />
+							</div>
+							<div class="col col-md-4">								
+								<label for "AR_Pseudo"><i class="fa fa-user fa" aria-hidden="true"></i>Pseudo / Nom de scène</label>
+								<input type="text" class="form-control" name="AR_Pseudo" id="AR_Pseudo" value="<?php echo $AR_Pseudo;?>"placeholder="Nom de scène"/>
+							</div>
+						</div>	
+					<div class="col col-md-12">	
+						<div class="col col-md-4">	
+							<label for "AR_Civilite">Civilité</label>
+							<select name="AR_Civilite" id="AR_Civilite" class="form-control">
+								<option value="Mr">Mr</option>
+								<option value="Mme">Mme</option>
+							</select>
+							</div>
+							<div class="col col-md-4">								
+								<label for "AR_Adresse_Mail"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Adresse messagerie électronique</label>
+								<input type="email" class="form-control" name="AR_Adresse_Mail" id="AR_Adresse_Mail" value="<?php echo $AR_Adresse_Mail;?>" placeholder="pre.nom@MonSite.fr" required/>
+							</div>
+							<div class="col col-md-4">		
+								<label for "AR_Emploi_Occupe">Emploi occupé</label>
+								<input type="text" class="form-control" name="AR_Emploi_Occupe" id="AR_Emploi_Occupe" value="<?php echo $AR_Emploi_Occupe;?>"/>
+							</div>
+						</div>
+					<div class="col col-md-12">	
+						<div class="col col-md-4">							
+							<label for "AR_Date_De_Naissance">Date de Naissance</label>
+							<input type="date" class="form-control" name="AR_Date_De_Naissance" id="AR_Date_De_Naissance"  value="<?php echo $AR_Date_De_Naissance;?>"/>
+						</div>
+						<div class="col col-md-4">							
+							<label for "AR_Lieu_De_Naissance">Lieu de Naissance</label>
+							<input type="text" class="form-control" name="AR_Lieu_De_Naissance" id="AR_Lieu_De_Naissance"  value="<?php echo $AR_Lieu_De_Naissance;?>"/>
+						</div>
+						<div class="col col-md-4">							
+							<label for "AR_Nationalite">Nationalité</label>
+							<input type="text" class="form-control" name="AR_Nationalite" id="AR_Nationalite" value="FR" value="<?php echo $AR_Nationalite;?>" placeholder="code sur 2 caractères en majuscules"/>
+						</div>
 					</div>
 					<div class="col col-md-12">	
-						<label for "AR_Adresse_Mail"><i class="fa fa-envelope-o fa" aria-hidden="true"></i>Adresse messagerie électronique</label>
-						<input type="email" name="AR_Adresse_Mail" id="AR_Adresse_Mail" value="<?php echo $AR_Adresse_Mail;?>" placeholder="pre.nom@MonSite.fr" required/>
+						<div class="col col-md-2">							
+							<label for "AR_Numero">Numero de la voie/rue</label>
+							<input type="text" class="form-control" name="AR_Numero" id="AR_Numero"  value="<?php echo $AR_Numero;?>"/>
+						</div>
+						<div class="col col-md-3">							
+							<label for "AR_Voie">Voie</label>
+							<input type="text" class="form-control" name="AR_Voie" id="AR_Voie"  value="<?php echo $AR_Voie;?>"/>
+						</div>
+						<div class="col col-md-3">							
+							<label for "AR_Batiment">Bâtiment</label>
+							<input type="text" class="form-control" name="AR_Batiment" id="AR_Batiment" value="<?php echo $AR_Batiment;?>"/>
+						</div>
+						<div class="col col-md-4">							
+							<label for "AR_Adresse_Ligne_1">Adresse</label>
+							<input type="text" name="AR_Adresse_Ligne_1" id="AR_Adresse_Ligne_1" value="<?php echo $AR_Adresse_Ligne_1;?>"/>
+						</div>
+					</div>
+					<div class="col col-md-12">	
+						<div class="col col-md-3">							
+							<label for "AR_Code_Postal">Code Postal</label>
+							<input type="text" class="form-control" name="AR_Code_Postal" id="AR_Code_Postal" value="<?php echo $AR_Code_Postal;?>"/>
+						</div>
+						<div class="col col-md-3">													
+							<label for "AR_Ville">Ville</label>
+							<input type="text" class="form-control" name="AR_Ville" id="AR_Ville"  value="<?php echo $AR_Ville;?>"/>
+						</div>
+						<div class="col col-md-3">													
+							<label for "AR_Telephone_1">Téléphone mobile</label>
+							<input type="text" class="form-control" name="AR_Telephone_1" id="AR_Telephone_1" value="<?php echo $AR_Telephone_1;?>" placeholder="+33(0)601020304"/>
+						</div>
+						<div class="col col-md-3">													
+							<label for "AR_Telephone_2">Téléphone fixe</label>
+							<input type="text" class="form-control" name="AR_Telephone_2" id="AR_Telephone_2"  value="<?php echo $AR_Telephone_2;?>"/>
+						</div>
+					</div>
+
+				<div class="col col-md-12"> &nbsp; </div>					
+					<div class="col col-md-12"> 	
+						<div class="col col-md-4 text-right">
+						<!-- insérer un séparateur -->
+							<label for "AR_N_De_Securite_Sociale">Numéro de Sécurité Sociale</label>
+							<input type="text" class="form-control" name="AR_N_De_Securite_Sociale" id="AR_N_De_Securite_Sociale"  value="<?php echo $AR_N_De_Securite_Sociale;?>"/>
+						</div>
+						<div class="col col-md-4 text-right">						
+							<label for "AR_N_Du_Guso">Numéro du GUSO</label>
+							<input type="text" class="form-control" name="AR_N_Du_Guso" id="AR_N_Du_Guso"  value="<?php echo $AR_N_Du_Guso;?>"/>
+						</div>
+						<div class="col col-md-4 text-right">												
+							<label for "AR_Numero_Conges_Spectacle">Numéro de Congés Spectacle</label>
+							<input type="text" class="form-control" name="AR_Numero_Conges_Spectacle" id="AR_Numero_Conges_Spectacle"  value="<?php echo $AR_Numero_Conges_Spectacle;?>"/>
+						</div>
+					</div>
+					<div class="col col-md-12"> 	
+						<div class="col col-md-6 text-right">
+							<label for "AR_NewsLetterYN"><i class="fa fa-hand-peace-o fa-lg" aria-hidden="true"></i> Souscrire à la newsletter ?</label>
+							<input type="checkbox" class="form-control" name="AR_NewsLetterYN" checked="<?php echo $AR_NewsLetterYN;?>" title ="cochée = oui">
+						</div>	
+						<div class="col col-md-6 text-right">
+							<label for "AR_ActiveYN"><i class="fa fa-hand-peace-o fa-lg" aria-hidden="true"></i> Activé ?</label>
+							<input type="checkbox" class="form-control" name="AR_ActiveYN" checked="<?php echo $AR_ActiveYN;?>">
+						</div>	
+
+					</div>						
+						<div class="col col-md-12" align="right">
+							<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
+						</div>
+
+					</div>
+
+<!-- 						<div class="col col-md-4">							
 						<label for "AR_Password"><i class="fa fa-lock fa-lg" aria-hidden="true"></i> Mot de passe</label>
-						<input type="password" name="AR_Password" id="AR_Password" required  title = "au moins 8 caractères"/>
+						<input type="password" class="form-control" name="AR_Password" id="AR_Password" required  title = "au moins 8 caractères"/>
 						<label for "mdp2"><i class="fa fa-unlock fa-lg" aria-hidden="true"></i> Confirmer le mot de passe</label>
-						<input type="password" name="mdp2" id="mdp2"  title = "au moins 8 caractères" required/>
+						<input type="password" class="form-control" name="mdp2" id="mdp2"  title = "au moins 8 caractères" required/>
+						</div> -->					
+					</form>				
+<!-- ****************** fin du formulaire ***************************				 -->
 
-						<label for "AR_Emploi_Occupe">Emploi occupé</label>
-						<input type="text" name="AR_Emploi_Occupe" id="AR_Emploi_Occupe" value="<?php echo $AR_Emploi_Occupe;?>"/>
-						<label for "AR_Civilite">Civilité</label>
-						<select name="AR_Civilite" id="AR_Civilite">
-							<option value="Mr">Mr</option>
-							<option value="Mme">Mme</option>
-						</select>
-						<label for "AR_Numero">Numero de la voie/rue</label>
-						<input type="text" name="AR_Numero" id="AR_Numero"  value="<?php echo $AR_Numero;?>"/>
-						<label for "AR_Voie">Voie</label>
-						<input type="text" name="AR_Voie" id="AR_Voie"  value="<?php echo $AR_Voie;?>"/>
-						<label for "AR_Batiment">Bâtiment</label>
-						<input type="text" name="AR_Batiment" id="AR_Batiment" value="<?php echo $AR_Batiment;?>"/>
-
-
-<!-- 	<label for "AR_Adresse_Ligne_1">Adresse</label>
-	<input type="text" name="AR_Adresse_Ligne_1" id="AR_Adresse_Ligne_1" value="<?php echo $AR_Adresse_Ligne_1;?>"/> -->
-	<label for "AR_Code_Postal">Code Postal</label>
-	<input type="text" name="AR_Code_Postal" id="AR_Code_Postal" value="<?php echo $AR_Code_Postal;?>"/>
-	<label for "AR_Ville">Ville</label>
-	<input type="text" name="AR_Ville" id="AR_Ville"  value="<?php echo $AR_Ville;?>"/>
-
-	<label for "AR_Telephone_1">Téléphone mobile</label>
-	<input type="text" name="AR_Telephone_1" id="AR_Telephone_1" value="<?php echo $AR_Telephone_1;?>" placeholder="+33(0)601020304"/>
-	<label for "AR_Telephone_2">Téléphone fixe</label>
-	<input type="text" name="AR_Telephone_2" id="AR_Telephone_2"  value="<?php echo $AR_Telephone_2;?>"/>
-	<!-- insérer un séparateur -->
-	<label for "AR_N_De_Securite_Sociale">Numéro de Sécurité Sociale</label>
-	<input type="text" name="AR_N_De_Securite_Sociale" id="AR_N_De_Securite_Sociale"  value="<?php echo $AR_N_De_Securite_Sociale;?>"/>
-	<label for "AR_N_Du_Guso">Numéro du GUSO</label>
-	<input type="text" name="AR_N_Du_Guso" id="AR_N_Du_Guso"  value="<?php echo $AR_N_Du_Guso;?>"/>
-	<label for "AR_Numero_Conges_Spectacle">Numéro de Congés Spectacle</label>
-	<input type="text" name="AR_Numero_Conges_Spectacle" id="AR_Numero_Conges_Spectacle"  value="<?php echo $AR_Numero_Conges_Spectacle;?>"/>
-	<label for "AR_Date_De_Naissance">Date de Naissance</label>
-	<input type="date" name="AR_Date_De_Naissance" id="AR_Date_De_Naissance"  value="<?php echo $AR_Date_De_Naissance;?>"/>
-	<label for "AR_Lieu_De_Naissance">Lieu de Naissance</label>
-	<input type="text" name="AR_Lieu_De_Naissance" id="AR_Lieu_De_Naissance"  value="<?php echo $AR_Lieu_De_Naissance;?>"/>
-
-	<label for "AR_Nationalite">Nationalité</label>
-	<input type="text" name="AR_Nationalite" id="AR_Nationalite" value="FR" value="<?php echo $AR_Nationalite;?>" placeholder="code sur 2 caractères en majuscules"/>
-
-	<label for "AR_NewsLetterYN"><i class="fa fa-hand-peace-o fa-lg" aria-hidden="true"></i>Souscrire à la newsletter ?</label>
-	<input type="checkbox" name="AR_NewsLetterYN" checked="<?php echo $AR_NewsLetterYN;?>" title ="cochée = oui">
-	<div class="col col-md-12" align="right">
-		<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i> Envoi</button>
-	</div>
 </div>
-</form>				
 </div>
 </div>
 </div>

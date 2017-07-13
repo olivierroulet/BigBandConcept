@@ -9,7 +9,7 @@
           <div class="col-md-12">
           <div class="col-md-8">&nbsp;</div>
             <div class="col-md-2">
-              <a href="../administrateur_accueil" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
+              	<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-home" aria-hidden="true"></i> Menu principal</a>
             </div>
             <div class="col-sm-2">
                 <!-- hypothétique uri -->
