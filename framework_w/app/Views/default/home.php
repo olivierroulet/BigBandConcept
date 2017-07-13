@@ -135,13 +135,13 @@
 								<div class="single-service">
 									<i class="fa fa-bullhorn"></i>
 									<h2>Musique de rue</h2>
-									<p>Avec toute son énergie BigBand vous propose son nouveau spectacle de rue</p>
+									<p>Avec toute son énergie, BigBand vous propose son nouveau spectacle de rue</p>
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="single-service">
 									<i class="fa fa-home"></i>
-									<h2>Soirée privées</h2>
+									<h2>Soirées privées</h2>
 									<p>L'energie et l'authenticité de BigBand pour vos soirées privées </p>
 								</div>
 							</div>
@@ -281,7 +281,7 @@
 								</div> 
 								<div class="mask text-center">
 									<h3>Console</h3>
-									<h4>Du son, des lights</h4>
+									<h4>Du son, des lumières</h4>
 									
 									<a href="assets/publique/images/portfolio/portfolio9.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 								</div>
@@ -549,7 +549,7 @@
 																</div>
 																<div class="col-lg-4">
 																	<div class="form-group">
-																		<label for="CL_Telephone">Telephone</label>
+																		<label for="CL_Telephone">Téléphone</label>
 																		<input type="text" name="CL_Telephone" value="<?php echo $CL_Telephone;?>" id="CL_Telephone" class="form-control" required="required" placeholder="Téléphone" tabindex="3">
 																	</div>
 																</div>
@@ -660,7 +660,7 @@
 												</div>
 											</div>
 											<div class="col-sm-8 col-sm-offset-2">
-												<button id="btnFirstLogin" class="btn btn-sdefault">Premiere connexion</button>
+												<button id="btnFirstLogin" class="btn btn-sdefault">Première connexion</button>
 												<button id="submitLoginForm" class="btn btn-success">Se connecter</button>
 												<button id="btnForgotPassword" class="btn btn-default">Mot de passe oublié</button>
 											</div>
@@ -679,7 +679,7 @@
 											
 										</div>
 										<div class="col-sm-8 col-sm-offset-2">
-											<h2 class="title-one">Premiere connexion</h2>
+											<h2 class="title-one">Première connexion</h2>
 										</div>
 										<div class="col-sm-12">
 											<div id="successAjaxFirstLoginForm" class="text-center" style="color:Lime"></div>

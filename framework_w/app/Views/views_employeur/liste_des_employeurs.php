@@ -32,7 +32,7 @@
 
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Prenom</h3>
                         </div>
                         <div class="panel-body">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Nom</h3>
                         </div>
                         <div class="panel-body">
@@ -50,7 +50,7 @@
                 </div>                       
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Email</h3>
                         </div>
                         <div class="panel-body">
@@ -60,7 +60,7 @@
 
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Téléphone</h3>
                         </div>
                         <div class="panel-body">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Raison Sociale</h3>
                         </div>
                         <div class="panel-body">
@@ -78,7 +78,7 @@
                 </div>                       
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Statut Juridique</h3>
                         </div>
                         <div class="panel-body">
@@ -88,7 +88,7 @@
                 </div>                       
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Titulaire Licence Entrepreneur De Spectacles</h3>
                         </div>
                         <div class="panel-body">
@@ -98,7 +98,7 @@
                 </div>                      
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Code postal/Ville</h3>
                         </div>
                         <div class="panel-body">
@@ -108,7 +108,7 @@
                 </div>                      
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Habitude de date</h3>
                         </div>
                         <div class="panel-body">
@@ -118,7 +118,7 @@
                 </div>                             
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Date du prochain suivi</h3>
                         </div>
                         <div class="panel-body">
@@ -128,7 +128,7 @@
                 </div>                           
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Bareme</h3>
                         </div>
                         <div class="panel-body">
@@ -138,7 +138,7 @@
                 </div>                          
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Indicateur du suivi</h3>
                         </div>
                         <div class="panel-body">
@@ -148,7 +148,7 @@
                 </div>                        
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="panel-heading-color">
                             <h3 class="panel-title">Statut du client</h3>
                         </div>
                         <div class="panel-body">
