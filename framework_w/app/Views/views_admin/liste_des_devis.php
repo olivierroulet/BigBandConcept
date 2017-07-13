@@ -40,15 +40,15 @@
                     </div> fiche n° <?=$fiche;?> / <?=$nbDeDevis;?>
                 </div>
                 <div class="col-sm-2">
-                    <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau devis</a>
-                    <a href="redirect_role" class="btn btn-block btn-default"><i class="fa fa-address-card-o" aria-hidden="true"></i> Fiche employeur</a>
+                    <!--<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau devis</a>
+                    <a href="redirect_role" class="btn btn-block btn-default"><i class="fa fa-address-card-o" aria-hidden="true"></i> Fiche employeur</a>-->
                 </div>
                 <div class="col-sm-6">
-                 <h2 class="title-one">Devis</h2>
-             </div>
-             <div class="col-sm-2">
-                <a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Recherche</a>
-                <a href="redirect_role" class="btn btn-block btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer le devis</a>
+                   <h2 class="title-one">Devis</h2>
+               </div>
+               <div class="col-sm-2">
+                <!--<a href="redirect_role" class="btn btn-block btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Recherche</a>
+                <a href="redirect_role" class="btn btn-block btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer le devis</a>-->
             </div>
         </div> <!-- fin de row -->
         <div class="row text-center">
@@ -57,18 +57,17 @@
 
     </div>
     <div class="row">
-     <form name="calculdudevis" method="POST" action="updater_le_devis"> <!-- debut du formulaire -->
-         <hr>
-         <?php
+       <form name="calculdudevis" method="POST" action="updater_le_devis"> <!-- debut du formulaire -->
+           <hr>
+           <?php
 
-         if(!empty($tousLesDevis)):?>
+           if(!empty($tousLesDevis)):?>
 
-         <?php foreach ($tousLesDevis as $devis): 
+           <?php foreach ($tousLesDevis as $devis): 
 
-         ?>          
-         <div class='row text-left'>
+           ?>          
+           <div class='row text-left'>
             <div class='col-sm-3'>
-
                 <div class='col-sm-9 text-center'>
                     Destinataire :<br>
                     <?= $devis['CL_Raison_Sociale']?><br>
@@ -107,90 +106,102 @@
                 </div><br>
                 Date de la demande : <?=date ('d/m/Y', strtotime($devis['DV_Date_De_Creation']));?>
                 <br><br>
-                <h4>Date de la prestation : <?=date ('d/m/Y', strtotime($devis['DV_Datedelaprestation']));?></h4>
-            </div> <!-- fin de col -->
-            <div class='col-sm-3 text-center'>
-                <label for="DV_Iddevis">Id Devis : </label> <input name="DV_Iddevis" id="DV_Iddevis" type="text" size="3" class="form-control-2" value="<?= $devis['DV_Iddevis'];?>"><br>
-                Id Employeur : <?= $devis['CL_Idclient'];?>
-                <input name="DE_Iddetaildudevis" id="DE_Iddetaildudevis" type="text" hidden value="<?= $devis['DE_Iddetaildudevis'];?>">
-            </div> <!-- fin de col -->
-        </div>
-        <hr>
-        <div class='col-sm-4 text-center'>
-            Donnees sur la prestation
-            <div class="form-group">
-                <select class="form-control upd" name="DE_Formule"  id="DE_Formule">
-                    <option value=''>Indiquez le type de prestation retenue</option>
-                    <option value='Musique de rue' <?php if ($devis['DE_Formule']=='Musique de rue'){echo 'selected';}?>>Musique de rue</option>  
-                    <option value='Soirée privée' <?php if ($devis['DE_Formule']=='Soirée privée'){echo 'selected';}?>>Soirée privée</option> 
-                    <option value='Concert' <?php if ($devis['DE_Formule']=='Concert'){echo 'selected';}?>>Concert</option>  
-                </select>
-            </div>
-            <br>
-            Coût Humain :<br><br>
-            <?=str_replace ( '\n', '<br>', $devis['DE_Voicilacomposition']);?>
-
-
-        </div>
-        <div class='col-sm-4 text-center'>
-            Donnees sur les déplacements
-            <div class='row'>
-                <div class='col-sm-6'>
-                    <div class="form-group">
-                        <label for="DV_CodePostalPrestation">Code postal</label>
-                        <input class="form-control upd" size="3" type="text" name="DV_CodePostalPrestation" id="DV_CodePostalPrestation" value=<?= $devis['DV_CodePostalPrestation'];?>>
-                    </div>
+                <label for="DV_Datedelaprestation">Date du la prestation</label>
+                    <?php // on travaille sur la date pour l'afficher au format francais
+                    $datedelaprestation_fr = date('d/m/Y', strtotime(str_replace('/', '-', $devis['DV_Datedelaprestation'])));
+                    ?>
+                    <input type="text" class="form-control upd" name="DV_Datedelaprestation" id="DV_Datedelaprestation" value=<?=$datedelaprestation_fr;?> placeholder="01/01/2000">
+                </div> <!-- fin de col -->
+                <div class='col-sm-3 text-center'>
+                    <label for="DV_Iddevis">Id Devis : </label> <input name="DV_Iddevis" id="DV_Iddevis" type="text" size="3" class="form-control-2" value="<?= $devis['DV_Iddevis'];?>"><br>
+                    Id Employeur : <?= $devis['CL_Idclient'];?>
+                    <input name="DE_Iddetaildudevis" id="DE_Iddetaildudevis" type="text" hidden value="<?= $devis['DE_Iddetaildudevis'];?>">
+                    <label for="DV_Statut_Du_Devis">
+                        <select class="form-control upd" name="DV_Statut_Du_Devis"  id="DV_Statut_Du_Devis">
+                            <option value=''>Indiquez le statut du devis</option>
+                            <option value='a faire' <?php if ($devis['DV_Statut_Du_Devis']=='a faire'){echo 'selected';}?>>A faire</option>  
+                            <option value='en attente' <?php if ($devis['DV_Statut_Du_Devis']=='en attente'){echo 'selected';}?>>En attente</option> 
+                            <option value='accepté' <?php if ($devis['DV_Statut_Du_Devis']=='accepté'){echo 'selected';}?>>Accepté</option> 
+                            <option value='refusé' <?php if ($devis['DV_Statut_Du_Devis']=='refusé'){echo 'selected';}?>>Refusé</option>  
+                        </select>
+                    </div> <!-- fin de col -->
                 </div>
-                <div class='col-sm-6'>
+                <hr>
+                <div class='col-sm-4 text-center'>
+                    Donnees sur la prestation
                     <div class="form-group">
-                        <label for="DV_Lieudelaprestation">Ville</label>
-                        <input class="form-control upd" size="3" type="text" name="DV_Lieudelaprestation" id="DV_Lieudelaprestation" value=<?= $devis['DV_Lieudelaprestation'];?>>
+                        <select class="form-control upd" name="DE_Formule"  id="DE_Formule">
+                            <option value=''>Indiquez le type de prestation retenue</option>
+                            <option value='Musique de rue' <?php if ($devis['DE_Formule']=='Musique de rue'){echo 'selected';}?>>Musique de rue</option>  
+                            <option value='Soirée privée' <?php if ($devis['DE_Formule']=='Soirée privée'){echo 'selected';}?>>Soirée privée</option> 
+                            <option value='Concert' <?php if ($devis['DE_Formule']=='Concert'){echo 'selected';}?>>Concert</option>  
+                        </select>
                     </div>
-                </div>
-            </div>
-            <div class='row'>
-                <div class="form-group">
-                    <input class="form-control-2" size="3" type="text" disabled name="kilometrageallerretour" id="kilometrageallerretour">kms
-
-                    <br>duree d'un trajet : <input type="text" disabled class="form-control-2" name="dureetrajeth" id="dureetrajeth">
-
-                    <br>Coûts des déplacements</label><br>
-                    <input class="form-control-2" type="text" size="3" name="coutdeplacements" id="coutdeplacements">€
                     <br>
-                    <input hidden class="form-control-2 upd"  type="text" name="DV_Prixtotal" id="DV_Prixtotal" value=<?= $devis['DV_Prixtotal'];?>>
-                    <h4>Prix total : <?= $devis['DV_Prixtotal'];?></h4>
+                    Coût Humain :<br><br>
+                    <?=str_replace ( '\n', '<br>', $devis['DE_Voicilacomposition']);?>
+
 
                 </div>
-                <?php 
-                if ($nbDeDevis==1){
-                    ?>
-                    <button class="btn btn-block btn-success" type="submit">Valider</button>
-                    <?php 
-                } 
-                else {
-                    ?>
-                    <a class="btn btn-block btn-warning" href="<?=$this->url('afficherundevis', ['DV_Iddevis' => $devis['DV_Iddevis']]);?>">Travailler sur ce devis</a>
-                    <?php
-                }
+                <div class='col-sm-4 text-center'>
+                    Donnees sur les déplacements
+                    <div class='row'>
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <label for="DV_CodePostalPrestation">Code postal</label>
+                                <input class="form-control upd" size="3" type="text" name="DV_CodePostalPrestation" id="DV_CodePostalPrestation" value=<?= $devis['DV_CodePostalPrestation'];?>>
+                            </div>
+                        </div>
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <label for="DV_Lieudelaprestation">Ville</label>
+                                <input class="form-control upd" size="3" type="text" name="DV_Lieudelaprestation" id="DV_Lieudelaprestation" value=<?= $devis['DV_Lieudelaprestation'];?>>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="form-group">
+                            <input class="form-control-2" size="3" type="text" disabled name="kilometrageallerretour" id="kilometrageallerretour">kms
 
-                ?>
+                            <br>duree d'un trajet : <input type="text" disabled class="form-control-2" name="dureetrajeth" id="dureetrajeth">
 
+                            <br>Coûts des déplacements</label><br>
+                            <input class="form-control-2" type="text" size="3" name="coutdeplacements" id="coutdeplacements">€
+                            <br>
+                            <input hidden class="form-control-2 upd"  type="text" name="DV_Prixtotal" id="DV_Prixtotal" value=<?= $devis['DV_Prixtotal'];?>>
+                            <h4>Prix total : <?= $devis['DV_Prixtotal'];?></h4>
+
+                        </div>
+                        <?php 
+                        if ($nbDeDevis==1){
+                            ?>
+                            <button class="btn btn-block btn-success" type="submit">Valider</button>
+                            <?php 
+                        } 
+                        else {
+                            ?>
+                            <a class="btn btn-block btn-warning" href="<?=$this->url('afficherundevis', ['DV_Iddevis' => $devis['DV_Iddevis']]);?>">Travailler sur ce devis</a>
+                            <?php
+                        }
+
+                        ?>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div id="mapG3" class="img-responsive"></div> 
+                </div>
             </div>
+
         </div>
-        <div class="col-sm-4">
-            <div id="mapG3" class="img-responsive"></div> 
-        </div>
-    </div>
 
-</div>
+    </form> 
 
-</form> 
-
-<!-- fin du formulaire -->
+    <!-- fin du formulaire -->
 
 <?php endforeach; ?>
 <?php else: ?>
-   <div class="alert alert-danger">
+ <div class="alert alert-danger">
     Aucun devis !
 </div>
 // <?php endif; 
@@ -207,17 +218,17 @@ $address=$devis['DV_CodePostalPrestation'].",".$devis['DV_Lieudelaprestation'];
 $addressdepart=$ourShop['GI_Addr_ZipCode'].",".$ourShop['GI_Addr_City'];
 ?>
 <script type="text/javascript">
-   /****AFFICHAGE DE LA CARTE ****/
-   var initialadevis = '<?php echo $devis['DV_CodePostalPrestation']; ?>';
-   var initialbdevis = '<?php echo $devis['DV_Lieudelaprestation']; ?>';
-   var myMarker;
-   var search_addr;
-   var map;
-   var gdir;
-   var geocoder = null;
-   var addressMarker;
-   var addressdepart = '<?php echo $addressdepart; ?>';
-   function coordonneesGPS(){      
+ /****AFFICHAGE DE LA CARTE ****/
+ var initialadevis = '<?php echo $devis['DV_CodePostalPrestation']; ?>';
+ var initialbdevis = '<?php echo $devis['DV_Lieudelaprestation']; ?>';
+ var myMarker;
+ var search_addr;
+ var map;
+ var gdir;
+ var geocoder = null;
+ var addressMarker;
+ var addressdepart = '<?php echo $addressdepart; ?>';
+ function coordonneesGPS(){      
     address = '<?php echo $address ?>';
     geocoder = new GClientGeocoder();
     z = 7;

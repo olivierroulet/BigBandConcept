@@ -138,6 +138,8 @@ class DevisController extends \W\Controller\Controller
             $date_fr = $post['DV_Datedudevis'];
             $date_us = date('Y-m-d', strtotime(str_replace('/', '-', $date_fr)));
             
+            $date_prestation_fr = $post['DV_Datedelaprestation'];
+            $date_prestation_us = date('Y-m-d', strtotime(str_replace('/', '-', $date_prestation_fr)));
             switch ($post['DE_Formule']) {
                 case 'Musique de rue':
                 $descriptif='4 Musiciens en acoustique\n
@@ -184,11 +186,13 @@ class DevisController extends \W\Controller\Controller
             $dataDevis = [
             'DV_Datedudevis' => $date_us,
             'DV_CodePostalPrestation' => $post['DV_CodePostalPrestation'],
+            'DV_Datedelaprestation' => $date_prestation_us,
             'DV_Lieudelaprestation' => $post['DV_Lieudelaprestation'],
             'DV_Montantdessalaires' => $totalsalairesnets,
             'DV_Montantdescotisations' => $totaldescotisations,
             'DV_Montantdesfrais'=>  $post['coutdeplacements'],
             'DV_Prixtotal' => $prixtotal,
+            'DV_Statut_Du_Devis'  => $post['DV_Statut_Du_Devis'],
             ];
             $Devis= new Devis();
             $update = $Devis->update($dataDevis,$post['DV_Iddevis']);
